@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 Uint8List toAscii(String input) {
+  
   List<int> toNums(String str) {
     return str.codeUnits.map((x) {
       // 0x00–0x1F control characters

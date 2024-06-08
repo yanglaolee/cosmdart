@@ -38,6 +38,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "comet_clients",
+      "rootUri": "../packages/comet_clients",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
       "name": "convert",
       "rootUri": "file:///home/laole/.pub-cache/hosted/pub.dev/convert-3.1.1",
       "packageUri": "lib/",
@@ -72,6 +78,12 @@
       "rootUri": "file:///home/laole/.pub-cache/hosted/pub.dev/glob-2.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///home/laole/.pub-cache/hosted/pub.dev/http-1.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
     },
     {
       "name": "http_multi_server",
@@ -296,7 +308,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-06-06T08:49:40.930948Z",
+  "generated": "2024-06-08T10:52:16.694773Z",
   "generator": "pub",
   "generatorVersion": "3.3.3"
 }
