@@ -1,15 +1,15 @@
 import 'package:http/http.dart' as http;
 
-import 'jsonrpc2v0.dart';
+import '../types.dart';
 import 'decode.dart' show parseRpcResultFromResponse;
 import 'parsed_url.dart' show ParsedURL;
-import 'client_interface.dart' show JsonRpcClient;
+import 'http_client_interface.dart' show HTTPClient;
 
 final _httpUriClientRequestID = newJsonRpcId(-1);
 
 // HttpUriClient is a JSON-RPC client, which sends POST form HTTP requests to the
 // remote server.
-class HttpUriClient implements JsonRpcClient {
+class HttpUriClient implements HTTPClient {
   late String address;
   http.Client client;
 

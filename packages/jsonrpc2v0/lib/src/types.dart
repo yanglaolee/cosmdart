@@ -10,6 +10,7 @@ part 'jsonrpc2v0.gen.dart';
 //===================types definition==========================================
 
 // ----JSON RPC ID ----
+
 abstract class JsonRpcId {}
 
 @JsonSerializable()
@@ -56,6 +57,7 @@ JsonRpcId newJsonRpcId(dynamic id) {
 }
 
 // ----JSON RPC Request ----
+
 @JsonSerializable()
 class JsonRpcRequest {
   @JsonKey(name: 'jsonrpc')
@@ -173,3 +175,11 @@ JsonRpcResponse rpcServerError(String error) {
   return JsonRpcResponse.jsonRpcErrorResponse(
       id: null, code: -32000, msg: 'Server error', data: error);
 }
+/// Support for doing something awesome.
+///
+/// More dartdocs go here.
+library;
+
+export 'src/types.dart';
+
+// TODO: Export any libraries intended for clients of this package.

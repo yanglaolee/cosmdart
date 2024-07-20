@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'jsonrpc2v0.dart' show RpcResult, JsonRpcId, JsonRpcResponse;
+import '../types.dart' show RpcResult, JsonRpcId, JsonRpcResponse;
 
 RpcResult parseRpcResultFromResponse(String response, JsonRpcId expectedID) {
   var jsonRpcResponse = JsonRpcResponse.fromJson(jsonDecode(response));

@@ -1,8 +1,9 @@
-import 'jsonrpc2v0.dart';
+import 'package:http/http.dart' as http;
 
-import 'client_interface.dart' show JsonRpcClient;
+import '../types.dart';
+import 'http_client_interface.dart' show HTTPClient;
 
-class HttpJsonClient implements JsonRpcClient {
+class HttpJsonClient implements HTTPClient {
   String address;
   String username;
   String password;

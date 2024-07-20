@@ -1,0 +1,602 @@
+    {
+        "repository": {
+            "url": "https://github.com/cosmos/chain-registry",
+            "branch": "master",
+            "commit": "840906e03604cc62f2e73c6431a7207e6cc72600",
+            "timestamp": 1721351616
+        },
+        "chains": [
+            {
+                "name": "akash",
+                "path": "akash",
+                "chain_name": "akash",
+                "network_type": "mainnet",
+                "pretty_name": "Akash",
+                "chain_id": "akashnet-2",
+                "status": "live",
+                "bech32_prefix": "akash",
+                "slip44": 118,
+                "symbol": "AKT",
+                "display": "akt",
+                "denom": "uakt",
+                "decimals": 6,
+                "coingecko_id": "akash-network",
+                "image": "https://raw.githubusercontent.com/cosmos/chain-registry/master/akash/images/akt.svg",
+                "website": "https://akash.network/",
+                "height": 17239532,
+                "best_apis": {
+                    "rest": [
+                        {
+                            "address": "https://api-akash-01.stakeflow.io/",
+                            "provider": "Stakeflow"
+                        },
+                        {
+                            "address": "https://akash-api.polkachu.com/",
+                            "provider": "Polkachu"
+                        },
+                        {
+                            "address": "https://akash.declab.pro/",
+                            "provider": "Decloud Nodes Lab"
+                        },
+                        {
+                            "address": "https://akash.c29r3.xyz/api/",
+                            "provider": "c29r3"
+                        },
+                        {
+                            "address": "https://rest-akash.ecostake.com/",
+                            "provider": "ecostake"
+                        },
+                        {
+                            "address": "https://api.akash.forbole.com/",
+                            "provider": "forbole"
+                        },
+                        {
+                            "address": "https://akash-api.w3coins.io/",
+                            "provider": "w3coins"
+                        },
+                        {
+                            "address": "https://akash-api.kleomedes.network/",
+                            "provider": "Kleomedes"
+                        },
+                        {
+                            "address": "https://akash-mainnet-rest.cosmonautstakes.com/",
+                            "provider": "Cosmonaut Stakes"
+                        },
+                        {
+                            "address": "https://api-akash.cosmos-spaces.cloud/",
+                            "provider": "Cosmos Spaces"
+                        },
+                        {
+                            "address": "https://akash-mainnet-lcd.autostake.com/",
+                            "provider": "AutoStake 🛡️ Slash Protected"
+                        }
+                    ],
+                    "rpc": [
+                        {
+                            "address": "https://rpc-akash-01.stakeflow.io/",
+                            "provider": "Stakeflow"
+                        },
+                        {
+                            "address": "https://akash.declab.pro:26601/",
+                            "provider": "Decloud Nodes Lab"
+                        },
+                        {
+                            "address": "https://akash-rpc.polkachu.com/",
+                            "provider": "Polkachu"
+                        },
+                        {
+                            "address": "http://akash.c29r3.xyz/rpc/",
+                            "provider": "c29r3"
+                        },
+                        {
+                            "address": "https://akash-rpc.w3coins.io/",
+                            "provider": "w3coins"
+                        },
+                        {
+                            "address": "https://akash-mainnet-rpc.cosmonautstakes.com/",
+                            "provider": "Cosmonaut Stakes"
+                        },
+                        {
+                            "address": "https://akash-mainnet-rpc.autostake.com/",
+                            "provider": "AutoStake 🛡️ Slash Protected"
+                        },
+                        {
+                            "address": "https://rpc-akash.ecostake.com/",
+                            "provider": "ecostake"
+                        },
+                        {
+                            "address": "https://rpc-akash.cosmos-spaces.cloud/",
+                            "provider": "Cosmos Spaces"
+                        },
+                        {
+                            "address": "https://rpc.akash.forbole.com/",
+                            "provider": "forbole"
+                        },
+                        {
+                            "address": "https://rpc-akash.whispernode.com/",
+                            "provider": "WhisperNode 🤐"
+                        },
+                        {
+                            "address": "https://akash-rpc.lavenderfive.com/",
+                            "provider": "Lavender.Five Nodes"
+                        },
+                        {
+                            "address": "https://akash-rpc.kleomedes.network/",
+                            "provider": "Kleomedes"
+                        },
+                        {
+                            "address": "https://public.stakewolle.com/cosmos/akash/rpc/",
+                            "provider": "Stakewolle"
+                        }
+                    ]
+                },
+                "proxy_status": {
+                    "rest": true,
+                    "rpc": true
+                },
+                "versions": {
+                    "application_version": "v0.36.0",
+                    "cosmos_sdk_version": "v0.45.16",
+                    "tendermint_version": "0.34.27"
+                },
+                "explorers": [
+                    {
+                        "kind": "ezstaking",
+                        "url": "https://ezstaking.app/akash",
+                        "tx_page": "https://ezstaking.app/akash/txs/",
+                        "account_page": "https://ezstaking.app/akash/account/"
+                    },
+                    {
+                        "kind": "mintscan",
+                        "url": "https://www.mintscan.io/akash",
+                        "tx_page": "https://www.mintscan.io/akash/transactions/",
+                        "account_page": "https://www.mintscan.io/akash/accounts/"
+                    },
+                    {
+                        "kind": "ping.pub",
+                        "url": "https://ping.pub/akash-network",
+                        "tx_page": "https://ping.pub/akash-network/tx/"
+                    },
+                    {
+                        "kind": "atomscan",
+                        "url": "https://atomscan.com/akash",
+                        "tx_page": "https://atomscan.com/akash/transactions/",
+                        "account_page": "https://atomscan.com/akash/accounts/"
+                    },
+                    {
+                        "kind": "cloudmos",
+                        "url": "https://cloudmos.io/blocks",
+                        "tx_page": "https://cloudmos.io/transactions/"
+                    },
+                    {
+                        "kind": "Stakeflow",
+                        "url": "https://stakeflow.io/akash",
+                        "account_page": "https://stakeflow.io/akash/accounts/"
+                    },
+                    {
+                        "kind": "ValidatorNode",
+                        "url": "https://explorer.validatornode.com/akash-network",
+                        "tx_page": "https://explorer.validatornode.com/akash-network/tx/"
+                    },
+                    {
+                        "kind": "Decloud Nodes Lab",
+                        "url": "https://explorer.declab.pro/Akash",
+                        "tx_page": "https://explorer.declab.pro/Akash/tx/"
+                    },
+                    {
+                        "kind": "WhisperNode 🤐",
+                        "url": "https://mainnet.whispernode.com/akash",
+                        "tx_page": "https://mainnet.whispernode.com/akash/tx/",
+                        "account_page": "https://mainnet.whispernode.com/akash/account/"
+                    }
+                ],
+                "params": {
+                    "authz": true,
+                    "actual_block_time": 6.04,
+                    "actual_blocks_per_year": 5221192.052980132,
+                    "current_block_height": "17239537",
+                    "unbonding_time": 1814400,
+                    "max_validators": 100,
+                    "staking": {
+                        "unbonding_time": "1814400s",
+                        "max_validators": 100,
+                        "max_entries": 7,
+                        "historical_entries": 10000,
+                        "bond_denom": "uakt"
+                    },
+                    "slashing": {
+                        "signed_blocks_window": "10000",
+                        "min_signed_per_window": "0.050000000000000000",
+                        "downtime_jail_duration": "600s",
+                        "slash_fraction_double_sign": "0.050000000000000000",
+                        "slash_fraction_downtime": "0.000100000000000000"
+                    },
+                    "total_supply": "244903755412581",
+                    "blocks_per_year": 5256000,
+                    "block_time": 6.004931506849315,
+                    "base_inflation": 0.2,
+                    "mint": {
+                        "mint_denom": "uakt",
+                        "inflation_rate_change": "1.000000000000000000",
+                        "inflation_max": "0.200000000000000000",
+                        "inflation_min": "0.130000000000000000",
+                        "goal_bonded": "0.670000000000000000",
+                        "blocks_per_year": "5256000"
+                    },
+                    "community_tax": 0.4,
+                    "distribution": {
+                        "community_tax": "0.400000000000000000",
+                        "base_proposer_reward": "0.010000000000000000",
+                        "bonus_proposer_reward": "0.040000000000000000",
+                        "withdraw_addr_enabled": true
+                    },
+                    "annual_provision": "48980749218713",
+                    "estimated_apr": 0.2167587140499864,
+                    "calculated_apr": 0.2153232258774699,
+                    "bonded_tokens": "135581398238276",
+                    "bonded_ratio": 0.5536109399787139
+                },
+                "services": {
+                    "staking_rewards": {
+                        "name": "Akash",
+                        "slug": "akash",
+                        "symbol": "AKT"
+                    }
+                },
+                "prices": {
+                    "coingecko": {
+                        "akt": {
+                            "usd": 3.35
+                        }
+                    }
+                },
+                "assets": [
+                    {
+                        "name": "Akash Network",
+                        "description": "Akash Network is a decentralized cloud computing marketplace that connects users with unused computing resources, offering a cost-effective alternative to traditional cloud providers.",
+                        "symbol": "AKT",
+                        "denom": "uakt",
+                        "decimals": 6,
+                        "coingecko_id": "akash-network",
+                        "base": {
+                            "denom": "uakt",
+                            "exponent": 0
+                        },
+                        "display": {
+                            "denom": "akt",
+                            "exponent": 6
+                        },
+                        "denom_units": [
+                            {
+                                "denom": "uakt",
+                                "exponent": 0
+                            },
+                            {
+                                "denom": "akt",
+                                "exponent": 6
+                            }
+                        ],
+                        "logo_URIs": {
+                            "png": "https://raw.githubusercontent.com/cosmos/chain-registry/master/akash/images/akt.png",
+                            "svg": "https://raw.githubusercontent.com/cosmos/chain-registry/master/akash/images/akt.svg"
+                        },
+                        "image": "https://raw.githubusercontent.com/cosmos/chain-registry/master/akash/images/akt.svg",
+                        "prices": {
+                            "coingecko": {
+                                "usd": 3.35
+                            }
+                        }
+                    },
+                    {
+                        "name": "Tether USDt",
+                        "description": "Tether USDt on Akash",
+                        "symbol": "USDt",
+                        "denom": "ibc/05DB6975261B805B6F6A157A4386C627F8A70BF8118D411655EFEDCA82BFABA5",
+                        "decimals": 6,
+                        "base": {
+                            "denom": "ibc/05DB6975261B805B6F6A157A4386C627F8A70BF8118D411655EFEDCA82BFABA5",
+                            "exponent": 0
+                        },
+                        "display": {
+                            "denom": "usdt",
+                            "exponent": 6
+                        },
+                        "denom_units": [
+                            {
+                                "denom": "ibc/05DB6975261B805B6F6A157A4386C627F8A70BF8118D411655EFEDCA82BFABA5",
+                                "exponent": 0
+                            },
+                            {
+                                "denom": "usdt",
+                                "exponent": 6
+                            }
+                        ],
+                        "logo_URIs": {
+                            "png": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/usdt.png",
+                            "svg": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/usdt.svg"
+                        },
+                        "image": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/usdt.svg"
+                    }
+                ]
+            },
+            {
+                "name": "axelar",
+                "path": "axelar",
+                "chain_name": "axelar",
+                "network_type": "mainnet",
+                "pretty_name": "Axelar",
+                "chain_id": "axelar-dojo-1",
+                "status": "live",
+                "bech32_prefix": "axelar",
+                "slip44": 118,
+                "symbol": "AXL",
+                "display": "axl",
+                "denom": "uaxl",
+                "decimals": 6,
+                "coingecko_id": "axelar",
+                "image": "https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/images/axelar-chain-logo.svg",
+                "website": "https://axelar.network/",
+                "height": 13642731,
+                "best_apis": {
+                    "rest": [
+                        {
+                            "address": "https://api-axelar-01.stakeflow.io/",
+                            "provider": "Stakeflow"
+                        },
+                        {
+                            "address": "https://api-1.axelar.nodes.guru/",
+                            "provider": "nodes.guru"
+                        },
+                        {
+                            "address": "https://axelar-api.polkachu.com/",
+                            "provider": "Polkachu"
+                        },
+                        {
+                            "address": "https://api.axelar.bh.rocks/",
+                            "provider": "BlockHunters 🎯"
+                        },
+                        {
+                            "address": "https://axelar-lcd.qubelabs.io/",
+                            "provider": "Qubelabs"
+                        },
+                        {
+                            "address": "https://lcd-axelar.whispernode.com/",
+                            "provider": "WhisperNode 🤐"
+                        },
+                        {
+                            "address": "https://axelar-lcd.quantnode.tech/",
+                            "provider": "QuantNode"
+                        },
+                        {
+                            "address": "https://lcd-axelar.imperator.co/",
+                            "provider": "Imperator.co"
+                        },
+                        {
+                            "address": "https://axelar-api.validatrium.club/",
+                            "provider": "Validatrium"
+                        },
+                        {
+                            "address": "https://api-axelar.cosmos-spaces.cloud/",
+                            "provider": "Cosmos Spaces"
+                        }
+                    ],
+                    "rpc": [
+                        {
+                            "address": "https://rpc-axelar-01.stakeflow.io/",
+                            "provider": "Stakeflow"
+                        },
+                        {
+                            "address": "https://axelar-rpc.pops.one/",
+                            "provider": "p-ops"
+                        },
+                        {
+                            "address": "https://rpc-1.axelar.nodes.guru/",
+                            "provider": "nodes.guru"
+                        },
+                        {
+                            "address": "https://rpc.axelar.bh.rocks/",
+                            "provider": "BlockHunters 🎯"
+                        },
+                        {
+                            "address": "https://axelar-rpc.qubelabs.io/",
+                            "provider": "Qubelabs"
+                        },
+                        {
+                            "address": "https://axelar-rpc.polkachu.com/",
+                            "provider": "Polkachu"
+                        },
+                        {
+                            "address": "https://axelar-rpc.quickapi.com/",
+                            "provider": "chainlayer"
+                        },
+                        {
+                            "address": "https://rpc-axelar.whispernode.com/",
+                            "provider": "WhisperNode 🤐"
+                        },
+                        {
+                            "address": "https://axelar-rpc.validatrium.club/",
+                            "provider": "Validatrium"
+                        },
+                        {
+                            "address": "https://rpc-axelar.imperator.co/",
+                            "provider": "Imperator.co"
+                        },
+                        {
+                            "address": "https://axelar-rpc.quantnode.tech/",
+                            "provider": "QuantNode"
+                        },
+                        {
+                            "address": "https://rpc-axelar.cosmos-spaces.cloud/",
+                            "provider": "Cosmos Spaces"
+                        },
+                        {
+                            "address": "https://axelar-rpc.rockrpc.net/",
+                            "provider": "RockawayX Infra"
+                        },
+                        {
+                            "address": "https://axelar-rpc.ibs.team/",
+                            "provider": "Inter Blockchain Services"
+                        }
+                    ]
+                },
+                "proxy_status": {
+                    "rest": true,
+                    "rpc": true
+                },
+                "versions": {
+                    "application_version": "0.35.5",
+                    "cosmos_sdk_version": "v0.45.16",
+                    "tendermint_version": "0.34.31",
+                    "cosmwasm_version": "v0.33.0"
+                },
+                "cosmwasm_enabled": true,
+                "explorers": [
+                    {
+                        "kind": "axelarscan",
+                        "url": "https://axelarscan.io",
+                        "tx_page": "https://axelarscan.io/tx/${txHash}"
+                    },
+                    {
+                        "kind": "mintscan",
+                        "url": "https://www.mintscan.io/axelar",
+                        "tx_page": "https://www.mintscan.io/axelar/transactions/${txHash}",
+                        "account_page": "https://www.mintscan.io/axelar/accounts/${accountAddress}"
+                    },
+                    {
+                        "kind": "explorers.guru",
+                        "url": "https://axelar.explorers.guru",
+                        "tx_page": "https://axelar.explorers.guru/transaction/${txHash}"
+                    },
+                    {
+                        "kind": "atomscan",
+                        "url": "https://atomscan.com/axelar",
+                        "tx_page": "https://atomscan.com/axelar/transactions/${txHash}",
+                        "account_page": "https://atomscan.com/axelar/accounts/${accountAddress}"
+                    },
+                    {
+                        "kind": "Stakeflow",
+                        "url": "https://stakeflow.io/axelar",
+                        "account_page": "https://stakeflow.io/axelar/accounts/${accountAddress}"
+                    },
+                    {
+                        "kind": "ezstaking",
+                        "url": "https://ezstaking.app/axelar",
+                        "tx_page": "https://ezstaking.app/axelar/txs/${txHash}",
+                        "account_page": "https://ezstaking.app/axelar/account/${accountAddress}"
+                    },
+                    {
+                        "kind": "WhisperNode 🤐",
+                        "url": "https://mainnet.whispernode.com/axelar",
+                        "tx_page": "https://mainnet.whispernode.com/axelar/tx/${txHash}",
+                        "account_page": "https://mainnet.whispernode.com/axelar/account/${accountAddress}"
+                    }
+                ],
+                "params": {
+                    "authz": false,
+                    "actual_block_time": 5.953609999895096,
+                    "actual_blocks_per_year": 5296954.284972592,
+                    "current_block_height": "13642735",
+                    "unbonding_time": 604800,
+                    "max_validators": 75,
+                    "staking": {
+                        "unbonding_time": "604800s",
+                        "max_validators": 75,
+                        "max_entries": 7,
+                        "historical_entries": 10000,
+                        "bond_denom": "uaxl"
+                    },
+                    "slashing": {
+                        "signed_blocks_window": "35000",
+                        "min_signed_per_window": "0.500000000000000000",
+                        "downtime_jail_duration": "7200s",
+                        "slash_fraction_double_sign": "0.020000000000000000",
+                        "slash_fraction_downtime": "0.000100000000000000"
+                    },
+                    "community_tax": 0.02,
+                    "distribution": {
+                        "community_tax": "0.020000000000000000",
+                        "base_proposer_reward": "0.010000000000000000",
+                        "bonus_proposer_reward": "0.040000000000000000",
+                        "withdraw_addr_enabled": true
+                    },
+                    "estimated_apr": 0.007750685825321553,
+                    "calculated_apr": 0.007680894910896317,
+                    "blocks_per_year": 5345084,
+                    "block_time": 5.904850138931399,
+                    "base_inflation": 0.005,
+                    "mint": {
+                        "mint_denom": "uaxl",
+                        "inflation_rate_change": "0.000000000000000000",
+                        "inflation_max": "0.005000000000000000",
+                        "inflation_min": "0.005000000000000000",
+                        "goal_bonded": "0.670000000000000000",
+                        "blocks_per_year": "5345084"
+                    },
+                    "total_supply": "1158744293953313",
+                    "annual_provision": "5793721464346.895",
+                    "bonded_tokens": "732560596961676",
+                    "bonded_ratio": 0.6322021180897324
+                },
+                "services": {
+                    "staking_rewards": {
+                        "name": "Axelar",
+                        "slug": "axelar",
+                        "symbol": "AXL"
+                    }
+                },
+                "prices": {
+                    "coingecko": {
+                        "axl": {
+                            "usd": 0.72295
+                        },
+                        "usdc": {
+                            "usd": 1.001
+                        },
+                        "usdt": {
+                            "usd": 1.004
+                        },
+                        "wbtc": {
+                            "usd": 64143
+                        }
+                    }
+                },
+                "assets": [
+                    {
+                        "name": "Pepe",
+                        "symbol": "PEPE",
+                        "denom": "pepe-wei",
+                        "decimals": 18,
+                        "base": {
+                            "denom": "pepe-wei",
+                            "exponent": 0,
+                            "aliases": [
+                                "0x6982508145454Ce325dDbE47a25d4ec3d2311933"
+                            ]
+                        },
+                        "display": {
+                            "denom": "pepe",
+                            "exponent": 18
+                        },
+                        "denom_units": [
+                            {
+                                "denom": "pepe-wei",
+                                "exponent": 0,
+                                "aliases": [
+                                    "0x6982508145454Ce325dDbE47a25d4ec3d2311933"
+                                ]
+                            },
+                            {
+                                "denom": "pepe",
+                                "exponent": 18
+                            }
+                        ],
+                        "logo_URIs": {
+                            "png": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/pepe.png",
+                            "svg": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/pepe.svg"
+                        },
+                        "image": "https://raw.githubusercontent.com/cosmos/chain-registry/master/_non-cosmos/ethereum/images/pepe.svg"
+                    }
+                ]
+            }
+        ]
+    }
