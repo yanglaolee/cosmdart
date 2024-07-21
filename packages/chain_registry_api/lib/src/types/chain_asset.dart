@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 
 import 'asset_denom.dart';
-import 'asset_logo_urls.dart';
+import 'logo_urls.dart';
 import 'asset_prices.dart';
 
 class ChainAsset {
@@ -16,7 +16,7 @@ class ChainAsset {
   final AssetDenom? base;
   final AssetDenom? display;
   final List<AssetDenom>? denomUnits;
-  final AssetLogoUrls? logoURIs;
+  final LogoUrls? logoURIs;
   final String? image;
   final AssetPrices? prices;
 
@@ -57,7 +57,7 @@ class ChainAsset {
             .toList(),
         logoURIs: data['logo_URIs'] == null
             ? null
-            : AssetLogoUrls.fromMap(data['logo_URIs'] as Map<String, dynamic>),
+            : LogoUrls.fromMap(data['logo_URIs'] as Map<String, dynamic>),
         image: data['image'] as String?,
         prices: data['prices'] == null
             ? null
@@ -99,7 +99,7 @@ class ChainAsset {
     AssetDenom? base,
     AssetDenom? display,
     List<AssetDenom>? denomUnits,
-    AssetLogoUrls? logoURIs,
+    LogoUrls? logoURIs,
     String? image,
     AssetPrices? prices,
   }) {

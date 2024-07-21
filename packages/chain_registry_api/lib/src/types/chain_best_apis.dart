@@ -4,16 +4,16 @@ import 'package:collection/collection.dart';
 
 import 'api_provider.dart';
 
-class ChainBestApis {
+class ChainBestAPIs {
   final List<ApiProvider>? rest;
   final List<ApiProvider>? rpc;
 
-  const ChainBestApis({this.rest, this.rpc});
+  const ChainBestAPIs({this.rest, this.rpc});
 
   @override
-  String toString() => 'ChainBestApis(rest: $rest, rpc: $rpc)';
+  String toString() => 'ChainBestAPIs(rest: $rest, rpc: $rpc)';
 
-  factory ChainBestApis.fromMap(Map<String, dynamic> data) => ChainBestApis(
+  factory ChainBestAPIs.fromMap(Map<String, dynamic> data) => ChainBestAPIs(
         rest: (data['rest'] as List<dynamic>?)
             ?.map((e) => ApiProvider.fromMap(e as Map<String, dynamic>))
             .toList(),
@@ -29,21 +29,21 @@ class ChainBestApis {
 
   /// `dart:convert`
   ///
-  /// Parses the string and returns the resulting Json object as [ChainBestApis].
-  factory ChainBestApis.fromJson(String data) {
-    return ChainBestApis.fromMap(json.decode(data) as Map<String, dynamic>);
+  /// Parses the string and returns the resulting Json object as [ChainBestAPIs].
+  factory ChainBestAPIs.fromJson(String data) {
+    return ChainBestAPIs.fromMap(json.decode(data) as Map<String, dynamic>);
   }
 
   /// `dart:convert`
   ///
-  /// Converts [ChainBestApis] to a JSON string.
+  /// Converts [ChainBestAPIs] to a JSON string.
   String toJson() => json.encode(toMap());
 
-  ChainBestApis copyWith({
+  ChainBestAPIs copyWith({
     List<ApiProvider>? rest,
     List<ApiProvider>? rpc,
   }) {
-    return ChainBestApis(
+    return ChainBestAPIs(
       rest: rest ?? this.rest,
       rpc: rpc ?? this.rpc,
     );
@@ -52,7 +52,7 @@ class ChainBestApis {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    if (other is! ChainBestApis) return false;
+    if (other is! ChainBestAPIs) return false;
     final mapEquals = const DeepCollectionEquality().equals;
     return mapEquals(other.toMap(), toMap());
   }

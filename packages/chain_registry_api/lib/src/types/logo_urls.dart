@@ -2,16 +2,16 @@ import 'dart:convert';
 
 import 'package:collection/collection.dart';
 
-class AssetLogoUrls {
+class LogoUrls {
   final String? png;
   final String? svg;
 
-  const AssetLogoUrls({this.png, this.svg});
+  const LogoUrls({this.png, this.svg});
 
   @override
-  String toString() => 'AssetLogoUrls(png: $png, svg: $svg)';
+  String toString() => 'LogoUrls(png: $png, svg: $svg)';
 
-  factory AssetLogoUrls.fromMap(Map<String, dynamic> data) => AssetLogoUrls(
+  factory LogoUrls.fromMap(Map<String, dynamic> data) => LogoUrls(
         png: data['png'] as String?,
         svg: data['svg'] as String?,
       );
@@ -23,21 +23,21 @@ class AssetLogoUrls {
 
   /// `dart:convert`
   ///
-  /// Parses the string and returns the resulting Json object as [AssetLogoUrls].
-  factory AssetLogoUrls.fromJson(String data) {
-    return AssetLogoUrls.fromMap(json.decode(data) as Map<String, dynamic>);
+  /// Parses the string and returns the resulting Json object as [LogoUrls].
+  factory LogoUrls.fromJson(String data) {
+    return LogoUrls.fromMap(json.decode(data) as Map<String, dynamic>);
   }
 
   /// `dart:convert`
   ///
-  /// Converts [AssetLogoUrls] to a JSON string.
+  /// Converts [LogoUrls] to a JSON string.
   String toJson() => json.encode(toMap());
 
-  AssetLogoUrls copyWith({
+  LogoUrls copyWith({
     String? png,
     String? svg,
   }) {
-    return AssetLogoUrls(
+    return LogoUrls(
       png: png ?? this.png,
       svg: svg ?? this.svg,
     );
@@ -46,7 +46,7 @@ class AssetLogoUrls {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    if (other is! AssetLogoUrls) return false;
+    if (other is! LogoUrls) return false;
     final mapEquals = const DeepCollectionEquality().equals;
     return mapEquals(other.toMap(), toMap());
   }
