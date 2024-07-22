@@ -1,6 +1,6 @@
-# Chain Registry API
+# cosmos_directory
 
-A wrap API in Dart for EcoStake's [cosmos.directory](https://github.com/eco-stake/cosmos-directory) which base on [Cosmos chain registry](https://github.com/cosmos/chain-registry) and [EcoStake Validator registry](https://github.com/eco-stake/validator-registry).
+A wrapped API in Dart for EcoStake's [cosmos.directory](https://github.com/eco-stake/cosmos-directory) which base on [Cosmos chain registry](https://github.com/cosmos/chain-registry) and [EcoStake Validator registry](https://github.com/eco-stake/validator-registry).
 
 ## Features
 
@@ -25,7 +25,7 @@ void main(List<String> args) async{
 
   print(await api.getChainsInfo());
   print(await api.getChainDetail(chainName: 'kujira'));
-  
+
   api.close();
 }
 ```
