@@ -1,8 +1,7 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
-library chain_registry_api.types;
+// export APIs
+export 'src/apis/chain_registry.dart';
 
+// export nessary types
 export 'src/types/repository.dart';
 
 export 'src/types/chains_info_wrapper.dart';
