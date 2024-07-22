@@ -18,13 +18,14 @@ TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
 ```dart
-import 'package:chain_registry_api/chain_registry_api.dart';
+import 'package:cosmos_directory/cosmos_directory.dart';
+
 void main(List<String> args) async{
   var api = ChainRegistry();
 
   print(await api.getChainsInfo());
   print(await api.getChainDetail(chainName: 'kujira'));
-
+  
   api.close();
 }
 ```

@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 
-import 'package:chain_registry_api/chain_registry_api.dart';
+import 'package:cosmos_directory/cosmos_directory.dart';
 
 class ChainRegistry {
   final http.Client _client;

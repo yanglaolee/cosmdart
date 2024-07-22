@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:test/test.dart';
 import 'package:path/path.dart' as path;
-import 'package:chain_registry_api/chain_registry_api.dart';
+import 'package:cosmos_directory/cosmos_directory.dart';
 
 void main() {
   group('ChainsInfo Serialization', () {
