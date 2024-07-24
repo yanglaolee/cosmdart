@@ -1,3 +1,4 @@
+/*
 import 'dart:convert';
 
 import '../types.dart' show RpcResult, JsonRpcId, JsonRpcResponse;
@@ -28,3 +29,4 @@ bool validateAndVerifyID(JsonRpcResponse response, JsonRpcId expectedID) {
 
   return false;
 }
+*/

@@ -1,3 +1,4 @@
+/*
 import 'package:http/http.dart' as http;
 
 import '../types.dart';
@@ -43,3 +44,5 @@ class HttpUriClient implements HTTPClient {
     }
   }
 }
+
+*/

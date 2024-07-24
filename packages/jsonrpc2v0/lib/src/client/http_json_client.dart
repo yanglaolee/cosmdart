@@ -1,4 +1,5 @@
-import 'package:http/http.dart' as http;
+
+/*import 'package:http/http.dart' as http;
 
 import '../types.dart';
 import 'http_client_interface.dart' show HTTPClient;
@@ -20,3 +21,5 @@ class HttpJsonClient implements HTTPClient {
   }
 
 }
+
+*/
