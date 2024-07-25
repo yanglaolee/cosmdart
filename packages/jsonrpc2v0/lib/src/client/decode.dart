@@ -1,32 +1,21 @@
-/*
 import 'dart:convert';
 
-import '../types.dart' show RpcResult, JsonRpcId, JsonRpcResponse;
+import '../types/types.dart';
 
-RpcResult parseRpcResultFromResponse(String response, JsonRpcId expectedID) {
-  var jsonRpcResponse = JsonRpcResponse.fromJson(jsonDecode(response));
+JsonRpcResponse decodeJsonRpcResponse(String responseText, {JsonRpcId? expectID}) {
+  final resp = JsonRpcResponse.fromJson(jsonDecode(responseText));
 
-  if (!validateAndVerifyID(jsonRpcResponse, expectedID)) {
-    throw Exception("Can't verify json-rpc id");
+  if (expectID != null) {
+    if (_verifyRpcId(resp.id, expectID)) {
+      return resp;
+    } else {
+      throw Exception('Invalid response ID');
+    }
   }
-
-  if (jsonRpcResponse.error != null) {
-    throw Exception(
-        'Get error response, code: $jsonRpcResponse.error.code, msg: $jsonRpcResponse.error.message, data: $jsonRpcResponse.error.data');
-  }
-
-  return jsonRpcResponse.result ?? RpcResult();
+  
+  return resp;
 }
 
-bool validateAndVerifyID(JsonRpcResponse response, JsonRpcId expectedID) {
-  var id = response.id;
-  if (id == null) {
-    return false;
-  }
-  if (id == expectedID) {
-    return true;
-  }
-
-  return false;
+bool _verifyRpcId(JsonRpcId? responseId, JsonRpcId? expectID) {
+  return responseId == expectID;
 }
-*/
