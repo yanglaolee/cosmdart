@@ -1,32 +1,112 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-@JsonSerializable()
-class EventAttribute {
-  @JsonKey(name: 'key', includeIfNull: false)
-  final String? key;
-  @JsonKey(name: 'value', includeIfNull: false)
-  final String? value;
-  @JsonKey(name: 'index', includeIfNull: false)
-  final bool? index;
+import '../crypto/proof.dart';
 
-  EventAttribute({this.key, this.value, this.index});
+part 'types.freezed.dart';
+part 'types.g.dart';   
 
-  factory EventAttribute.fromJson(Map<String, dynamic> json) =>
-      _$EventAttributeFormJson(json);
+@freezed
+class ResponseInfo with _$ResponseInfo {
+  factory ResponseInfo({
+    @JsonKey(name: 'data', includeIfNull: false) String? data,
+    @JsonKey(name: 'version', includeIfNull: false) String? version,
+    @JsonKey(name: 'app_version', includeIfNull: false) int? appVersion,
+    @JsonKey(name: 'last_block_height', includeIfNull: false) String? lastBlockHeight,
+    @JsonKey(name: 'last_block_app_hash', includeIfNull: false) List<int>? lastBlockAppHash,
+  }) = _ResponseInfo;
 
-  Map<String, dynamic> toJson() => _$EventAttributeToJson(this);
+  factory ResponseInfo.fromJson(Map<String, dynamic> json) =>
+      _$ResponseInfoFromJson(json);
 }
 
-@JsonSerializable()
-class Event {
-  @JsonKey(name: 'type', includeIfNull: false)
-  final String? type;
-  @JsonKey(name: 'attributes', includeIfNull: false)
-  final List<EventAttribute>? attributes;
+@freezed
+class ResponseQuery with _$ResponseQuery {
+  @JsonSerializable(explicitToJson: true)
+  factory ResponseQuery({
+    @JsonKey(name: 'code', includeIfNull: false) int? code,
+    @JsonKey(name: 'log', includeIfNull: false) String? log,
+    @JsonKey(name: 'info', includeIfNull: false) String? info,
+    @JsonKey(name: 'index', includeIfNull: false) int? index,
+    @JsonKey(name: 'key', includeIfNull: false) List<int>? key,
+    @JsonKey(name: 'value', includeIfNull: false) List<int>? value,
+    @JsonKey(name: 'proof_ops', includeIfNull: false) ProofOps? proofOps,
+    @JsonKey(name: 'height', includeIfNull: false) int? height,
+    @JsonKey(name: 'codespace', includeIfNull: false) String? codespace,
+  }) = _ResponseQuery;
 
-  Event({this.type, this.attributes});
+  factory ResponseQuery.fromJson(Map<String, dynamic> json) =>
+      _$ResponseQueryFromJson(json);
+}
 
-  factory Event.fromJson(Map<String, dynamic> json) => _$EventFormJson(json);
+@freezed
+class ResponseCheckTx with _$ResponseCheckTx {
+  @JsonSerializable(explicitToJson: true)
+  factory ResponseCheckTx({
+    @JsonKey(name: 'code', includeIfNull: false) int? code,
+    @JsonKey(name: 'data', includeIfNull: false) List<int>? data,
+    @JsonKey(name: 'log', includeIfNull: false) String? log,
+    @JsonKey(name: 'info', includeIfNull: false) String? info,
+    @JsonKey(name: 'gas_wanted', includeIfNull: false) int? gasWanted,
+    @JsonKey(name: 'gas_used', includeIfNull: false) int? gasUsed,
+    @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
+    @JsonKey(name: 'codespace', includeIfNull: false) String? codespace,
+  }) = _ResponseCheckTx;
 
-  Map<String, dynamic> toJson() => _$EventToJson(this);
+  factory ResponseCheckTx.fromJson(Map<String, dynamic> json) =>
+      _$ResponseCheckTxFromJson(json);
+}
+
+@freezed
+class Event with _$Event {
+  @JsonSerializable(explicitToJson: true)
+  factory Event({
+    @JsonKey(name: 'type', includeIfNull: false) String? type,
+    @JsonKey(name: 'attributes', includeIfNull: false) List<EventAttribute>? attributes,
+  }) = _Event;
+
+  factory Event.fromJson(Map<String, dynamic> json) =>
+      _$EventFromJson(json);
+}
+
+@freezed
+class EventAttribute with _$EventAttribute {
+  @JsonSerializable(explicitToJson: true)
+  factory EventAttribute({
+    @JsonKey(name: 'key', includeIfNull: false) String? key,
+    @JsonKey(name: 'value', includeIfNull: false) String? value,
+    @JsonKey(name: 'index', includeIfNull: false) bool? index,
+  }) = _EventAttribute;
+
+  factory EventAttribute.fromJson(Map<String, dynamic> json) =>
+      _$EventAttributeFromJson(json);
+}
+
+@freezed
+class ExecTxResult with _$ExecTxResult {
+  @JsonSerializable(explicitToJson: true)
+  factory ExecTxResult({
+    @JsonKey(name: 'code', includeIfNull: false) int? code,
+    @JsonKey(name: 'data', includeIfNull: false) List<int>? data,
+    @JsonKey(name: 'log', includeIfNull: false) String? log,
+    @JsonKey(name: 'info', includeIfNull: false) String? info,
+    @JsonKey(name: 'gas_wanted', includeIfNull: false) int? gasWanted,
+    @JsonKey(name: 'gas_used', includeIfNull: false) int? gasUsed,
+    @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
+    @JsonKey(name: 'codespace', includeIfNull: false) String? codespace,
+  }) = _ExecTxResult;
+
+  factory ExecTxResult.fromJson(Map<String, dynamic> json) =>
+      _$ExecTxResultFromJson(json);
+}
+
+@freezed
+class ValidatorUpdate with _$ValidatorUpdate {
+  @JsonSerializable(explicitToJson: true)
+  factory ValidatorUpdate({
+    @JsonKey(name: 'pub_key', includeIfNull: false) String? pubKey,
+    @JsonKey(name: 'power', includeIfNull: false) int? power,
+  }) = _ValidatorUpdate;
+
+  factory ValidatorUpdate.fromJson(Map<String, dynamic> json) =>
+      _$ValidatorUpdateFromJson(json);
 }

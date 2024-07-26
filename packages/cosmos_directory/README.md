@@ -1,6 +1,6 @@
 # cosmos_directory
 
-A wrapped API in Dart for EcoStake's [cosmos.directory](https://github.com/eco-stake/cosmos-directory) which base on [Cosmos chain registry](https://github.com/cosmos/chain-registry) and [EcoStake Validator registry](https://github.com/eco-stake/validator-registry).
+A wrapped API in Dart for EcoStake's [cosmos.directory](https://github.com/eco-stake/cosmos-directory) which bases on [Cosmos chain registry](https://github.com/cosmos/chain-registry) and [EcoStake Validator registry](https://github.com/eco-stake/validator-registry).
 
 ## Features
 
@@ -8,7 +8,7 @@ See EcoStake's doc: [cosmos.directory](https://github.com/eco-stake/cosmos-direc
 
 ## Getting started
 
-The corresponding relationship between API names and endPoints is as follows:
+The corresponding relationship between API names and endpoints is as follows:
 
 TODO: need a chart to show the relationship.
 
