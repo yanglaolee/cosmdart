@@ -75,20 +75,6 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-_$RpcErrorImpl _$$RpcErrorImplFromJson(Map<String, dynamic> json) =>
-    _$RpcErrorImpl(
-      code: (json['code'] as num).toInt(),
-      message: json['message'] as String,
-      data: json['data'] as String?,
-    );
-
-Map<String, dynamic> _$$RpcErrorImplToJson(_$RpcErrorImpl instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'message': instance.message,
-      'data': instance.data,
-    };
-
 _$JsonRpcResponseImpl _$$JsonRpcResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$JsonRpcResponseImpl(
@@ -118,3 +104,17 @@ Map<String, dynamic> _$$JsonRpcResponseImplToJson(
   writeNotNull('error', instance.error?.toJson());
   return val;
 }
+
+_$RpcErrorImpl _$$RpcErrorImplFromJson(Map<String, dynamic> json) =>
+    _$RpcErrorImpl(
+      code: (json['code'] as num).toInt(),
+      message: json['message'] as String,
+      data: json['data'] as String?,
+    );
+
+Map<String, dynamic> _$$RpcErrorImplToJson(_$RpcErrorImpl instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'message': instance.message,
+      'data': instance.data,
+    };

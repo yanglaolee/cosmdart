@@ -20,11 +20,12 @@ class HttpUriClient implements HTTPClient {
     this.address = url.getDialAddress();
   }
 
-  // Call issues a POST form HTTP request.
-  //
-  // @params only accept Map<String, String|Iterable<String>>?
+  // call issues a POST form HTTP request.
+  // 
+  // @method is the RPC method to call, see:
+  // https://docs.cometbft.com/v0.38/rpc
   @override
-  Future<JsonRpcResponse> call(String method, {dynamic params}) async {
+  Future<JsonRpcResponse> call(String method, {Map<String, dynamic>? params, int timeoutSeconds = 10}) async {
 
     String? encodedParams;
     try {
@@ -40,7 +41,9 @@ class HttpUriClient implements HTTPClient {
         uri,
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         body: encodedParams,
-      );
+      ).timeout(Duration(seconds: timeoutSeconds), onTimeout: () {
+        throw Exception('The RPC call has timed out, please try again later.');
+      });
 
       if (response.statusCode == 200 || response.statusCode == 500) {  // Comet RPC only returns 200(Success) or 500(Error)
         return decodeJsonRpcResponse(response.body, expectID: _httpUriClientRequestID);
@@ -51,5 +54,10 @@ class HttpUriClient implements HTTPClient {
     } catch (e) {
       throw Exception('Error occurred: $e');
     }
+  }
+
+  // close closes the internal http client.
+  void close() {
+    _client.close();
   }
 }

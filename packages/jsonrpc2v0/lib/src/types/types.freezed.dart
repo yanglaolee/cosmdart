@@ -807,189 +807,6 @@ abstract class _JsonRpcRequest implements JsonRpcRequest {
       throw _privateConstructorUsedError;
 }
 
-RpcError _$RpcErrorFromJson(Map<String, dynamic> json) {
-  return _RpcError.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RpcError {
-  int get code => throw _privateConstructorUsedError;
-  String get message => throw _privateConstructorUsedError;
-  String? get data => throw _privateConstructorUsedError;
-
-  /// Serializes this RpcError to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RpcError
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RpcErrorCopyWith<RpcError> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RpcErrorCopyWith<$Res> {
-  factory $RpcErrorCopyWith(RpcError value, $Res Function(RpcError) then) =
-      _$RpcErrorCopyWithImpl<$Res, RpcError>;
-  @useResult
-  $Res call({int code, String message, String? data});
-}
-
-/// @nodoc
-class _$RpcErrorCopyWithImpl<$Res, $Val extends RpcError>
-    implements $RpcErrorCopyWith<$Res> {
-  _$RpcErrorCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RpcError
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? code = null,
-    Object? message = null,
-    Object? data = freezed,
-  }) {
-    return _then(_value.copyWith(
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as int,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$RpcErrorImplCopyWith<$Res>
-    implements $RpcErrorCopyWith<$Res> {
-  factory _$$RpcErrorImplCopyWith(
-          _$RpcErrorImpl value, $Res Function(_$RpcErrorImpl) then) =
-      __$$RpcErrorImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int code, String message, String? data});
-}
-
-/// @nodoc
-class __$$RpcErrorImplCopyWithImpl<$Res>
-    extends _$RpcErrorCopyWithImpl<$Res, _$RpcErrorImpl>
-    implements _$$RpcErrorImplCopyWith<$Res> {
-  __$$RpcErrorImplCopyWithImpl(
-      _$RpcErrorImpl _value, $Res Function(_$RpcErrorImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RpcError
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? code = null,
-    Object? message = null,
-    Object? data = freezed,
-  }) {
-    return _then(_$RpcErrorImpl(
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as int,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$RpcErrorImpl implements _RpcError {
-  _$RpcErrorImpl({required this.code, required this.message, this.data});
-
-  factory _$RpcErrorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RpcErrorImplFromJson(json);
-
-  @override
-  final int code;
-  @override
-  final String message;
-  @override
-  final String? data;
-
-  @override
-  String toString() {
-    return 'RpcError(code: $code, message: $message, data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RpcErrorImpl &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.data, data) || other.data == data));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, code, message, data);
-
-  /// Create a copy of RpcError
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RpcErrorImplCopyWith<_$RpcErrorImpl> get copyWith =>
-      __$$RpcErrorImplCopyWithImpl<_$RpcErrorImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RpcErrorImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RpcError implements RpcError {
-  factory _RpcError(
-      {required final int code,
-      required final String message,
-      final String? data}) = _$RpcErrorImpl;
-
-  factory _RpcError.fromJson(Map<String, dynamic> json) =
-      _$RpcErrorImpl.fromJson;
-
-  @override
-  int get code;
-  @override
-  String get message;
-  @override
-  String? get data;
-
-  /// Create a copy of RpcError
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RpcErrorImplCopyWith<_$RpcErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 JsonRpcResponse _$JsonRpcResponseFromJson(Map<String, dynamic> json) {
   return _JsonRpcResponse.fromJson(json);
 }
@@ -1261,5 +1078,188 @@ abstract class _JsonRpcResponse extends JsonRpcResponse {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$JsonRpcResponseImplCopyWith<_$JsonRpcResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+RpcError _$RpcErrorFromJson(Map<String, dynamic> json) {
+  return _RpcError.fromJson(json);
+}
+
+/// @nodoc
+mixin _$RpcError {
+  int get code => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  String? get data => throw _privateConstructorUsedError;
+
+  /// Serializes this RpcError to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of RpcError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $RpcErrorCopyWith<RpcError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RpcErrorCopyWith<$Res> {
+  factory $RpcErrorCopyWith(RpcError value, $Res Function(RpcError) then) =
+      _$RpcErrorCopyWithImpl<$Res, RpcError>;
+  @useResult
+  $Res call({int code, String message, String? data});
+}
+
+/// @nodoc
+class _$RpcErrorCopyWithImpl<$Res, $Val extends RpcError>
+    implements $RpcErrorCopyWith<$Res> {
+  _$RpcErrorCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of RpcError
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? code = null,
+    Object? message = null,
+    Object? data = freezed,
+  }) {
+    return _then(_value.copyWith(
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as int,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$RpcErrorImplCopyWith<$Res>
+    implements $RpcErrorCopyWith<$Res> {
+  factory _$$RpcErrorImplCopyWith(
+          _$RpcErrorImpl value, $Res Function(_$RpcErrorImpl) then) =
+      __$$RpcErrorImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int code, String message, String? data});
+}
+
+/// @nodoc
+class __$$RpcErrorImplCopyWithImpl<$Res>
+    extends _$RpcErrorCopyWithImpl<$Res, _$RpcErrorImpl>
+    implements _$$RpcErrorImplCopyWith<$Res> {
+  __$$RpcErrorImplCopyWithImpl(
+      _$RpcErrorImpl _value, $Res Function(_$RpcErrorImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of RpcError
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? code = null,
+    Object? message = null,
+    Object? data = freezed,
+  }) {
+    return _then(_$RpcErrorImpl(
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as int,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$RpcErrorImpl implements _RpcError {
+  _$RpcErrorImpl({required this.code, required this.message, this.data});
+
+  factory _$RpcErrorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RpcErrorImplFromJson(json);
+
+  @override
+  final int code;
+  @override
+  final String message;
+  @override
+  final String? data;
+
+  @override
+  String toString() {
+    return 'RpcError(code: $code, message: $message, data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RpcErrorImpl &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, code, message, data);
+
+  /// Create a copy of RpcError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RpcErrorImplCopyWith<_$RpcErrorImpl> get copyWith =>
+      __$$RpcErrorImplCopyWithImpl<_$RpcErrorImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$RpcErrorImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _RpcError implements RpcError {
+  factory _RpcError(
+      {required final int code,
+      required final String message,
+      final String? data}) = _$RpcErrorImpl;
+
+  factory _RpcError.fromJson(Map<String, dynamic> json) =
+      _$RpcErrorImpl.fromJson;
+
+  @override
+  int get code;
+  @override
+  String get message;
+  @override
+  String? get data;
+
+  /// Create a copy of RpcError
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RpcErrorImplCopyWith<_$RpcErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -46,17 +46,6 @@ class JsonRpcRequest with _$JsonRpcRequest {
 // ----------------------------------------------------------------------------
 // JSON RPC Response
 
-// typedef RpcResult = Map<String, dynamic>;
-
-@freezed
-class RpcError with _$RpcError {
-  factory RpcError({required int code, required String message, String? data}) =
-      _RpcError;
-
-  factory RpcError.fromJson(Map<String, dynamic> json) =>
-      _$RpcErrorFromJson(json);
-}
-
 @freezed
 class JsonRpcResponse with _$JsonRpcResponse{
   const JsonRpcResponse._();
@@ -74,4 +63,14 @@ class JsonRpcResponse with _$JsonRpcResponse{
 
   bool get isSuccess => result != null && error == null;
   bool get isError => result == null && error != null;
+}
+
+
+@freezed
+class RpcError with _$RpcError {
+  factory RpcError({required int code, required String message, String? data}) =
+      _RpcError;
+
+  factory RpcError.fromJson(Map<String, dynamic> json) =>
+      _$RpcErrorFromJson(json);
 }
