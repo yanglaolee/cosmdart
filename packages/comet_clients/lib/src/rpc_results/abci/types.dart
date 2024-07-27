@@ -1,9 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../crypto/proof.dart';
+import '../comet/params.dart';
 
 part 'types.freezed.dart';
-part 'types.g.dart';   
+part 'types.g.dart';
 
 @freezed
 class ResponseInfo with _$ResponseInfo {
@@ -11,8 +12,10 @@ class ResponseInfo with _$ResponseInfo {
     @JsonKey(name: 'data', includeIfNull: false) String? data,
     @JsonKey(name: 'version', includeIfNull: false) String? version,
     @JsonKey(name: 'app_version', includeIfNull: false) int? appVersion,
-    @JsonKey(name: 'last_block_height', includeIfNull: false) String? lastBlockHeight,
-    @JsonKey(name: 'last_block_app_hash', includeIfNull: false) List<int>? lastBlockAppHash,
+    @JsonKey(name: 'last_block_height', includeIfNull: false)
+    String? lastBlockHeight,
+    @JsonKey(name: 'last_block_app_hash', includeIfNull: false)
+    List<int>? lastBlockAppHash,
   }) = _ResponseInfo;
 
   factory ResponseInfo.fromJson(Map<String, dynamic> json) =>
@@ -61,11 +64,11 @@ class Event with _$Event {
   @JsonSerializable(explicitToJson: true)
   factory Event({
     @JsonKey(name: 'type', includeIfNull: false) String? type,
-    @JsonKey(name: 'attributes', includeIfNull: false) List<EventAttribute>? attributes,
+    @JsonKey(name: 'attributes', includeIfNull: false)
+    List<EventAttribute>? attributes,
   }) = _Event;
 
-  factory Event.fromJson(Map<String, dynamic> json) =>
-      _$EventFromJson(json);
+  factory Event.fromJson(Map<String, dynamic> json) => _$EventFromJson(json);
 }
 
 @freezed
@@ -109,4 +112,33 @@ class ValidatorUpdate with _$ValidatorUpdate {
 
   factory ValidatorUpdate.fromJson(Map<String, dynamic> json) =>
       _$ValidatorUpdateFromJson(json);
+}
+
+@freezed
+class TxResult with _$TxResult {
+  @JsonSerializable(explicitToJson: true)
+  factory TxResult({
+    @JsonKey(name: 'height', includeIfNull: false) int? height,
+    @JsonKey(name: 'index', includeIfNull: false) int? index,
+    @JsonKey(name: 'tx', includeIfNull: false) List<int>? tx,
+    @JsonKey(name: 'result') ExecTxResult? result,
+  }) = _TxResult;
+
+  factory TxResult.fromJson(Map<String, dynamic> json) =>
+      _$TxResultFromJson(json);
+}
+
+@freezed
+class ResponseFinalizeBlock with _$ResponseFinalizeBlock {
+  @JsonSerializable(explicitToJson: true)
+  factory ResponseFinalizeBlock({
+    @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
+    @JsonKey(name: 'tx_results', includeIfNull: false) List<TxResult>? txResults,
+    @JsonKey(name: 'validator_updates', includeIfNull: false) List<ValidatorUpdate>? validatorUpdates,
+    @JsonKey(name: 'consensus_param_updates', includeIfNull: false) ConsensusParams? consensusParamUpdates,
+    @JsonKey(name: 'app_hash', includeIfNull: false) List<int>? appHash,
+  }) = _ResponseFinalizeBlock;
+
+  factory ResponseFinalizeBlock.fromJson(Map<String, dynamic> json) =>
+      _$ResponseFinalizeBlockFromJson(json);
 }

@@ -1948,3 +1948,592 @@ abstract class _ValidatorUpdate implements ValidatorUpdate {
   _$$ValidatorUpdateImplCopyWith<_$ValidatorUpdateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+TxResult _$TxResultFromJson(Map<String, dynamic> json) {
+  return _TxResult.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TxResult {
+  @JsonKey(name: 'height', includeIfNull: false)
+  int? get height => throw _privateConstructorUsedError;
+  @JsonKey(name: 'index', includeIfNull: false)
+  int? get index => throw _privateConstructorUsedError;
+  @JsonKey(name: 'tx', includeIfNull: false)
+  List<int>? get tx => throw _privateConstructorUsedError;
+  @JsonKey(name: 'result')
+  ExecTxResult? get result => throw _privateConstructorUsedError;
+
+  /// Serializes this TxResult to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of TxResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $TxResultCopyWith<TxResult> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TxResultCopyWith<$Res> {
+  factory $TxResultCopyWith(TxResult value, $Res Function(TxResult) then) =
+      _$TxResultCopyWithImpl<$Res, TxResult>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'height', includeIfNull: false) int? height,
+      @JsonKey(name: 'index', includeIfNull: false) int? index,
+      @JsonKey(name: 'tx', includeIfNull: false) List<int>? tx,
+      @JsonKey(name: 'result') ExecTxResult? result});
+
+  $ExecTxResultCopyWith<$Res>? get result;
+}
+
+/// @nodoc
+class _$TxResultCopyWithImpl<$Res, $Val extends TxResult>
+    implements $TxResultCopyWith<$Res> {
+  _$TxResultCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of TxResult
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? height = freezed,
+    Object? index = freezed,
+    Object? tx = freezed,
+    Object? result = freezed,
+  }) {
+    return _then(_value.copyWith(
+      height: freezed == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int?,
+      index: freezed == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int?,
+      tx: freezed == tx
+          ? _value.tx
+          : tx // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
+      result: freezed == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as ExecTxResult?,
+    ) as $Val);
+  }
+
+  /// Create a copy of TxResult
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExecTxResultCopyWith<$Res>? get result {
+    if (_value.result == null) {
+      return null;
+    }
+
+    return $ExecTxResultCopyWith<$Res>(_value.result!, (value) {
+      return _then(_value.copyWith(result: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$TxResultImplCopyWith<$Res>
+    implements $TxResultCopyWith<$Res> {
+  factory _$$TxResultImplCopyWith(
+          _$TxResultImpl value, $Res Function(_$TxResultImpl) then) =
+      __$$TxResultImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'height', includeIfNull: false) int? height,
+      @JsonKey(name: 'index', includeIfNull: false) int? index,
+      @JsonKey(name: 'tx', includeIfNull: false) List<int>? tx,
+      @JsonKey(name: 'result') ExecTxResult? result});
+
+  @override
+  $ExecTxResultCopyWith<$Res>? get result;
+}
+
+/// @nodoc
+class __$$TxResultImplCopyWithImpl<$Res>
+    extends _$TxResultCopyWithImpl<$Res, _$TxResultImpl>
+    implements _$$TxResultImplCopyWith<$Res> {
+  __$$TxResultImplCopyWithImpl(
+      _$TxResultImpl _value, $Res Function(_$TxResultImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TxResult
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? height = freezed,
+    Object? index = freezed,
+    Object? tx = freezed,
+    Object? result = freezed,
+  }) {
+    return _then(_$TxResultImpl(
+      height: freezed == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int?,
+      index: freezed == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int?,
+      tx: freezed == tx
+          ? _value._tx
+          : tx // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
+      result: freezed == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as ExecTxResult?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true)
+class _$TxResultImpl implements _TxResult {
+  _$TxResultImpl(
+      {@JsonKey(name: 'height', includeIfNull: false) this.height,
+      @JsonKey(name: 'index', includeIfNull: false) this.index,
+      @JsonKey(name: 'tx', includeIfNull: false) final List<int>? tx,
+      @JsonKey(name: 'result') this.result})
+      : _tx = tx;
+
+  factory _$TxResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TxResultImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'height', includeIfNull: false)
+  final int? height;
+  @override
+  @JsonKey(name: 'index', includeIfNull: false)
+  final int? index;
+  final List<int>? _tx;
+  @override
+  @JsonKey(name: 'tx', includeIfNull: false)
+  List<int>? get tx {
+    final value = _tx;
+    if (value == null) return null;
+    if (_tx is EqualUnmodifiableListView) return _tx;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey(name: 'result')
+  final ExecTxResult? result;
+
+  @override
+  String toString() {
+    return 'TxResult(height: $height, index: $index, tx: $tx, result: $result)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TxResultImpl &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.index, index) || other.index == index) &&
+            const DeepCollectionEquality().equals(other._tx, _tx) &&
+            (identical(other.result, result) || other.result == result));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, height, index,
+      const DeepCollectionEquality().hash(_tx), result);
+
+  /// Create a copy of TxResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TxResultImplCopyWith<_$TxResultImpl> get copyWith =>
+      __$$TxResultImplCopyWithImpl<_$TxResultImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TxResultImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TxResult implements TxResult {
+  factory _TxResult(
+      {@JsonKey(name: 'height', includeIfNull: false) final int? height,
+      @JsonKey(name: 'index', includeIfNull: false) final int? index,
+      @JsonKey(name: 'tx', includeIfNull: false) final List<int>? tx,
+      @JsonKey(name: 'result') final ExecTxResult? result}) = _$TxResultImpl;
+
+  factory _TxResult.fromJson(Map<String, dynamic> json) =
+      _$TxResultImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'height', includeIfNull: false)
+  int? get height;
+  @override
+  @JsonKey(name: 'index', includeIfNull: false)
+  int? get index;
+  @override
+  @JsonKey(name: 'tx', includeIfNull: false)
+  List<int>? get tx;
+  @override
+  @JsonKey(name: 'result')
+  ExecTxResult? get result;
+
+  /// Create a copy of TxResult
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TxResultImplCopyWith<_$TxResultImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ResponseFinalizeBlock _$ResponseFinalizeBlockFromJson(
+    Map<String, dynamic> json) {
+  return _ResponseFinalizeBlock.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ResponseFinalizeBlock {
+  @JsonKey(name: 'events', includeIfNull: false)
+  List<Event>? get events => throw _privateConstructorUsedError;
+  @JsonKey(name: 'tx_results', includeIfNull: false)
+  List<TxResult>? get txResults => throw _privateConstructorUsedError;
+  @JsonKey(name: 'validator_updates', includeIfNull: false)
+  List<ValidatorUpdate>? get validatorUpdates =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
+  ConsensusParams? get consensusParamUpdates =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'app_hash', includeIfNull: false)
+  List<int>? get appHash => throw _privateConstructorUsedError;
+
+  /// Serializes this ResponseFinalizeBlock to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ResponseFinalizeBlock
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ResponseFinalizeBlockCopyWith<ResponseFinalizeBlock> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ResponseFinalizeBlockCopyWith<$Res> {
+  factory $ResponseFinalizeBlockCopyWith(ResponseFinalizeBlock value,
+          $Res Function(ResponseFinalizeBlock) then) =
+      _$ResponseFinalizeBlockCopyWithImpl<$Res, ResponseFinalizeBlock>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
+      @JsonKey(name: 'tx_results', includeIfNull: false)
+      List<TxResult>? txResults,
+      @JsonKey(name: 'validator_updates', includeIfNull: false)
+      List<ValidatorUpdate>? validatorUpdates,
+      @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
+      ConsensusParams? consensusParamUpdates,
+      @JsonKey(name: 'app_hash', includeIfNull: false) List<int>? appHash});
+
+  $ConsensusParamsCopyWith<$Res>? get consensusParamUpdates;
+}
+
+/// @nodoc
+class _$ResponseFinalizeBlockCopyWithImpl<$Res,
+        $Val extends ResponseFinalizeBlock>
+    implements $ResponseFinalizeBlockCopyWith<$Res> {
+  _$ResponseFinalizeBlockCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ResponseFinalizeBlock
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? events = freezed,
+    Object? txResults = freezed,
+    Object? validatorUpdates = freezed,
+    Object? consensusParamUpdates = freezed,
+    Object? appHash = freezed,
+  }) {
+    return _then(_value.copyWith(
+      events: freezed == events
+          ? _value.events
+          : events // ignore: cast_nullable_to_non_nullable
+              as List<Event>?,
+      txResults: freezed == txResults
+          ? _value.txResults
+          : txResults // ignore: cast_nullable_to_non_nullable
+              as List<TxResult>?,
+      validatorUpdates: freezed == validatorUpdates
+          ? _value.validatorUpdates
+          : validatorUpdates // ignore: cast_nullable_to_non_nullable
+              as List<ValidatorUpdate>?,
+      consensusParamUpdates: freezed == consensusParamUpdates
+          ? _value.consensusParamUpdates
+          : consensusParamUpdates // ignore: cast_nullable_to_non_nullable
+              as ConsensusParams?,
+      appHash: freezed == appHash
+          ? _value.appHash
+          : appHash // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
+    ) as $Val);
+  }
+
+  /// Create a copy of ResponseFinalizeBlock
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConsensusParamsCopyWith<$Res>? get consensusParamUpdates {
+    if (_value.consensusParamUpdates == null) {
+      return null;
+    }
+
+    return $ConsensusParamsCopyWith<$Res>(_value.consensusParamUpdates!,
+        (value) {
+      return _then(_value.copyWith(consensusParamUpdates: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$ResponseFinalizeBlockImplCopyWith<$Res>
+    implements $ResponseFinalizeBlockCopyWith<$Res> {
+  factory _$$ResponseFinalizeBlockImplCopyWith(
+          _$ResponseFinalizeBlockImpl value,
+          $Res Function(_$ResponseFinalizeBlockImpl) then) =
+      __$$ResponseFinalizeBlockImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
+      @JsonKey(name: 'tx_results', includeIfNull: false)
+      List<TxResult>? txResults,
+      @JsonKey(name: 'validator_updates', includeIfNull: false)
+      List<ValidatorUpdate>? validatorUpdates,
+      @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
+      ConsensusParams? consensusParamUpdates,
+      @JsonKey(name: 'app_hash', includeIfNull: false) List<int>? appHash});
+
+  @override
+  $ConsensusParamsCopyWith<$Res>? get consensusParamUpdates;
+}
+
+/// @nodoc
+class __$$ResponseFinalizeBlockImplCopyWithImpl<$Res>
+    extends _$ResponseFinalizeBlockCopyWithImpl<$Res,
+        _$ResponseFinalizeBlockImpl>
+    implements _$$ResponseFinalizeBlockImplCopyWith<$Res> {
+  __$$ResponseFinalizeBlockImplCopyWithImpl(_$ResponseFinalizeBlockImpl _value,
+      $Res Function(_$ResponseFinalizeBlockImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ResponseFinalizeBlock
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? events = freezed,
+    Object? txResults = freezed,
+    Object? validatorUpdates = freezed,
+    Object? consensusParamUpdates = freezed,
+    Object? appHash = freezed,
+  }) {
+    return _then(_$ResponseFinalizeBlockImpl(
+      events: freezed == events
+          ? _value._events
+          : events // ignore: cast_nullable_to_non_nullable
+              as List<Event>?,
+      txResults: freezed == txResults
+          ? _value._txResults
+          : txResults // ignore: cast_nullable_to_non_nullable
+              as List<TxResult>?,
+      validatorUpdates: freezed == validatorUpdates
+          ? _value._validatorUpdates
+          : validatorUpdates // ignore: cast_nullable_to_non_nullable
+              as List<ValidatorUpdate>?,
+      consensusParamUpdates: freezed == consensusParamUpdates
+          ? _value.consensusParamUpdates
+          : consensusParamUpdates // ignore: cast_nullable_to_non_nullable
+              as ConsensusParams?,
+      appHash: freezed == appHash
+          ? _value._appHash
+          : appHash // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true)
+class _$ResponseFinalizeBlockImpl implements _ResponseFinalizeBlock {
+  _$ResponseFinalizeBlockImpl(
+      {@JsonKey(name: 'events', includeIfNull: false) final List<Event>? events,
+      @JsonKey(name: 'tx_results', includeIfNull: false)
+      final List<TxResult>? txResults,
+      @JsonKey(name: 'validator_updates', includeIfNull: false)
+      final List<ValidatorUpdate>? validatorUpdates,
+      @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
+      this.consensusParamUpdates,
+      @JsonKey(name: 'app_hash', includeIfNull: false)
+      final List<int>? appHash})
+      : _events = events,
+        _txResults = txResults,
+        _validatorUpdates = validatorUpdates,
+        _appHash = appHash;
+
+  factory _$ResponseFinalizeBlockImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResponseFinalizeBlockImplFromJson(json);
+
+  final List<Event>? _events;
+  @override
+  @JsonKey(name: 'events', includeIfNull: false)
+  List<Event>? get events {
+    final value = _events;
+    if (value == null) return null;
+    if (_events is EqualUnmodifiableListView) return _events;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<TxResult>? _txResults;
+  @override
+  @JsonKey(name: 'tx_results', includeIfNull: false)
+  List<TxResult>? get txResults {
+    final value = _txResults;
+    if (value == null) return null;
+    if (_txResults is EqualUnmodifiableListView) return _txResults;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<ValidatorUpdate>? _validatorUpdates;
+  @override
+  @JsonKey(name: 'validator_updates', includeIfNull: false)
+  List<ValidatorUpdate>? get validatorUpdates {
+    final value = _validatorUpdates;
+    if (value == null) return null;
+    if (_validatorUpdates is EqualUnmodifiableListView)
+      return _validatorUpdates;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
+  final ConsensusParams? consensusParamUpdates;
+  final List<int>? _appHash;
+  @override
+  @JsonKey(name: 'app_hash', includeIfNull: false)
+  List<int>? get appHash {
+    final value = _appHash;
+    if (value == null) return null;
+    if (_appHash is EqualUnmodifiableListView) return _appHash;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'ResponseFinalizeBlock(events: $events, txResults: $txResults, validatorUpdates: $validatorUpdates, consensusParamUpdates: $consensusParamUpdates, appHash: $appHash)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResponseFinalizeBlockImpl &&
+            const DeepCollectionEquality().equals(other._events, _events) &&
+            const DeepCollectionEquality()
+                .equals(other._txResults, _txResults) &&
+            const DeepCollectionEquality()
+                .equals(other._validatorUpdates, _validatorUpdates) &&
+            (identical(other.consensusParamUpdates, consensusParamUpdates) ||
+                other.consensusParamUpdates == consensusParamUpdates) &&
+            const DeepCollectionEquality().equals(other._appHash, _appHash));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_events),
+      const DeepCollectionEquality().hash(_txResults),
+      const DeepCollectionEquality().hash(_validatorUpdates),
+      consensusParamUpdates,
+      const DeepCollectionEquality().hash(_appHash));
+
+  /// Create a copy of ResponseFinalizeBlock
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ResponseFinalizeBlockImplCopyWith<_$ResponseFinalizeBlockImpl>
+      get copyWith => __$$ResponseFinalizeBlockImplCopyWithImpl<
+          _$ResponseFinalizeBlockImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ResponseFinalizeBlockImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ResponseFinalizeBlock implements ResponseFinalizeBlock {
+  factory _ResponseFinalizeBlock(
+      {@JsonKey(name: 'events', includeIfNull: false) final List<Event>? events,
+      @JsonKey(name: 'tx_results', includeIfNull: false)
+      final List<TxResult>? txResults,
+      @JsonKey(name: 'validator_updates', includeIfNull: false)
+      final List<ValidatorUpdate>? validatorUpdates,
+      @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
+      final ConsensusParams? consensusParamUpdates,
+      @JsonKey(name: 'app_hash', includeIfNull: false)
+      final List<int>? appHash}) = _$ResponseFinalizeBlockImpl;
+
+  factory _ResponseFinalizeBlock.fromJson(Map<String, dynamic> json) =
+      _$ResponseFinalizeBlockImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'events', includeIfNull: false)
+  List<Event>? get events;
+  @override
+  @JsonKey(name: 'tx_results', includeIfNull: false)
+  List<TxResult>? get txResults;
+  @override
+  @JsonKey(name: 'validator_updates', includeIfNull: false)
+  List<ValidatorUpdate>? get validatorUpdates;
+  @override
+  @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
+  ConsensusParams? get consensusParamUpdates;
+  @override
+  @JsonKey(name: 'app_hash', includeIfNull: false)
+  List<int>? get appHash;
+
+  /// Create a copy of ResponseFinalizeBlock
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ResponseFinalizeBlockImplCopyWith<_$ResponseFinalizeBlockImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

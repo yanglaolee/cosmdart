@@ -10,6 +10,7 @@ import 'comet/validator.dart';
 import 'comet/tx.dart';
 import 'comet/genesis.dart';
 import 'comet/block_meta.dart';
+import 'comet/events.dart';
 
 import 'p2p/node_info.dart';
 
@@ -270,4 +271,89 @@ class ResultNetInfo with _$ResultNetInfo {
   
     factory ResultNetInfo.fromJson(Map<String, dynamic> json) =>
         _$ResultNetInfoFromJson(json);
+}
+
+@freezed
+class PeerStateInfo with _$PeerStateInfo {
+  factory PeerStateInfo({
+    @JsonKey(name: 'node_address') String? nodeAddress,
+    @JsonKey(name: 'peer_state') List<int>? peerState,
+
+  }) = _PeerStateInfo;
+
+  factory PeerStateInfo.fromJson(Map<String, dynamic> json) =>
+      _$PeerStateInfoFromJson(json);
+}
+
+@freezed
+class ResultDumpConsensusState with _$ResultDumpConsensusState {
+  @JsonSerializable(explicitToJson: true)
+  factory ResultDumpConsensusState({
+    @JsonKey(name: 'round_state') List<int>? roundState,
+    @JsonKey(name: 'peers') List<PeerStateInfo>? peers,
+  }) = _ResultDumpConsensusState;
+
+  factory ResultDumpConsensusState.fromJson(Map<String, dynamic> json) =>
+      _$ResultDumpConsensusStateFromJson(json);
+}
+
+@freezed
+class ResultConsensusState with _$ResultConsensusState {
+  factory ResultConsensusState({
+    @JsonKey(name: 'round_state') List<int>? roundState,
+  }) = _ResultConsensusState;
+
+  factory ResultConsensusState.fromJson(Map<String, dynamic> json) =>
+      _$ResultConsensusStateFromJson(json);
+}
+
+@freezed
+class ResultConsensusParams with _$ResultConsensusParams {
+  @JsonSerializable(explicitToJson: true)
+  factory ResultConsensusParams({
+    @JsonKey(name: 'block_height') int? blockHeight,
+    @JsonKey(name: 'consensus_params') ConsensusParams? consensusParams,
+  }) = _ResultConsensusParams;
+
+  factory ResultConsensusParams.fromJson(Map<String, dynamic> json) =>
+      _$ResultConsensusParamsFromJson(json);
+}
+
+@freezed
+class ResultEvent with _$ResultEvent {
+  @JsonSerializable(explicitToJson: true)
+  factory ResultEvent({
+    @JsonKey(name: 'query') String? query,
+    @JsonKey(name: 'data') EventData? data,  // TODO need a custom converter
+    @JsonKey(name: 'events') Map<String, List<String>>? events,
+  }) = _ResultEvent;
+
+    factory ResultEvent.fromJson(Map<String, dynamic> json) =>
+      _$ResultEventFromJson(json);
+
+}
+
+@freezed
+class ResultUnconfirmedTxs with _$ResultUnconfirmedTxs {
+  factory ResultUnconfirmedTxs({
+    @JsonKey(name: 'n_txs') int? nTxs,
+    @JsonKey(name: 'total') int? total,
+    @JsonKey(name: 'total_bytes') int? totalBytes,
+    @JsonKey(name: 'txs') List<List<int>>? txs,
+  }) = _ResultUnconfirmedTxs;
+
+  factory ResultUnconfirmedTxs.fromJson(Map<String, dynamic> json) =>
+      _$ResultUnconfirmedTxsFromJson(json);
+}
+
+typedef ResultCheckTx = ResponseCheckTx;
+
+@freezed
+class ResultBroadcastEvidence with _$ResultBroadcastEvidence {
+  factory ResultBroadcastEvidence({
+    @JsonKey(name: 'hash') List<int>? hash,
+  }) = _ResultBroadcastEvidence;
+
+  factory ResultBroadcastEvidence.fromJson(Map<String, dynamic> json) =>
+      _$ResultBroadcastEvidenceFromJson(json);
 }

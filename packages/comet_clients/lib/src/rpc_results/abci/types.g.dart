@@ -214,3 +214,73 @@ Map<String, dynamic> _$$ValidatorUpdateImplToJson(
   writeNotNull('power', instance.power);
   return val;
 }
+
+_$TxResultImpl _$$TxResultImplFromJson(Map<String, dynamic> json) =>
+    _$TxResultImpl(
+      height: (json['height'] as num?)?.toInt(),
+      index: (json['index'] as num?)?.toInt(),
+      tx: (json['tx'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+      result: json['result'] == null
+          ? null
+          : ExecTxResult.fromJson(json['result'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$TxResultImplToJson(_$TxResultImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('height', instance.height);
+  writeNotNull('index', instance.index);
+  writeNotNull('tx', instance.tx);
+  val['result'] = instance.result?.toJson();
+  return val;
+}
+
+_$ResponseFinalizeBlockImpl _$$ResponseFinalizeBlockImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ResponseFinalizeBlockImpl(
+      events: (json['events'] as List<dynamic>?)
+          ?.map((e) => Event.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      txResults: (json['tx_results'] as List<dynamic>?)
+          ?.map((e) => TxResult.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      validatorUpdates: (json['validator_updates'] as List<dynamic>?)
+          ?.map((e) => ValidatorUpdate.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      consensusParamUpdates: json['consensus_param_updates'] == null
+          ? null
+          : ConsensusParams.fromJson(
+              json['consensus_param_updates'] as Map<String, dynamic>),
+      appHash: (json['app_hash'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+    );
+
+Map<String, dynamic> _$$ResponseFinalizeBlockImplToJson(
+    _$ResponseFinalizeBlockImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('events', instance.events?.map((e) => e.toJson()).toList());
+  writeNotNull(
+      'tx_results', instance.txResults?.map((e) => e.toJson()).toList());
+  writeNotNull('validator_updates',
+      instance.validatorUpdates?.map((e) => e.toJson()).toList());
+  writeNotNull(
+      'consensus_param_updates', instance.consensusParamUpdates?.toJson());
+  writeNotNull('app_hash', instance.appHash);
+  return val;
+}

@@ -382,3 +382,120 @@ Map<String, dynamic> _$$ResultNetInfoImplToJson(_$ResultNetInfoImpl instance) =>
       'n_peers': instance.nPeers,
       'peers': instance.peers,
     };
+
+_$PeerStateInfoImpl _$$PeerStateInfoImplFromJson(Map<String, dynamic> json) =>
+    _$PeerStateInfoImpl(
+      nodeAddress: json['node_address'] as String?,
+      peerState: (json['peer_state'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+    );
+
+Map<String, dynamic> _$$PeerStateInfoImplToJson(_$PeerStateInfoImpl instance) =>
+    <String, dynamic>{
+      'node_address': instance.nodeAddress,
+      'peer_state': instance.peerState,
+    };
+
+_$ResultDumpConsensusStateImpl _$$ResultDumpConsensusStateImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ResultDumpConsensusStateImpl(
+      roundState: (json['round_state'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+      peers: (json['peers'] as List<dynamic>?)
+          ?.map((e) => PeerStateInfo.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$ResultDumpConsensusStateImplToJson(
+        _$ResultDumpConsensusStateImpl instance) =>
+    <String, dynamic>{
+      'round_state': instance.roundState,
+      'peers': instance.peers?.map((e) => e.toJson()).toList(),
+    };
+
+_$ResultConsensusStateImpl _$$ResultConsensusStateImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ResultConsensusStateImpl(
+      roundState: (json['round_state'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+    );
+
+Map<String, dynamic> _$$ResultConsensusStateImplToJson(
+        _$ResultConsensusStateImpl instance) =>
+    <String, dynamic>{
+      'round_state': instance.roundState,
+    };
+
+_$ResultConsensusParamsImpl _$$ResultConsensusParamsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ResultConsensusParamsImpl(
+      blockHeight: (json['block_height'] as num?)?.toInt(),
+      consensusParams: json['consensus_params'] == null
+          ? null
+          : ConsensusParams.fromJson(
+              json['consensus_params'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$ResultConsensusParamsImplToJson(
+        _$ResultConsensusParamsImpl instance) =>
+    <String, dynamic>{
+      'block_height': instance.blockHeight,
+      'consensus_params': instance.consensusParams?.toJson(),
+    };
+
+_$ResultEventImpl _$$ResultEventImplFromJson(Map<String, dynamic> json) =>
+    _$ResultEventImpl(
+      query: json['query'] as String?,
+      data: json['data'] == null
+          ? null
+          : EventData.fromJson(json['data'] as Map<String, dynamic>),
+      events: (json['events'] as Map<String, dynamic>?)?.map(
+        (k, e) =>
+            MapEntry(k, (e as List<dynamic>).map((e) => e as String).toList()),
+      ),
+    );
+
+Map<String, dynamic> _$$ResultEventImplToJson(_$ResultEventImpl instance) =>
+    <String, dynamic>{
+      'query': instance.query,
+      'data': instance.data?.toJson(),
+      'events': instance.events,
+    };
+
+_$ResultUnconfirmedTxsImpl _$$ResultUnconfirmedTxsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ResultUnconfirmedTxsImpl(
+      nTxs: (json['n_txs'] as num?)?.toInt(),
+      total: (json['total'] as num?)?.toInt(),
+      totalBytes: (json['total_bytes'] as num?)?.toInt(),
+      txs: (json['txs'] as List<dynamic>?)
+          ?.map((e) =>
+              (e as List<dynamic>).map((e) => (e as num).toInt()).toList())
+          .toList(),
+    );
+
+Map<String, dynamic> _$$ResultUnconfirmedTxsImplToJson(
+        _$ResultUnconfirmedTxsImpl instance) =>
+    <String, dynamic>{
+      'n_txs': instance.nTxs,
+      'total': instance.total,
+      'total_bytes': instance.totalBytes,
+      'txs': instance.txs,
+    };
+
+_$ResultBroadcastEvidenceImpl _$$ResultBroadcastEvidenceImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ResultBroadcastEvidenceImpl(
+      hash: (json['hash'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+    );
+
+Map<String, dynamic> _$$ResultBroadcastEvidenceImplToJson(
+        _$ResultBroadcastEvidenceImpl instance) =>
+    <String, dynamic>{
+      'hash': instance.hash,
+    };

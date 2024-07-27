@@ -1,6 +1,7 @@
-
-/*
 import 'dart:typed_data';
+
+import '../rpc_results/comet/evidence.dart';
+import '../rpc_results/results.dart';
 
 // --------------------------------------------------------------------------
 // ABCIClient groups together the functionality that principally affects the
@@ -14,8 +15,8 @@ abstract interface class ABCIClient {
 
   // Writing to abci app
   Future<ResultBroadcastTxCommit> broadcastTxCommit(Uint8List tx);
-  Future<ResultBroadcastTx> BroadcastTxAsync(Uint8List tx);
-  Future<ResultBroadcastTx> BroadcastTxSync(Uint8List tx);
+  Future<ResultBroadcastTx> broadcastTxAsync(Uint8List tx);
+  Future<ResultBroadcastTx> broadcastTxSync(Uint8List tx);
 }
 
 // --------------------------------------------------------------------------
@@ -46,7 +47,7 @@ abstract interface class SignClient {
 abstract interface class HistoryClient {
 
   Future<ResultGenesis> genesis();
-  Future<ResultGenesisChunked> genesisChunked(int chunckSize);
+  Future<ResultGenesisChunk> genesisChunked(int chunckSize);
   Future<ResultBlockchainInfo> blockchainInfo(int minHeight, int maxHeight);
 }
 
@@ -66,7 +67,7 @@ abstract interface class NetworkClient {
   Future<ResultDumpConsensusState> dumpConsensusState();
   Future<ResultConsensusState> consensusState();
   Future<ResultConsensusParams> consensusParams(String height);
-  Future<ResultHealth> health();
+  Future<void> health();
 }
 
 // --------------------------------------------------------------------------
@@ -93,6 +94,5 @@ abstract interface class MempoolClient {
 // behavior.
 abstract interface class EvidenceClient {
 
-  Future<ResultBroadcastEvidence> broadcastEvidence(Evidence evidence);
+  Future<ResultBroadcastEvidence> broadcastEvidence(DuplicateVoteEvidence evidence);
 }
-*/
