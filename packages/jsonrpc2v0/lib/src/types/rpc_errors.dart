@@ -16,22 +16,22 @@ JsonRpcResponse rpcInvalidRequestError(String error) {
       id: null, error: RpcError(code: -32600, message: 'Invalid Request', data: error));
 }
 
-JsonRpcResponse rpcMethodNotFoundError(JsonRpcId id) {
+JsonRpcResponse rpcMethodNotFoundError(RpcId id) {
   var  rpcError = RpcError(code: -32601, message: 'Method not found', data: "");
   return JsonRpcResponse(id: id, error: rpcError);
 }
 
-JsonRpcResponse rpcInvalidParamsError(JsonRpcId id, String error) {
+JsonRpcResponse rpcInvalidParamsError(RpcId id, String error) {
   var  rpcError = RpcError(code: -32602, message: 'Invalid params', data: error);
   return JsonRpcResponse(id: id, error: rpcError);
 }
 
-JsonRpcResponse rpcInternalError(JsonRpcId id, String error) {
+JsonRpcResponse rpcInternalError(RpcId id, String error) {
   var  rpcError = RpcError(code: -32603, message: 'Internal error', data: error);
   return JsonRpcResponse(id: id, error: rpcError);
 }
 
-JsonRpcResponse rpcServerError(JsonRpcId id, String error) {
+JsonRpcResponse rpcServerError(RpcId id, String error) {
   var  rpcError = RpcError(code: -32000, message: 'Server error', data: error);
   return JsonRpcResponse(id: id, error: rpcError);
 }

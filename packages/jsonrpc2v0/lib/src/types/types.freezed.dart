@@ -14,549 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-JsonRpcId _$JsonRpcIdFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
-    case 'stringID':
-      return JsonRpcStringId.fromJson(json);
-    case 'intID':
-      return JsonRpcIntId.fromJson(json);
-    case 'nullID':
-      return JsonRpcNullId.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'JsonRpcId',
-          'Invalid union type "${json['runtimeType']}"!');
-  }
-}
-
-/// @nodoc
-mixin _$JsonRpcId {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String id) stringID,
-    required TResult Function(int id) intID,
-    required TResult Function() nullID,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String id)? stringID,
-    TResult? Function(int id)? intID,
-    TResult? Function()? nullID,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String id)? stringID,
-    TResult Function(int id)? intID,
-    TResult Function()? nullID,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(JsonRpcStringId value) stringID,
-    required TResult Function(JsonRpcIntId value) intID,
-    required TResult Function(JsonRpcNullId value) nullID,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(JsonRpcStringId value)? stringID,
-    TResult? Function(JsonRpcIntId value)? intID,
-    TResult? Function(JsonRpcNullId value)? nullID,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(JsonRpcStringId value)? stringID,
-    TResult Function(JsonRpcIntId value)? intID,
-    TResult Function(JsonRpcNullId value)? nullID,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this JsonRpcId to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $JsonRpcIdCopyWith<$Res> {
-  factory $JsonRpcIdCopyWith(JsonRpcId value, $Res Function(JsonRpcId) then) =
-      _$JsonRpcIdCopyWithImpl<$Res, JsonRpcId>;
-}
-
-/// @nodoc
-class _$JsonRpcIdCopyWithImpl<$Res, $Val extends JsonRpcId>
-    implements $JsonRpcIdCopyWith<$Res> {
-  _$JsonRpcIdCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of JsonRpcId
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$JsonRpcStringIdImplCopyWith<$Res> {
-  factory _$$JsonRpcStringIdImplCopyWith(_$JsonRpcStringIdImpl value,
-          $Res Function(_$JsonRpcStringIdImpl) then) =
-      __$$JsonRpcStringIdImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String id});
-}
-
-/// @nodoc
-class __$$JsonRpcStringIdImplCopyWithImpl<$Res>
-    extends _$JsonRpcIdCopyWithImpl<$Res, _$JsonRpcStringIdImpl>
-    implements _$$JsonRpcStringIdImplCopyWith<$Res> {
-  __$$JsonRpcStringIdImplCopyWithImpl(
-      _$JsonRpcStringIdImpl _value, $Res Function(_$JsonRpcStringIdImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of JsonRpcId
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_$JsonRpcStringIdImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$JsonRpcStringIdImpl implements JsonRpcStringId {
-  _$JsonRpcStringIdImpl({required this.id, final String? $type})
-      : $type = $type ?? 'stringID';
-
-  factory _$JsonRpcStringIdImpl.fromJson(Map<String, dynamic> json) =>
-      _$$JsonRpcStringIdImplFromJson(json);
-
-  @override
-  final String id;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'JsonRpcId.stringID(id: $id)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$JsonRpcStringIdImpl &&
-            (identical(other.id, id) || other.id == id));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
-
-  /// Create a copy of JsonRpcId
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$JsonRpcStringIdImplCopyWith<_$JsonRpcStringIdImpl> get copyWith =>
-      __$$JsonRpcStringIdImplCopyWithImpl<_$JsonRpcStringIdImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String id) stringID,
-    required TResult Function(int id) intID,
-    required TResult Function() nullID,
-  }) {
-    return stringID(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String id)? stringID,
-    TResult? Function(int id)? intID,
-    TResult? Function()? nullID,
-  }) {
-    return stringID?.call(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String id)? stringID,
-    TResult Function(int id)? intID,
-    TResult Function()? nullID,
-    required TResult orElse(),
-  }) {
-    if (stringID != null) {
-      return stringID(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(JsonRpcStringId value) stringID,
-    required TResult Function(JsonRpcIntId value) intID,
-    required TResult Function(JsonRpcNullId value) nullID,
-  }) {
-    return stringID(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(JsonRpcStringId value)? stringID,
-    TResult? Function(JsonRpcIntId value)? intID,
-    TResult? Function(JsonRpcNullId value)? nullID,
-  }) {
-    return stringID?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(JsonRpcStringId value)? stringID,
-    TResult Function(JsonRpcIntId value)? intID,
-    TResult Function(JsonRpcNullId value)? nullID,
-    required TResult orElse(),
-  }) {
-    if (stringID != null) {
-      return stringID(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$JsonRpcStringIdImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class JsonRpcStringId implements JsonRpcId {
-  factory JsonRpcStringId({required final String id}) = _$JsonRpcStringIdImpl;
-
-  factory JsonRpcStringId.fromJson(Map<String, dynamic> json) =
-      _$JsonRpcStringIdImpl.fromJson;
-
-  String get id;
-
-  /// Create a copy of JsonRpcId
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$JsonRpcStringIdImplCopyWith<_$JsonRpcStringIdImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$JsonRpcIntIdImplCopyWith<$Res> {
-  factory _$$JsonRpcIntIdImplCopyWith(
-          _$JsonRpcIntIdImpl value, $Res Function(_$JsonRpcIntIdImpl) then) =
-      __$$JsonRpcIntIdImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int id});
-}
-
-/// @nodoc
-class __$$JsonRpcIntIdImplCopyWithImpl<$Res>
-    extends _$JsonRpcIdCopyWithImpl<$Res, _$JsonRpcIntIdImpl>
-    implements _$$JsonRpcIntIdImplCopyWith<$Res> {
-  __$$JsonRpcIntIdImplCopyWithImpl(
-      _$JsonRpcIntIdImpl _value, $Res Function(_$JsonRpcIntIdImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of JsonRpcId
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_$JsonRpcIntIdImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$JsonRpcIntIdImpl implements JsonRpcIntId {
-  _$JsonRpcIntIdImpl({required this.id, final String? $type})
-      : $type = $type ?? 'intID';
-
-  factory _$JsonRpcIntIdImpl.fromJson(Map<String, dynamic> json) =>
-      _$$JsonRpcIntIdImplFromJson(json);
-
-  @override
-  final int id;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'JsonRpcId.intID(id: $id)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$JsonRpcIntIdImpl &&
-            (identical(other.id, id) || other.id == id));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
-
-  /// Create a copy of JsonRpcId
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$JsonRpcIntIdImplCopyWith<_$JsonRpcIntIdImpl> get copyWith =>
-      __$$JsonRpcIntIdImplCopyWithImpl<_$JsonRpcIntIdImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String id) stringID,
-    required TResult Function(int id) intID,
-    required TResult Function() nullID,
-  }) {
-    return intID(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String id)? stringID,
-    TResult? Function(int id)? intID,
-    TResult? Function()? nullID,
-  }) {
-    return intID?.call(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String id)? stringID,
-    TResult Function(int id)? intID,
-    TResult Function()? nullID,
-    required TResult orElse(),
-  }) {
-    if (intID != null) {
-      return intID(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(JsonRpcStringId value) stringID,
-    required TResult Function(JsonRpcIntId value) intID,
-    required TResult Function(JsonRpcNullId value) nullID,
-  }) {
-    return intID(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(JsonRpcStringId value)? stringID,
-    TResult? Function(JsonRpcIntId value)? intID,
-    TResult? Function(JsonRpcNullId value)? nullID,
-  }) {
-    return intID?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(JsonRpcStringId value)? stringID,
-    TResult Function(JsonRpcIntId value)? intID,
-    TResult Function(JsonRpcNullId value)? nullID,
-    required TResult orElse(),
-  }) {
-    if (intID != null) {
-      return intID(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$JsonRpcIntIdImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class JsonRpcIntId implements JsonRpcId {
-  factory JsonRpcIntId({required final int id}) = _$JsonRpcIntIdImpl;
-
-  factory JsonRpcIntId.fromJson(Map<String, dynamic> json) =
-      _$JsonRpcIntIdImpl.fromJson;
-
-  int get id;
-
-  /// Create a copy of JsonRpcId
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$JsonRpcIntIdImplCopyWith<_$JsonRpcIntIdImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$JsonRpcNullIdImplCopyWith<$Res> {
-  factory _$$JsonRpcNullIdImplCopyWith(
-          _$JsonRpcNullIdImpl value, $Res Function(_$JsonRpcNullIdImpl) then) =
-      __$$JsonRpcNullIdImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$JsonRpcNullIdImplCopyWithImpl<$Res>
-    extends _$JsonRpcIdCopyWithImpl<$Res, _$JsonRpcNullIdImpl>
-    implements _$$JsonRpcNullIdImplCopyWith<$Res> {
-  __$$JsonRpcNullIdImplCopyWithImpl(
-      _$JsonRpcNullIdImpl _value, $Res Function(_$JsonRpcNullIdImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of JsonRpcId
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$JsonRpcNullIdImpl implements JsonRpcNullId {
-  _$JsonRpcNullIdImpl({final String? $type}) : $type = $type ?? 'nullID';
-
-  factory _$JsonRpcNullIdImpl.fromJson(Map<String, dynamic> json) =>
-      _$$JsonRpcNullIdImplFromJson(json);
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'JsonRpcId.nullID()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$JsonRpcNullIdImpl);
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String id) stringID,
-    required TResult Function(int id) intID,
-    required TResult Function() nullID,
-  }) {
-    return nullID();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String id)? stringID,
-    TResult? Function(int id)? intID,
-    TResult? Function()? nullID,
-  }) {
-    return nullID?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String id)? stringID,
-    TResult Function(int id)? intID,
-    TResult Function()? nullID,
-    required TResult orElse(),
-  }) {
-    if (nullID != null) {
-      return nullID();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(JsonRpcStringId value) stringID,
-    required TResult Function(JsonRpcIntId value) intID,
-    required TResult Function(JsonRpcNullId value) nullID,
-  }) {
-    return nullID(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(JsonRpcStringId value)? stringID,
-    TResult? Function(JsonRpcIntId value)? intID,
-    TResult? Function(JsonRpcNullId value)? nullID,
-  }) {
-    return nullID?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(JsonRpcStringId value)? stringID,
-    TResult Function(JsonRpcIntId value)? intID,
-    TResult Function(JsonRpcNullId value)? nullID,
-    required TResult orElse(),
-  }) {
-    if (nullID != null) {
-      return nullID(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$JsonRpcNullIdImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class JsonRpcNullId implements JsonRpcId {
-  factory JsonRpcNullId() = _$JsonRpcNullIdImpl;
-
-  factory JsonRpcNullId.fromJson(Map<String, dynamic> json) =
-      _$JsonRpcNullIdImpl.fromJson;
-}
-
 JsonRpcRequest _$JsonRpcRequestFromJson(Map<String, dynamic> json) {
   return _JsonRpcRequest.fromJson(json);
 }
@@ -565,9 +22,9 @@ JsonRpcRequest _$JsonRpcRequestFromJson(Map<String, dynamic> json) {
 mixin _$JsonRpcRequest {
   String get jsonrpc => throw _privateConstructorUsedError;
   @RpcIdConverter()
-  JsonRpcId? get id => throw _privateConstructorUsedError;
+  RpcId? get id => throw _privateConstructorUsedError;
   String get method => throw _privateConstructorUsedError;
-  @JsonKey(includeIfNull: false)
+  @JsonKey(includeIfNull: true)
   Map<String, dynamic>? get params => throw _privateConstructorUsedError;
 
   /// Serializes this JsonRpcRequest to a JSON map.
@@ -588,11 +45,9 @@ abstract class $JsonRpcRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String jsonrpc,
-      @RpcIdConverter() JsonRpcId? id,
+      @RpcIdConverter() RpcId? id,
       String method,
-      @JsonKey(includeIfNull: false) Map<String, dynamic>? params});
-
-  $JsonRpcIdCopyWith<$Res>? get id;
+      @JsonKey(includeIfNull: true) Map<String, dynamic>? params});
 }
 
 /// @nodoc
@@ -623,7 +78,7 @@ class _$JsonRpcRequestCopyWithImpl<$Res, $Val extends JsonRpcRequest>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as JsonRpcId?,
+              as RpcId?,
       method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
@@ -633,20 +88,6 @@ class _$JsonRpcRequestCopyWithImpl<$Res, $Val extends JsonRpcRequest>
           : params // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ) as $Val);
-  }
-
-  /// Create a copy of JsonRpcRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $JsonRpcIdCopyWith<$Res>? get id {
-    if (_value.id == null) {
-      return null;
-    }
-
-    return $JsonRpcIdCopyWith<$Res>(_value.id!, (value) {
-      return _then(_value.copyWith(id: value) as $Val);
-    });
   }
 }
 
@@ -660,12 +101,9 @@ abstract class _$$JsonRpcRequestImplCopyWith<$Res>
   @useResult
   $Res call(
       {String jsonrpc,
-      @RpcIdConverter() JsonRpcId? id,
+      @RpcIdConverter() RpcId? id,
       String method,
-      @JsonKey(includeIfNull: false) Map<String, dynamic>? params});
-
-  @override
-  $JsonRpcIdCopyWith<$Res>? get id;
+      @JsonKey(includeIfNull: true) Map<String, dynamic>? params});
 }
 
 /// @nodoc
@@ -694,7 +132,7 @@ class __$$JsonRpcRequestImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as JsonRpcId?,
+              as RpcId?,
       method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
@@ -714,7 +152,7 @@ class _$JsonRpcRequestImpl implements _JsonRpcRequest {
       {this.jsonrpc = '2.0',
       @RpcIdConverter() this.id,
       required this.method,
-      @JsonKey(includeIfNull: false) final Map<String, dynamic>? params})
+      @JsonKey(includeIfNull: true) final Map<String, dynamic>? params})
       : _params = params;
 
   factory _$JsonRpcRequestImpl.fromJson(Map<String, dynamic> json) =>
@@ -725,12 +163,12 @@ class _$JsonRpcRequestImpl implements _JsonRpcRequest {
   final String jsonrpc;
   @override
   @RpcIdConverter()
-  final JsonRpcId? id;
+  final RpcId? id;
   @override
   final String method;
   final Map<String, dynamic>? _params;
   @override
-  @JsonKey(includeIfNull: false)
+  @JsonKey(includeIfNull: true)
   Map<String, dynamic>? get params {
     final value = _params;
     if (value == null) return null;
@@ -780,9 +218,9 @@ class _$JsonRpcRequestImpl implements _JsonRpcRequest {
 abstract class _JsonRpcRequest implements JsonRpcRequest {
   factory _JsonRpcRequest(
           {final String jsonrpc,
-          @RpcIdConverter() final JsonRpcId? id,
+          @RpcIdConverter() final RpcId? id,
           required final String method,
-          @JsonKey(includeIfNull: false) final Map<String, dynamic>? params}) =
+          @JsonKey(includeIfNull: true) final Map<String, dynamic>? params}) =
       _$JsonRpcRequestImpl;
 
   factory _JsonRpcRequest.fromJson(Map<String, dynamic> json) =
@@ -792,11 +230,11 @@ abstract class _JsonRpcRequest implements JsonRpcRequest {
   String get jsonrpc;
   @override
   @RpcIdConverter()
-  JsonRpcId? get id;
+  RpcId? get id;
   @override
   String get method;
   @override
-  @JsonKey(includeIfNull: false)
+  @JsonKey(includeIfNull: true)
   Map<String, dynamic>? get params;
 
   /// Create a copy of JsonRpcRequest
@@ -815,7 +253,7 @@ JsonRpcResponse _$JsonRpcResponseFromJson(Map<String, dynamic> json) {
 mixin _$JsonRpcResponse {
   String get jsonrpc => throw _privateConstructorUsedError;
   @RpcIdConverter()
-  JsonRpcId? get id => throw _privateConstructorUsedError;
+  RpcId? get id => throw _privateConstructorUsedError;
   @JsonKey(includeIfNull: false)
   Map<String, dynamic>? get result => throw _privateConstructorUsedError;
   @JsonKey(includeIfNull: false)
@@ -839,11 +277,10 @@ abstract class $JsonRpcResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {String jsonrpc,
-      @RpcIdConverter() JsonRpcId? id,
+      @RpcIdConverter() RpcId? id,
       @JsonKey(includeIfNull: false) Map<String, dynamic>? result,
       @JsonKey(includeIfNull: false) RpcError? error});
 
-  $JsonRpcIdCopyWith<$Res>? get id;
   $RpcErrorCopyWith<$Res>? get error;
 }
 
@@ -875,7 +312,7 @@ class _$JsonRpcResponseCopyWithImpl<$Res, $Val extends JsonRpcResponse>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as JsonRpcId?,
+              as RpcId?,
       result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -885,20 +322,6 @@ class _$JsonRpcResponseCopyWithImpl<$Res, $Val extends JsonRpcResponse>
           : error // ignore: cast_nullable_to_non_nullable
               as RpcError?,
     ) as $Val);
-  }
-
-  /// Create a copy of JsonRpcResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $JsonRpcIdCopyWith<$Res>? get id {
-    if (_value.id == null) {
-      return null;
-    }
-
-    return $JsonRpcIdCopyWith<$Res>(_value.id!, (value) {
-      return _then(_value.copyWith(id: value) as $Val);
-    });
   }
 
   /// Create a copy of JsonRpcResponse
@@ -926,12 +349,10 @@ abstract class _$$JsonRpcResponseImplCopyWith<$Res>
   @useResult
   $Res call(
       {String jsonrpc,
-      @RpcIdConverter() JsonRpcId? id,
+      @RpcIdConverter() RpcId? id,
       @JsonKey(includeIfNull: false) Map<String, dynamic>? result,
       @JsonKey(includeIfNull: false) RpcError? error});
 
-  @override
-  $JsonRpcIdCopyWith<$Res>? get id;
   @override
   $RpcErrorCopyWith<$Res>? get error;
 }
@@ -962,7 +383,7 @@ class __$$JsonRpcResponseImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as JsonRpcId?,
+              as RpcId?,
       result: freezed == result
           ? _value._result
           : result // ignore: cast_nullable_to_non_nullable
@@ -995,7 +416,7 @@ class _$JsonRpcResponseImpl extends _JsonRpcResponse {
   final String jsonrpc;
   @override
   @RpcIdConverter()
-  final JsonRpcId? id;
+  final RpcId? id;
   final Map<String, dynamic>? _result;
   @override
   @JsonKey(includeIfNull: false)
@@ -1052,7 +473,7 @@ class _$JsonRpcResponseImpl extends _JsonRpcResponse {
 abstract class _JsonRpcResponse extends JsonRpcResponse {
   factory _JsonRpcResponse(
           {final String jsonrpc,
-          @RpcIdConverter() final JsonRpcId? id,
+          @RpcIdConverter() final RpcId? id,
           @JsonKey(includeIfNull: false) final Map<String, dynamic>? result,
           @JsonKey(includeIfNull: false) final RpcError? error}) =
       _$JsonRpcResponseImpl;
@@ -1065,7 +486,7 @@ abstract class _JsonRpcResponse extends JsonRpcResponse {
   String get jsonrpc;
   @override
   @RpcIdConverter()
-  JsonRpcId? get id;
+  RpcId? get id;
   @override
   @JsonKey(includeIfNull: false)
   Map<String, dynamic>? get result;

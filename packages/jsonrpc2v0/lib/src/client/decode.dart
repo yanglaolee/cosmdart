@@ -4,7 +4,7 @@ import '../types/types.dart';
 
 // expectID null means no need to verify the response ID.
 JsonRpcResponse decodeJsonRpcResponse(String responseText,
-    {JsonRpcId? expectID}) {
+    {RpcId? expectID}) {
   final resp = JsonRpcResponse.fromJson(jsonDecode(responseText));
 
   if (expectID != null) {
@@ -20,7 +20,7 @@ JsonRpcResponse decodeJsonRpcResponse(String responseText,
 
 // List null means no need to verify the response IDs.
 List<JsonRpcResponse> decodeJsonRpcResponses(String responsesText,
-    {List<JsonRpcId?>? expectIDs}) {
+    {List<RpcId?>? expectIDs}) {
   final resps = (jsonDecode(responsesText) as List<dynamic>)
       .map((resp) => JsonRpcResponse.fromJson(resp))
       .toList();
@@ -34,6 +34,6 @@ List<JsonRpcResponse> decodeJsonRpcResponses(String responsesText,
   return resps;
 }
 
-bool _verifyRpcId(JsonRpcId? responseID, JsonRpcId? expectID) {
+bool _verifyRpcId(RpcId? responseID, RpcId? expectID) {
   return responseID == expectID;
 }

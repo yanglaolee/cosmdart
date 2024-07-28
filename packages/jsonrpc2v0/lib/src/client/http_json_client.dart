@@ -29,7 +29,7 @@ class HttpJsonClient implements HTTPClient {
   @override
   Future<JsonRpcResponse> call(String method,
       {Map<String, dynamic>? params, int timeoutSeconds = 10}) async {
-    final rpcID = JsonRpcId.intID(id: await nextRequestID());
+    final rpcID = RpcIntId(id: await nextRequestID());
 
     final requst = JsonRpcRequest(id: rpcID, method: method, params: params);
 
@@ -59,7 +59,7 @@ class HttpJsonClient implements HTTPClient {
   // SendBatch issues a batch POST HTTP request.
   Future<List<JsonRpcResponse>> sendBatch(List<JsonRpcRequest> requests,
       {int timeoutSeconds = 10}) async {
-    List<JsonRpcId?> ids = [];
+    List<RpcId?> ids = [];
     for (var req in requests) {
       ids.add(req.id);
     }

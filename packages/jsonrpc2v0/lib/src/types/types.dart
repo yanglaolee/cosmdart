@@ -4,27 +4,31 @@
 // https://wiki.geekdream.com/Specification/json-rpc_2.0.html
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'custom_converter.dart';
+import 'rpc_id_converter.dart';
 
 part 'types.freezed.dart';
 part 'types.g.dart';
 
 //===================JSON RPC 2.0 types definition=============================
-// TODO
-// Request Params and Response Result are both Map<String, dynamic> type.
-// Maybe need to define a custom type for Request Params and Response Result someday.
+
 
 // ----------------------------------------------------------------------------
 // JSON RPC ID
 
-@freezed
-sealed class JsonRpcId with _$JsonRpcId {
-  factory JsonRpcId.stringID({required String id}) = JsonRpcStringId;
-  factory JsonRpcId.intID({required int id}) = JsonRpcIntId;
-  factory JsonRpcId.nullID() = JsonRpcNullId;
+sealed class RpcId{}
 
-  factory JsonRpcId.fromJson(Map<String, dynamic> json) =>
-      _$JsonRpcIdFromJson(json);
+class RpcStringId extends RpcId{
+  final String id;
+  RpcStringId({required this.id});
+}
+
+class RpcIntId extends RpcId{
+  final int id;
+  RpcIntId({required this.id});
+}
+
+class RpcNullId extends RpcId{
+  RpcNullId();
 }
 
 // ----------------------------------------------------------------------------
@@ -34,9 +38,9 @@ sealed class JsonRpcId with _$JsonRpcId {
 class JsonRpcRequest with _$JsonRpcRequest {
   factory JsonRpcRequest(
           {@Default('2.0') String jsonrpc,
-          @RpcIdConverter() JsonRpcId? id,
+          @RpcIdConverter() RpcId? id,
           required String method,
-          @JsonKey(includeIfNull: false) Map<String, dynamic>? params}) =
+          @JsonKey(includeIfNull: true) Map<String, dynamic>? params}) =
       _JsonRpcRequest;
 
   factory JsonRpcRequest.fromJson(Map<String, dynamic> json) =>
@@ -53,7 +57,7 @@ class JsonRpcResponse with _$JsonRpcResponse{
   @JsonSerializable(explicitToJson: true)
   factory JsonRpcResponse(
           {@Default('2.0') String jsonrpc,
-          @RpcIdConverter() JsonRpcId? id,
+          @RpcIdConverter() RpcId? id,
           @JsonKey(includeIfNull: false) Map<String, dynamic>? result,
           @JsonKey(includeIfNull: false) RpcError? error}) =
       _JsonRpcResponse;

@@ -6,42 +6,6 @@ part of 'types.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$JsonRpcStringIdImpl _$$JsonRpcStringIdImplFromJson(
-        Map<String, dynamic> json) =>
-    _$JsonRpcStringIdImpl(
-      id: json['id'] as String,
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$JsonRpcStringIdImplToJson(
-        _$JsonRpcStringIdImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'runtimeType': instance.$type,
-    };
-
-_$JsonRpcIntIdImpl _$$JsonRpcIntIdImplFromJson(Map<String, dynamic> json) =>
-    _$JsonRpcIntIdImpl(
-      id: (json['id'] as num).toInt(),
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$JsonRpcIntIdImplToJson(_$JsonRpcIntIdImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'runtimeType': instance.$type,
-    };
-
-_$JsonRpcNullIdImpl _$$JsonRpcNullIdImplFromJson(Map<String, dynamic> json) =>
-    _$JsonRpcNullIdImpl(
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$JsonRpcNullIdImplToJson(_$JsonRpcNullIdImpl instance) =>
-    <String, dynamic>{
-      'runtimeType': instance.$type,
-    };
-
 _$JsonRpcRequestImpl _$$JsonRpcRequestImplFromJson(Map<String, dynamic> json) =>
     _$JsonRpcRequestImpl(
       jsonrpc: json['jsonrpc'] as String? ?? '2.0',
@@ -51,23 +15,14 @@ _$JsonRpcRequestImpl _$$JsonRpcRequestImplFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$JsonRpcRequestImplToJson(
-    _$JsonRpcRequestImpl instance) {
-  final val = <String, dynamic>{
-    'jsonrpc': instance.jsonrpc,
-    'id': _$JsonConverterToJson<dynamic, JsonRpcId>(
-        instance.id, const RpcIdConverter().toJson),
-    'method': instance.method,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('params', instance.params);
-  return val;
-}
+        _$JsonRpcRequestImpl instance) =>
+    <String, dynamic>{
+      'jsonrpc': instance.jsonrpc,
+      'id': _$JsonConverterToJson<dynamic, RpcId>(
+          instance.id, const RpcIdConverter().toJson),
+      'method': instance.method,
+      'params': instance.params,
+    };
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
@@ -90,7 +45,7 @@ Map<String, dynamic> _$$JsonRpcResponseImplToJson(
     _$JsonRpcResponseImpl instance) {
   final val = <String, dynamic>{
     'jsonrpc': instance.jsonrpc,
-    'id': _$JsonConverterToJson<dynamic, JsonRpcId>(
+    'id': _$JsonConverterToJson<dynamic, RpcId>(
         instance.id, const RpcIdConverter().toJson),
   };
 

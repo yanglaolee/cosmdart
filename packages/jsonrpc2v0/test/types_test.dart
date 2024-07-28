@@ -97,13 +97,13 @@ void main() {
   });
 
   group('JSON RPC 2.0 Request Serialization without Params', () {
-    checkJsonRpcId(JsonRpcId? rpcID, dynamic expectValue) {
+    checkJsonRpcId(RpcId? rpcID, dynamic expectValue) {
       switch (rpcID) {
-        case JsonRpcIntId(:final id):
+        case RpcIntId(:final id):
           expect(id, expectValue);
-        case JsonRpcStringId(:final id):
+        case RpcStringId(:final id):
           expect(id, expectValue);
-        case JsonRpcNullId():
+        case RpcNullId():
           expect(expectValue, null);
         default:
           fail('Invalid RPC ID Type');
@@ -217,40 +217,40 @@ void main() {
       final intId0 = Map<String, dynamic>.from(
           {"jsonrpc": "2.0", "id": 0, "method": "test"});
       var temp =
-          JsonRpcRequest(id: JsonRpcIntId(id: 0), method: 'test').toJson();
+          JsonRpcRequest(id: RpcIntId(id: 0), method: 'test').toJson();
       expect(intId0, temp);
 
       final intId99 = Map<String, dynamic>.from(
           {"jsonrpc": "2.0", "id": 99, "method": "test"});
-      temp = JsonRpcRequest(id: JsonRpcIntId(id: 99), method: 'test').toJson();
+      temp = JsonRpcRequest(id: RpcIntId(id: 99), method: 'test').toJson();
       expect(intId99, temp);
 
       final intIdN99 = Map<String, dynamic>.from(
           {"jsonrpc": "2.0", "id": -99, "method": "test"});
-      temp = JsonRpcRequest(id: JsonRpcIntId(id: -99), method: 'test').toJson();
+      temp = JsonRpcRequest(id: RpcIntId(id: -99), method: 'test').toJson();
       expect(intIdN99, temp);
 
       final stringId0 = Map<String, dynamic>.from(
           {"jsonrpc": "2.0", "id": "0", "method": "test"});
       temp =
-          JsonRpcRequest(id: JsonRpcStringId(id: "0"), method: 'test').toJson();
+          JsonRpcRequest(id: RpcStringId(id: "0"), method: 'test').toJson();
       expect(stringId0, temp);
 
       final stringId99 = Map<String, dynamic>.from(
           {"jsonrpc": "2.0", "id": "99", "method": "test"});
-      temp = JsonRpcRequest(id: JsonRpcStringId(id: "99"), method: 'test')
+      temp = JsonRpcRequest(id: RpcStringId(id: "99"), method: 'test')
           .toJson();
       expect(stringId99, temp);
 
       final stringIdN99 = Map<String, dynamic>.from(
           {"jsonrpc": "2.0", "id": "-99", "method": "test"});
-      temp = JsonRpcRequest(id: JsonRpcStringId(id: "-99"), method: 'test')
+      temp = JsonRpcRequest(id: RpcStringId(id: "-99"), method: 'test')
           .toJson();
       expect(stringIdN99, temp);
 
       final nullId = Map<String, dynamic>.from(
           {"jsonrpc": "2.0", "id": null, "method": "test"});
-      temp = JsonRpcRequest(id: JsonRpcNullId(), method: 'test').toJson();
+      temp = JsonRpcRequest(id: RpcNullId(), method: 'test').toJson();
       expect(nullId, temp);
     });
   });

@@ -14,7 +14,7 @@ void main() {
 
       if (respone.isSuccess) {
         expect(respone.jsonrpc, '2.0');
-        expect(respone.id, JsonRpcId.intID(id: -1));
+        expect(respone.id, RpcIntId(id: -1));
       }
     });
 
@@ -29,7 +29,7 @@ void main() {
 
       if (respone.isSuccess) {
         expect(respone.jsonrpc, '2.0');
-        expect(respone.id, JsonRpcId.intID(id: -1));
+        expect(respone.id, RpcIntId(id: -1));
       }
     });
 
@@ -44,7 +44,7 @@ void main() {
 
       if (respone.isSuccess) {
         expect(respone.jsonrpc, '2.0');
-        expect(respone.id, JsonRpcId.intID(id: -1));
+        expect(respone.id, RpcIntId(id: -1));
       }
     });
   });

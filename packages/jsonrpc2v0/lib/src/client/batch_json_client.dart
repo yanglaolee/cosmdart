@@ -20,7 +20,7 @@ class BatchJsonClient extends HttpJsonClient {
   // enqueues a call request onto the Send queue
   Future<void> addCall(String method, {Map<String, dynamic>? params}) async{
     var request = JsonRpcRequest(
-        id: JsonRpcId.intID(id: await super.nextRequestID()),
+        id: RpcIntId(id: await super.nextRequestID()),
         method: method,
         params: params);
     _requests.add(request);

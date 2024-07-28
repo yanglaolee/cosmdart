@@ -7,7 +7,7 @@ import 'encode.dart';
 import 'parsed_url.dart' show ParsedURL;
 import 'http_client_interface.dart' show HTTPClient;
 
-final _httpUriClientRequestID = JsonRpcId.intID(id: -1);
+final _httpUriClientRequestID = RpcIntId(id: -1);
 
 class HttpUriClient implements HTTPClient {
   late String address;

@@ -8,7 +8,7 @@ abstract interface class HTTPClient {
   // 
   // Why not return RPC `Result` directly?
   // Because this library is mainly used with Flutter, 
-  // it returns `Response` which may contain error information, 
+  // it returns `Response` which may contain error information from server, 
   // allowing package users to decide how to handle the error, such as displaying it on the screen.
   Future<JsonRpcResponse> call(String method, {Map<String, dynamic>? params, int timeoutSeconds});
 }
