@@ -5210,13 +5210,14 @@ ResultUnconfirmedTxs _$ResultUnconfirmedTxsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ResultUnconfirmedTxs {
   @JsonKey(name: 'n_txs')
-  int? get nTxs => throw _privateConstructorUsedError;
+  String? get nTxs => throw _privateConstructorUsedError;
   @JsonKey(name: 'total')
-  int? get total => throw _privateConstructorUsedError;
+  String? get total => throw _privateConstructorUsedError;
   @JsonKey(name: 'total_bytes')
-  int? get totalBytes => throw _privateConstructorUsedError;
-  @JsonKey(name: 'txs')
-  List<List<int>>? get txs => throw _privateConstructorUsedError;
+  String? get totalBytes => throw _privateConstructorUsedError;
+  @JsonKey(name: 'txs', includeIfNull: true)
+  @TxsConverter()
+  List<Uint8List>? get txs => throw _privateConstructorUsedError;
 
   /// Serializes this ResultUnconfirmedTxs to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -5235,10 +5236,12 @@ abstract class $ResultUnconfirmedTxsCopyWith<$Res> {
       _$ResultUnconfirmedTxsCopyWithImpl<$Res, ResultUnconfirmedTxs>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'n_txs') int? nTxs,
-      @JsonKey(name: 'total') int? total,
-      @JsonKey(name: 'total_bytes') int? totalBytes,
-      @JsonKey(name: 'txs') List<List<int>>? txs});
+      {@JsonKey(name: 'n_txs') String? nTxs,
+      @JsonKey(name: 'total') String? total,
+      @JsonKey(name: 'total_bytes') String? totalBytes,
+      @JsonKey(name: 'txs', includeIfNull: true)
+      @TxsConverter()
+      List<Uint8List>? txs});
 }
 
 /// @nodoc
@@ -5266,19 +5269,19 @@ class _$ResultUnconfirmedTxsCopyWithImpl<$Res,
       nTxs: freezed == nTxs
           ? _value.nTxs
           : nTxs // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       totalBytes: freezed == totalBytes
           ? _value.totalBytes
           : totalBytes // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       txs: freezed == txs
           ? _value.txs
           : txs // ignore: cast_nullable_to_non_nullable
-              as List<List<int>>?,
+              as List<Uint8List>?,
     ) as $Val);
   }
 }
@@ -5292,10 +5295,12 @@ abstract class _$$ResultUnconfirmedTxsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'n_txs') int? nTxs,
-      @JsonKey(name: 'total') int? total,
-      @JsonKey(name: 'total_bytes') int? totalBytes,
-      @JsonKey(name: 'txs') List<List<int>>? txs});
+      {@JsonKey(name: 'n_txs') String? nTxs,
+      @JsonKey(name: 'total') String? total,
+      @JsonKey(name: 'total_bytes') String? totalBytes,
+      @JsonKey(name: 'txs', includeIfNull: true)
+      @TxsConverter()
+      List<Uint8List>? txs});
 }
 
 /// @nodoc
@@ -5320,19 +5325,19 @@ class __$$ResultUnconfirmedTxsImplCopyWithImpl<$Res>
       nTxs: freezed == nTxs
           ? _value.nTxs
           : nTxs // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       totalBytes: freezed == totalBytes
           ? _value.totalBytes
           : totalBytes // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       txs: freezed == txs
           ? _value._txs
           : txs // ignore: cast_nullable_to_non_nullable
-              as List<List<int>>?,
+              as List<Uint8List>?,
     ));
   }
 }
@@ -5344,7 +5349,9 @@ class _$ResultUnconfirmedTxsImpl implements _ResultUnconfirmedTxs {
       {@JsonKey(name: 'n_txs') this.nTxs,
       @JsonKey(name: 'total') this.total,
       @JsonKey(name: 'total_bytes') this.totalBytes,
-      @JsonKey(name: 'txs') final List<List<int>>? txs})
+      @JsonKey(name: 'txs', includeIfNull: true)
+      @TxsConverter()
+      final List<Uint8List>? txs})
       : _txs = txs;
 
   factory _$ResultUnconfirmedTxsImpl.fromJson(Map<String, dynamic> json) =>
@@ -5352,17 +5359,18 @@ class _$ResultUnconfirmedTxsImpl implements _ResultUnconfirmedTxs {
 
   @override
   @JsonKey(name: 'n_txs')
-  final int? nTxs;
+  final String? nTxs;
   @override
   @JsonKey(name: 'total')
-  final int? total;
+  final String? total;
   @override
   @JsonKey(name: 'total_bytes')
-  final int? totalBytes;
-  final List<List<int>>? _txs;
+  final String? totalBytes;
+  final List<Uint8List>? _txs;
   @override
-  @JsonKey(name: 'txs')
-  List<List<int>>? get txs {
+  @JsonKey(name: 'txs', includeIfNull: true)
+  @TxsConverter()
+  List<Uint8List>? get txs {
     final value = _txs;
     if (value == null) return null;
     if (_txs is EqualUnmodifiableListView) return _txs;
@@ -5412,27 +5420,29 @@ class _$ResultUnconfirmedTxsImpl implements _ResultUnconfirmedTxs {
 
 abstract class _ResultUnconfirmedTxs implements ResultUnconfirmedTxs {
   factory _ResultUnconfirmedTxs(
-          {@JsonKey(name: 'n_txs') final int? nTxs,
-          @JsonKey(name: 'total') final int? total,
-          @JsonKey(name: 'total_bytes') final int? totalBytes,
-          @JsonKey(name: 'txs') final List<List<int>>? txs}) =
-      _$ResultUnconfirmedTxsImpl;
+      {@JsonKey(name: 'n_txs') final String? nTxs,
+      @JsonKey(name: 'total') final String? total,
+      @JsonKey(name: 'total_bytes') final String? totalBytes,
+      @JsonKey(name: 'txs', includeIfNull: true)
+      @TxsConverter()
+      final List<Uint8List>? txs}) = _$ResultUnconfirmedTxsImpl;
 
   factory _ResultUnconfirmedTxs.fromJson(Map<String, dynamic> json) =
       _$ResultUnconfirmedTxsImpl.fromJson;
 
   @override
   @JsonKey(name: 'n_txs')
-  int? get nTxs;
+  String? get nTxs;
   @override
   @JsonKey(name: 'total')
-  int? get total;
+  String? get total;
   @override
   @JsonKey(name: 'total_bytes')
-  int? get totalBytes;
+  String? get totalBytes;
   @override
-  @JsonKey(name: 'txs')
-  List<List<int>>? get txs;
+  @JsonKey(name: 'txs', includeIfNull: true)
+  @TxsConverter()
+  List<Uint8List>? get txs;
 
   /// Create a copy of ResultUnconfirmedTxs
   /// with the given fields replaced by the non-null parameter values.
@@ -5442,171 +5452,351 @@ abstract class _ResultUnconfirmedTxs implements ResultUnconfirmedTxs {
       get copyWith => throw _privateConstructorUsedError;
 }
 
-ResultBroadcastEvidence _$ResultBroadcastEvidenceFromJson(
-    Map<String, dynamic> json) {
-  return _ResultBroadcastEvidence.fromJson(json);
+ResultCheckTx _$ResultCheckTxFromJson(Map<String, dynamic> json) {
+  return _ResultCheckTx.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ResultBroadcastEvidence {
-  @JsonKey(name: 'hash')
-  List<int>? get hash => throw _privateConstructorUsedError;
+mixin _$ResultCheckTx {
+  @JsonKey(name: 'code', includeIfNull: false)
+  int? get code => throw _privateConstructorUsedError;
+  @JsonKey(name: 'data', includeIfNull: false)
+  @Base64Converter()
+  Uint8List? get data => throw _privateConstructorUsedError;
+  @JsonKey(name: 'log', includeIfNull: false)
+  String? get log => throw _privateConstructorUsedError;
+  @JsonKey(name: 'info', includeIfNull: false)
+  String? get info => throw _privateConstructorUsedError;
+  @JsonKey(name: 'gas_wanted', includeIfNull: false)
+  String? get gasWanted => throw _privateConstructorUsedError;
+  @JsonKey(name: 'gas_used', includeIfNull: false)
+  String? get gasUsed => throw _privateConstructorUsedError;
+  @JsonKey(name: 'events', includeIfNull: false)
+  List<Event>? get events => throw _privateConstructorUsedError;
+  @JsonKey(name: 'codespace', includeIfNull: false)
+  String? get codespace => throw _privateConstructorUsedError;
 
-  /// Serializes this ResultBroadcastEvidence to a JSON map.
+  /// Serializes this ResultCheckTx to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of ResultBroadcastEvidence
+  /// Create a copy of ResultCheckTx
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ResultBroadcastEvidenceCopyWith<ResultBroadcastEvidence> get copyWith =>
+  $ResultCheckTxCopyWith<ResultCheckTx> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ResultBroadcastEvidenceCopyWith<$Res> {
-  factory $ResultBroadcastEvidenceCopyWith(ResultBroadcastEvidence value,
-          $Res Function(ResultBroadcastEvidence) then) =
-      _$ResultBroadcastEvidenceCopyWithImpl<$Res, ResultBroadcastEvidence>;
+abstract class $ResultCheckTxCopyWith<$Res> {
+  factory $ResultCheckTxCopyWith(
+          ResultCheckTx value, $Res Function(ResultCheckTx) then) =
+      _$ResultCheckTxCopyWithImpl<$Res, ResultCheckTx>;
   @useResult
-  $Res call({@JsonKey(name: 'hash') List<int>? hash});
+  $Res call(
+      {@JsonKey(name: 'code', includeIfNull: false) int? code,
+      @JsonKey(name: 'data', includeIfNull: false)
+      @Base64Converter()
+      Uint8List? data,
+      @JsonKey(name: 'log', includeIfNull: false) String? log,
+      @JsonKey(name: 'info', includeIfNull: false) String? info,
+      @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
+      @JsonKey(name: 'gas_used', includeIfNull: false) String? gasUsed,
+      @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
+      @JsonKey(name: 'codespace', includeIfNull: false) String? codespace});
 }
 
 /// @nodoc
-class _$ResultBroadcastEvidenceCopyWithImpl<$Res,
-        $Val extends ResultBroadcastEvidence>
-    implements $ResultBroadcastEvidenceCopyWith<$Res> {
-  _$ResultBroadcastEvidenceCopyWithImpl(this._value, this._then);
+class _$ResultCheckTxCopyWithImpl<$Res, $Val extends ResultCheckTx>
+    implements $ResultCheckTxCopyWith<$Res> {
+  _$ResultCheckTxCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ResultBroadcastEvidence
+  /// Create a copy of ResultCheckTx
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? hash = freezed,
+    Object? code = freezed,
+    Object? data = freezed,
+    Object? log = freezed,
+    Object? info = freezed,
+    Object? gasWanted = freezed,
+    Object? gasUsed = freezed,
+    Object? events = freezed,
+    Object? codespace = freezed,
   }) {
     return _then(_value.copyWith(
-      hash: freezed == hash
-          ? _value.hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+      code: freezed == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as int?,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
+      log: freezed == log
+          ? _value.log
+          : log // ignore: cast_nullable_to_non_nullable
+              as String?,
+      info: freezed == info
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gasWanted: freezed == gasWanted
+          ? _value.gasWanted
+          : gasWanted // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gasUsed: freezed == gasUsed
+          ? _value.gasUsed
+          : gasUsed // ignore: cast_nullable_to_non_nullable
+              as String?,
+      events: freezed == events
+          ? _value.events
+          : events // ignore: cast_nullable_to_non_nullable
+              as List<Event>?,
+      codespace: freezed == codespace
+          ? _value.codespace
+          : codespace // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$ResultBroadcastEvidenceImplCopyWith<$Res>
-    implements $ResultBroadcastEvidenceCopyWith<$Res> {
-  factory _$$ResultBroadcastEvidenceImplCopyWith(
-          _$ResultBroadcastEvidenceImpl value,
-          $Res Function(_$ResultBroadcastEvidenceImpl) then) =
-      __$$ResultBroadcastEvidenceImplCopyWithImpl<$Res>;
+abstract class _$$ResultCheckTxImplCopyWith<$Res>
+    implements $ResultCheckTxCopyWith<$Res> {
+  factory _$$ResultCheckTxImplCopyWith(
+          _$ResultCheckTxImpl value, $Res Function(_$ResultCheckTxImpl) then) =
+      __$$ResultCheckTxImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'hash') List<int>? hash});
+  $Res call(
+      {@JsonKey(name: 'code', includeIfNull: false) int? code,
+      @JsonKey(name: 'data', includeIfNull: false)
+      @Base64Converter()
+      Uint8List? data,
+      @JsonKey(name: 'log', includeIfNull: false) String? log,
+      @JsonKey(name: 'info', includeIfNull: false) String? info,
+      @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
+      @JsonKey(name: 'gas_used', includeIfNull: false) String? gasUsed,
+      @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
+      @JsonKey(name: 'codespace', includeIfNull: false) String? codespace});
 }
 
 /// @nodoc
-class __$$ResultBroadcastEvidenceImplCopyWithImpl<$Res>
-    extends _$ResultBroadcastEvidenceCopyWithImpl<$Res,
-        _$ResultBroadcastEvidenceImpl>
-    implements _$$ResultBroadcastEvidenceImplCopyWith<$Res> {
-  __$$ResultBroadcastEvidenceImplCopyWithImpl(
-      _$ResultBroadcastEvidenceImpl _value,
-      $Res Function(_$ResultBroadcastEvidenceImpl) _then)
+class __$$ResultCheckTxImplCopyWithImpl<$Res>
+    extends _$ResultCheckTxCopyWithImpl<$Res, _$ResultCheckTxImpl>
+    implements _$$ResultCheckTxImplCopyWith<$Res> {
+  __$$ResultCheckTxImplCopyWithImpl(
+      _$ResultCheckTxImpl _value, $Res Function(_$ResultCheckTxImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ResultBroadcastEvidence
+  /// Create a copy of ResultCheckTx
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? hash = freezed,
+    Object? code = freezed,
+    Object? data = freezed,
+    Object? log = freezed,
+    Object? info = freezed,
+    Object? gasWanted = freezed,
+    Object? gasUsed = freezed,
+    Object? events = freezed,
+    Object? codespace = freezed,
   }) {
-    return _then(_$ResultBroadcastEvidenceImpl(
-      hash: freezed == hash
-          ? _value._hash
-          : hash // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+    return _then(_$ResultCheckTxImpl(
+      code: freezed == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as int?,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
+      log: freezed == log
+          ? _value.log
+          : log // ignore: cast_nullable_to_non_nullable
+              as String?,
+      info: freezed == info
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gasWanted: freezed == gasWanted
+          ? _value.gasWanted
+          : gasWanted // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gasUsed: freezed == gasUsed
+          ? _value.gasUsed
+          : gasUsed // ignore: cast_nullable_to_non_nullable
+              as String?,
+      events: freezed == events
+          ? _value._events
+          : events // ignore: cast_nullable_to_non_nullable
+              as List<Event>?,
+      codespace: freezed == codespace
+          ? _value.codespace
+          : codespace // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$ResultBroadcastEvidenceImpl implements _ResultBroadcastEvidence {
-  _$ResultBroadcastEvidenceImpl({@JsonKey(name: 'hash') final List<int>? hash})
-      : _hash = hash;
 
-  factory _$ResultBroadcastEvidenceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ResultBroadcastEvidenceImplFromJson(json);
+@JsonSerializable(explicitToJson: true)
+class _$ResultCheckTxImpl implements _ResultCheckTx {
+  _$ResultCheckTxImpl(
+      {@JsonKey(name: 'code', includeIfNull: false) this.code,
+      @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() this.data,
+      @JsonKey(name: 'log', includeIfNull: false) this.log,
+      @JsonKey(name: 'info', includeIfNull: false) this.info,
+      @JsonKey(name: 'gas_wanted', includeIfNull: false) this.gasWanted,
+      @JsonKey(name: 'gas_used', includeIfNull: false) this.gasUsed,
+      @JsonKey(name: 'events', includeIfNull: false) final List<Event>? events,
+      @JsonKey(name: 'codespace', includeIfNull: false) this.codespace})
+      : _events = events;
 
-  final List<int>? _hash;
+  factory _$ResultCheckTxImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResultCheckTxImplFromJson(json);
+
   @override
-  @JsonKey(name: 'hash')
-  List<int>? get hash {
-    final value = _hash;
+  @JsonKey(name: 'code', includeIfNull: false)
+  final int? code;
+  @override
+  @JsonKey(name: 'data', includeIfNull: false)
+  @Base64Converter()
+  final Uint8List? data;
+  @override
+  @JsonKey(name: 'log', includeIfNull: false)
+  final String? log;
+  @override
+  @JsonKey(name: 'info', includeIfNull: false)
+  final String? info;
+  @override
+  @JsonKey(name: 'gas_wanted', includeIfNull: false)
+  final String? gasWanted;
+  @override
+  @JsonKey(name: 'gas_used', includeIfNull: false)
+  final String? gasUsed;
+  final List<Event>? _events;
+  @override
+  @JsonKey(name: 'events', includeIfNull: false)
+  List<Event>? get events {
+    final value = _events;
     if (value == null) return null;
-    if (_hash is EqualUnmodifiableListView) return _hash;
+    if (_events is EqualUnmodifiableListView) return _events;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
 
   @override
+  @JsonKey(name: 'codespace', includeIfNull: false)
+  final String? codespace;
+
+  @override
   String toString() {
-    return 'ResultBroadcastEvidence(hash: $hash)';
+    return 'ResultCheckTx(code: $code, data: $data, log: $log, info: $info, gasWanted: $gasWanted, gasUsed: $gasUsed, events: $events, codespace: $codespace)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResultBroadcastEvidenceImpl &&
-            const DeepCollectionEquality().equals(other._hash, _hash));
+            other is _$ResultCheckTxImpl &&
+            (identical(other.code, code) || other.code == code) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.log, log) || other.log == log) &&
+            (identical(other.info, info) || other.info == info) &&
+            (identical(other.gasWanted, gasWanted) ||
+                other.gasWanted == gasWanted) &&
+            (identical(other.gasUsed, gasUsed) || other.gasUsed == gasUsed) &&
+            const DeepCollectionEquality().equals(other._events, _events) &&
+            (identical(other.codespace, codespace) ||
+                other.codespace == codespace));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_hash));
+  int get hashCode => Object.hash(
+      runtimeType,
+      code,
+      const DeepCollectionEquality().hash(data),
+      log,
+      info,
+      gasWanted,
+      gasUsed,
+      const DeepCollectionEquality().hash(_events),
+      codespace);
 
-  /// Create a copy of ResultBroadcastEvidence
+  /// Create a copy of ResultCheckTx
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ResultBroadcastEvidenceImplCopyWith<_$ResultBroadcastEvidenceImpl>
-      get copyWith => __$$ResultBroadcastEvidenceImplCopyWithImpl<
-          _$ResultBroadcastEvidenceImpl>(this, _$identity);
+  _$$ResultCheckTxImplCopyWith<_$ResultCheckTxImpl> get copyWith =>
+      __$$ResultCheckTxImplCopyWithImpl<_$ResultCheckTxImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ResultBroadcastEvidenceImplToJson(
+    return _$$ResultCheckTxImplToJson(
       this,
     );
   }
 }
 
-abstract class _ResultBroadcastEvidence implements ResultBroadcastEvidence {
-  factory _ResultBroadcastEvidence(
-          {@JsonKey(name: 'hash') final List<int>? hash}) =
-      _$ResultBroadcastEvidenceImpl;
+abstract class _ResultCheckTx implements ResultCheckTx {
+  factory _ResultCheckTx(
+      {@JsonKey(name: 'code', includeIfNull: false) final int? code,
+      @JsonKey(name: 'data', includeIfNull: false)
+      @Base64Converter()
+      final Uint8List? data,
+      @JsonKey(name: 'log', includeIfNull: false) final String? log,
+      @JsonKey(name: 'info', includeIfNull: false) final String? info,
+      @JsonKey(name: 'gas_wanted', includeIfNull: false)
+      final String? gasWanted,
+      @JsonKey(name: 'gas_used', includeIfNull: false) final String? gasUsed,
+      @JsonKey(name: 'events', includeIfNull: false) final List<Event>? events,
+      @JsonKey(name: 'codespace', includeIfNull: false)
+      final String? codespace}) = _$ResultCheckTxImpl;
 
-  factory _ResultBroadcastEvidence.fromJson(Map<String, dynamic> json) =
-      _$ResultBroadcastEvidenceImpl.fromJson;
+  factory _ResultCheckTx.fromJson(Map<String, dynamic> json) =
+      _$ResultCheckTxImpl.fromJson;
 
   @override
-  @JsonKey(name: 'hash')
-  List<int>? get hash;
+  @JsonKey(name: 'code', includeIfNull: false)
+  int? get code;
+  @override
+  @JsonKey(name: 'data', includeIfNull: false)
+  @Base64Converter()
+  Uint8List? get data;
+  @override
+  @JsonKey(name: 'log', includeIfNull: false)
+  String? get log;
+  @override
+  @JsonKey(name: 'info', includeIfNull: false)
+  String? get info;
+  @override
+  @JsonKey(name: 'gas_wanted', includeIfNull: false)
+  String? get gasWanted;
+  @override
+  @JsonKey(name: 'gas_used', includeIfNull: false)
+  String? get gasUsed;
+  @override
+  @JsonKey(name: 'events', includeIfNull: false)
+  List<Event>? get events;
+  @override
+  @JsonKey(name: 'codespace', includeIfNull: false)
+  String? get codespace;
 
-  /// Create a copy of ResultBroadcastEvidence
+  /// Create a copy of ResultCheckTx
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ResultBroadcastEvidenceImplCopyWith<_$ResultBroadcastEvidenceImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$ResultCheckTxImplCopyWith<_$ResultCheckTxImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

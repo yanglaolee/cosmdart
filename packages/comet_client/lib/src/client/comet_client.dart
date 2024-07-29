@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:jsonrpc2v0/jsonrpc2v0.dart' as jsonrpc;
-import 'package:comet_client/rpc_types.dart';
+import 'package:comet_client/types.dart';
 
 import 'comet_interface.dart';
 

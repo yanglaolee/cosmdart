@@ -15,14 +15,23 @@ _$JsonRpcRequestImpl _$$JsonRpcRequestImplFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$$JsonRpcRequestImplToJson(
-        _$JsonRpcRequestImpl instance) =>
-    <String, dynamic>{
-      'jsonrpc': instance.jsonrpc,
-      'id': _$JsonConverterToJson<dynamic, RpcId>(
-          instance.id, const RpcIdConverter().toJson),
-      'method': instance.method,
-      'params': instance.params,
-    };
+    _$JsonRpcRequestImpl instance) {
+  final val = <String, dynamic>{
+    'jsonrpc': instance.jsonrpc,
+    'id': _$JsonConverterToJson<dynamic, RpcId>(
+        instance.id, const RpcIdConverter().toJson),
+    'method': instance.method,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('params', instance.params);
+  return val;
+}
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
@@ -42,23 +51,14 @@ _$JsonRpcResponseImpl _$$JsonRpcResponseImplFromJson(
     );
 
 Map<String, dynamic> _$$JsonRpcResponseImplToJson(
-    _$JsonRpcResponseImpl instance) {
-  final val = <String, dynamic>{
-    'jsonrpc': instance.jsonrpc,
-    'id': _$JsonConverterToJson<dynamic, RpcId>(
-        instance.id, const RpcIdConverter().toJson),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('result', instance.result);
-  writeNotNull('error', instance.error?.toJson());
-  return val;
-}
+        _$JsonRpcResponseImpl instance) =>
+    <String, dynamic>{
+      'jsonrpc': instance.jsonrpc,
+      'id': _$JsonConverterToJson<dynamic, RpcId>(
+          instance.id, const RpcIdConverter().toJson),
+      'result': instance.result,
+      'error': instance.error?.toJson(),
+    };
 
 _$RpcErrorImpl _$$RpcErrorImplFromJson(Map<String, dynamic> json) =>
     _$RpcErrorImpl(

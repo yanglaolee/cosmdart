@@ -6,6 +6,9 @@ import '../types/types.dart' show JsonRpcResponse;
 abstract interface class HTTPClient {
   // Call calls the given method with the params and returns a Json RPC response.
   // 
+  // @params null means this RPC call does not have any parameters,
+  // won't include in RPC request params feild in JSON string.
+  // 
   // Why not return RPC `Result` directly?
   // Because this library is mainly used with Flutter, 
   // it returns `Response` which may contain error information from server, 

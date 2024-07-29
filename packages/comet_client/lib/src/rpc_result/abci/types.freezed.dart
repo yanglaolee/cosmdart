@@ -295,15 +295,15 @@ mixin _$ResponseQuery {
   @JsonKey(name: 'info', includeIfNull: false)
   String? get info => throw _privateConstructorUsedError;
   @JsonKey(name: 'index', includeIfNull: false)
-  int? get index => throw _privateConstructorUsedError;
+  String? get index => throw _privateConstructorUsedError;
   @JsonKey(name: 'key', includeIfNull: false)
-  List<int>? get key => throw _privateConstructorUsedError;
+  String? get key => throw _privateConstructorUsedError;
   @JsonKey(name: 'value', includeIfNull: false)
-  List<int>? get value => throw _privateConstructorUsedError;
+  String? get value => throw _privateConstructorUsedError;
   @JsonKey(name: 'proof_ops', includeIfNull: false)
   ProofOps? get proofOps => throw _privateConstructorUsedError;
   @JsonKey(name: 'height', includeIfNull: false)
-  int? get height => throw _privateConstructorUsedError;
+  String? get height => throw _privateConstructorUsedError;
   @JsonKey(name: 'codespace', includeIfNull: false)
   String? get codespace => throw _privateConstructorUsedError;
 
@@ -327,11 +327,11 @@ abstract class $ResponseQueryCopyWith<$Res> {
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
-      @JsonKey(name: 'index', includeIfNull: false) int? index,
-      @JsonKey(name: 'key', includeIfNull: false) List<int>? key,
-      @JsonKey(name: 'value', includeIfNull: false) List<int>? value,
+      @JsonKey(name: 'index', includeIfNull: false) String? index,
+      @JsonKey(name: 'key', includeIfNull: false) String? key,
+      @JsonKey(name: 'value', includeIfNull: false) String? value,
       @JsonKey(name: 'proof_ops', includeIfNull: false) ProofOps? proofOps,
-      @JsonKey(name: 'height', includeIfNull: false) int? height,
+      @JsonKey(name: 'height', includeIfNull: false) String? height,
       @JsonKey(name: 'codespace', includeIfNull: false) String? codespace});
 
   $ProofOpsCopyWith<$Res>? get proofOps;
@@ -378,15 +378,15 @@ class _$ResponseQueryCopyWithImpl<$Res, $Val extends ResponseQuery>
       index: freezed == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       proofOps: freezed == proofOps
           ? _value.proofOps
           : proofOps // ignore: cast_nullable_to_non_nullable
@@ -394,7 +394,7 @@ class _$ResponseQueryCopyWithImpl<$Res, $Val extends ResponseQuery>
       height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       codespace: freezed == codespace
           ? _value.codespace
           : codespace // ignore: cast_nullable_to_non_nullable
@@ -429,11 +429,11 @@ abstract class _$$ResponseQueryImplCopyWith<$Res>
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
-      @JsonKey(name: 'index', includeIfNull: false) int? index,
-      @JsonKey(name: 'key', includeIfNull: false) List<int>? key,
-      @JsonKey(name: 'value', includeIfNull: false) List<int>? value,
+      @JsonKey(name: 'index', includeIfNull: false) String? index,
+      @JsonKey(name: 'key', includeIfNull: false) String? key,
+      @JsonKey(name: 'value', includeIfNull: false) String? value,
       @JsonKey(name: 'proof_ops', includeIfNull: false) ProofOps? proofOps,
-      @JsonKey(name: 'height', includeIfNull: false) int? height,
+      @JsonKey(name: 'height', includeIfNull: false) String? height,
       @JsonKey(name: 'codespace', includeIfNull: false) String? codespace});
 
   @override
@@ -479,15 +479,15 @@ class __$$ResponseQueryImplCopyWithImpl<$Res>
       index: freezed == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       key: freezed == key
-          ? _value._key
+          ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       value: freezed == value
-          ? _value._value
+          ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       proofOps: freezed == proofOps
           ? _value.proofOps
           : proofOps // ignore: cast_nullable_to_non_nullable
@@ -495,7 +495,7 @@ class __$$ResponseQueryImplCopyWithImpl<$Res>
       height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       codespace: freezed == codespace
           ? _value.codespace
           : codespace // ignore: cast_nullable_to_non_nullable
@@ -513,13 +513,11 @@ class _$ResponseQueryImpl implements _ResponseQuery {
       @JsonKey(name: 'log', includeIfNull: false) this.log,
       @JsonKey(name: 'info', includeIfNull: false) this.info,
       @JsonKey(name: 'index', includeIfNull: false) this.index,
-      @JsonKey(name: 'key', includeIfNull: false) final List<int>? key,
-      @JsonKey(name: 'value', includeIfNull: false) final List<int>? value,
+      @JsonKey(name: 'key', includeIfNull: false) this.key,
+      @JsonKey(name: 'value', includeIfNull: false) this.value,
       @JsonKey(name: 'proof_ops', includeIfNull: false) this.proofOps,
       @JsonKey(name: 'height', includeIfNull: false) this.height,
-      @JsonKey(name: 'codespace', includeIfNull: false) this.codespace})
-      : _key = key,
-        _value = value;
+      @JsonKey(name: 'codespace', includeIfNull: false) this.codespace});
 
   factory _$ResponseQueryImpl.fromJson(Map<String, dynamic> json) =>
       _$$ResponseQueryImplFromJson(json);
@@ -535,35 +533,19 @@ class _$ResponseQueryImpl implements _ResponseQuery {
   final String? info;
   @override
   @JsonKey(name: 'index', includeIfNull: false)
-  final int? index;
-  final List<int>? _key;
+  final String? index;
   @override
   @JsonKey(name: 'key', includeIfNull: false)
-  List<int>? get key {
-    final value = _key;
-    if (value == null) return null;
-    if (_key is EqualUnmodifiableListView) return _key;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<int>? _value;
+  final String? key;
   @override
   @JsonKey(name: 'value', includeIfNull: false)
-  List<int>? get value {
-    final value = _value;
-    if (value == null) return null;
-    if (_value is EqualUnmodifiableListView) return _value;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  final String? value;
   @override
   @JsonKey(name: 'proof_ops', includeIfNull: false)
   final ProofOps? proofOps;
   @override
   @JsonKey(name: 'height', includeIfNull: false)
-  final int? height;
+  final String? height;
   @override
   @JsonKey(name: 'codespace', includeIfNull: false)
   final String? codespace;
@@ -582,8 +564,8 @@ class _$ResponseQueryImpl implements _ResponseQuery {
             (identical(other.log, log) || other.log == log) &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.index, index) || other.index == index) &&
-            const DeepCollectionEquality().equals(other._key, _key) &&
-            const DeepCollectionEquality().equals(other._value, _value) &&
+            (identical(other.key, key) || other.key == key) &&
+            (identical(other.value, value) || other.value == value) &&
             (identical(other.proofOps, proofOps) ||
                 other.proofOps == proofOps) &&
             (identical(other.height, height) || other.height == height) &&
@@ -593,17 +575,8 @@ class _$ResponseQueryImpl implements _ResponseQuery {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      code,
-      log,
-      info,
-      index,
-      const DeepCollectionEquality().hash(_key),
-      const DeepCollectionEquality().hash(_value),
-      proofOps,
-      height,
-      codespace);
+  int get hashCode => Object.hash(runtimeType, code, log, info, index, key,
+      value, proofOps, height, codespace);
 
   /// Create a copy of ResponseQuery
   /// with the given fields replaced by the non-null parameter values.
@@ -626,12 +599,12 @@ abstract class _ResponseQuery implements ResponseQuery {
       {@JsonKey(name: 'code', includeIfNull: false) final int? code,
       @JsonKey(name: 'log', includeIfNull: false) final String? log,
       @JsonKey(name: 'info', includeIfNull: false) final String? info,
-      @JsonKey(name: 'index', includeIfNull: false) final int? index,
-      @JsonKey(name: 'key', includeIfNull: false) final List<int>? key,
-      @JsonKey(name: 'value', includeIfNull: false) final List<int>? value,
+      @JsonKey(name: 'index', includeIfNull: false) final String? index,
+      @JsonKey(name: 'key', includeIfNull: false) final String? key,
+      @JsonKey(name: 'value', includeIfNull: false) final String? value,
       @JsonKey(name: 'proof_ops', includeIfNull: false)
       final ProofOps? proofOps,
-      @JsonKey(name: 'height', includeIfNull: false) final int? height,
+      @JsonKey(name: 'height', includeIfNull: false) final String? height,
       @JsonKey(name: 'codespace', includeIfNull: false)
       final String? codespace}) = _$ResponseQueryImpl;
 
@@ -649,19 +622,19 @@ abstract class _ResponseQuery implements ResponseQuery {
   String? get info;
   @override
   @JsonKey(name: 'index', includeIfNull: false)
-  int? get index;
+  String? get index;
   @override
   @JsonKey(name: 'key', includeIfNull: false)
-  List<int>? get key;
+  String? get key;
   @override
   @JsonKey(name: 'value', includeIfNull: false)
-  List<int>? get value;
+  String? get value;
   @override
   @JsonKey(name: 'proof_ops', includeIfNull: false)
   ProofOps? get proofOps;
   @override
   @JsonKey(name: 'height', includeIfNull: false)
-  int? get height;
+  String? get height;
   @override
   @JsonKey(name: 'codespace', includeIfNull: false)
   String? get codespace;
@@ -683,15 +656,16 @@ mixin _$ResponseCheckTx {
   @JsonKey(name: 'code', includeIfNull: false)
   int? get code => throw _privateConstructorUsedError;
   @JsonKey(name: 'data', includeIfNull: false)
-  List<int>? get data => throw _privateConstructorUsedError;
+  @Base64Converter()
+  Uint8List? get data => throw _privateConstructorUsedError;
   @JsonKey(name: 'log', includeIfNull: false)
   String? get log => throw _privateConstructorUsedError;
   @JsonKey(name: 'info', includeIfNull: false)
   String? get info => throw _privateConstructorUsedError;
   @JsonKey(name: 'gas_wanted', includeIfNull: false)
-  int? get gasWanted => throw _privateConstructorUsedError;
+  String? get gasWanted => throw _privateConstructorUsedError;
   @JsonKey(name: 'gas_used', includeIfNull: false)
-  int? get gasUsed => throw _privateConstructorUsedError;
+  String? get gasUsed => throw _privateConstructorUsedError;
   @JsonKey(name: 'events', includeIfNull: false)
   List<Event>? get events => throw _privateConstructorUsedError;
   @JsonKey(name: 'codespace', includeIfNull: false)
@@ -715,11 +689,13 @@ abstract class $ResponseCheckTxCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
-      @JsonKey(name: 'data', includeIfNull: false) List<int>? data,
+      @JsonKey(name: 'data', includeIfNull: false)
+      @Base64Converter()
+      Uint8List? data,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
-      @JsonKey(name: 'gas_wanted', includeIfNull: false) int? gasWanted,
-      @JsonKey(name: 'gas_used', includeIfNull: false) int? gasUsed,
+      @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
+      @JsonKey(name: 'gas_used', includeIfNull: false) String? gasUsed,
       @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
       @JsonKey(name: 'codespace', includeIfNull: false) String? codespace});
 }
@@ -756,7 +732,7 @@ class _$ResponseCheckTxCopyWithImpl<$Res, $Val extends ResponseCheckTx>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as Uint8List?,
       log: freezed == log
           ? _value.log
           : log // ignore: cast_nullable_to_non_nullable
@@ -768,11 +744,11 @@ class _$ResponseCheckTxCopyWithImpl<$Res, $Val extends ResponseCheckTx>
       gasWanted: freezed == gasWanted
           ? _value.gasWanted
           : gasWanted // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       gasUsed: freezed == gasUsed
           ? _value.gasUsed
           : gasUsed // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       events: freezed == events
           ? _value.events
           : events // ignore: cast_nullable_to_non_nullable
@@ -795,11 +771,13 @@ abstract class _$$ResponseCheckTxImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
-      @JsonKey(name: 'data', includeIfNull: false) List<int>? data,
+      @JsonKey(name: 'data', includeIfNull: false)
+      @Base64Converter()
+      Uint8List? data,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
-      @JsonKey(name: 'gas_wanted', includeIfNull: false) int? gasWanted,
-      @JsonKey(name: 'gas_used', includeIfNull: false) int? gasUsed,
+      @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
+      @JsonKey(name: 'gas_used', includeIfNull: false) String? gasUsed,
       @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
       @JsonKey(name: 'codespace', includeIfNull: false) String? codespace});
 }
@@ -832,9 +810,9 @@ class __$$ResponseCheckTxImplCopyWithImpl<$Res>
           : code // ignore: cast_nullable_to_non_nullable
               as int?,
       data: freezed == data
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as Uint8List?,
       log: freezed == log
           ? _value.log
           : log // ignore: cast_nullable_to_non_nullable
@@ -846,11 +824,11 @@ class __$$ResponseCheckTxImplCopyWithImpl<$Res>
       gasWanted: freezed == gasWanted
           ? _value.gasWanted
           : gasWanted // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       gasUsed: freezed == gasUsed
           ? _value.gasUsed
           : gasUsed // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       events: freezed == events
           ? _value._events
           : events // ignore: cast_nullable_to_non_nullable
@@ -869,15 +847,14 @@ class __$$ResponseCheckTxImplCopyWithImpl<$Res>
 class _$ResponseCheckTxImpl implements _ResponseCheckTx {
   _$ResponseCheckTxImpl(
       {@JsonKey(name: 'code', includeIfNull: false) this.code,
-      @JsonKey(name: 'data', includeIfNull: false) final List<int>? data,
+      @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() this.data,
       @JsonKey(name: 'log', includeIfNull: false) this.log,
       @JsonKey(name: 'info', includeIfNull: false) this.info,
       @JsonKey(name: 'gas_wanted', includeIfNull: false) this.gasWanted,
       @JsonKey(name: 'gas_used', includeIfNull: false) this.gasUsed,
       @JsonKey(name: 'events', includeIfNull: false) final List<Event>? events,
       @JsonKey(name: 'codespace', includeIfNull: false) this.codespace})
-      : _data = data,
-        _events = events;
+      : _events = events;
 
   factory _$ResponseCheckTxImpl.fromJson(Map<String, dynamic> json) =>
       _$$ResponseCheckTxImplFromJson(json);
@@ -885,17 +862,10 @@ class _$ResponseCheckTxImpl implements _ResponseCheckTx {
   @override
   @JsonKey(name: 'code', includeIfNull: false)
   final int? code;
-  final List<int>? _data;
   @override
   @JsonKey(name: 'data', includeIfNull: false)
-  List<int>? get data {
-    final value = _data;
-    if (value == null) return null;
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  @Base64Converter()
+  final Uint8List? data;
   @override
   @JsonKey(name: 'log', includeIfNull: false)
   final String? log;
@@ -904,10 +874,10 @@ class _$ResponseCheckTxImpl implements _ResponseCheckTx {
   final String? info;
   @override
   @JsonKey(name: 'gas_wanted', includeIfNull: false)
-  final int? gasWanted;
+  final String? gasWanted;
   @override
   @JsonKey(name: 'gas_used', includeIfNull: false)
-  final int? gasUsed;
+  final String? gasUsed;
   final List<Event>? _events;
   @override
   @JsonKey(name: 'events', includeIfNull: false)
@@ -934,7 +904,7 @@ class _$ResponseCheckTxImpl implements _ResponseCheckTx {
         (other.runtimeType == runtimeType &&
             other is _$ResponseCheckTxImpl &&
             (identical(other.code, code) || other.code == code) &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
             (identical(other.log, log) || other.log == log) &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.gasWanted, gasWanted) ||
@@ -950,7 +920,7 @@ class _$ResponseCheckTxImpl implements _ResponseCheckTx {
   int get hashCode => Object.hash(
       runtimeType,
       code,
-      const DeepCollectionEquality().hash(_data),
+      const DeepCollectionEquality().hash(data),
       log,
       info,
       gasWanted,
@@ -978,11 +948,14 @@ class _$ResponseCheckTxImpl implements _ResponseCheckTx {
 abstract class _ResponseCheckTx implements ResponseCheckTx {
   factory _ResponseCheckTx(
       {@JsonKey(name: 'code', includeIfNull: false) final int? code,
-      @JsonKey(name: 'data', includeIfNull: false) final List<int>? data,
+      @JsonKey(name: 'data', includeIfNull: false)
+      @Base64Converter()
+      final Uint8List? data,
       @JsonKey(name: 'log', includeIfNull: false) final String? log,
       @JsonKey(name: 'info', includeIfNull: false) final String? info,
-      @JsonKey(name: 'gas_wanted', includeIfNull: false) final int? gasWanted,
-      @JsonKey(name: 'gas_used', includeIfNull: false) final int? gasUsed,
+      @JsonKey(name: 'gas_wanted', includeIfNull: false)
+      final String? gasWanted,
+      @JsonKey(name: 'gas_used', includeIfNull: false) final String? gasUsed,
       @JsonKey(name: 'events', includeIfNull: false) final List<Event>? events,
       @JsonKey(name: 'codespace', includeIfNull: false)
       final String? codespace}) = _$ResponseCheckTxImpl;
@@ -995,7 +968,8 @@ abstract class _ResponseCheckTx implements ResponseCheckTx {
   int? get code;
   @override
   @JsonKey(name: 'data', includeIfNull: false)
-  List<int>? get data;
+  @Base64Converter()
+  Uint8List? get data;
   @override
   @JsonKey(name: 'log', includeIfNull: false)
   String? get log;
@@ -1004,10 +978,10 @@ abstract class _ResponseCheckTx implements ResponseCheckTx {
   String? get info;
   @override
   @JsonKey(name: 'gas_wanted', includeIfNull: false)
-  int? get gasWanted;
+  String? get gasWanted;
   @override
   @JsonKey(name: 'gas_used', includeIfNull: false)
-  int? get gasUsed;
+  String? get gasUsed;
   @override
   @JsonKey(name: 'events', includeIfNull: false)
   List<Event>? get events;

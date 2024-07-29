@@ -53,17 +53,13 @@ _$ResponseQueryImpl _$$ResponseQueryImplFromJson(Map<String, dynamic> json) =>
       code: (json['code'] as num?)?.toInt(),
       log: json['log'] as String?,
       info: json['info'] as String?,
-      index: (json['index'] as num?)?.toInt(),
-      key: (json['key'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      value: (json['value'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      index: json['index'] as String?,
+      key: json['key'] as String?,
+      value: json['value'] as String?,
       proofOps: json['proof_ops'] == null
           ? null
           : ProofOps.fromJson(json['proof_ops'] as Map<String, dynamic>),
-      height: (json['height'] as num?)?.toInt(),
+      height: json['height'] as String?,
       codespace: json['codespace'] as String?,
     );
 
@@ -92,13 +88,12 @@ _$ResponseCheckTxImpl _$$ResponseCheckTxImplFromJson(
         Map<String, dynamic> json) =>
     _$ResponseCheckTxImpl(
       code: (json['code'] as num?)?.toInt(),
-      data: (json['data'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      data: _$JsonConverterFromJson<String, Uint8List>(
+          json['data'], const Base64Converter().fromJson),
       log: json['log'] as String?,
       info: json['info'] as String?,
-      gasWanted: (json['gas_wanted'] as num?)?.toInt(),
-      gasUsed: (json['gas_used'] as num?)?.toInt(),
+      gasWanted: json['gas_wanted'] as String?,
+      gasUsed: json['gas_used'] as String?,
       events: (json['events'] as List<dynamic>?)
           ?.map((e) => Event.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -116,7 +111,10 @@ Map<String, dynamic> _$$ResponseCheckTxImplToJson(
   }
 
   writeNotNull('code', instance.code);
-  writeNotNull('data', instance.data);
+  writeNotNull(
+      'data',
+      _$JsonConverterToJson<String, Uint8List>(
+          instance.data, const Base64Converter().toJson));
   writeNotNull('log', instance.log);
   writeNotNull('info', instance.info);
   writeNotNull('gas_wanted', instance.gasWanted);

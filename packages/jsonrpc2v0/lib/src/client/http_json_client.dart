@@ -32,6 +32,7 @@ class HttpJsonClient implements HTTPClient {
     final rpcID = RpcIntId(id: await nextRequestID());
 
     final requst = JsonRpcRequest(id: rpcID, method: method, params: params);
+    print(requst.toJson());
 
     final http.Response response;
     try {

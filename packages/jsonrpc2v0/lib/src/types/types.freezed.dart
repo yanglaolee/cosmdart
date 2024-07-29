@@ -24,7 +24,7 @@ mixin _$JsonRpcRequest {
   @RpcIdConverter()
   RpcId? get id => throw _privateConstructorUsedError;
   String get method => throw _privateConstructorUsedError;
-  @JsonKey(includeIfNull: true)
+  @JsonKey(includeIfNull: false)
   Map<String, dynamic>? get params => throw _privateConstructorUsedError;
 
   /// Serializes this JsonRpcRequest to a JSON map.
@@ -47,7 +47,7 @@ abstract class $JsonRpcRequestCopyWith<$Res> {
       {String jsonrpc,
       @RpcIdConverter() RpcId? id,
       String method,
-      @JsonKey(includeIfNull: true) Map<String, dynamic>? params});
+      @JsonKey(includeIfNull: false) Map<String, dynamic>? params});
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ abstract class _$$JsonRpcRequestImplCopyWith<$Res>
       {String jsonrpc,
       @RpcIdConverter() RpcId? id,
       String method,
-      @JsonKey(includeIfNull: true) Map<String, dynamic>? params});
+      @JsonKey(includeIfNull: false) Map<String, dynamic>? params});
 }
 
 /// @nodoc
@@ -152,7 +152,7 @@ class _$JsonRpcRequestImpl implements _JsonRpcRequest {
       {this.jsonrpc = '2.0',
       @RpcIdConverter() this.id,
       required this.method,
-      @JsonKey(includeIfNull: true) final Map<String, dynamic>? params})
+      @JsonKey(includeIfNull: false) final Map<String, dynamic>? params})
       : _params = params;
 
   factory _$JsonRpcRequestImpl.fromJson(Map<String, dynamic> json) =>
@@ -168,7 +168,7 @@ class _$JsonRpcRequestImpl implements _JsonRpcRequest {
   final String method;
   final Map<String, dynamic>? _params;
   @override
-  @JsonKey(includeIfNull: true)
+  @JsonKey(includeIfNull: false)
   Map<String, dynamic>? get params {
     final value = _params;
     if (value == null) return null;
@@ -220,7 +220,7 @@ abstract class _JsonRpcRequest implements JsonRpcRequest {
           {final String jsonrpc,
           @RpcIdConverter() final RpcId? id,
           required final String method,
-          @JsonKey(includeIfNull: true) final Map<String, dynamic>? params}) =
+          @JsonKey(includeIfNull: false) final Map<String, dynamic>? params}) =
       _$JsonRpcRequestImpl;
 
   factory _JsonRpcRequest.fromJson(Map<String, dynamic> json) =
@@ -234,7 +234,7 @@ abstract class _JsonRpcRequest implements JsonRpcRequest {
   @override
   String get method;
   @override
-  @JsonKey(includeIfNull: true)
+  @JsonKey(includeIfNull: false)
   Map<String, dynamic>? get params;
 
   /// Create a copy of JsonRpcRequest
@@ -254,9 +254,7 @@ mixin _$JsonRpcResponse {
   String get jsonrpc => throw _privateConstructorUsedError;
   @RpcIdConverter()
   RpcId? get id => throw _privateConstructorUsedError;
-  @JsonKey(includeIfNull: false)
   Map<String, dynamic>? get result => throw _privateConstructorUsedError;
-  @JsonKey(includeIfNull: false)
   RpcError? get error => throw _privateConstructorUsedError;
 
   /// Serializes this JsonRpcResponse to a JSON map.
@@ -278,8 +276,8 @@ abstract class $JsonRpcResponseCopyWith<$Res> {
   $Res call(
       {String jsonrpc,
       @RpcIdConverter() RpcId? id,
-      @JsonKey(includeIfNull: false) Map<String, dynamic>? result,
-      @JsonKey(includeIfNull: false) RpcError? error});
+      Map<String, dynamic>? result,
+      RpcError? error});
 
   $RpcErrorCopyWith<$Res>? get error;
 }
@@ -350,8 +348,8 @@ abstract class _$$JsonRpcResponseImplCopyWith<$Res>
   $Res call(
       {String jsonrpc,
       @RpcIdConverter() RpcId? id,
-      @JsonKey(includeIfNull: false) Map<String, dynamic>? result,
-      @JsonKey(includeIfNull: false) RpcError? error});
+      Map<String, dynamic>? result,
+      RpcError? error});
 
   @override
   $RpcErrorCopyWith<$Res>? get error;
@@ -403,8 +401,8 @@ class _$JsonRpcResponseImpl extends _JsonRpcResponse {
   _$JsonRpcResponseImpl(
       {this.jsonrpc = '2.0',
       @RpcIdConverter() this.id,
-      @JsonKey(includeIfNull: false) final Map<String, dynamic>? result,
-      @JsonKey(includeIfNull: false) this.error})
+      final Map<String, dynamic>? result,
+      this.error})
       : _result = result,
         super._();
 
@@ -419,7 +417,6 @@ class _$JsonRpcResponseImpl extends _JsonRpcResponse {
   final RpcId? id;
   final Map<String, dynamic>? _result;
   @override
-  @JsonKey(includeIfNull: false)
   Map<String, dynamic>? get result {
     final value = _result;
     if (value == null) return null;
@@ -429,7 +426,6 @@ class _$JsonRpcResponseImpl extends _JsonRpcResponse {
   }
 
   @override
-  @JsonKey(includeIfNull: false)
   final RpcError? error;
 
   @override
@@ -472,11 +468,10 @@ class _$JsonRpcResponseImpl extends _JsonRpcResponse {
 
 abstract class _JsonRpcResponse extends JsonRpcResponse {
   factory _JsonRpcResponse(
-          {final String jsonrpc,
-          @RpcIdConverter() final RpcId? id,
-          @JsonKey(includeIfNull: false) final Map<String, dynamic>? result,
-          @JsonKey(includeIfNull: false) final RpcError? error}) =
-      _$JsonRpcResponseImpl;
+      {final String jsonrpc,
+      @RpcIdConverter() final RpcId? id,
+      final Map<String, dynamic>? result,
+      final RpcError? error}) = _$JsonRpcResponseImpl;
   _JsonRpcResponse._() : super._();
 
   factory _JsonRpcResponse.fromJson(Map<String, dynamic> json) =
@@ -488,10 +483,8 @@ abstract class _JsonRpcResponse extends JsonRpcResponse {
   @RpcIdConverter()
   RpcId? get id;
   @override
-  @JsonKey(includeIfNull: false)
   Map<String, dynamic>? get result;
   @override
-  @JsonKey(includeIfNull: false)
   RpcError? get error;
 
   /// Create a copy of JsonRpcResponse

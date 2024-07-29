@@ -11,7 +11,7 @@ JsonRpcResponse decodeJsonRpcResponse(String responseText,
     if (_verifyRpcId(resp.id, expectID)) {
       return resp;
     } else {
-      throw Exception('Invalid response ID');
+      throw Exception('Invalid response ID: ${resp.id}, expect: $expectID');
     }
   }
 
@@ -35,5 +35,21 @@ List<JsonRpcResponse> decodeJsonRpcResponses(String responsesText,
 }
 
 bool _verifyRpcId(RpcId? responseID, RpcId? expectID) {
-  return responseID == expectID;
+  if((responseID is RpcIntId) && (expectID is RpcIntId)) {
+      print('responseID:${responseID.id}, expectID:${expectID.id}');
+      return responseID.id == expectID.id;
+  }
+
+  if((responseID is RpcStringId) && (expectID is RpcStringId)) {
+      print('responseID:${responseID.id}, expectID:${expectID.id}');
+      return responseID.id == expectID.id;
+  }
+
+  if((responseID is RpcNullId) && (expectID is RpcNullId)) {
+      print('responseID null, expectID null');
+      return true;
+  }
+
+  return false;
+  
 }

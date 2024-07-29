@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 
-import '../rpc_result/comet/evidence.dart';
-import 'package:comet_client/rpc_types.dart';
+import 'package:comet_client/types.dart';
 
 
 // --------------------------------------------------------------------------
@@ -11,7 +10,7 @@ abstract interface class ABCIClient {
 
   // Reading from abci app
   Future<ResultABCIInfo?> abciInfo();
-  Future<ResultABCIQuery?> abciQuery(String path, Uint8List data, {int height=0, bool prove=false});
+  Future<ResultABCIQuery?> abciQuery({required String path, required Uint8List data, int height, bool prove});
 
   // Writing to abci app
   Future<ResultBroadcastTxCommit?> broadcastTxCommit(Uint8List tx);
@@ -24,8 +23,8 @@ abstract interface class ABCIClient {
 // and prove anything about the chain.
 abstract interface class SignClient {
 
-  Future<ResultBlock?> block(String height);
-  Future<ResultBlock?> blockByHash(Uint8List hash);
+  Future<ResultBlock?> block({int? height});
+  Future<ResultBlock?> blockByHash(Hash hash);
   Future<ResultBlockResults?> blockResults(String height);
   Future<ResultHeader?> header(String height);
   Future<ResultHeader?> headerByHash(Uint8List hash);
@@ -92,10 +91,10 @@ abstract interface class MempoolClient {
 // --------------------------------------------------------------------------
 // EvidenceClient is used for submitting an evidence of the malicious
 // behavior.
-abstract interface class EvidenceClient {
+// abstract interface class EvidenceClient {  // not supported for now
 
-  Future<ResultBroadcastEvidence?> broadcastEvidence(DuplicateVoteEvidence evidence);
-}
+//   Future<ResultBroadcastEvidence?> broadcastEvidence(DuplicateVoteEvidence evidence);
+// }
 
 enum RpcMethod {
   // ABCIClient
@@ -127,8 +126,8 @@ enum RpcMethod {
 
   // NetworkClient
   netInfo,
-  dumpConsensusState,
-  consensusState,
+  // dumpConsensusState,  // not surpported
+  // consensusState,
   consensusParams,
   health,
 
@@ -142,8 +141,8 @@ enum RpcMethod {
   numUnconfirmedTxs,
   checkTx,
 
-  // EvidenceClient
-  broadcastEvidence
+  // EvidenceClient  // not surpported
+  // broadcastEvidence
 }
 
 extension RpcMethodExtension on RpcMethod {
@@ -151,9 +150,9 @@ extension RpcMethodExtension on RpcMethod {
     switch (this) {
       // ABCIClient
       case RpcMethod.abciInfo:
-        return 'abci_query';
-      case RpcMethod.abciQuery:
         return 'abci_info';
+      case RpcMethod.abciQuery:
+        return 'abci_query';
       case RpcMethod.broadcastTxCommit:
         return 'broadcast_tx_commit';
       case RpcMethod.broadcastTxAsync:
@@ -198,10 +197,10 @@ extension RpcMethodExtension on RpcMethod {
       // NetworkClient
       case RpcMethod.netInfo:
         return 'net_info';
-      case RpcMethod.dumpConsensusState:
-        return 'dump_consensus_state';
-      case RpcMethod.consensusState:
-        return 'consensus_state';
+      // case RpcMethod.dumpConsensusState:  // not surpported
+      //   return 'dump_consensus_state';
+      // case RpcMethod.consensusState:
+      //   return 'consensus_state';
       case RpcMethod.consensusParams:
         return 'consensus_params';
       case RpcMethod.health:
@@ -223,9 +222,9 @@ extension RpcMethodExtension on RpcMethod {
       case RpcMethod.checkTx:
         return 'check_tx';
       
-      // EvidenceClient
-      case RpcMethod.broadcastEvidence:
-        return 'broadcast_evidence';
+      // EvidenceClient  // not surpported
+      // case RpcMethod.broadcastEvidence:
+      //   return 'broadcast_evidence';
       default:
         return 'unknown';
     }

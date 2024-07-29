@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:test/test.dart';
-import 'package:comet_client/rpc_types.dart';
+import 'package:comet_client/types.dart';
 
 void main() {
   group('RPC Results Test', () {
@@ -130,6 +130,24 @@ void main() {
       // print(result);
 
       expect(result.blockHeight, "21496970");
+    });
+
+    test('ResultUnconfirmedTxs Test', () async {
+      final resultJson =
+          await File('test/testdata/ResultUnconfirmedTxs.json').readAsString();
+      final result = ResultUnconfirmedTxs.fromJson(jsonDecode(resultJson));
+      // print(result);
+
+      expect(result.nTxs, "82");
+    });
+
+    test('ResultUnconfirmedTxs without txs Test', () async {
+      final resultJson =
+          await File('test/testdata/ResultNumUnconfirmedTxs.json').readAsString();
+      final result = ResultUnconfirmedTxs.fromJson(jsonDecode(resultJson));
+      // print(result);
+
+      expect(result.nTxs, "82");
     });
   });
 }

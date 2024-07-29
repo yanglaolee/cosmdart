@@ -8,16 +8,36 @@ class Base64Converter implements JsonConverter<Uint8List, String> {
 
   @override
   Uint8List fromJson(String json) {
-      RegExp base64Regex = RegExp(r'^[a-zA-Z0-9+/]*={0,2}$');
-  if (!base64Regex.hasMatch(json)) {
-    throw FormatException("Invalid base64 string format");
-  }
-  return base64.decode(json);
+    RegExp base64Regex = RegExp(r'^[a-zA-Z0-9+/]*={0,2}$');
+    if (!base64Regex.hasMatch(json)) {
+      throw FormatException("Invalid base64 string format");
+    }
+    return base64.decode(json);
   }
 
   @override
   String toJson(Uint8List object) {
     return base64.encode(object as List<int>);
+  }
+}
+
+class HexConverter implements JsonConverter<Uint8List, String> {
+  const HexConverter();
+
+  @override
+  Uint8List fromJson(String json) {
+    final buffer = Uint8List(json.length ~/ 2);
+    for (int i = 0; i < json.length; i += 2) {
+      buffer[i ~/ 2] = int.parse(json.substring(i, i + 2), radix: 16);
+    }
+    return buffer;
+  }
+
+  @override
+  String toJson(Uint8List object) {
+    return object
+        .map((byte) => byte.toRadixString(16).padLeft(2, '0').toUpperCase())
+        .join();
   }
 }
 

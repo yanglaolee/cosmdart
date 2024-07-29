@@ -44,7 +44,7 @@ class ResultABCIQuery extends RpcResult with _$ResultABCIQuery {
 }
 
 @freezed
-class ResultBroadcastTxCommit with _$ResultBroadcastTxCommit {
+class ResultBroadcastTxCommit extends RpcResult with _$ResultBroadcastTxCommit {
   @JsonSerializable(explicitToJson: true)
   factory ResultBroadcastTxCommit({
     @JsonKey(name: 'check_tx') ResponseCheckTx? checkTx,
@@ -58,7 +58,7 @@ class ResultBroadcastTxCommit with _$ResultBroadcastTxCommit {
 }
 
 @freezed
-class ResultBroadcastTx with _$ResultBroadcastTx {
+class ResultBroadcastTx extends RpcResult with _$ResultBroadcastTx {
   factory ResultBroadcastTx({
     @JsonKey(name: 'code') int? code,
     @JsonKey(name: 'data') List<int>? data,
@@ -72,7 +72,7 @@ class ResultBroadcastTx with _$ResultBroadcastTx {
 }
 
 @freezed
-class ResultBlock with _$ResultBlock {
+class ResultBlock extends RpcResult with _$ResultBlock {
   @JsonSerializable(explicitToJson: true)
   factory ResultBlock({
     @JsonKey(name: 'block_id') BlockID? blockId,
@@ -84,7 +84,7 @@ class ResultBlock with _$ResultBlock {
 }
 
 @freezed
-class ResultBlockResults with _$ResultBlockResults {
+class ResultBlockResults extends RpcResult with _$ResultBlockResults {
   @JsonSerializable(explicitToJson: true)
   factory ResultBlockResults({
     @JsonKey(name: 'height') String? height,
@@ -104,7 +104,7 @@ class ResultBlockResults with _$ResultBlockResults {
 }
 
 @freezed
-class ResultHeader with _$ResultHeader {
+class ResultHeader extends RpcResult with _$ResultHeader {
   @JsonSerializable(explicitToJson: true)
   factory ResultHeader({
     @JsonKey(name: 'header') Header? header,
@@ -115,7 +115,7 @@ class ResultHeader with _$ResultHeader {
 }
 
 @freezed
-class ResultCommit with _$ResultCommit {
+class ResultCommit extends RpcResult with _$ResultCommit {
   @JsonSerializable(explicitToJson: true)
   factory ResultCommit({
     @JsonKey(name: 'signed_header') SignedHeader? signedHeader,
@@ -127,7 +127,7 @@ class ResultCommit with _$ResultCommit {
 }
 
 @freezed
-class ResultValidators with _$ResultValidators {
+class ResultValidators extends RpcResult with _$ResultValidators {
   @JsonSerializable(explicitToJson: true)
   factory ResultValidators({
     @JsonKey(name: 'block_height') String? blockHeight,
@@ -141,7 +141,7 @@ class ResultValidators with _$ResultValidators {
 }
 
 @freezed
-class ResultTx with _$ResultTx {
+class ResultTx extends RpcResult with _$ResultTx {
   @JsonSerializable(explicitToJson: true)
   factory ResultTx({
     @JsonKey(name: 'hash') String? hash,
@@ -157,7 +157,7 @@ class ResultTx with _$ResultTx {
 }
 
 @freezed
-class ResultTxSearch with _$ResultTxSearch {
+class ResultTxSearch extends RpcResult with _$ResultTxSearch {
   @JsonSerializable(explicitToJson: true)
   factory ResultTxSearch({
     @JsonKey(name: 'txs') List<ResultTx>? txs,
@@ -169,7 +169,7 @@ class ResultTxSearch with _$ResultTxSearch {
 }
 
 @freezed
-class ResultBlockSearch with _$ResultBlockSearch {
+class ResultBlockSearch extends RpcResult with _$ResultBlockSearch {
   @JsonSerializable(explicitToJson: true)
   factory ResultBlockSearch({
     @JsonKey(name: 'blocks') List<ResultBlock>? blocks,
@@ -181,7 +181,7 @@ class ResultBlockSearch with _$ResultBlockSearch {
 }
 
 @freezed
-class ResultGenesis with _$ResultGenesis {
+class ResultGenesis extends RpcResult with _$ResultGenesis {
   @JsonSerializable(explicitToJson: true)
   factory ResultGenesis({
     @JsonKey(name: 'genesis') GenesisDoc? genesis,
@@ -192,7 +192,7 @@ class ResultGenesis with _$ResultGenesis {
 }
 
 @freezed
-class ResultGenesisChunk with _$ResultGenesisChunk {
+class ResultGenesisChunk extends RpcResult with _$ResultGenesisChunk {
   factory ResultGenesisChunk({
     @JsonKey(name: 'chunk') int? chunkNumber,
     @JsonKey(name: 'total') int? totalChunks,
@@ -204,7 +204,7 @@ class ResultGenesisChunk with _$ResultGenesisChunk {
 }
 
 @freezed
-class ResultBlockchainInfo with _$ResultBlockchainInfo {
+class ResultBlockchainInfo extends RpcResult with _$ResultBlockchainInfo {
   @JsonSerializable(explicitToJson: true)
   factory ResultBlockchainInfo({
     @JsonKey(name: 'last_height') String? lastHeight,
@@ -252,7 +252,7 @@ class SyncInfo with _$SyncInfo {
 }
 
 @freezed
-class ResultStatus with _$ResultStatus {
+class ResultStatus extends RpcResult with _$ResultStatus {
   @JsonSerializable(explicitToJson: true)
   factory ResultStatus({
     @JsonKey(name: 'node_info') DefaultNodeInfo? nodeInfo,
@@ -278,7 +278,7 @@ class Peer with _$Peer {
 }
 
 @freezed
-class ResultNetInfo with _$ResultNetInfo {
+class ResultNetInfo extends RpcResult with _$ResultNetInfo {
   @JsonSerializable(explicitToJson: true)
   factory ResultNetInfo({
     @JsonKey(name: 'listening') bool? listening,
@@ -303,7 +303,7 @@ class ResultNetInfo with _$ResultNetInfo {
 // }
 
 // @freezed
-// class ResultDumpConsensusState with _$ResultDumpConsensusState {
+// class ResultDumpConsensusState extends RpcResult with _$ResultDumpConsensusState {
 //   @JsonSerializable(explicitToJson: true)
 //   factory ResultDumpConsensusState({
 //     @JsonKey(name: 'round_state') List<int>? roundState,
@@ -315,7 +315,7 @@ class ResultNetInfo with _$ResultNetInfo {
 // }
 
 // @freezed
-// class ResultConsensusState with _$ResultConsensusState {
+// class ResultConsensusState extends RpcResult with _$ResultConsensusState {
 //   factory ResultConsensusState({
 //     @JsonKey(name: 'round_state') List<int>? roundState,
 //   }) = _ResultConsensusState;
@@ -325,7 +325,7 @@ class ResultNetInfo with _$ResultNetInfo {
 // }
 
 @freezed
-class ResultConsensusParams with _$ResultConsensusParams {
+class ResultConsensusParams extends RpcResult with _$ResultConsensusParams {
   @JsonSerializable(explicitToJson: true)
   factory ResultConsensusParams({
     @JsonKey(name: 'block_height') String? blockHeight,
@@ -337,7 +337,7 @@ class ResultConsensusParams with _$ResultConsensusParams {
 }
 
 @freezed
-class ResultEvent with _$ResultEvent {
+class ResultEvent extends RpcResult with _$ResultEvent {
   @JsonSerializable(explicitToJson: true)
   factory ResultEvent({
     @JsonKey(name: 'query') String? query,
@@ -350,26 +350,42 @@ class ResultEvent with _$ResultEvent {
 }
 
 @freezed
-class ResultUnconfirmedTxs with _$ResultUnconfirmedTxs {
+class ResultUnconfirmedTxs extends RpcResult with _$ResultUnconfirmedTxs {
   factory ResultUnconfirmedTxs({
-    @JsonKey(name: 'n_txs') int? nTxs,
-    @JsonKey(name: 'total') int? total,
-    @JsonKey(name: 'total_bytes') int? totalBytes,
-    @JsonKey(name: 'txs') List<List<int>>? txs,
+    @JsonKey(name: 'n_txs') String? nTxs,
+    @JsonKey(name: 'total') String? total,
+    @JsonKey(name: 'total_bytes') String? totalBytes,
+    @JsonKey(name: 'txs', includeIfNull: true) @TxsConverter() List<Uint8List>? txs,
   }) = _ResultUnconfirmedTxs;
 
   factory ResultUnconfirmedTxs.fromJson(Map<String, dynamic> json) =>
       _$ResultUnconfirmedTxsFromJson(json);
 }
 
-typedef ResultCheckTx = ResponseCheckTx;
-
 @freezed
-class ResultBroadcastEvidence with _$ResultBroadcastEvidence {
-  factory ResultBroadcastEvidence({
-    @JsonKey(name: 'hash') List<int>? hash,
-  }) = _ResultBroadcastEvidence;
+class ResultCheckTx extends RpcResult with _$ResultCheckTx {
+  @JsonSerializable(explicitToJson: true)
+  factory ResultCheckTx({
+    @JsonKey(name: 'code', includeIfNull: false) int? code,
+    @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() Uint8List? data,
+    @JsonKey(name: 'log', includeIfNull: false) String? log,
+    @JsonKey(name: 'info', includeIfNull: false) String? info,
+    @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
+    @JsonKey(name: 'gas_used', includeIfNull: false) String? gasUsed,
+    @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
+    @JsonKey(name: 'codespace', includeIfNull: false) String? codespace,
+  }) = _ResultCheckTx;
 
-  factory ResultBroadcastEvidence.fromJson(Map<String, dynamic> json) =>
-      _$ResultBroadcastEvidenceFromJson(json);
+  factory ResultCheckTx.fromJson(Map<String, dynamic> json) =>
+      _$ResultCheckTxFromJson(json);
 }
+
+// @freezed
+// class ResultBroadcastEvidence with _$ResultBroadcastEvidence {
+//   factory ResultBroadcastEvidence({
+//     @JsonKey(name: 'hash') List<int>? hash,
+//   }) = _ResultBroadcastEvidence;
+
+//   factory ResultBroadcastEvidence.fromJson(Map<String, dynamic> json) =>
+//       _$ResultBroadcastEvidenceFromJson(json);
+// }

@@ -31,11 +31,11 @@ class ResponseQuery with _$ResponseQuery {
     @JsonKey(name: 'code', includeIfNull: false) int? code,
     @JsonKey(name: 'log', includeIfNull: false) String? log,
     @JsonKey(name: 'info', includeIfNull: false) String? info,
-    @JsonKey(name: 'index', includeIfNull: false) int? index,
-    @JsonKey(name: 'key', includeIfNull: false) List<int>? key,
-    @JsonKey(name: 'value', includeIfNull: false) List<int>? value,
+    @JsonKey(name: 'index', includeIfNull: false) String? index,
+    @JsonKey(name: 'key', includeIfNull: false) String? key,
+    @JsonKey(name: 'value', includeIfNull: false) String? value,
     @JsonKey(name: 'proof_ops', includeIfNull: false) ProofOps? proofOps,
-    @JsonKey(name: 'height', includeIfNull: false) int? height,
+    @JsonKey(name: 'height', includeIfNull: false) String? height,
     @JsonKey(name: 'codespace', includeIfNull: false) String? codespace,
   }) = _ResponseQuery;
 
@@ -48,11 +48,11 @@ class ResponseCheckTx with _$ResponseCheckTx {
   @JsonSerializable(explicitToJson: true)
   factory ResponseCheckTx({
     @JsonKey(name: 'code', includeIfNull: false) int? code,
-    @JsonKey(name: 'data', includeIfNull: false) List<int>? data,
+    @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() Uint8List? data,
     @JsonKey(name: 'log', includeIfNull: false) String? log,
     @JsonKey(name: 'info', includeIfNull: false) String? info,
-    @JsonKey(name: 'gas_wanted', includeIfNull: false) int? gasWanted,
-    @JsonKey(name: 'gas_used', includeIfNull: false) int? gasUsed,
+    @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
+    @JsonKey(name: 'gas_used', includeIfNull: false) String? gasUsed,
     @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
     @JsonKey(name: 'codespace', includeIfNull: false) String? codespace,
   }) = _ResponseCheckTx;

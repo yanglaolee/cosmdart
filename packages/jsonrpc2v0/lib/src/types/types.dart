@@ -11,23 +11,22 @@ part 'types.g.dart';
 
 //===================JSON RPC 2.0 types definition=============================
 
-
 // ----------------------------------------------------------------------------
 // JSON RPC ID
 
-sealed class RpcId{}
+sealed class RpcId {}
 
-class RpcStringId extends RpcId{
+class RpcStringId extends RpcId {
   final String id;
   RpcStringId({required this.id});
 }
 
-class RpcIntId extends RpcId{
+class RpcIntId extends RpcId {
   final int id;
   RpcIntId({required this.id});
 }
 
-class RpcNullId extends RpcId{
+class RpcNullId extends RpcId {
   RpcNullId();
 }
 
@@ -40,7 +39,7 @@ class JsonRpcRequest with _$JsonRpcRequest {
           {@Default('2.0') String jsonrpc,
           @RpcIdConverter() RpcId? id,
           required String method,
-          @JsonKey(includeIfNull: true) Map<String, dynamic>? params}) =
+          @JsonKey(includeIfNull: false) Map<String, dynamic>? params}) =
       _JsonRpcRequest;
 
   factory JsonRpcRequest.fromJson(Map<String, dynamic> json) =>
@@ -51,16 +50,15 @@ class JsonRpcRequest with _$JsonRpcRequest {
 // JSON RPC Response
 
 @freezed
-class JsonRpcResponse with _$JsonRpcResponse{
+class JsonRpcResponse with _$JsonRpcResponse {
   const JsonRpcResponse._();
 
   @JsonSerializable(explicitToJson: true)
   factory JsonRpcResponse(
-          {@Default('2.0') String jsonrpc,
-          @RpcIdConverter() RpcId? id,
-          @JsonKey(includeIfNull: false) Map<String, dynamic>? result,
-          @JsonKey(includeIfNull: false) RpcError? error}) =
-      _JsonRpcResponse;
+      {@Default('2.0') String jsonrpc,
+      @RpcIdConverter() RpcId? id,
+      Map<String, dynamic>? result,
+      RpcError? error}) = _JsonRpcResponse;
 
   factory JsonRpcResponse.fromJson(Map<String, dynamic> json) =>
       _$JsonRpcResponseFromJson(json);
@@ -68,7 +66,6 @@ class JsonRpcResponse with _$JsonRpcResponse{
   bool get isSuccess => result != null && error == null;
   bool get isError => result == null && error != null;
 }
-
 
 @freezed
 class RpcError with _$RpcError {

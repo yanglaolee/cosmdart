@@ -448,13 +448,11 @@ Map<String, dynamic> _$$ResultEventImplToJson(_$ResultEventImpl instance) =>
 _$ResultUnconfirmedTxsImpl _$$ResultUnconfirmedTxsImplFromJson(
         Map<String, dynamic> json) =>
     _$ResultUnconfirmedTxsImpl(
-      nTxs: (json['n_txs'] as num?)?.toInt(),
-      total: (json['total'] as num?)?.toInt(),
-      totalBytes: (json['total_bytes'] as num?)?.toInt(),
-      txs: (json['txs'] as List<dynamic>?)
-          ?.map((e) =>
-              (e as List<dynamic>).map((e) => (e as num).toInt()).toList())
-          .toList(),
+      nTxs: json['n_txs'] as String?,
+      total: json['total'] as String?,
+      totalBytes: json['total_bytes'] as String?,
+      txs: _$JsonConverterFromJson<List<dynamic>, List<Uint8List>>(
+          json['txs'], const TxsConverter().fromJson),
     );
 
 Map<String, dynamic> _$$ResultUnconfirmedTxsImplToJson(
@@ -463,19 +461,44 @@ Map<String, dynamic> _$$ResultUnconfirmedTxsImplToJson(
       'n_txs': instance.nTxs,
       'total': instance.total,
       'total_bytes': instance.totalBytes,
-      'txs': instance.txs,
+      'txs': _$JsonConverterToJson<List<dynamic>, List<Uint8List>>(
+          instance.txs, const TxsConverter().toJson),
     };
 
-_$ResultBroadcastEvidenceImpl _$$ResultBroadcastEvidenceImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ResultBroadcastEvidenceImpl(
-      hash: (json['hash'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
+_$ResultCheckTxImpl _$$ResultCheckTxImplFromJson(Map<String, dynamic> json) =>
+    _$ResultCheckTxImpl(
+      code: (json['code'] as num?)?.toInt(),
+      data: _$JsonConverterFromJson<String, Uint8List>(
+          json['data'], const Base64Converter().fromJson),
+      log: json['log'] as String?,
+      info: json['info'] as String?,
+      gasWanted: json['gas_wanted'] as String?,
+      gasUsed: json['gas_used'] as String?,
+      events: (json['events'] as List<dynamic>?)
+          ?.map((e) => Event.fromJson(e as Map<String, dynamic>))
           .toList(),
+      codespace: json['codespace'] as String?,
     );
 
-Map<String, dynamic> _$$ResultBroadcastEvidenceImplToJson(
-        _$ResultBroadcastEvidenceImpl instance) =>
-    <String, dynamic>{
-      'hash': instance.hash,
-    };
+Map<String, dynamic> _$$ResultCheckTxImplToJson(_$ResultCheckTxImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('code', instance.code);
+  writeNotNull(
+      'data',
+      _$JsonConverterToJson<String, Uint8List>(
+          instance.data, const Base64Converter().toJson));
+  writeNotNull('log', instance.log);
+  writeNotNull('info', instance.info);
+  writeNotNull('gas_wanted', instance.gasWanted);
+  writeNotNull('gas_used', instance.gasUsed);
+  writeNotNull('events', instance.events?.map((e) => e.toJson()).toList());
+  writeNotNull('codespace', instance.codespace);
+  return val;
+}

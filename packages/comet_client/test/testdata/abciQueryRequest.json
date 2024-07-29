@@ -1,0 +1,11 @@
+{
+    "jsonrpc": "2.0",
+    "id": 0,
+    "method": "abci_query",
+    "params": {
+        "data": "0A2D6B756A697261316D643864376C383937353778646B6D6E367078636A656479706C306A6B6B676B6B676D76746C1205756B756A69",
+        "height": "0",
+        "path": "/cosmos.bank.v1beta1.Query/Balance",
+        "prove": false
+    }
+}
