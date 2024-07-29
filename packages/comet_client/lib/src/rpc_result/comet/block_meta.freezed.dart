@@ -27,7 +27,7 @@ mixin _$BlockMeta {
   @JsonKey(name: 'header')
   Header? get header => throw _privateConstructorUsedError;
   @JsonKey(name: 'num_txs')
-  int? get numTxs => throw _privateConstructorUsedError;
+  String? get numTxs => throw _privateConstructorUsedError;
 
   /// Serializes this BlockMeta to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,7 +48,7 @@ abstract class $BlockMetaCopyWith<$Res> {
       {@JsonKey(name: 'block_id') BlockID? blockID,
       @JsonKey(name: 'block_size') int? blockSize,
       @JsonKey(name: 'header') Header? header,
-      @JsonKey(name: 'num_txs') int? numTxs});
+      @JsonKey(name: 'num_txs') String? numTxs});
 
   $BlockIDCopyWith<$Res>? get blockID;
   $HeaderCopyWith<$Res>? get header;
@@ -90,7 +90,7 @@ class _$BlockMetaCopyWithImpl<$Res, $Val extends BlockMeta>
       numTxs: freezed == numTxs
           ? _value.numTxs
           : numTxs // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
   }
 
@@ -135,7 +135,7 @@ abstract class _$$BlockMetaImplCopyWith<$Res>
       {@JsonKey(name: 'block_id') BlockID? blockID,
       @JsonKey(name: 'block_size') int? blockSize,
       @JsonKey(name: 'header') Header? header,
-      @JsonKey(name: 'num_txs') int? numTxs});
+      @JsonKey(name: 'num_txs') String? numTxs});
 
   @override
   $BlockIDCopyWith<$Res>? get blockID;
@@ -177,7 +177,7 @@ class __$$BlockMetaImplCopyWithImpl<$Res>
       numTxs: freezed == numTxs
           ? _value.numTxs
           : numTxs // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -206,7 +206,7 @@ class _$BlockMetaImpl implements _BlockMeta {
   final Header? header;
   @override
   @JsonKey(name: 'num_txs')
-  final int? numTxs;
+  final String? numTxs;
 
   @override
   String toString() {
@@ -251,7 +251,7 @@ abstract class _BlockMeta implements BlockMeta {
       {@JsonKey(name: 'block_id') final BlockID? blockID,
       @JsonKey(name: 'block_size') final int? blockSize,
       @JsonKey(name: 'header') final Header? header,
-      @JsonKey(name: 'num_txs') final int? numTxs}) = _$BlockMetaImpl;
+      @JsonKey(name: 'num_txs') final String? numTxs}) = _$BlockMetaImpl;
 
   factory _BlockMeta.fromJson(Map<String, dynamic> json) =
       _$BlockMetaImpl.fromJson;
@@ -267,7 +267,7 @@ abstract class _BlockMeta implements BlockMeta {
   Header? get header;
   @override
   @JsonKey(name: 'num_txs')
-  int? get numTxs;
+  String? get numTxs;
 
   /// Create a copy of BlockMeta
   /// with the given fields replaced by the non-null parameter values.

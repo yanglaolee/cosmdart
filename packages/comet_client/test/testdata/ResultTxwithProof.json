@@ -1,0 +1,360 @@
+{
+    "hash": "691912E600D51E538247EA9C02B1A81C4ADD33FED4C583D49886CD4422E75A50",
+    "height": "21495356",
+    "index": 0,
+    "tx_result": {
+        "code": 0,
+        "data": "Ei0KKy9jb3Ntb3Muc3Rha2luZy52MWJldGExLk1zZ0RlbGVnYXRlUmVzcG9uc2U=",
+        "log": "[{\"msg_index\":0,\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"/cosmos.staking.v1beta1.MsgDelegate\"},{\"key\":\"sender\",\"value\":\"cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq\"},{\"key\":\"module\",\"value\":\"staking\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"cosmos1jv65s3grqf6v6jl3dp4t6c9t9rk99cd88lyufl\"},{\"key\":\"amount\",\"value\":\"9ibc/054892D6BB43AF8B93AAC28AA5FD7019D2C59A15DAFD6F45C1FA2BF9BDA22454,35ibc/6B8A3F5C2AD51CD6171FA41A7E8C35AD594AB69226438DB94450436EA57B3A89,20ibc/715BD634CF4D914C3EE93B0F8A9D2514B743F6FE36BC80263D1BC5EE4B3C5D40,2ibc/88DCAA43A9CD099E1F9BBB80B9A90F64782EBA115A84B2CD8398757ADA4F4B40,17894078964ibc/B011C1A0AD5E717F674BA59FD8E05B2F946E4FD41C9CB3311C95F7ED4B815620,2ibc/B05539B66B72E2739B986B86391E5D08F12B8D5D2C2A7F8F8CF9ADF674DFA231,5925480710234ibc/B38AAA0F7A3EC4D7C8E12DFA33FF93205FE7A42738A4B0590E2FF15BC60A612B,21ibc/D41ECC8FEF1B7E9C4BCC58B1362588420853A9D0B898EDD513D9B79AFFA195C8,1ibc/E92E07E68705FAD13305EE9C73684B30A7B66A52F54C9890327E0A4C0F1D22E3,17275uatom\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq\"},{\"key\":\"amount\",\"value\":\"9ibc/054892D6BB43AF8B93AAC28AA5FD7019D2C59A15DAFD6F45C1FA2BF9BDA22454,35ibc/6B8A3F5C2AD51CD6171FA41A7E8C35AD594AB69226438DB94450436EA57B3A89,20ibc/715BD634CF4D914C3EE93B0F8A9D2514B743F6FE36BC80263D1BC5EE4B3C5D40,2ibc/88DCAA43A9CD099E1F9BBB80B9A90F64782EBA115A84B2CD8398757ADA4F4B40,17894078964ibc/B011C1A0AD5E717F674BA59FD8E05B2F946E4FD41C9CB3311C95F7ED4B815620,2ibc/B05539B66B72E2739B986B86391E5D08F12B8D5D2C2A7F8F8CF9ADF674DFA231,5925480710234ibc/B38AAA0F7A3EC4D7C8E12DFA33FF93205FE7A42738A4B0590E2FF15BC60A612B,21ibc/D41ECC8FEF1B7E9C4BCC58B1362588420853A9D0B898EDD513D9B79AFFA195C8,1ibc/E92E07E68705FAD13305EE9C73684B30A7B66A52F54C9890327E0A4C0F1D22E3,17275uatom\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq\"},{\"key\":\"sender\",\"value\":\"cosmos1jv65s3grqf6v6jl3dp4t6c9t9rk99cd88lyufl\"},{\"key\":\"amount\",\"value\":\"9ibc/054892D6BB43AF8B93AAC28AA5FD7019D2C59A15DAFD6F45C1FA2BF9BDA22454,35ibc/6B8A3F5C2AD51CD6171FA41A7E8C35AD594AB69226438DB94450436EA57B3A89,20ibc/715BD634CF4D914C3EE93B0F8A9D2514B743F6FE36BC80263D1BC5EE4B3C5D40,2ibc/88DCAA43A9CD099E1F9BBB80B9A90F64782EBA115A84B2CD8398757ADA4F4B40,17894078964ibc/B011C1A0AD5E717F674BA59FD8E05B2F946E4FD41C9CB3311C95F7ED4B815620,2ibc/B05539B66B72E2739B986B86391E5D08F12B8D5D2C2A7F8F8CF9ADF674DFA231,5925480710234ibc/B38AAA0F7A3EC4D7C8E12DFA33FF93205FE7A42738A4B0590E2FF15BC60A612B,21ibc/D41ECC8FEF1B7E9C4BCC58B1362588420853A9D0B898EDD513D9B79AFFA195C8,1ibc/E92E07E68705FAD13305EE9C73684B30A7B66A52F54C9890327E0A4C0F1D22E3,17275uatom\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"sender\",\"value\":\"cosmos1jv65s3grqf6v6jl3dp4t6c9t9rk99cd88lyufl\"}]},{\"type\":\"withdraw_rewards\",\"attributes\":[{\"key\":\"amount\",\"value\":\"9ibc/054892D6BB43AF8B93AAC28AA5FD7019D2C59A15DAFD6F45C1FA2BF9BDA22454,35ibc/6B8A3F5C2AD51CD6171FA41A7E8C35AD594AB69226438DB94450436EA57B3A89,20ibc/715BD634CF4D914C3EE93B0F8A9D2514B743F6FE36BC80263D1BC5EE4B3C5D40,2ibc/88DCAA43A9CD099E1F9BBB80B9A90F64782EBA115A84B2CD8398757ADA4F4B40,17894078964ibc/B011C1A0AD5E717F674BA59FD8E05B2F946E4FD41C9CB3311C95F7ED4B815620,2ibc/B05539B66B72E2739B986B86391E5D08F12B8D5D2C2A7F8F8CF9ADF674DFA231,5925480710234ibc/B38AAA0F7A3EC4D7C8E12DFA33FF93205FE7A42738A4B0590E2FF15BC60A612B,21ibc/D41ECC8FEF1B7E9C4BCC58B1362588420853A9D0B898EDD513D9B79AFFA195C8,1ibc/E92E07E68705FAD13305EE9C73684B30A7B66A52F54C9890327E0A4C0F1D22E3,17275uatom\"},{\"key\":\"validator\",\"value\":\"cosmosvaloper1clpqr4nrk4khgkxj78fcwwh6dl3uw4epsluffn\"},{\"key\":\"delegator\",\"value\":\"cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq\"},{\"key\":\"amount\",\"value\":\"500000uatom\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"cosmos1fl48vsnmsdzcv85q5d2q4z5ajdha8yu34mf0eh\"},{\"key\":\"amount\",\"value\":\"500000uatom\"}]},{\"type\":\"delegate\",\"attributes\":[{\"key\":\"validator\",\"value\":\"cosmosvaloper1clpqr4nrk4khgkxj78fcwwh6dl3uw4epsluffn\"},{\"key\":\"delegator\",\"value\":\"cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq\"},{\"key\":\"amount\",\"value\":\"500000uatom\"},{\"key\":\"new_shares\",\"value\":\"500000.000000000000000000\"}]}]}]",
+        "info": "",
+        "gas_wanted": "1003766",
+        "gas_used": "574066",
+        "events": [
+            {
+                "type": "tx",
+                "attributes": [
+                    {
+                        "key": "acc_seq",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq/1070",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "tx",
+                "attributes": [
+                    {
+                        "key": "signature",
+                        "value": "ldo+IA4c6ITQ5ueILjwdwzD9IAiiojjdV2DqjJg7LjR0a6tcDkw9P6tPZ4sbjh1hF0aeOwQ9DWQK4Tvm8nKJGQ==",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "message",
+                "attributes": [
+                    {
+                        "key": "action",
+                        "value": "/cosmos.staking.v1beta1.MsgDelegate",
+                        "index": true
+                    },
+                    {
+                        "key": "sender",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    },
+                    {
+                        "key": "module",
+                        "value": "staking",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "coin_spent",
+                "attributes": [
+                    {
+                        "key": "spender",
+                        "value": "cosmos1jv65s3grqf6v6jl3dp4t6c9t9rk99cd88lyufl",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "9ibc/054892D6BB43AF8B93AAC28AA5FD7019D2C59A15DAFD6F45C1FA2BF9BDA22454,35ibc/6B8A3F5C2AD51CD6171FA41A7E8C35AD594AB69226438DB94450436EA57B3A89,20ibc/715BD634CF4D914C3EE93B0F8A9D2514B743F6FE36BC80263D1BC5EE4B3C5D40,2ibc/88DCAA43A9CD099E1F9BBB80B9A90F64782EBA115A84B2CD8398757ADA4F4B40,17894078964ibc/B011C1A0AD5E717F674BA59FD8E05B2F946E4FD41C9CB3311C95F7ED4B815620,2ibc/B05539B66B72E2739B986B86391E5D08F12B8D5D2C2A7F8F8CF9ADF674DFA231,5925480710234ibc/B38AAA0F7A3EC4D7C8E12DFA33FF93205FE7A42738A4B0590E2FF15BC60A612B,21ibc/D41ECC8FEF1B7E9C4BCC58B1362588420853A9D0B898EDD513D9B79AFFA195C8,1ibc/E92E07E68705FAD13305EE9C73684B30A7B66A52F54C9890327E0A4C0F1D22E3,17275uatom",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "coin_received",
+                "attributes": [
+                    {
+                        "key": "receiver",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "9ibc/054892D6BB43AF8B93AAC28AA5FD7019D2C59A15DAFD6F45C1FA2BF9BDA22454,35ibc/6B8A3F5C2AD51CD6171FA41A7E8C35AD594AB69226438DB94450436EA57B3A89,20ibc/715BD634CF4D914C3EE93B0F8A9D2514B743F6FE36BC80263D1BC5EE4B3C5D40,2ibc/88DCAA43A9CD099E1F9BBB80B9A90F64782EBA115A84B2CD8398757ADA4F4B40,17894078964ibc/B011C1A0AD5E717F674BA59FD8E05B2F946E4FD41C9CB3311C95F7ED4B815620,2ibc/B05539B66B72E2739B986B86391E5D08F12B8D5D2C2A7F8F8CF9ADF674DFA231,5925480710234ibc/B38AAA0F7A3EC4D7C8E12DFA33FF93205FE7A42738A4B0590E2FF15BC60A612B,21ibc/D41ECC8FEF1B7E9C4BCC58B1362588420853A9D0B898EDD513D9B79AFFA195C8,1ibc/E92E07E68705FAD13305EE9C73684B30A7B66A52F54C9890327E0A4C0F1D22E3,17275uatom",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "transfer",
+                "attributes": [
+                    {
+                        "key": "recipient",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    },
+                    {
+                        "key": "sender",
+                        "value": "cosmos1jv65s3grqf6v6jl3dp4t6c9t9rk99cd88lyufl",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "9ibc/054892D6BB43AF8B93AAC28AA5FD7019D2C59A15DAFD6F45C1FA2BF9BDA22454,35ibc/6B8A3F5C2AD51CD6171FA41A7E8C35AD594AB69226438DB94450436EA57B3A89,20ibc/715BD634CF4D914C3EE93B0F8A9D2514B743F6FE36BC80263D1BC5EE4B3C5D40,2ibc/88DCAA43A9CD099E1F9BBB80B9A90F64782EBA115A84B2CD8398757ADA4F4B40,17894078964ibc/B011C1A0AD5E717F674BA59FD8E05B2F946E4FD41C9CB3311C95F7ED4B815620,2ibc/B05539B66B72E2739B986B86391E5D08F12B8D5D2C2A7F8F8CF9ADF674DFA231,5925480710234ibc/B38AAA0F7A3EC4D7C8E12DFA33FF93205FE7A42738A4B0590E2FF15BC60A612B,21ibc/D41ECC8FEF1B7E9C4BCC58B1362588420853A9D0B898EDD513D9B79AFFA195C8,1ibc/E92E07E68705FAD13305EE9C73684B30A7B66A52F54C9890327E0A4C0F1D22E3,17275uatom",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "message",
+                "attributes": [
+                    {
+                        "key": "sender",
+                        "value": "cosmos1jv65s3grqf6v6jl3dp4t6c9t9rk99cd88lyufl",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "withdraw_rewards",
+                "attributes": [
+                    {
+                        "key": "amount",
+                        "value": "9ibc/054892D6BB43AF8B93AAC28AA5FD7019D2C59A15DAFD6F45C1FA2BF9BDA22454,35ibc/6B8A3F5C2AD51CD6171FA41A7E8C35AD594AB69226438DB94450436EA57B3A89,20ibc/715BD634CF4D914C3EE93B0F8A9D2514B743F6FE36BC80263D1BC5EE4B3C5D40,2ibc/88DCAA43A9CD099E1F9BBB80B9A90F64782EBA115A84B2CD8398757ADA4F4B40,17894078964ibc/B011C1A0AD5E717F674BA59FD8E05B2F946E4FD41C9CB3311C95F7ED4B815620,2ibc/B05539B66B72E2739B986B86391E5D08F12B8D5D2C2A7F8F8CF9ADF674DFA231,5925480710234ibc/B38AAA0F7A3EC4D7C8E12DFA33FF93205FE7A42738A4B0590E2FF15BC60A612B,21ibc/D41ECC8FEF1B7E9C4BCC58B1362588420853A9D0B898EDD513D9B79AFFA195C8,1ibc/E92E07E68705FAD13305EE9C73684B30A7B66A52F54C9890327E0A4C0F1D22E3,17275uatom",
+                        "index": true
+                    },
+                    {
+                        "key": "validator",
+                        "value": "cosmosvaloper1clpqr4nrk4khgkxj78fcwwh6dl3uw4epsluffn",
+                        "index": true
+                    },
+                    {
+                        "key": "delegator",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "coin_spent",
+                "attributes": [
+                    {
+                        "key": "spender",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "500000uatom",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "coin_received",
+                "attributes": [
+                    {
+                        "key": "receiver",
+                        "value": "cosmos1fl48vsnmsdzcv85q5d2q4z5ajdha8yu34mf0eh",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "500000uatom",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "delegate",
+                "attributes": [
+                    {
+                        "key": "validator",
+                        "value": "cosmosvaloper1clpqr4nrk4khgkxj78fcwwh6dl3uw4epsluffn",
+                        "index": true
+                    },
+                    {
+                        "key": "delegator",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "500000uatom",
+                        "index": true
+                    },
+                    {
+                        "key": "new_shares",
+                        "value": "500000.000000000000000000",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "coin_spent",
+                "attributes": [
+                    {
+                        "key": "spender",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "2705uatom",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "coin_received",
+                "attributes": [
+                    {
+                        "key": "receiver",
+                        "value": "cosmos13pxn9n3qw79e03844rdadagmg0nshmwf7qvuye",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "2705uatom",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "transfer",
+                "attributes": [
+                    {
+                        "key": "recipient",
+                        "value": "cosmos13pxn9n3qw79e03844rdadagmg0nshmwf7qvuye",
+                        "index": true
+                    },
+                    {
+                        "key": "sender",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "2705uatom",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "message",
+                "attributes": [
+                    {
+                        "key": "sender",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "coin_spent",
+                "attributes": [
+                    {
+                        "key": "spender",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "2314uatom",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "coin_received",
+                "attributes": [
+                    {
+                        "key": "receiver",
+                        "value": "cosmos1pqr96s9e6jk4zf4v7zavsqesjjp4wg8ahy82zz",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "2314uatom",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "transfer",
+                "attributes": [
+                    {
+                        "key": "recipient",
+                        "value": "cosmos1pqr96s9e6jk4zf4v7zavsqesjjp4wg8ahy82zz",
+                        "index": true
+                    },
+                    {
+                        "key": "sender",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    },
+                    {
+                        "key": "amount",
+                        "value": "2314uatom",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "message",
+                "attributes": [
+                    {
+                        "key": "sender",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "fee_pay",
+                "attributes": [
+                    {
+                        "key": "fee",
+                        "value": "2705uatom",
+                        "index": true
+                    },
+                    {
+                        "key": "fee_payer",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    }
+                ]
+            },
+            {
+                "type": "tip_pay",
+                "attributes": [
+                    {
+                        "key": "tip",
+                        "value": "2314uatom",
+                        "index": true
+                    },
+                    {
+                        "key": "tip_payer",
+                        "value": "cosmos19lzdey4jmepmpzyw6sggsgfayrp3h45e734ynq",
+                        "index": true
+                    },
+                    {
+                        "key": "tip_payee",
+                        "value": "cosmos1pqr96s9e6jk4zf4v7zavsqesjjp4wg8ahy82zz",
+                        "index": true
+                    }
+                ]
+            }
+        ],
+        "codespace": ""
+    },
+    "tx": "CqUBCp0BCiMvY29zbW9zLnN0YWtpbmcudjFiZXRhMS5Nc2dEZWxlZ2F0ZRJ2Ci1jb3Ntb3MxOWx6ZGV5NGptZXBtcHp5dzZzZ2dzZ2ZheXJwM2g0NWU3MzR5bnESNGNvc21vc3ZhbG9wZXIxY2xwcXI0bnJrNGtoZ2t4ajc4ZmN3d2g2ZGwzdXc0ZXBzbHVmZm4aDwoFdWF0b20SBjUwMDAwMBjY/J8KEmgKUQpGCh8vY29zbW9zLmNyeXB0by5zZWNwMjU2azEuUHViS2V5EiMKIQPqVnp9F0XgO5TIszdpuYhpxDh635q0Shf9jrdHJmbgAhIECgIIARiuCBITCg0KBXVhdG9tEgQ1MDE5EPahPRpAldo+IA4c6ITQ5ueILjwdwzD9IAiiojjdV2DqjJg7LjR0a6tcDkw9P6tPZ4sbjh1hF0aeOwQ9DWQK4Tvm8nKJGQ==",
+    "proof": {
+        "root_hash": "B629BA426CC25D9199FC0A8A6079B05641F8B050EACDD4D27CE3415AA76673C6",
+        "data": "CqUBCp0BCiMvY29zbW9zLnN0YWtpbmcudjFiZXRhMS5Nc2dEZWxlZ2F0ZRJ2Ci1jb3Ntb3MxOWx6ZGV5NGptZXBtcHp5dzZzZ2dzZ2ZheXJwM2g0NWU3MzR5bnESNGNvc21vc3ZhbG9wZXIxY2xwcXI0bnJrNGtoZ2t4ajc4ZmN3d2g2ZGwzdXc0ZXBzbHVmZm4aDwoFdWF0b20SBjUwMDAwMBjY/J8KEmgKUQpGCh8vY29zbW9zLmNyeXB0by5zZWNwMjU2azEuUHViS2V5EiMKIQPqVnp9F0XgO5TIszdpuYhpxDh635q0Shf9jrdHJmbgAhIECgIIARiuCBITCg0KBXVhdG9tEgQ1MDE5EPahPRpAldo+IA4c6ITQ5ueILjwdwzD9IAiiojjdV2DqjJg7LjR0a6tcDkw9P6tPZ4sbjh1hF0aeOwQ9DWQK4Tvm8nKJGQ==",
+        "proof": {
+            "total": "3",
+            "index": "0",
+            "leaf_hash": "XqLGbJxyE9dEb0+pUJmxnKa15mzQbCGwXy2kIfGHIBs=",
+            "aunts": [
+                "t6IHAMw7aRaaAbkExkrqL14sL8dYqrc8w+OTHYmQXdM=",
+                "YwF5wa6jJ7w37HsKcSWIGaCX4bbSv0fETLd+DE3m7BM="
+            ]
+        }
+    }
+}

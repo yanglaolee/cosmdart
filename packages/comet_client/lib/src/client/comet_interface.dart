@@ -64,8 +64,8 @@ abstract interface class StatusClient {
 abstract interface class NetworkClient {
 
   Future<ResultNetInfo?> netInfo();
-  Future<ResultDumpConsensusState?> dumpConsensusState();
-  Future<ResultConsensusState?> consensusState();
+  // Future<ResultDumpConsensusState?> dumpConsensusState();  // not surpported
+  // Future<ResultConsensusState?> consensusState();  // // not surpported
   Future<ResultConsensusParams?> consensusParams(String height);
   Future<void> health();
 }

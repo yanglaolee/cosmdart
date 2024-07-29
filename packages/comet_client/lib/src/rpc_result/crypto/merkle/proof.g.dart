@@ -7,22 +7,20 @@ part of 'proof.dart';
 // **************************************************************************
 
 _$ProofImpl _$$ProofImplFromJson(Map<String, dynamic> json) => _$ProofImpl(
-      total: (json['total'] as num?)?.toInt(),
-      index: (json['index'] as num?)?.toInt(),
-      leafHash: (json['leaf_hash'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      aunts: (json['aunts'] as List<dynamic>?)
-          ?.map((e) =>
-              (e as List<dynamic>).map((e) => (e as num).toInt()).toList())
-          .toList(),
+      total: json['total'] as String?,
+      index: json['index'] as String?,
+      leafHash: _$JsonConverterFromJson<String, Uint8List>(
+          json['leaf_hash'], const Base64Converter().fromJson),
+      aunts: _$JsonConverterFromJson<List<dynamic>, List<Uint8List>>(
+          json['aunts'], const TxsConverter().fromJson),
     );
 
 Map<String, dynamic> _$$ProofImplToJson(_$ProofImpl instance) {
   final val = <String, dynamic>{
     'total': instance.total,
     'index': instance.index,
-    'leaf_hash': instance.leafHash,
+    'leaf_hash': _$JsonConverterToJson<String, Uint8List>(
+        instance.leafHash, const Base64Converter().toJson),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -31,6 +29,21 @@ Map<String, dynamic> _$$ProofImplToJson(_$ProofImpl instance) {
     }
   }
 
-  writeNotNull('aunts', instance.aunts);
+  writeNotNull(
+      'aunts',
+      _$JsonConverterToJson<List<dynamic>, List<Uint8List>>(
+          instance.aunts, const TxsConverter().toJson));
   return val;
 }
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

@@ -9,11 +9,9 @@ part of 'genesis.dart';
 _$GenesisValidatorImpl _$$GenesisValidatorImplFromJson(
         Map<String, dynamic> json) =>
     _$GenesisValidatorImpl(
-      address: (json['address'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      address: json['address'] as String?,
       pubKey: json['pub_key'] as String?,
-      power: (json['power'] as num?)?.toInt(),
+      power: json['power'] as String?,
       name: json['name'] as String?,
     );
 
@@ -31,7 +29,7 @@ _$GenesisDocImpl _$$GenesisDocImplFromJson(Map<String, dynamic> json) =>
       genesisTime: _$JsonConverterFromJson<String, DateTime>(
           json['genesis_time'], const DateTimeConverter().fromJson),
       chainId: json['chain_id'] as String?,
-      initialHeight: (json['initial_height'] as num?)?.toInt(),
+      initialHeight: json['initial_height'] as String?,
       consensusParams: json['consensus_params'] == null
           ? null
           : ConsensusParams.fromJson(
@@ -39,12 +37,8 @@ _$GenesisDocImpl _$$GenesisDocImplFromJson(Map<String, dynamic> json) =>
       validators: (json['validators'] as List<dynamic>?)
           ?.map((e) => GenesisValidator.fromJson(e as Map<String, dynamic>))
           .toList(),
-      appHash: (json['app_hash'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      appState: (json['app_state'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      appHash: json['app_hash'] as String?,
+      appState: json['app_state'] as String?,
     );
 
 Map<String, dynamic> _$$GenesisDocImplToJson(_$GenesisDocImpl instance) {

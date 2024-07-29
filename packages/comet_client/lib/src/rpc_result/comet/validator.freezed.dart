@@ -21,13 +21,13 @@ Validator _$ValidatorFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Validator {
   @JsonKey(name: 'address')
-  List<int>? get address => throw _privateConstructorUsedError;
+  String? get address => throw _privateConstructorUsedError;
   @JsonKey(name: 'pub_key')
-  String? get pubKey => throw _privateConstructorUsedError;
+  PubKey? get pubKey => throw _privateConstructorUsedError;
   @JsonKey(name: 'voting_power')
-  int? get votingPower => throw _privateConstructorUsedError;
+  String? get votingPower => throw _privateConstructorUsedError;
   @JsonKey(name: 'proposer_priority')
-  int? get proposerPriority => throw _privateConstructorUsedError;
+  String? get proposerPriority => throw _privateConstructorUsedError;
 
   /// Serializes this Validator to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,10 +45,12 @@ abstract class $ValidatorCopyWith<$Res> {
       _$ValidatorCopyWithImpl<$Res, Validator>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'address') List<int>? address,
-      @JsonKey(name: 'pub_key') String? pubKey,
-      @JsonKey(name: 'voting_power') int? votingPower,
-      @JsonKey(name: 'proposer_priority') int? proposerPriority});
+      {@JsonKey(name: 'address') String? address,
+      @JsonKey(name: 'pub_key') PubKey? pubKey,
+      @JsonKey(name: 'voting_power') String? votingPower,
+      @JsonKey(name: 'proposer_priority') String? proposerPriority});
+
+  $PubKeyCopyWith<$Res>? get pubKey;
 }
 
 /// @nodoc
@@ -75,20 +77,34 @@ class _$ValidatorCopyWithImpl<$Res, $Val extends Validator>
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       pubKey: freezed == pubKey
           ? _value.pubKey
           : pubKey // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as PubKey?,
       votingPower: freezed == votingPower
           ? _value.votingPower
           : votingPower // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       proposerPriority: freezed == proposerPriority
           ? _value.proposerPriority
           : proposerPriority // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
+  }
+
+  /// Create a copy of Validator
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PubKeyCopyWith<$Res>? get pubKey {
+    if (_value.pubKey == null) {
+      return null;
+    }
+
+    return $PubKeyCopyWith<$Res>(_value.pubKey!, (value) {
+      return _then(_value.copyWith(pubKey: value) as $Val);
+    });
   }
 }
 
@@ -101,10 +117,13 @@ abstract class _$$ValidatorImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'address') List<int>? address,
-      @JsonKey(name: 'pub_key') String? pubKey,
-      @JsonKey(name: 'voting_power') int? votingPower,
-      @JsonKey(name: 'proposer_priority') int? proposerPriority});
+      {@JsonKey(name: 'address') String? address,
+      @JsonKey(name: 'pub_key') PubKey? pubKey,
+      @JsonKey(name: 'voting_power') String? votingPower,
+      @JsonKey(name: 'proposer_priority') String? proposerPriority});
+
+  @override
+  $PubKeyCopyWith<$Res>? get pubKey;
 }
 
 /// @nodoc
@@ -127,21 +146,21 @@ class __$$ValidatorImplCopyWithImpl<$Res>
   }) {
     return _then(_$ValidatorImpl(
       address: freezed == address
-          ? _value._address
+          ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       pubKey: freezed == pubKey
           ? _value.pubKey
           : pubKey // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as PubKey?,
       votingPower: freezed == votingPower
           ? _value.votingPower
           : votingPower // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       proposerPriority: freezed == proposerPriority
           ? _value.proposerPriority
           : proposerPriority // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -150,35 +169,26 @@ class __$$ValidatorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ValidatorImpl implements _Validator {
   _$ValidatorImpl(
-      {@JsonKey(name: 'address') final List<int>? address,
+      {@JsonKey(name: 'address') this.address,
       @JsonKey(name: 'pub_key') this.pubKey,
       @JsonKey(name: 'voting_power') this.votingPower,
-      @JsonKey(name: 'proposer_priority') this.proposerPriority})
-      : _address = address;
+      @JsonKey(name: 'proposer_priority') this.proposerPriority});
 
   factory _$ValidatorImpl.fromJson(Map<String, dynamic> json) =>
       _$$ValidatorImplFromJson(json);
 
-  final List<int>? _address;
   @override
   @JsonKey(name: 'address')
-  List<int>? get address {
-    final value = _address;
-    if (value == null) return null;
-    if (_address is EqualUnmodifiableListView) return _address;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  final String? address;
   @override
   @JsonKey(name: 'pub_key')
-  final String? pubKey;
+  final PubKey? pubKey;
   @override
   @JsonKey(name: 'voting_power')
-  final int? votingPower;
+  final String? votingPower;
   @override
   @JsonKey(name: 'proposer_priority')
-  final int? proposerPriority;
+  final String? proposerPriority;
 
   @override
   String toString() {
@@ -190,7 +200,7 @@ class _$ValidatorImpl implements _Validator {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ValidatorImpl &&
-            const DeepCollectionEquality().equals(other._address, _address) &&
+            (identical(other.address, address) || other.address == address) &&
             (identical(other.pubKey, pubKey) || other.pubKey == pubKey) &&
             (identical(other.votingPower, votingPower) ||
                 other.votingPower == votingPower) &&
@@ -200,12 +210,8 @@ class _$ValidatorImpl implements _Validator {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_address),
-      pubKey,
-      votingPower,
-      proposerPriority);
+  int get hashCode =>
+      Object.hash(runtimeType, address, pubKey, votingPower, proposerPriority);
 
   /// Create a copy of Validator
   /// with the given fields replaced by the non-null parameter values.
@@ -225,10 +231,10 @@ class _$ValidatorImpl implements _Validator {
 
 abstract class _Validator implements Validator {
   factory _Validator(
-          {@JsonKey(name: 'address') final List<int>? address,
-          @JsonKey(name: 'pub_key') final String? pubKey,
-          @JsonKey(name: 'voting_power') final int? votingPower,
-          @JsonKey(name: 'proposer_priority') final int? proposerPriority}) =
+          {@JsonKey(name: 'address') final String? address,
+          @JsonKey(name: 'pub_key') final PubKey? pubKey,
+          @JsonKey(name: 'voting_power') final String? votingPower,
+          @JsonKey(name: 'proposer_priority') final String? proposerPriority}) =
       _$ValidatorImpl;
 
   factory _Validator.fromJson(Map<String, dynamic> json) =
@@ -236,21 +242,201 @@ abstract class _Validator implements Validator {
 
   @override
   @JsonKey(name: 'address')
-  List<int>? get address;
+  String? get address;
   @override
   @JsonKey(name: 'pub_key')
-  String? get pubKey;
+  PubKey? get pubKey;
   @override
   @JsonKey(name: 'voting_power')
-  int? get votingPower;
+  String? get votingPower;
   @override
   @JsonKey(name: 'proposer_priority')
-  int? get proposerPriority;
+  String? get proposerPriority;
 
   /// Create a copy of Validator
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ValidatorImplCopyWith<_$ValidatorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+PubKey _$PubKeyFromJson(Map<String, dynamic> json) {
+  return _PubKey.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PubKey {
+  @JsonKey(name: 'type')
+  String? get type => throw _privateConstructorUsedError;
+  @JsonKey(name: 'value')
+  @Base64Converter()
+  Uint8List? get value => throw _privateConstructorUsedError;
+
+  /// Serializes this PubKey to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of PubKey
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $PubKeyCopyWith<PubKey> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PubKeyCopyWith<$Res> {
+  factory $PubKeyCopyWith(PubKey value, $Res Function(PubKey) then) =
+      _$PubKeyCopyWithImpl<$Res, PubKey>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'type') String? type,
+      @JsonKey(name: 'value') @Base64Converter() Uint8List? value});
+}
+
+/// @nodoc
+class _$PubKeyCopyWithImpl<$Res, $Val extends PubKey>
+    implements $PubKeyCopyWith<$Res> {
+  _$PubKeyCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of PubKey
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = freezed,
+    Object? value = freezed,
+  }) {
+    return _then(_value.copyWith(
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$PubKeyImplCopyWith<$Res> implements $PubKeyCopyWith<$Res> {
+  factory _$$PubKeyImplCopyWith(
+          _$PubKeyImpl value, $Res Function(_$PubKeyImpl) then) =
+      __$$PubKeyImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'type') String? type,
+      @JsonKey(name: 'value') @Base64Converter() Uint8List? value});
+}
+
+/// @nodoc
+class __$$PubKeyImplCopyWithImpl<$Res>
+    extends _$PubKeyCopyWithImpl<$Res, _$PubKeyImpl>
+    implements _$$PubKeyImplCopyWith<$Res> {
+  __$$PubKeyImplCopyWithImpl(
+      _$PubKeyImpl _value, $Res Function(_$PubKeyImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PubKey
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = freezed,
+    Object? value = freezed,
+  }) {
+    return _then(_$PubKeyImpl(
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PubKeyImpl implements _PubKey {
+  _$PubKeyImpl(
+      {@JsonKey(name: 'type') this.type,
+      @JsonKey(name: 'value') @Base64Converter() this.value});
+
+  factory _$PubKeyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PubKeyImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'type')
+  final String? type;
+  @override
+  @JsonKey(name: 'value')
+  @Base64Converter()
+  final Uint8List? value;
+
+  @override
+  String toString() {
+    return 'PubKey(type: $type, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PubKeyImpl &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other.value, value));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, type, const DeepCollectionEquality().hash(value));
+
+  /// Create a copy of PubKey
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PubKeyImplCopyWith<_$PubKeyImpl> get copyWith =>
+      __$$PubKeyImplCopyWithImpl<_$PubKeyImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PubKeyImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PubKey implements PubKey {
+  factory _PubKey(
+          {@JsonKey(name: 'type') final String? type,
+          @JsonKey(name: 'value') @Base64Converter() final Uint8List? value}) =
+      _$PubKeyImpl;
+
+  factory _PubKey.fromJson(Map<String, dynamic> json) = _$PubKeyImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'type')
+  String? get type;
+  @override
+  @JsonKey(name: 'value')
+  @Base64Converter()
+  Uint8List? get value;
+
+  /// Create a copy of PubKey
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PubKeyImplCopyWith<_$PubKeyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

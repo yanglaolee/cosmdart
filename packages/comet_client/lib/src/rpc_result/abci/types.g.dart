@@ -174,13 +174,12 @@ Map<String, dynamic> _$$EventAttributeImplToJson(
 _$ExecTxResultImpl _$$ExecTxResultImplFromJson(Map<String, dynamic> json) =>
     _$ExecTxResultImpl(
       code: (json['code'] as num?)?.toInt(),
-      data: (json['data'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      data: _$JsonConverterFromJson<String, Uint8List>(
+          json['data'], const Base64Converter().fromJson),
       log: json['log'] as String?,
       info: json['info'] as String?,
-      gasWanted: (json['gas_wanted'] as num?)?.toInt(),
-      gasUsed: (json['gas_used'] as num?)?.toInt(),
+      gasWanted: json['gas_wanted'] as String?,
+      gasUsed: json['gas_used'] as String?,
       events: (json['events'] as List<dynamic>?)
           ?.map((e) => Event.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -197,7 +196,10 @@ Map<String, dynamic> _$$ExecTxResultImplToJson(_$ExecTxResultImpl instance) {
   }
 
   writeNotNull('code', instance.code);
-  writeNotNull('data', instance.data);
+  writeNotNull(
+      'data',
+      _$JsonConverterToJson<String, Uint8List>(
+          instance.data, const Base64Converter().toJson));
   writeNotNull('log', instance.log);
   writeNotNull('info', instance.info);
   writeNotNull('gas_wanted', instance.gasWanted);

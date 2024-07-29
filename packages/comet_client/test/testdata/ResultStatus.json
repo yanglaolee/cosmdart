@@ -1,0 +1,38 @@
+{
+    "node_info": {
+        "protocol_version": {
+            "p2p": "8",
+            "block": "11",
+            "app": "0"
+        },
+        "id": "3aa86f390e71f416f66dcf68b22b1b640f1fa23d",
+        "listen_addr": "65.108.131.174:14956",
+        "network": "cosmoshub-4",
+        "version": "0.37.6",
+        "channels": "40202122233038606100",
+        "moniker": "hello-cosmos-relayer",
+        "other": {
+            "tx_index": "on",
+            "rpc_address": "tcp://0.0.0.0:14957"
+        }
+    },
+    "sync_info": {
+        "latest_block_hash": "1A2C11752E9F676686EABAB053946142DFBE995DEA9AB08C41D3DA18F8F222D2",
+        "latest_app_hash": "F588D1F2DA513145CEBC1A414D9B267914C1D10CB41ACCC14CAC6F2CE9032FCA",
+        "latest_block_height": "21496556",
+        "latest_block_time": "2024-07-29T03:47:47.657979003Z",
+        "earliest_block_hash": "151D57031C8E7CE8174F325FE29089BA9D6BA3019D2640B1F4525E6F618A954B",
+        "earliest_app_hash": "CA2B8D831B9EE5CFD6F8EDF24F8AEADF4D39DFA8E497280CF5D5DA54FAFE1A15",
+        "earliest_block_height": "20685604",
+        "earliest_block_time": "2024-06-01T21:59:47.837697303Z",
+        "catching_up": false
+    },
+    "validator_info": {
+        "address": "2E172FCAA29C843A518A2A9950763A68351A9075",
+        "pub_key": {
+            "type": "tendermint/PubKeyEd25519",
+            "value": "h6DLniDViaHdmO8G7KfcKXkF4CyznQW8bUdUTA+cf+I="
+        },
+        "voting_power": "0"
+    }
+}

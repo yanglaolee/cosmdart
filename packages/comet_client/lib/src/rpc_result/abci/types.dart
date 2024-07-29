@@ -75,7 +75,6 @@ class Event with _$Event {
 
 @freezed
 class EventAttribute with _$EventAttribute {
-  @JsonSerializable(explicitToJson: true)
   factory EventAttribute({
     @JsonKey(name: 'key', includeIfNull: false) String? key,
     @JsonKey(name: 'value', includeIfNull: false) String? value,
@@ -91,11 +90,11 @@ class ExecTxResult with _$ExecTxResult {
   @JsonSerializable(explicitToJson: true)
   factory ExecTxResult({
     @JsonKey(name: 'code', includeIfNull: false) int? code,
-    @JsonKey(name: 'data', includeIfNull: false) List<int>? data,
+    @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() Uint8List? data,
     @JsonKey(name: 'log', includeIfNull: false) String? log,
     @JsonKey(name: 'info', includeIfNull: false) String? info,
-    @JsonKey(name: 'gas_wanted', includeIfNull: false) int? gasWanted,
-    @JsonKey(name: 'gas_used', includeIfNull: false) int? gasUsed,
+    @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
+    @JsonKey(name: 'gas_used', includeIfNull: false) String? gasUsed,
     @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
     @JsonKey(name: 'codespace', includeIfNull: false) String? codespace,
   }) = _ExecTxResult;

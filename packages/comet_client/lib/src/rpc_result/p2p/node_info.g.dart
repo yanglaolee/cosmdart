@@ -23,9 +23,9 @@ Map<String, dynamic> _$$DefaultNodeInfoOtherImplToJson(
 _$ProtocolVersionImpl _$$ProtocolVersionImplFromJson(
         Map<String, dynamic> json) =>
     _$ProtocolVersionImpl(
-      p2p: (json['p2p'] as num?)?.toInt(),
-      block: (json['block'] as num?)?.toInt(),
-      app: (json['app'] as num?)?.toInt(),
+      p2p: json['p2p'] as String?,
+      block: json['block'] as String?,
+      app: json['app'] as String?,
     );
 
 Map<String, dynamic> _$$ProtocolVersionImplToJson(
@@ -47,9 +47,7 @@ _$DefaultNodeInfoImpl _$$DefaultNodeInfoImplFromJson(
       listenAddr: json['listen_addr'] as String?,
       network: json['network'] as String?,
       version: json['version'] as String?,
-      channels: (json['channels'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      channels: json['channels'] as String?,
       moniker: json['moniker'] as String?,
       other: json['other'] == null
           ? null

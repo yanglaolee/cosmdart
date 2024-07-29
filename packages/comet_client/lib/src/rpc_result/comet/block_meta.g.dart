@@ -15,7 +15,7 @@ _$BlockMetaImpl _$$BlockMetaImplFromJson(Map<String, dynamic> json) =>
       header: json['header'] == null
           ? null
           : Header.fromJson(json['header'] as Map<String, dynamic>),
-      numTxs: (json['num_txs'] as num?)?.toInt(),
+      numTxs: json['num_txs'] as String?,
     );
 
 Map<String, dynamic> _$$BlockMetaImplToJson(_$BlockMetaImpl instance) =>

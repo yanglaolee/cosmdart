@@ -8,8 +8,8 @@ part of 'params.dart';
 
 _$BlockParamsImpl _$$BlockParamsImplFromJson(Map<String, dynamic> json) =>
     _$BlockParamsImpl(
-      maxBytes: (json['max_bytes'] as num?)?.toInt(),
-      maxGas: (json['max_gas'] as num?)?.toInt(),
+      maxBytes: json['max_bytes'] as String?,
+      maxGas: json['max_gas'] as String?,
     );
 
 Map<String, dynamic> _$$BlockParamsImplToJson(_$BlockParamsImpl instance) =>
@@ -20,9 +20,9 @@ Map<String, dynamic> _$$BlockParamsImplToJson(_$BlockParamsImpl instance) =>
 
 _$EvidenceParamsImpl _$$EvidenceParamsImplFromJson(Map<String, dynamic> json) =>
     _$EvidenceParamsImpl(
-      maxAgeNumBlocks: (json['max_age_num_blocks'] as num?)?.toInt(),
+      maxAgeNumBlocks: json['max_age_num_blocks'] as String?,
       maxAgeDuration: json['max_age_duration'] as String?,
-      maxBytes: (json['max_bytes'] as num?)?.toInt(),
+      maxBytes: json['max_bytes'] as String?,
     );
 
 Map<String, dynamic> _$$EvidenceParamsImplToJson(
@@ -49,7 +49,7 @@ Map<String, dynamic> _$$ValidatorParamsImplToJson(
 
 _$VersionParamsImpl _$$VersionParamsImplFromJson(Map<String, dynamic> json) =>
     _$VersionParamsImpl(
-      app: (json['app'] as num?)?.toInt(),
+      app: json['app'] as String?,
     );
 
 Map<String, dynamic> _$$VersionParamsImplToJson(_$VersionParamsImpl instance) =>
@@ -60,7 +60,7 @@ Map<String, dynamic> _$$VersionParamsImplToJson(_$VersionParamsImpl instance) =>
 _$ABCIParamsImpl _$$ABCIParamsImplFromJson(Map<String, dynamic> json) =>
     _$ABCIParamsImpl(
       voteExtensionsEnableHeight:
-          (json['vote_extensions_enable_height'] as num?)?.toInt(),
+          json['vote_extensions_enable_height'] as String?,
     );
 
 Map<String, dynamic> _$$ABCIParamsImplToJson(_$ABCIParamsImpl instance) =>
@@ -89,11 +89,20 @@ _$ConsensusParamsImpl _$$ConsensusParamsImplFromJson(
     );
 
 Map<String, dynamic> _$$ConsensusParamsImplToJson(
-        _$ConsensusParamsImpl instance) =>
-    <String, dynamic>{
-      'block': instance.block?.toJson(),
-      'evidence': instance.evidence?.toJson(),
-      'validator': instance.validator?.toJson(),
-      'version': instance.version?.toJson(),
-      'abci': instance.abci?.toJson(),
-    };
+    _$ConsensusParamsImpl instance) {
+  final val = <String, dynamic>{
+    'block': instance.block?.toJson(),
+    'evidence': instance.evidence?.toJson(),
+    'validator': instance.validator?.toJson(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('version', instance.version?.toJson());
+  writeNotNull('abci', instance.abci?.toJson());
+  return val;
+}

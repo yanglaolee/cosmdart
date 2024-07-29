@@ -18,9 +18,9 @@ class DefaultNodeInfoOther with _$DefaultNodeInfoOther {
 @freezed 
 class ProtocolVersion with _$ProtocolVersion {
   factory ProtocolVersion({
-    @JsonKey(name: 'p2p') int? p2p,
-    @JsonKey(name: 'block') int? block,
-    @JsonKey(name: 'app') int? app,
+    @JsonKey(name: 'p2p') String? p2p,
+    @JsonKey(name: 'block') String? block,
+    @JsonKey(name: 'app') String? app,
   }) = _ProtocolVersion;
 
   factory ProtocolVersion.fromJson(Map<String, dynamic> json) =>
@@ -36,7 +36,7 @@ class DefaultNodeInfo with _$DefaultNodeInfo {
     @JsonKey(name: 'listen_addr') String? listenAddr,
     @JsonKey(name: 'network') String? network,
     @JsonKey(name: 'version') String? version,
-    @JsonKey(name: 'channels') List<int>? channels,
+    @JsonKey(name: 'channels') String? channels,
     @JsonKey(name: 'moniker') String? moniker,
     @JsonKey(name: 'other') DefaultNodeInfoOther? other,
   }) = _DefaultNodeInfo;

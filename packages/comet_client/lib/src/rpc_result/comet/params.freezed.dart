@@ -21,9 +21,9 @@ BlockParams _$BlockParamsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BlockParams {
   @JsonKey(name: 'max_bytes')
-  int? get maxBytes => throw _privateConstructorUsedError;
+  String? get maxBytes => throw _privateConstructorUsedError;
   @JsonKey(name: 'max_gas')
-  int? get maxGas => throw _privateConstructorUsedError;
+  String? get maxGas => throw _privateConstructorUsedError;
 
   /// Serializes this BlockParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,8 +42,8 @@ abstract class $BlockParamsCopyWith<$Res> {
       _$BlockParamsCopyWithImpl<$Res, BlockParams>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'max_bytes') int? maxBytes,
-      @JsonKey(name: 'max_gas') int? maxGas});
+      {@JsonKey(name: 'max_bytes') String? maxBytes,
+      @JsonKey(name: 'max_gas') String? maxGas});
 }
 
 /// @nodoc
@@ -68,11 +68,11 @@ class _$BlockParamsCopyWithImpl<$Res, $Val extends BlockParams>
       maxBytes: freezed == maxBytes
           ? _value.maxBytes
           : maxBytes // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       maxGas: freezed == maxGas
           ? _value.maxGas
           : maxGas // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
   }
 }
@@ -86,8 +86,8 @@ abstract class _$$BlockParamsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'max_bytes') int? maxBytes,
-      @JsonKey(name: 'max_gas') int? maxGas});
+      {@JsonKey(name: 'max_bytes') String? maxBytes,
+      @JsonKey(name: 'max_gas') String? maxGas});
 }
 
 /// @nodoc
@@ -110,11 +110,11 @@ class __$$BlockParamsImplCopyWithImpl<$Res>
       maxBytes: freezed == maxBytes
           ? _value.maxBytes
           : maxBytes // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       maxGas: freezed == maxGas
           ? _value.maxGas
           : maxGas // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -131,10 +131,10 @@ class _$BlockParamsImpl implements _BlockParams {
 
   @override
   @JsonKey(name: 'max_bytes')
-  final int? maxBytes;
+  final String? maxBytes;
   @override
   @JsonKey(name: 'max_gas')
-  final int? maxGas;
+  final String? maxGas;
 
   @override
   String toString() {
@@ -173,18 +173,18 @@ class _$BlockParamsImpl implements _BlockParams {
 
 abstract class _BlockParams implements BlockParams {
   factory _BlockParams(
-      {@JsonKey(name: 'max_bytes') final int? maxBytes,
-      @JsonKey(name: 'max_gas') final int? maxGas}) = _$BlockParamsImpl;
+      {@JsonKey(name: 'max_bytes') final String? maxBytes,
+      @JsonKey(name: 'max_gas') final String? maxGas}) = _$BlockParamsImpl;
 
   factory _BlockParams.fromJson(Map<String, dynamic> json) =
       _$BlockParamsImpl.fromJson;
 
   @override
   @JsonKey(name: 'max_bytes')
-  int? get maxBytes;
+  String? get maxBytes;
   @override
   @JsonKey(name: 'max_gas')
-  int? get maxGas;
+  String? get maxGas;
 
   /// Create a copy of BlockParams
   /// with the given fields replaced by the non-null parameter values.
@@ -201,11 +201,11 @@ EvidenceParams _$EvidenceParamsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$EvidenceParams {
   @JsonKey(name: 'max_age_num_blocks')
-  int? get maxAgeNumBlocks => throw _privateConstructorUsedError;
+  String? get maxAgeNumBlocks => throw _privateConstructorUsedError;
   @JsonKey(name: 'max_age_duration')
   String? get maxAgeDuration => throw _privateConstructorUsedError;
   @JsonKey(name: 'max_bytes')
-  int? get maxBytes => throw _privateConstructorUsedError;
+  String? get maxBytes => throw _privateConstructorUsedError;
 
   /// Serializes this EvidenceParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -224,9 +224,9 @@ abstract class $EvidenceParamsCopyWith<$Res> {
       _$EvidenceParamsCopyWithImpl<$Res, EvidenceParams>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'max_age_num_blocks') int? maxAgeNumBlocks,
+      {@JsonKey(name: 'max_age_num_blocks') String? maxAgeNumBlocks,
       @JsonKey(name: 'max_age_duration') String? maxAgeDuration,
-      @JsonKey(name: 'max_bytes') int? maxBytes});
+      @JsonKey(name: 'max_bytes') String? maxBytes});
 }
 
 /// @nodoc
@@ -252,7 +252,7 @@ class _$EvidenceParamsCopyWithImpl<$Res, $Val extends EvidenceParams>
       maxAgeNumBlocks: freezed == maxAgeNumBlocks
           ? _value.maxAgeNumBlocks
           : maxAgeNumBlocks // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       maxAgeDuration: freezed == maxAgeDuration
           ? _value.maxAgeDuration
           : maxAgeDuration // ignore: cast_nullable_to_non_nullable
@@ -260,7 +260,7 @@ class _$EvidenceParamsCopyWithImpl<$Res, $Val extends EvidenceParams>
       maxBytes: freezed == maxBytes
           ? _value.maxBytes
           : maxBytes // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
   }
 }
@@ -274,9 +274,9 @@ abstract class _$$EvidenceParamsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'max_age_num_blocks') int? maxAgeNumBlocks,
+      {@JsonKey(name: 'max_age_num_blocks') String? maxAgeNumBlocks,
       @JsonKey(name: 'max_age_duration') String? maxAgeDuration,
-      @JsonKey(name: 'max_bytes') int? maxBytes});
+      @JsonKey(name: 'max_bytes') String? maxBytes});
 }
 
 /// @nodoc
@@ -300,7 +300,7 @@ class __$$EvidenceParamsImplCopyWithImpl<$Res>
       maxAgeNumBlocks: freezed == maxAgeNumBlocks
           ? _value.maxAgeNumBlocks
           : maxAgeNumBlocks // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       maxAgeDuration: freezed == maxAgeDuration
           ? _value.maxAgeDuration
           : maxAgeDuration // ignore: cast_nullable_to_non_nullable
@@ -308,7 +308,7 @@ class __$$EvidenceParamsImplCopyWithImpl<$Res>
       maxBytes: freezed == maxBytes
           ? _value.maxBytes
           : maxBytes // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -326,13 +326,13 @@ class _$EvidenceParamsImpl implements _EvidenceParams {
 
   @override
   @JsonKey(name: 'max_age_num_blocks')
-  final int? maxAgeNumBlocks;
+  final String? maxAgeNumBlocks;
   @override
   @JsonKey(name: 'max_age_duration')
   final String? maxAgeDuration;
   @override
   @JsonKey(name: 'max_bytes')
-  final int? maxBytes;
+  final String? maxBytes;
 
   @override
   String toString() {
@@ -376,22 +376,23 @@ class _$EvidenceParamsImpl implements _EvidenceParams {
 
 abstract class _EvidenceParams implements EvidenceParams {
   factory _EvidenceParams(
-      {@JsonKey(name: 'max_age_num_blocks') final int? maxAgeNumBlocks,
-      @JsonKey(name: 'max_age_duration') final String? maxAgeDuration,
-      @JsonKey(name: 'max_bytes') final int? maxBytes}) = _$EvidenceParamsImpl;
+          {@JsonKey(name: 'max_age_num_blocks') final String? maxAgeNumBlocks,
+          @JsonKey(name: 'max_age_duration') final String? maxAgeDuration,
+          @JsonKey(name: 'max_bytes') final String? maxBytes}) =
+      _$EvidenceParamsImpl;
 
   factory _EvidenceParams.fromJson(Map<String, dynamic> json) =
       _$EvidenceParamsImpl.fromJson;
 
   @override
   @JsonKey(name: 'max_age_num_blocks')
-  int? get maxAgeNumBlocks;
+  String? get maxAgeNumBlocks;
   @override
   @JsonKey(name: 'max_age_duration')
   String? get maxAgeDuration;
   @override
   @JsonKey(name: 'max_bytes')
-  int? get maxBytes;
+  String? get maxBytes;
 
   /// Create a copy of EvidenceParams
   /// with the given fields replaced by the non-null parameter values.
@@ -574,7 +575,7 @@ VersionParams _$VersionParamsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$VersionParams {
   @JsonKey(name: 'app')
-  int? get app => throw _privateConstructorUsedError;
+  String? get app => throw _privateConstructorUsedError;
 
   /// Serializes this VersionParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -592,7 +593,7 @@ abstract class $VersionParamsCopyWith<$Res> {
           VersionParams value, $Res Function(VersionParams) then) =
       _$VersionParamsCopyWithImpl<$Res, VersionParams>;
   @useResult
-  $Res call({@JsonKey(name: 'app') int? app});
+  $Res call({@JsonKey(name: 'app') String? app});
 }
 
 /// @nodoc
@@ -616,7 +617,7 @@ class _$VersionParamsCopyWithImpl<$Res, $Val extends VersionParams>
       app: freezed == app
           ? _value.app
           : app // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
   }
 }
@@ -629,7 +630,7 @@ abstract class _$$VersionParamsImplCopyWith<$Res>
       __$$VersionParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'app') int? app});
+  $Res call({@JsonKey(name: 'app') String? app});
 }
 
 /// @nodoc
@@ -651,7 +652,7 @@ class __$$VersionParamsImplCopyWithImpl<$Res>
       app: freezed == app
           ? _value.app
           : app // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -666,7 +667,7 @@ class _$VersionParamsImpl implements _VersionParams {
 
   @override
   @JsonKey(name: 'app')
-  final int? app;
+  final String? app;
 
   @override
   String toString() {
@@ -702,7 +703,7 @@ class _$VersionParamsImpl implements _VersionParams {
 }
 
 abstract class _VersionParams implements VersionParams {
-  factory _VersionParams({@JsonKey(name: 'app') final int? app}) =
+  factory _VersionParams({@JsonKey(name: 'app') final String? app}) =
       _$VersionParamsImpl;
 
   factory _VersionParams.fromJson(Map<String, dynamic> json) =
@@ -710,7 +711,7 @@ abstract class _VersionParams implements VersionParams {
 
   @override
   @JsonKey(name: 'app')
-  int? get app;
+  String? get app;
 
   /// Create a copy of VersionParams
   /// with the given fields replaced by the non-null parameter values.
@@ -727,7 +728,7 @@ ABCIParams _$ABCIParamsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ABCIParams {
   @JsonKey(name: 'vote_extensions_enable_height')
-  int? get voteExtensionsEnableHeight => throw _privateConstructorUsedError;
+  String? get voteExtensionsEnableHeight => throw _privateConstructorUsedError;
 
   /// Serializes this ABCIParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -747,7 +748,7 @@ abstract class $ABCIParamsCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'vote_extensions_enable_height')
-      int? voteExtensionsEnableHeight});
+      String? voteExtensionsEnableHeight});
 }
 
 /// @nodoc
@@ -771,7 +772,7 @@ class _$ABCIParamsCopyWithImpl<$Res, $Val extends ABCIParams>
       voteExtensionsEnableHeight: freezed == voteExtensionsEnableHeight
           ? _value.voteExtensionsEnableHeight
           : voteExtensionsEnableHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
   }
 }
@@ -786,7 +787,7 @@ abstract class _$$ABCIParamsImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'vote_extensions_enable_height')
-      int? voteExtensionsEnableHeight});
+      String? voteExtensionsEnableHeight});
 }
 
 /// @nodoc
@@ -808,7 +809,7 @@ class __$$ABCIParamsImplCopyWithImpl<$Res>
       voteExtensionsEnableHeight: freezed == voteExtensionsEnableHeight
           ? _value.voteExtensionsEnableHeight
           : voteExtensionsEnableHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -825,7 +826,7 @@ class _$ABCIParamsImpl implements _ABCIParams {
 
   @override
   @JsonKey(name: 'vote_extensions_enable_height')
-  final int? voteExtensionsEnableHeight;
+  final String? voteExtensionsEnableHeight;
 
   @override
   String toString() {
@@ -866,14 +867,14 @@ class _$ABCIParamsImpl implements _ABCIParams {
 abstract class _ABCIParams implements ABCIParams {
   factory _ABCIParams(
       {@JsonKey(name: 'vote_extensions_enable_height')
-      final int? voteExtensionsEnableHeight}) = _$ABCIParamsImpl;
+      final String? voteExtensionsEnableHeight}) = _$ABCIParamsImpl;
 
   factory _ABCIParams.fromJson(Map<String, dynamic> json) =
       _$ABCIParamsImpl.fromJson;
 
   @override
   @JsonKey(name: 'vote_extensions_enable_height')
-  int? get voteExtensionsEnableHeight;
+  String? get voteExtensionsEnableHeight;
 
   /// Create a copy of ABCIParams
   /// with the given fields replaced by the non-null parameter values.
@@ -895,9 +896,9 @@ mixin _$ConsensusParams {
   EvidenceParams? get evidence => throw _privateConstructorUsedError;
   @JsonKey(name: 'validator')
   ValidatorParams? get validator => throw _privateConstructorUsedError;
-  @JsonKey(name: 'version')
+  @JsonKey(name: 'version', includeIfNull: false)
   VersionParams? get version => throw _privateConstructorUsedError;
-  @JsonKey(name: 'abci')
+  @JsonKey(name: 'abci', includeIfNull: false)
   ABCIParams? get abci => throw _privateConstructorUsedError;
 
   /// Serializes this ConsensusParams to a JSON map.
@@ -920,8 +921,8 @@ abstract class $ConsensusParamsCopyWith<$Res> {
       {@JsonKey(name: 'block') BlockParams? block,
       @JsonKey(name: 'evidence') EvidenceParams? evidence,
       @JsonKey(name: 'validator') ValidatorParams? validator,
-      @JsonKey(name: 'version') VersionParams? version,
-      @JsonKey(name: 'abci') ABCIParams? abci});
+      @JsonKey(name: 'version', includeIfNull: false) VersionParams? version,
+      @JsonKey(name: 'abci', includeIfNull: false) ABCIParams? abci});
 
   $BlockParamsCopyWith<$Res>? get block;
   $EvidenceParamsCopyWith<$Res>? get evidence;
@@ -1058,8 +1059,8 @@ abstract class _$$ConsensusParamsImplCopyWith<$Res>
       {@JsonKey(name: 'block') BlockParams? block,
       @JsonKey(name: 'evidence') EvidenceParams? evidence,
       @JsonKey(name: 'validator') ValidatorParams? validator,
-      @JsonKey(name: 'version') VersionParams? version,
-      @JsonKey(name: 'abci') ABCIParams? abci});
+      @JsonKey(name: 'version', includeIfNull: false) VersionParams? version,
+      @JsonKey(name: 'abci', includeIfNull: false) ABCIParams? abci});
 
   @override
   $BlockParamsCopyWith<$Res>? get block;
@@ -1125,8 +1126,8 @@ class _$ConsensusParamsImpl implements _ConsensusParams {
       {@JsonKey(name: 'block') this.block,
       @JsonKey(name: 'evidence') this.evidence,
       @JsonKey(name: 'validator') this.validator,
-      @JsonKey(name: 'version') this.version,
-      @JsonKey(name: 'abci') this.abci});
+      @JsonKey(name: 'version', includeIfNull: false) this.version,
+      @JsonKey(name: 'abci', includeIfNull: false) this.abci});
 
   factory _$ConsensusParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConsensusParamsImplFromJson(json);
@@ -1141,10 +1142,10 @@ class _$ConsensusParamsImpl implements _ConsensusParams {
   @JsonKey(name: 'validator')
   final ValidatorParams? validator;
   @override
-  @JsonKey(name: 'version')
+  @JsonKey(name: 'version', includeIfNull: false)
   final VersionParams? version;
   @override
-  @JsonKey(name: 'abci')
+  @JsonKey(name: 'abci', includeIfNull: false)
   final ABCIParams? abci;
 
   @override
@@ -1193,8 +1194,10 @@ abstract class _ConsensusParams implements ConsensusParams {
       {@JsonKey(name: 'block') final BlockParams? block,
       @JsonKey(name: 'evidence') final EvidenceParams? evidence,
       @JsonKey(name: 'validator') final ValidatorParams? validator,
-      @JsonKey(name: 'version') final VersionParams? version,
-      @JsonKey(name: 'abci') final ABCIParams? abci}) = _$ConsensusParamsImpl;
+      @JsonKey(name: 'version', includeIfNull: false)
+      final VersionParams? version,
+      @JsonKey(name: 'abci', includeIfNull: false)
+      final ABCIParams? abci}) = _$ConsensusParamsImpl;
 
   factory _ConsensusParams.fromJson(Map<String, dynamic> json) =
       _$ConsensusParamsImpl.fromJson;
@@ -1209,10 +1212,10 @@ abstract class _ConsensusParams implements ConsensusParams {
   @JsonKey(name: 'validator')
   ValidatorParams? get validator;
   @override
-  @JsonKey(name: 'version')
+  @JsonKey(name: 'version', includeIfNull: false)
   VersionParams? get version;
   @override
-  @JsonKey(name: 'abci')
+  @JsonKey(name: 'abci', includeIfNull: false)
   ABCIParams? get abci;
 
   /// Create a copy of ConsensusParams

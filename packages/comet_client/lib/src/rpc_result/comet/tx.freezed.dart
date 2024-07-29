@@ -21,9 +21,10 @@ TxProof _$TxProofFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TxProof {
   @JsonKey(name: 'root_hash')
-  List<int>? get rootHash => throw _privateConstructorUsedError;
+  String? get rootHash => throw _privateConstructorUsedError;
   @JsonKey(name: 'data')
-  List<int>? get data => throw _privateConstructorUsedError;
+  @Base64Converter()
+  Uint8List? get data => throw _privateConstructorUsedError;
   @JsonKey(name: 'proof')
   Proof? get proof => throw _privateConstructorUsedError;
 
@@ -42,8 +43,8 @@ abstract class $TxProofCopyWith<$Res> {
       _$TxProofCopyWithImpl<$Res, TxProof>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'root_hash') List<int>? rootHash,
-      @JsonKey(name: 'data') List<int>? data,
+      {@JsonKey(name: 'root_hash') String? rootHash,
+      @JsonKey(name: 'data') @Base64Converter() Uint8List? data,
       @JsonKey(name: 'proof') Proof? proof});
 
   $ProofCopyWith<$Res>? get proof;
@@ -72,11 +73,11 @@ class _$TxProofCopyWithImpl<$Res, $Val extends TxProof>
       rootHash: freezed == rootHash
           ? _value.rootHash
           : rootHash // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as Uint8List?,
       proof: freezed == proof
           ? _value.proof
           : proof // ignore: cast_nullable_to_non_nullable
@@ -107,8 +108,8 @@ abstract class _$$TxProofImplCopyWith<$Res> implements $TxProofCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'root_hash') List<int>? rootHash,
-      @JsonKey(name: 'data') List<int>? data,
+      {@JsonKey(name: 'root_hash') String? rootHash,
+      @JsonKey(name: 'data') @Base64Converter() Uint8List? data,
       @JsonKey(name: 'proof') Proof? proof});
 
   @override
@@ -134,13 +135,13 @@ class __$$TxProofImplCopyWithImpl<$Res>
   }) {
     return _then(_$TxProofImpl(
       rootHash: freezed == rootHash
-          ? _value._rootHash
+          ? _value.rootHash
           : rootHash // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       data: freezed == data
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as Uint8List?,
       proof: freezed == proof
           ? _value.proof
           : proof // ignore: cast_nullable_to_non_nullable
@@ -153,37 +154,20 @@ class __$$TxProofImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TxProofImpl implements _TxProof {
   _$TxProofImpl(
-      {@JsonKey(name: 'root_hash') final List<int>? rootHash,
-      @JsonKey(name: 'data') final List<int>? data,
-      @JsonKey(name: 'proof') this.proof})
-      : _rootHash = rootHash,
-        _data = data;
+      {@JsonKey(name: 'root_hash') this.rootHash,
+      @JsonKey(name: 'data') @Base64Converter() this.data,
+      @JsonKey(name: 'proof') this.proof});
 
   factory _$TxProofImpl.fromJson(Map<String, dynamic> json) =>
       _$$TxProofImplFromJson(json);
 
-  final List<int>? _rootHash;
   @override
   @JsonKey(name: 'root_hash')
-  List<int>? get rootHash {
-    final value = _rootHash;
-    if (value == null) return null;
-    if (_rootHash is EqualUnmodifiableListView) return _rootHash;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<int>? _data;
+  final String? rootHash;
   @override
   @JsonKey(name: 'data')
-  List<int>? get data {
-    final value = _data;
-    if (value == null) return null;
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  @Base64Converter()
+  final Uint8List? data;
   @override
   @JsonKey(name: 'proof')
   final Proof? proof;
@@ -198,18 +182,16 @@ class _$TxProofImpl implements _TxProof {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TxProofImpl &&
-            const DeepCollectionEquality().equals(other._rootHash, _rootHash) &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
+            (identical(other.rootHash, rootHash) ||
+                other.rootHash == rootHash) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
             (identical(other.proof, proof) || other.proof == proof));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_rootHash),
-      const DeepCollectionEquality().hash(_data),
-      proof);
+      runtimeType, rootHash, const DeepCollectionEquality().hash(data), proof);
 
   /// Create a copy of TxProof
   /// with the given fields replaced by the non-null parameter values.
@@ -229,18 +211,19 @@ class _$TxProofImpl implements _TxProof {
 
 abstract class _TxProof implements TxProof {
   factory _TxProof(
-      {@JsonKey(name: 'root_hash') final List<int>? rootHash,
-      @JsonKey(name: 'data') final List<int>? data,
+      {@JsonKey(name: 'root_hash') final String? rootHash,
+      @JsonKey(name: 'data') @Base64Converter() final Uint8List? data,
       @JsonKey(name: 'proof') final Proof? proof}) = _$TxProofImpl;
 
   factory _TxProof.fromJson(Map<String, dynamic> json) = _$TxProofImpl.fromJson;
 
   @override
   @JsonKey(name: 'root_hash')
-  List<int>? get rootHash;
+  String? get rootHash;
   @override
   @JsonKey(name: 'data')
-  List<int>? get data;
+  @Base64Converter()
+  Uint8List? get data;
   @override
   @JsonKey(name: 'proof')
   Proof? get proof;

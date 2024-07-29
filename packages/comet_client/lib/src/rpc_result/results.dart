@@ -1,9 +1,12 @@
+import 'dart:typed_data';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:comet_client/converter.dart';
 
 import 'abci/types.dart';
 import 'p2p/node_info.dart';
+import 'conn/connection_status.dart';
 import 'comet/block.dart';
 import 'comet/params.dart';
 import 'comet/light.dart';
@@ -19,7 +22,7 @@ part 'results.g.dart';
 sealed class RpcResult {}
 
 @freezed
-class ResultABCIInfo extends RpcResult with _$ResultABCIInfo{
+class ResultABCIInfo extends RpcResult with _$ResultABCIInfo {
   @JsonSerializable(explicitToJson: true)
   factory ResultABCIInfo({
     @JsonKey(name: 'response') ResponseInfo? response,
@@ -30,7 +33,7 @@ class ResultABCIInfo extends RpcResult with _$ResultABCIInfo{
 }
 
 @freezed
-class ResultABCIQuery extends RpcResult with _$ResultABCIQuery{
+class ResultABCIQuery extends RpcResult with _$ResultABCIQuery {
   @JsonSerializable(explicitToJson: true)
   factory ResultABCIQuery({
     @JsonKey(name: 'response') ResponseQuery? response,
@@ -41,7 +44,7 @@ class ResultABCIQuery extends RpcResult with _$ResultABCIQuery{
 }
 
 @freezed
-class ResultBroadcastTxCommit with _$ResultBroadcastTxCommit{
+class ResultBroadcastTxCommit with _$ResultBroadcastTxCommit {
   @JsonSerializable(explicitToJson: true)
   factory ResultBroadcastTxCommit({
     @JsonKey(name: 'check_tx') ResponseCheckTx? checkTx,
@@ -55,7 +58,7 @@ class ResultBroadcastTxCommit with _$ResultBroadcastTxCommit{
 }
 
 @freezed
-class ResultBroadcastTx with _$ResultBroadcastTx{
+class ResultBroadcastTx with _$ResultBroadcastTx {
   factory ResultBroadcastTx({
     @JsonKey(name: 'code') int? code,
     @JsonKey(name: 'data') List<int>? data,
@@ -69,7 +72,7 @@ class ResultBroadcastTx with _$ResultBroadcastTx{
 }
 
 @freezed
-class ResultBlock with _$ResultBlock{
+class ResultBlock with _$ResultBlock {
   @JsonSerializable(explicitToJson: true)
   factory ResultBlock({
     @JsonKey(name: 'block_id') BlockID? blockId,
@@ -81,15 +84,19 @@ class ResultBlock with _$ResultBlock{
 }
 
 @freezed
-class ResultBlockResults with _$ResultBlockResults{
+class ResultBlockResults with _$ResultBlockResults {
   @JsonSerializable(explicitToJson: true)
   factory ResultBlockResults({
-    @JsonKey(name: 'height') int? height,
+    @JsonKey(name: 'height') String? height,
     @JsonKey(name: 'txs_results') List<ExecTxResult>? txsResults,
-    @JsonKey(name: 'finalize_block_events') List<Event>? finalizeBlockEvents,
+    @JsonKey(name: 'begin_block_events', includeIfNull: true)
+    List<Event>? beginBlockEvents,
+    @JsonKey(name: 'end_block_events', includeIfNull: true)
+    List<Event>? endBlockEvents,
     @JsonKey(name: 'validator_updates') List<ValidatorUpdate>? validatorUpdates,
-    @JsonKey(name: 'consensus_param_updates') ConsensusParams? consensusParamUpdates,
-    @JsonKey(name: 'app_hash') List<int>? appHash,
+    @JsonKey(name: 'consensus_param_updates')
+    ConsensusParams? consensusParamUpdates,
+    // @JsonKey(name: 'app_hash') String? appHash,
   }) = _ResultBlockResults;
 
   factory ResultBlockResults.fromJson(Map<String, dynamic> json) =>
@@ -97,7 +104,7 @@ class ResultBlockResults with _$ResultBlockResults{
 }
 
 @freezed
-class ResultHeader with _$ResultHeader{
+class ResultHeader with _$ResultHeader {
   @JsonSerializable(explicitToJson: true)
   factory ResultHeader({
     @JsonKey(name: 'header') Header? header,
@@ -108,7 +115,7 @@ class ResultHeader with _$ResultHeader{
 }
 
 @freezed
-class ResultCommit with _$ResultCommit{
+class ResultCommit with _$ResultCommit {
   @JsonSerializable(explicitToJson: true)
   factory ResultCommit({
     @JsonKey(name: 'signed_header') SignedHeader? signedHeader,
@@ -120,13 +127,13 @@ class ResultCommit with _$ResultCommit{
 }
 
 @freezed
-class ResultValidators with _$ResultValidators{
+class ResultValidators with _$ResultValidators {
   @JsonSerializable(explicitToJson: true)
   factory ResultValidators({
-    @JsonKey(name: 'block_height') int? blockHeight,
+    @JsonKey(name: 'block_height') String? blockHeight,
     @JsonKey(name: 'validators') List<Validator>? validators,
-    @JsonKey(name: 'count') int? count,
-    @JsonKey(name: 'total') int? total,
+    @JsonKey(name: 'count') String? count,
+    @JsonKey(name: 'total') String? total,
   }) = _ResultValidators;
 
   factory ResultValidators.fromJson(Map<String, dynamic> json) =>
@@ -134,14 +141,14 @@ class ResultValidators with _$ResultValidators{
 }
 
 @freezed
-class ResultTx with _$ResultTx{
+class ResultTx with _$ResultTx {
   @JsonSerializable(explicitToJson: true)
   factory ResultTx({
-    @JsonKey(name: 'hash') List<int>? hash,
-    @JsonKey(name: 'height') int? height,
+    @JsonKey(name: 'hash') String? hash,
+    @JsonKey(name: 'height') String? height,
     @JsonKey(name: 'index') int? index,
     @JsonKey(name: 'tx_result') ExecTxResult? txResult,
-    @JsonKey(name: 'tx') List<int>? tx,
+    @JsonKey(name: 'tx') @Base64Converter() Uint8List? tx,
     @JsonKey(name: 'proof', includeIfNull: false) TxProof? proof,
   }) = _ResultTx;
 
@@ -150,7 +157,7 @@ class ResultTx with _$ResultTx{
 }
 
 @freezed
-class ResultTxSearch with _$ResultTxSearch{
+class ResultTxSearch with _$ResultTxSearch {
   @JsonSerializable(explicitToJson: true)
   factory ResultTxSearch({
     @JsonKey(name: 'txs') List<ResultTx>? txs,
@@ -162,7 +169,7 @@ class ResultTxSearch with _$ResultTxSearch{
 }
 
 @freezed
-class ResultBlockSearch with _$ResultBlockSearch{
+class ResultBlockSearch with _$ResultBlockSearch {
   @JsonSerializable(explicitToJson: true)
   factory ResultBlockSearch({
     @JsonKey(name: 'blocks') List<ResultBlock>? blocks,
@@ -174,7 +181,7 @@ class ResultBlockSearch with _$ResultBlockSearch{
 }
 
 @freezed
-class ResultGenesis with _$ResultGenesis{
+class ResultGenesis with _$ResultGenesis {
   @JsonSerializable(explicitToJson: true)
   factory ResultGenesis({
     @JsonKey(name: 'genesis') GenesisDoc? genesis,
@@ -197,10 +204,10 @@ class ResultGenesisChunk with _$ResultGenesisChunk {
 }
 
 @freezed
-class ResultBlockchainInfo with _$ResultBlockchainInfo{
+class ResultBlockchainInfo with _$ResultBlockchainInfo {
   @JsonSerializable(explicitToJson: true)
   factory ResultBlockchainInfo({
-    @JsonKey(name: 'last_height') int? lastHeight,
+    @JsonKey(name: 'last_height') String? lastHeight,
     @JsonKey(name: 'block_metas') List<BlockMeta>? blockMetas,
   }) = _ResultBlockchainInfo;
 
@@ -210,10 +217,11 @@ class ResultBlockchainInfo with _$ResultBlockchainInfo{
 
 @freezed
 class ValidatorInfo with _$ValidatorInfo {
+  @JsonSerializable(explicitToJson: true)
   factory ValidatorInfo({
-    @JsonKey(name: 'address') List<int>? address,
-    @JsonKey(name: 'pub_key') String? pubKey,
-    @JsonKey(name: 'voting_power') int? votingPower,
+    @JsonKey(name: 'address') String? address,
+    @JsonKey(name: 'pub_key') PubKey? pubKey,
+    @JsonKey(name: 'voting_power') String? votingPower,
   }) = _ValidatorInfo;
 
   factory ValidatorInfo.fromJson(Map<String, dynamic> json) =>
@@ -222,18 +230,20 @@ class ValidatorInfo with _$ValidatorInfo {
 
 @freezed
 class SyncInfo with _$SyncInfo {
-   @JsonSerializable(explicitToJson: true)
+  @JsonSerializable(explicitToJson: true)
   factory SyncInfo({
-    @JsonKey(name: 'latest_block_hash') List<int>? latestBlockHash,
-    @JsonKey(name: 'latest_app_hash') List<int>? latestAppHash,
-    @JsonKey(name: 'latest_block_height') int? latestBlockHeight,
-    @JsonKey(name: 'latest_block_time') @DateTimeConverter() DateTime? latestBlockTime,
-
-    @JsonKey(name: 'earliest_block_hash') List<int>? earliestBlockHash,
-    @JsonKey(name: 'earliest_app_hash') List<int>? earliestAppHash,
-    @JsonKey(name: 'earliest_block_height') int? earliestBlockHeight,
-    @JsonKey(name: 'earliest_block_time') @DateTimeConverter() DateTime? earliestBlockTime,
-
+    @JsonKey(name: 'latest_block_hash') String? latestBlockHash,
+    @JsonKey(name: 'latest_app_hash') String? latestAppHash,
+    @JsonKey(name: 'latest_block_height') String? latestBlockHeight,
+    @JsonKey(name: 'latest_block_time')
+    @DateTimeConverter()
+    DateTime? latestBlockTime,
+    @JsonKey(name: 'earliest_block_hash') String? earliestBlockHash,
+    @JsonKey(name: 'earliest_app_hash') String? earliestAppHash,
+    @JsonKey(name: 'earliest_block_height') String? earliestBlockHeight,
+    @JsonKey(name: 'earliest_block_time')
+    @DateTimeConverter()
+    DateTime? earliestBlockTime,
     @JsonKey(name: 'catching_up') bool? catchingUp,
   }) = _SyncInfo;
 
@@ -243,7 +253,7 @@ class SyncInfo with _$SyncInfo {
 
 @freezed
 class ResultStatus with _$ResultStatus {
-   @JsonSerializable(explicitToJson: true)
+  @JsonSerializable(explicitToJson: true)
   factory ResultStatus({
     @JsonKey(name: 'node_info') DefaultNodeInfo? nodeInfo,
     @JsonKey(name: 'sync_info') SyncInfo? syncInfo,
@@ -255,58 +265,70 @@ class ResultStatus with _$ResultStatus {
 }
 
 @freezed
-class ResultNetInfo with _$ResultNetInfo {
-    @JsonSerializable(explicitToJson: true)
-    factory ResultNetInfo({
-      @JsonKey(name: 'listening') bool? listening,
-      @JsonKey(name: 'listeners') List<String>? listeners,
-      @JsonKey(name: 'n_peers') int? nPeers,
-      @JsonKey(name: 'peers') List<dynamic>? peers,  // TODO: Define Peer
-    }) = _ResultNetInfo;
-  
-    factory ResultNetInfo.fromJson(Map<String, dynamic> json) =>
-        _$ResultNetInfoFromJson(json);
-}
-
-@freezed
-class PeerStateInfo with _$PeerStateInfo {
-  factory PeerStateInfo({
-    @JsonKey(name: 'node_address') String? nodeAddress,
-    @JsonKey(name: 'peer_state') List<int>? peerState,
-
-  }) = _PeerStateInfo;
-
-  factory PeerStateInfo.fromJson(Map<String, dynamic> json) =>
-      _$PeerStateInfoFromJson(json);
-}
-
-@freezed
-class ResultDumpConsensusState with _$ResultDumpConsensusState {
+class Peer with _$Peer {
   @JsonSerializable(explicitToJson: true)
-  factory ResultDumpConsensusState({
-    @JsonKey(name: 'round_state') List<int>? roundState,
-    @JsonKey(name: 'peers') List<PeerStateInfo>? peers,
-  }) = _ResultDumpConsensusState;
+  factory Peer({
+    @JsonKey(name: 'node_info') DefaultNodeInfo? nodeInfo,
+    @JsonKey(name: 'is_outbound') bool? isOutbound,
+    @JsonKey(name: 'connection_status') ConnectionStatus? connectionStatus,
+    @JsonKey(name: 'remote_ip') String? remoteIP,
+  }) = _Peer;
 
-  factory ResultDumpConsensusState.fromJson(Map<String, dynamic> json) =>
-      _$ResultDumpConsensusStateFromJson(json);
+  factory Peer.fromJson(Map<String, dynamic> json) => _$PeerFromJson(json);
 }
 
 @freezed
-class ResultConsensusState with _$ResultConsensusState {
-  factory ResultConsensusState({
-    @JsonKey(name: 'round_state') List<int>? roundState,
-  }) = _ResultConsensusState;
+class ResultNetInfo with _$ResultNetInfo {
+  @JsonSerializable(explicitToJson: true)
+  factory ResultNetInfo({
+    @JsonKey(name: 'listening') bool? listening,
+    @JsonKey(name: 'listeners') List<String>? listeners,
+    @JsonKey(name: 'n_peers') String? nPeers,
+    @JsonKey(name: 'peers') List<Peer>? peers,
+  }) = _ResultNetInfo;
 
-  factory ResultConsensusState.fromJson(Map<String, dynamic> json) =>
-      _$ResultConsensusStateFromJson(json);
+  factory ResultNetInfo.fromJson(Map<String, dynamic> json) =>
+      _$ResultNetInfoFromJson(json);
 }
+
+// @freezed
+// class PeerStateInfo with _$PeerStateInfo {
+//   factory PeerStateInfo({
+//     @JsonKey(name: 'node_address') String? nodeAddress,
+//     @JsonKey(name: 'peer_state') List<int>? peerState,
+//   }) = _PeerStateInfo;
+
+//   factory PeerStateInfo.fromJson(Map<String, dynamic> json) =>
+//       _$PeerStateInfoFromJson(json);
+// }
+
+// @freezed
+// class ResultDumpConsensusState with _$ResultDumpConsensusState {
+//   @JsonSerializable(explicitToJson: true)
+//   factory ResultDumpConsensusState({
+//     @JsonKey(name: 'round_state') List<int>? roundState,
+//     @JsonKey(name: 'peers') List<PeerStateInfo>? peers,
+//   }) = _ResultDumpConsensusState;
+
+//   factory ResultDumpConsensusState.fromJson(Map<String, dynamic> json) =>
+//       _$ResultDumpConsensusStateFromJson(json);
+// }
+
+// @freezed
+// class ResultConsensusState with _$ResultConsensusState {
+//   factory ResultConsensusState({
+//     @JsonKey(name: 'round_state') List<int>? roundState,
+//   }) = _ResultConsensusState;
+
+//   factory ResultConsensusState.fromJson(Map<String, dynamic> json) =>
+//       _$ResultConsensusStateFromJson(json);
+// }
 
 @freezed
 class ResultConsensusParams with _$ResultConsensusParams {
   @JsonSerializable(explicitToJson: true)
   factory ResultConsensusParams({
-    @JsonKey(name: 'block_height') int? blockHeight,
+    @JsonKey(name: 'block_height') String? blockHeight,
     @JsonKey(name: 'consensus_params') ConsensusParams? consensusParams,
   }) = _ResultConsensusParams;
 
@@ -319,13 +341,12 @@ class ResultEvent with _$ResultEvent {
   @JsonSerializable(explicitToJson: true)
   factory ResultEvent({
     @JsonKey(name: 'query') String? query,
-    @JsonKey(name: 'data') EventData? data,  // TODO need a custom converter
+    @JsonKey(name: 'data') EventData? data, // TODO need a custom converter
     @JsonKey(name: 'events') Map<String, List<String>>? events,
   }) = _ResultEvent;
 
-    factory ResultEvent.fromJson(Map<String, dynamic> json) =>
+  factory ResultEvent.fromJson(Map<String, dynamic> json) =>
       _$ResultEventFromJson(json);
-
 }
 
 @freezed

@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+
+import 'package:comet_client/converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../crypto/merkle/proof.dart';
@@ -9,8 +12,8 @@ part 'tx.g.dart';
 class TxProof with _$TxProof {
 
   factory TxProof({
-    @JsonKey(name: 'root_hash') List<int>? rootHash,
-    @JsonKey(name: 'data') List<int>? data,
+    @JsonKey(name: 'root_hash') String? rootHash,
+    @JsonKey(name: 'data') @Base64Converter() Uint8List? data,
     @JsonKey(name: 'proof') Proof? proof,
   }) = _TxProof;
 

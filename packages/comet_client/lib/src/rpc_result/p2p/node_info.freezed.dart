@@ -205,11 +205,11 @@ ProtocolVersion _$ProtocolVersionFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ProtocolVersion {
   @JsonKey(name: 'p2p')
-  int? get p2p => throw _privateConstructorUsedError;
+  String? get p2p => throw _privateConstructorUsedError;
   @JsonKey(name: 'block')
-  int? get block => throw _privateConstructorUsedError;
+  String? get block => throw _privateConstructorUsedError;
   @JsonKey(name: 'app')
-  int? get app => throw _privateConstructorUsedError;
+  String? get app => throw _privateConstructorUsedError;
 
   /// Serializes this ProtocolVersion to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -228,9 +228,9 @@ abstract class $ProtocolVersionCopyWith<$Res> {
       _$ProtocolVersionCopyWithImpl<$Res, ProtocolVersion>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'p2p') int? p2p,
-      @JsonKey(name: 'block') int? block,
-      @JsonKey(name: 'app') int? app});
+      {@JsonKey(name: 'p2p') String? p2p,
+      @JsonKey(name: 'block') String? block,
+      @JsonKey(name: 'app') String? app});
 }
 
 /// @nodoc
@@ -256,15 +256,15 @@ class _$ProtocolVersionCopyWithImpl<$Res, $Val extends ProtocolVersion>
       p2p: freezed == p2p
           ? _value.p2p
           : p2p // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       block: freezed == block
           ? _value.block
           : block // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       app: freezed == app
           ? _value.app
           : app // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ) as $Val);
   }
 }
@@ -278,9 +278,9 @@ abstract class _$$ProtocolVersionImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'p2p') int? p2p,
-      @JsonKey(name: 'block') int? block,
-      @JsonKey(name: 'app') int? app});
+      {@JsonKey(name: 'p2p') String? p2p,
+      @JsonKey(name: 'block') String? block,
+      @JsonKey(name: 'app') String? app});
 }
 
 /// @nodoc
@@ -304,15 +304,15 @@ class __$$ProtocolVersionImplCopyWithImpl<$Res>
       p2p: freezed == p2p
           ? _value.p2p
           : p2p // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       block: freezed == block
           ? _value.block
           : block // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       app: freezed == app
           ? _value.app
           : app // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
     ));
   }
 }
@@ -330,13 +330,13 @@ class _$ProtocolVersionImpl implements _ProtocolVersion {
 
   @override
   @JsonKey(name: 'p2p')
-  final int? p2p;
+  final String? p2p;
   @override
   @JsonKey(name: 'block')
-  final int? block;
+  final String? block;
   @override
   @JsonKey(name: 'app')
-  final int? app;
+  final String? app;
 
   @override
   String toString() {
@@ -376,22 +376,22 @@ class _$ProtocolVersionImpl implements _ProtocolVersion {
 
 abstract class _ProtocolVersion implements ProtocolVersion {
   factory _ProtocolVersion(
-      {@JsonKey(name: 'p2p') final int? p2p,
-      @JsonKey(name: 'block') final int? block,
-      @JsonKey(name: 'app') final int? app}) = _$ProtocolVersionImpl;
+      {@JsonKey(name: 'p2p') final String? p2p,
+      @JsonKey(name: 'block') final String? block,
+      @JsonKey(name: 'app') final String? app}) = _$ProtocolVersionImpl;
 
   factory _ProtocolVersion.fromJson(Map<String, dynamic> json) =
       _$ProtocolVersionImpl.fromJson;
 
   @override
   @JsonKey(name: 'p2p')
-  int? get p2p;
+  String? get p2p;
   @override
   @JsonKey(name: 'block')
-  int? get block;
+  String? get block;
   @override
   @JsonKey(name: 'app')
-  int? get app;
+  String? get app;
 
   /// Create a copy of ProtocolVersion
   /// with the given fields replaced by the non-null parameter values.
@@ -418,7 +418,7 @@ mixin _$DefaultNodeInfo {
   @JsonKey(name: 'version')
   String? get version => throw _privateConstructorUsedError;
   @JsonKey(name: 'channels')
-  List<int>? get channels => throw _privateConstructorUsedError;
+  String? get channels => throw _privateConstructorUsedError;
   @JsonKey(name: 'moniker')
   String? get moniker => throw _privateConstructorUsedError;
   @JsonKey(name: 'other')
@@ -446,7 +446,7 @@ abstract class $DefaultNodeInfoCopyWith<$Res> {
       @JsonKey(name: 'listen_addr') String? listenAddr,
       @JsonKey(name: 'network') String? network,
       @JsonKey(name: 'version') String? version,
-      @JsonKey(name: 'channels') List<int>? channels,
+      @JsonKey(name: 'channels') String? channels,
       @JsonKey(name: 'moniker') String? moniker,
       @JsonKey(name: 'other') DefaultNodeInfoOther? other});
 
@@ -502,7 +502,7 @@ class _$DefaultNodeInfoCopyWithImpl<$Res, $Val extends DefaultNodeInfo>
       channels: freezed == channels
           ? _value.channels
           : channels // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       moniker: freezed == moniker
           ? _value.moniker
           : moniker // ignore: cast_nullable_to_non_nullable
@@ -557,7 +557,7 @@ abstract class _$$DefaultNodeInfoImplCopyWith<$Res>
       @JsonKey(name: 'listen_addr') String? listenAddr,
       @JsonKey(name: 'network') String? network,
       @JsonKey(name: 'version') String? version,
-      @JsonKey(name: 'channels') List<int>? channels,
+      @JsonKey(name: 'channels') String? channels,
       @JsonKey(name: 'moniker') String? moniker,
       @JsonKey(name: 'other') DefaultNodeInfoOther? other});
 
@@ -611,9 +611,9 @@ class __$$DefaultNodeInfoImplCopyWithImpl<$Res>
           : version // ignore: cast_nullable_to_non_nullable
               as String?,
       channels: freezed == channels
-          ? _value._channels
+          ? _value.channels
           : channels // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       moniker: freezed == moniker
           ? _value.moniker
           : moniker // ignore: cast_nullable_to_non_nullable
@@ -636,10 +636,9 @@ class _$DefaultNodeInfoImpl implements _DefaultNodeInfo {
       @JsonKey(name: 'listen_addr') this.listenAddr,
       @JsonKey(name: 'network') this.network,
       @JsonKey(name: 'version') this.version,
-      @JsonKey(name: 'channels') final List<int>? channels,
+      @JsonKey(name: 'channels') this.channels,
       @JsonKey(name: 'moniker') this.moniker,
-      @JsonKey(name: 'other') this.other})
-      : _channels = channels;
+      @JsonKey(name: 'other') this.other});
 
   factory _$DefaultNodeInfoImpl.fromJson(Map<String, dynamic> json) =>
       _$$DefaultNodeInfoImplFromJson(json);
@@ -659,17 +658,9 @@ class _$DefaultNodeInfoImpl implements _DefaultNodeInfo {
   @override
   @JsonKey(name: 'version')
   final String? version;
-  final List<int>? _channels;
   @override
   @JsonKey(name: 'channels')
-  List<int>? get channels {
-    final value = _channels;
-    if (value == null) return null;
-    if (_channels is EqualUnmodifiableListView) return _channels;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  final String? channels;
   @override
   @JsonKey(name: 'moniker')
   final String? moniker;
@@ -694,23 +685,16 @@ class _$DefaultNodeInfoImpl implements _DefaultNodeInfo {
                 other.listenAddr == listenAddr) &&
             (identical(other.network, network) || other.network == network) &&
             (identical(other.version, version) || other.version == version) &&
-            const DeepCollectionEquality().equals(other._channels, _channels) &&
+            (identical(other.channels, channels) ||
+                other.channels == channels) &&
             (identical(other.moniker, moniker) || other.moniker == moniker) &&
             (identical(other.other, this.other) || other.other == this.other));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      protocolVersion,
-      id,
-      listenAddr,
-      network,
-      version,
-      const DeepCollectionEquality().hash(_channels),
-      moniker,
-      other);
+  int get hashCode => Object.hash(runtimeType, protocolVersion, id, listenAddr,
+      network, version, channels, moniker, other);
 
   /// Create a copy of DefaultNodeInfo
   /// with the given fields replaced by the non-null parameter values.
@@ -737,7 +721,7 @@ abstract class _DefaultNodeInfo implements DefaultNodeInfo {
           @JsonKey(name: 'listen_addr') final String? listenAddr,
           @JsonKey(name: 'network') final String? network,
           @JsonKey(name: 'version') final String? version,
-          @JsonKey(name: 'channels') final List<int>? channels,
+          @JsonKey(name: 'channels') final String? channels,
           @JsonKey(name: 'moniker') final String? moniker,
           @JsonKey(name: 'other') final DefaultNodeInfoOther? other}) =
       _$DefaultNodeInfoImpl;
@@ -762,7 +746,7 @@ abstract class _DefaultNodeInfo implements DefaultNodeInfo {
   String? get version;
   @override
   @JsonKey(name: 'channels')
-  List<int>? get channels;
+  String? get channels;
   @override
   @JsonKey(name: 'moniker')
   String? get moniker;

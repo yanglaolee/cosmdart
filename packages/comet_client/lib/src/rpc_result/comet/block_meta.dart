@@ -12,7 +12,7 @@ class BlockMeta with _$BlockMeta {
     @JsonKey(name: 'block_id') BlockID? blockID,
     @JsonKey(name: 'block_size') int? blockSize,
     @JsonKey(name: 'header') Header? header,
-    @JsonKey(name: 'num_txs') int? numTxs,
+    @JsonKey(name: 'num_txs') String? numTxs,
   }) = _BlockMeta;
 
   factory BlockMeta.fromJson(Map<String, dynamic> json) =>

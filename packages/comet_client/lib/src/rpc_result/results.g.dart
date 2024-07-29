@@ -100,11 +100,14 @@ Map<String, dynamic> _$$ResultBlockImplToJson(_$ResultBlockImpl instance) =>
 _$ResultBlockResultsImpl _$$ResultBlockResultsImplFromJson(
         Map<String, dynamic> json) =>
     _$ResultBlockResultsImpl(
-      height: (json['height'] as num?)?.toInt(),
+      height: json['height'] as String?,
       txsResults: (json['txs_results'] as List<dynamic>?)
           ?.map((e) => ExecTxResult.fromJson(e as Map<String, dynamic>))
           .toList(),
-      finalizeBlockEvents: (json['finalize_block_events'] as List<dynamic>?)
+      beginBlockEvents: (json['begin_block_events'] as List<dynamic>?)
+          ?.map((e) => Event.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      endBlockEvents: (json['end_block_events'] as List<dynamic>?)
           ?.map((e) => Event.fromJson(e as Map<String, dynamic>))
           .toList(),
       validatorUpdates: (json['validator_updates'] as List<dynamic>?)
@@ -114,9 +117,6 @@ _$ResultBlockResultsImpl _$$ResultBlockResultsImplFromJson(
           ? null
           : ConsensusParams.fromJson(
               json['consensus_param_updates'] as Map<String, dynamic>),
-      appHash: (json['app_hash'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
     );
 
 Map<String, dynamic> _$$ResultBlockResultsImplToJson(
@@ -124,12 +124,13 @@ Map<String, dynamic> _$$ResultBlockResultsImplToJson(
     <String, dynamic>{
       'height': instance.height,
       'txs_results': instance.txsResults?.map((e) => e.toJson()).toList(),
-      'finalize_block_events':
-          instance.finalizeBlockEvents?.map((e) => e.toJson()).toList(),
+      'begin_block_events':
+          instance.beginBlockEvents?.map((e) => e.toJson()).toList(),
+      'end_block_events':
+          instance.endBlockEvents?.map((e) => e.toJson()).toList(),
       'validator_updates':
           instance.validatorUpdates?.map((e) => e.toJson()).toList(),
       'consensus_param_updates': instance.consensusParamUpdates?.toJson(),
-      'app_hash': instance.appHash,
     };
 
 _$ResultHeaderImpl _$$ResultHeaderImplFromJson(Map<String, dynamic> json) =>
@@ -162,12 +163,12 @@ Map<String, dynamic> _$$ResultCommitImplToJson(_$ResultCommitImpl instance) =>
 _$ResultValidatorsImpl _$$ResultValidatorsImplFromJson(
         Map<String, dynamic> json) =>
     _$ResultValidatorsImpl(
-      blockHeight: (json['block_height'] as num?)?.toInt(),
+      blockHeight: json['block_height'] as String?,
       validators: (json['validators'] as List<dynamic>?)
           ?.map((e) => Validator.fromJson(e as Map<String, dynamic>))
           .toList(),
-      count: (json['count'] as num?)?.toInt(),
-      total: (json['total'] as num?)?.toInt(),
+      count: json['count'] as String?,
+      total: json['total'] as String?,
     );
 
 Map<String, dynamic> _$$ResultValidatorsImplToJson(
@@ -181,17 +182,14 @@ Map<String, dynamic> _$$ResultValidatorsImplToJson(
 
 _$ResultTxImpl _$$ResultTxImplFromJson(Map<String, dynamic> json) =>
     _$ResultTxImpl(
-      hash: (json['hash'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      height: (json['height'] as num?)?.toInt(),
+      hash: json['hash'] as String?,
+      height: json['height'] as String?,
       index: (json['index'] as num?)?.toInt(),
       txResult: json['tx_result'] == null
           ? null
           : ExecTxResult.fromJson(json['tx_result'] as Map<String, dynamic>),
-      tx: (json['tx'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      tx: _$JsonConverterFromJson<String, Uint8List>(
+          json['tx'], const Base64Converter().fromJson),
       proof: json['proof'] == null
           ? null
           : TxProof.fromJson(json['proof'] as Map<String, dynamic>),
@@ -203,7 +201,8 @@ Map<String, dynamic> _$$ResultTxImplToJson(_$ResultTxImpl instance) {
     'height': instance.height,
     'index': instance.index,
     'tx_result': instance.txResult?.toJson(),
-    'tx': instance.tx,
+    'tx': _$JsonConverterToJson<String, Uint8List>(
+        instance.tx, const Base64Converter().toJson),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -215,6 +214,18 @@ Map<String, dynamic> _$$ResultTxImplToJson(_$ResultTxImpl instance) {
   writeNotNull('proof', instance.proof?.toJson());
   return val;
 }
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
 
 _$ResultTxSearchImpl _$$ResultTxSearchImplFromJson(Map<String, dynamic> json) =>
     _$ResultTxSearchImpl(
@@ -278,7 +289,7 @@ Map<String, dynamic> _$$ResultGenesisChunkImplToJson(
 _$ResultBlockchainInfoImpl _$$ResultBlockchainInfoImplFromJson(
         Map<String, dynamic> json) =>
     _$ResultBlockchainInfoImpl(
-      lastHeight: (json['last_height'] as num?)?.toInt(),
+      lastHeight: json['last_height'] as String?,
       blockMetas: (json['block_metas'] as List<dynamic>?)
           ?.map((e) => BlockMeta.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -293,38 +304,30 @@ Map<String, dynamic> _$$ResultBlockchainInfoImplToJson(
 
 _$ValidatorInfoImpl _$$ValidatorInfoImplFromJson(Map<String, dynamic> json) =>
     _$ValidatorInfoImpl(
-      address: (json['address'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      pubKey: json['pub_key'] as String?,
-      votingPower: (json['voting_power'] as num?)?.toInt(),
+      address: json['address'] as String?,
+      pubKey: json['pub_key'] == null
+          ? null
+          : PubKey.fromJson(json['pub_key'] as Map<String, dynamic>),
+      votingPower: json['voting_power'] as String?,
     );
 
 Map<String, dynamic> _$$ValidatorInfoImplToJson(_$ValidatorInfoImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
-      'pub_key': instance.pubKey,
+      'pub_key': instance.pubKey?.toJson(),
       'voting_power': instance.votingPower,
     };
 
 _$SyncInfoImpl _$$SyncInfoImplFromJson(Map<String, dynamic> json) =>
     _$SyncInfoImpl(
-      latestBlockHash: (json['latest_block_hash'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      latestAppHash: (json['latest_app_hash'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      latestBlockHeight: (json['latest_block_height'] as num?)?.toInt(),
+      latestBlockHash: json['latest_block_hash'] as String?,
+      latestAppHash: json['latest_app_hash'] as String?,
+      latestBlockHeight: json['latest_block_height'] as String?,
       latestBlockTime: _$JsonConverterFromJson<String, DateTime>(
           json['latest_block_time'], const DateTimeConverter().fromJson),
-      earliestBlockHash: (json['earliest_block_hash'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      earliestAppHash: (json['earliest_app_hash'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      earliestBlockHeight: (json['earliest_block_height'] as num?)?.toInt(),
+      earliestBlockHash: json['earliest_block_hash'] as String?,
+      earliestAppHash: json['earliest_app_hash'] as String?,
+      earliestBlockHeight: json['earliest_block_height'] as String?,
       earliestBlockTime: _$JsonConverterFromJson<String, DateTime>(
           json['earliest_block_time'], const DateTimeConverter().fromJson),
       catchingUp: json['catching_up'] as bool?,
@@ -344,18 +347,6 @@ Map<String, dynamic> _$$SyncInfoImplToJson(_$SyncInfoImpl instance) =>
           instance.earliestBlockTime, const DateTimeConverter().toJson),
       'catching_up': instance.catchingUp,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
-
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);
 
 _$ResultStatusImpl _$$ResultStatusImplFromJson(Map<String, dynamic> json) =>
     _$ResultStatusImpl(
@@ -378,14 +369,36 @@ Map<String, dynamic> _$$ResultStatusImplToJson(_$ResultStatusImpl instance) =>
       'validator_info': instance.validatorInfo?.toJson(),
     };
 
+_$PeerImpl _$$PeerImplFromJson(Map<String, dynamic> json) => _$PeerImpl(
+      nodeInfo: json['node_info'] == null
+          ? null
+          : DefaultNodeInfo.fromJson(json['node_info'] as Map<String, dynamic>),
+      isOutbound: json['is_outbound'] as bool?,
+      connectionStatus: json['connection_status'] == null
+          ? null
+          : ConnectionStatus.fromJson(
+              json['connection_status'] as Map<String, dynamic>),
+      remoteIP: json['remote_ip'] as String?,
+    );
+
+Map<String, dynamic> _$$PeerImplToJson(_$PeerImpl instance) =>
+    <String, dynamic>{
+      'node_info': instance.nodeInfo?.toJson(),
+      'is_outbound': instance.isOutbound,
+      'connection_status': instance.connectionStatus?.toJson(),
+      'remote_ip': instance.remoteIP,
+    };
+
 _$ResultNetInfoImpl _$$ResultNetInfoImplFromJson(Map<String, dynamic> json) =>
     _$ResultNetInfoImpl(
       listening: json['listening'] as bool?,
       listeners: (json['listeners'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      nPeers: (json['n_peers'] as num?)?.toInt(),
-      peers: json['peers'] as List<dynamic>?,
+      nPeers: json['n_peers'] as String?,
+      peers: (json['peers'] as List<dynamic>?)
+          ?.map((e) => Peer.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$ResultNetInfoImplToJson(_$ResultNetInfoImpl instance) =>
@@ -393,59 +406,13 @@ Map<String, dynamic> _$$ResultNetInfoImplToJson(_$ResultNetInfoImpl instance) =>
       'listening': instance.listening,
       'listeners': instance.listeners,
       'n_peers': instance.nPeers,
-      'peers': instance.peers,
-    };
-
-_$PeerStateInfoImpl _$$PeerStateInfoImplFromJson(Map<String, dynamic> json) =>
-    _$PeerStateInfoImpl(
-      nodeAddress: json['node_address'] as String?,
-      peerState: (json['peer_state'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-    );
-
-Map<String, dynamic> _$$PeerStateInfoImplToJson(_$PeerStateInfoImpl instance) =>
-    <String, dynamic>{
-      'node_address': instance.nodeAddress,
-      'peer_state': instance.peerState,
-    };
-
-_$ResultDumpConsensusStateImpl _$$ResultDumpConsensusStateImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ResultDumpConsensusStateImpl(
-      roundState: (json['round_state'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      peers: (json['peers'] as List<dynamic>?)
-          ?.map((e) => PeerStateInfo.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$ResultDumpConsensusStateImplToJson(
-        _$ResultDumpConsensusStateImpl instance) =>
-    <String, dynamic>{
-      'round_state': instance.roundState,
       'peers': instance.peers?.map((e) => e.toJson()).toList(),
-    };
-
-_$ResultConsensusStateImpl _$$ResultConsensusStateImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ResultConsensusStateImpl(
-      roundState: (json['round_state'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-    );
-
-Map<String, dynamic> _$$ResultConsensusStateImplToJson(
-        _$ResultConsensusStateImpl instance) =>
-    <String, dynamic>{
-      'round_state': instance.roundState,
     };
 
 _$ResultConsensusParamsImpl _$$ResultConsensusParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$ResultConsensusParamsImpl(
-      blockHeight: (json['block_height'] as num?)?.toInt(),
+      blockHeight: json['block_height'] as String?,
       consensusParams: json['consensus_params'] == null
           ? null
           : ConsensusParams.fromJson(

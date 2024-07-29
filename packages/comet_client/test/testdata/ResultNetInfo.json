@@ -1,0 +1,4419 @@
+{
+    "listening": true,
+    "listeners": [
+        "Listener(@95.216.248.222:26656)"
+    ],
+    "n_peers": "35",
+    "peers": [
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://[2a01:4f8:10a:1550::2]:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "998983751425633",
+                "SendMonitor": {
+                    "Start": "2024-07-17T14:24:37.78Z",
+                    "Bytes": "16623769509",
+                    "Samples": "3747925",
+                    "InstRate": "3375",
+                    "CurRate": "23962",
+                    "AvgRate": "16641",
+                    "PeakRate": "5211350",
+                    "BytesRem": "0",
+                    "Duration": "998983740000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T14:24:37.78Z",
+                    "Bytes": "18679633809",
+                    "Samples": "3552156",
+                    "InstRate": "29403",
+                    "CurRate": "24957",
+                    "AvgRate": "18699",
+                    "PeakRate": "4804460",
+                    "BytesRem": "0",
+                    "Duration": "998983740000000",
+                    "Idle": "380000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14649"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "48965"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "93196"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "240"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "2a01:4f8:10a:1550::2"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "959503800881887",
+                "SendMonitor": {
+                    "Start": "2024-07-18T01:22:37.72Z",
+                    "Bytes": "18435072262",
+                    "Samples": "3628769",
+                    "InstRate": "37117",
+                    "CurRate": "29392",
+                    "AvgRate": "19213",
+                    "PeakRate": "5170000",
+                    "BytesRem": "0",
+                    "Duration": "959503720000000",
+                    "Idle": "20000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-18T01:22:37.72Z",
+                    "Bytes": "16271777532",
+                    "Samples": "3091894",
+                    "InstRate": "79653",
+                    "CurRate": "33177",
+                    "AvgRate": "16959",
+                    "PeakRate": "5128170",
+                    "BytesRem": "0",
+                    "Duration": "959503800000000",
+                    "Idle": "360000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11957"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14682"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "32517"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "130085"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "34.88.161.33"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "965113742169338",
+                "SendMonitor": {
+                    "Start": "2024-07-17T23:49:07.78Z",
+                    "Bytes": "17509565490",
+                    "Samples": "3657917",
+                    "InstRate": "47625",
+                    "CurRate": "30665",
+                    "AvgRate": "18142",
+                    "PeakRate": "5215720",
+                    "BytesRem": "0",
+                    "Duration": "965113660000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T23:49:07.78Z",
+                    "Bytes": "18625620078",
+                    "Samples": "3338162",
+                    "InstRate": "57563",
+                    "CurRate": "30625",
+                    "AvgRate": "19299",
+                    "PeakRate": "4756540",
+                    "BytesRem": "0",
+                    "Duration": "965113740000000",
+                    "Idle": "360000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14692"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "57950"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "106310"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "74.118.136.19"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.34.24",
+                "channels": "20222100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://127.0.0.1:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "208482884702341",
+                "SendMonitor": {
+                    "Start": "2024-07-26T17:59:38.64Z",
+                    "Bytes": "254074745",
+                    "Samples": "660544",
+                    "InstRate": "4017",
+                    "CurRate": "2860",
+                    "AvgRate": "1219",
+                    "PeakRate": "112220",
+                    "BytesRem": "0",
+                    "Duration": "208482800000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-26T17:59:38.64Z",
+                    "Bytes": "20844",
+                    "Samples": "24721",
+                    "InstRate": "0",
+                    "CurRate": "0",
+                    "AvgRate": "0",
+                    "PeakRate": "30",
+                    "BytesRem": "0",
+                    "Duration": "208482880000000",
+                    "Idle": "42560000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "12185"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "170.64.218.141"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "928063757053412",
+                "SendMonitor": {
+                    "Start": "2024-07-18T10:06:37.78Z",
+                    "Bytes": "16112988106",
+                    "Samples": "3493311",
+                    "InstRate": "4693",
+                    "CurRate": "21220",
+                    "AvgRate": "17362",
+                    "PeakRate": "5211530",
+                    "BytesRem": "0",
+                    "Duration": "928063660000000",
+                    "Idle": "60000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-18T10:06:37.78Z",
+                    "Bytes": "16591124207",
+                    "Samples": "3254464",
+                    "InstRate": "862",
+                    "CurRate": "24624",
+                    "AvgRate": "17877",
+                    "PeakRate": "4653940",
+                    "BytesRem": "0",
+                    "Duration": "928063740000000",
+                    "Idle": "0",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11937"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14560"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "58303"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "85286"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "113"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "51.83.96.79"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "538483495495983",
+                "SendMonitor": {
+                    "Start": "2024-07-22T22:19:38.04Z",
+                    "Bytes": "10659324282",
+                    "Samples": "2053256",
+                    "InstRate": "5090",
+                    "CurRate": "24980",
+                    "AvgRate": "19795",
+                    "PeakRate": "3821870",
+                    "BytesRem": "0",
+                    "Duration": "538483400000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-22T22:19:38.04Z",
+                    "Bytes": "11371833791",
+                    "Samples": "1984435",
+                    "InstRate": "4583",
+                    "CurRate": "43480",
+                    "AvgRate": "21118",
+                    "PeakRate": "2280020",
+                    "BytesRem": "0",
+                    "Duration": "538483460000000",
+                    "Idle": "20000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "13979"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "54140"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "112502"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "141.98.219.28"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://0.0.0.0:33041"
+                }
+            },
+            "is_outbound": false,
+            "connection_status": {
+                "Duration": "977364703052429",
+                "SendMonitor": {
+                    "Start": "2024-07-17T20:24:56.82Z",
+                    "Bytes": "13441595599",
+                    "Samples": "3626675",
+                    "InstRate": "56740",
+                    "CurRate": "30812",
+                    "AvgRate": "13753",
+                    "PeakRate": "5176090",
+                    "BytesRem": "0",
+                    "Duration": "977364620000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T20:24:56.82Z",
+                    "Bytes": "19497510263",
+                    "Samples": "3436131",
+                    "InstRate": "27921",
+                    "CurRate": "24936",
+                    "AvgRate": "19949",
+                    "PeakRate": "4239400",
+                    "BytesRem": "0",
+                    "Duration": "977364700000000",
+                    "Idle": "380000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11491"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "12082"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "53251"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "74763"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "4"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "162.19.18.137"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://127.0.0.1:26657"
+                }
+            },
+            "is_outbound": false,
+            "connection_status": {
+                "Duration": "999043662221936",
+                "SendMonitor": {
+                    "Start": "2024-07-17T14:23:37.86Z",
+                    "Bytes": "12113508362",
+                    "Samples": "3621030",
+                    "InstRate": "4693",
+                    "CurRate": "3680",
+                    "AvgRate": "12125",
+                    "PeakRate": "4609910",
+                    "BytesRem": "0",
+                    "Duration": "999043580000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T14:23:37.86Z",
+                    "Bytes": "19824496809",
+                    "Samples": "3655744",
+                    "InstRate": "167",
+                    "CurRate": "33195",
+                    "AvgRate": "19843",
+                    "PeakRate": "2620950",
+                    "BytesRem": "0",
+                    "Duration": "999043580000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11723"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14382"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "5068"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "25171"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "135.181.174.106"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:2012"
+                }
+            },
+            "is_outbound": false,
+            "connection_status": {
+                "Duration": "944290156578313",
+                "SendMonitor": {
+                    "Start": "2024-07-18T05:36:11.38Z",
+                    "Bytes": "12562790060",
+                    "Samples": "3503923",
+                    "InstRate": "293",
+                    "CurRate": "14704",
+                    "AvgRate": "13304",
+                    "PeakRate": "4928530",
+                    "BytesRem": "0",
+                    "Duration": "944290140000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-18T05:36:11.38Z",
+                    "Bytes": "18176075827",
+                    "Samples": "3395509",
+                    "InstRate": "0",
+                    "CurRate": "28694",
+                    "AvgRate": "19248",
+                    "PeakRate": "2985690",
+                    "BytesRem": "0",
+                    "Duration": "944290140000000",
+                    "Idle": "360000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11172"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "11816"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "31936"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "57875"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "65.108.121.190"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "978943513241179",
+                "SendMonitor": {
+                    "Start": "2024-07-17T19:58:38.02Z",
+                    "Bytes": "19606774967",
+                    "Samples": "3747618",
+                    "InstRate": "53705",
+                    "CurRate": "31613",
+                    "AvgRate": "20029",
+                    "PeakRate": "5211530",
+                    "BytesRem": "0",
+                    "Duration": "978943420000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T19:58:38.02Z",
+                    "Bytes": "19733300898",
+                    "Samples": "3573548",
+                    "InstRate": "63980",
+                    "CurRate": "43016",
+                    "AvgRate": "20158",
+                    "PeakRate": "3433970",
+                    "BytesRem": "0",
+                    "Duration": "978943420000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "13952"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "54322"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "113671"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "169.155.171.230"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:14957"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "998383751037886",
+                "SendMonitor": {
+                    "Start": "2024-07-17T14:34:37.78Z",
+                    "Bytes": "14393366716",
+                    "Samples": "3671488",
+                    "InstRate": "8730",
+                    "CurRate": "14276",
+                    "AvgRate": "14417",
+                    "PeakRate": "5215720",
+                    "BytesRem": "0",
+                    "Duration": "998383660000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T14:34:37.78Z",
+                    "Bytes": "20090234507",
+                    "Samples": "3580957",
+                    "InstRate": "60032",
+                    "CurRate": "36821",
+                    "AvgRate": "20123",
+                    "PeakRate": "4487570",
+                    "BytesRem": "0",
+                    "Duration": "998383740000000",
+                    "Idle": "360000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11930"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14604"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "58207"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "67126"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "240"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "88.99.139.207"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "998923746447281",
+                "SendMonitor": {
+                    "Start": "2024-07-17T14:25:37.78Z",
+                    "Bytes": "16053077399",
+                    "Samples": "3708864",
+                    "InstRate": "53700",
+                    "CurRate": "28160",
+                    "AvgRate": "16070",
+                    "PeakRate": "5170000",
+                    "BytesRem": "0",
+                    "Duration": "998923660000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T14:25:37.78Z",
+                    "Bytes": "19001825603",
+                    "Samples": "3473420",
+                    "InstRate": "26676",
+                    "CurRate": "23320",
+                    "AvgRate": "19022",
+                    "PeakRate": "4254230",
+                    "BytesRem": "0",
+                    "Duration": "998923740000000",
+                    "Idle": "380000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11936"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14640"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "34806"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "99858"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "7"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "169.150.255.54"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "605923509184871",
+                "SendMonitor": {
+                    "Start": "2024-07-22T03:35:38.02Z",
+                    "Bytes": "12160943015",
+                    "Samples": "2314656",
+                    "InstRate": "7900",
+                    "CurRate": "33827",
+                    "AvgRate": "20070",
+                    "PeakRate": "4434380",
+                    "BytesRem": "0",
+                    "Duration": "605923420000000",
+                    "Idle": "60000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-22T03:35:38.02Z",
+                    "Bytes": "12900504529",
+                    "Samples": "2255495",
+                    "InstRate": "83621",
+                    "CurRate": "40770",
+                    "AvgRate": "21291",
+                    "PeakRate": "2259890",
+                    "BytesRem": "0",
+                    "Duration": "605923500000000",
+                    "Idle": "360000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "13989"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "54322"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "127811"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "7"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "204.16.247.246"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://127.0.0.1:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "998863507126717",
+                "SendMonitor": {
+                    "Start": "2024-07-17T14:26:38.02Z",
+                    "Bytes": "20545873865",
+                    "Samples": "3831617",
+                    "InstRate": "52685",
+                    "CurRate": "33827",
+                    "AvgRate": "20569",
+                    "PeakRate": "5211530",
+                    "BytesRem": "0",
+                    "Duration": "998863420000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T14:26:38.02Z",
+                    "Bytes": "19376140933",
+                    "Samples": "3624743",
+                    "InstRate": "105570",
+                    "CurRate": "40598",
+                    "AvgRate": "19398",
+                    "PeakRate": "4548360",
+                    "BytesRem": "0",
+                    "Duration": "998863460000000",
+                    "Idle": "40000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "13947"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "54322"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "128663"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "207"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "15.204.196.180"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.38.6",
+                "channels": "20222100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://127.0.0.1:26657"
+                }
+            },
+            "is_outbound": false,
+            "connection_status": {
+                "Duration": "998691452369155",
+                "SendMonitor": {
+                    "Start": "2024-07-17T14:29:30.08Z",
+                    "Bytes": "6827999613",
+                    "Samples": "3451143",
+                    "InstRate": "43190",
+                    "CurRate": "53808",
+                    "AvgRate": "6837",
+                    "PeakRate": "5199400",
+                    "BytesRem": "0",
+                    "Duration": "998691360000000",
+                    "Idle": "60000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T14:29:30.08Z",
+                    "Bytes": "1341803555",
+                    "Samples": "1084065",
+                    "InstRate": "194",
+                    "CurRate": "721",
+                    "AvgRate": "1344",
+                    "PeakRate": "391090",
+                    "BytesRem": "0",
+                    "Duration": "998691440000000",
+                    "Idle": "1140000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "13874"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "25261"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "89783"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "178.128.238.183"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "998713745997040",
+                "SendMonitor": {
+                    "Start": "2024-07-17T14:29:07.78Z",
+                    "Bytes": "16282983205",
+                    "Samples": "3742003",
+                    "InstRate": "7100",
+                    "CurRate": "16688",
+                    "AvgRate": "16304",
+                    "PeakRate": "5211940",
+                    "BytesRem": "0",
+                    "Duration": "998713660000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T14:29:07.78Z",
+                    "Bytes": "18828212069",
+                    "Samples": "3609518",
+                    "InstRate": "9493",
+                    "CurRate": "36608",
+                    "AvgRate": "18852",
+                    "PeakRate": "5129010",
+                    "BytesRem": "0",
+                    "Duration": "998713740000000",
+                    "Idle": "280000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14547"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "58302"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "79333"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "57"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "80.190.129.50"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "603853712473686",
+                "SendMonitor": {
+                    "Start": "2024-07-22T04:10:07.82Z",
+                    "Bytes": "9227518962",
+                    "Samples": "2252030",
+                    "InstRate": "3815",
+                    "CurRate": "17992",
+                    "AvgRate": "15281",
+                    "PeakRate": "3821870",
+                    "BytesRem": "0",
+                    "Duration": "603853620000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-22T04:10:07.82Z",
+                    "Bytes": "12254235102",
+                    "Samples": "2210841",
+                    "InstRate": "71344",
+                    "CurRate": "37690",
+                    "AvgRate": "20293",
+                    "PeakRate": "2115100",
+                    "BytesRem": "0",
+                    "Duration": "603853640000000",
+                    "Idle": "60000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14544"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "57304"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "82457"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "56"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "146.59.81.92"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "987433819421725",
+                "SendMonitor": {
+                    "Start": "2024-07-17T17:37:07.7Z",
+                    "Bytes": "15533671591",
+                    "Samples": "3687538",
+                    "InstRate": "51680",
+                    "CurRate": "24885",
+                    "AvgRate": "15731",
+                    "PeakRate": "5211530",
+                    "BytesRem": "0",
+                    "Duration": "987433740000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T17:37:07.7Z",
+                    "Bytes": "19214112497",
+                    "Samples": "3402355",
+                    "InstRate": "24208",
+                    "CurRate": "19937",
+                    "AvgRate": "19459",
+                    "PeakRate": "2167480",
+                    "BytesRem": "0",
+                    "Duration": "987433820000000",
+                    "Idle": "380000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11948"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14692"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "31836"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "89426"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "95.216.114.244"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://127.0.0.1:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "644473520642619",
+                "SendMonitor": {
+                    "Start": "2024-07-21T16:53:08Z",
+                    "Bytes": "12653485841",
+                    "Samples": "2445978",
+                    "InstRate": "50665",
+                    "CurRate": "30226",
+                    "AvgRate": "19634",
+                    "PeakRate": "3821870",
+                    "BytesRem": "0",
+                    "Duration": "644473440000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-21T16:53:08Z",
+                    "Bytes": "12806290246",
+                    "Samples": "2301466",
+                    "InstRate": "72663",
+                    "CurRate": "32738",
+                    "AvgRate": "19871",
+                    "PeakRate": "3096290",
+                    "BytesRem": "0",
+                    "Duration": "644473460000000",
+                    "Idle": "60000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "13981"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "54292"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "111823"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "3.208.33.221"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "998293730826848",
+                "SendMonitor": {
+                    "Start": "2024-07-17T14:36:07.8Z",
+                    "Bytes": "16679704133",
+                    "Samples": "3726763",
+                    "InstRate": "4693",
+                    "CurRate": "20259",
+                    "AvgRate": "16708",
+                    "PeakRate": "5170000",
+                    "BytesRem": "0",
+                    "Duration": "998293640000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T14:36:07.8Z",
+                    "Bytes": "18721596738",
+                    "Samples": "3468122",
+                    "InstRate": "91",
+                    "CurRate": "30966",
+                    "AvgRate": "18754",
+                    "PeakRate": "5129530",
+                    "BytesRem": "0",
+                    "Duration": "998293660000000",
+                    "Idle": "60000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11937"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14607"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "55089"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "87898"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "141.94.101.116"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://127.0.0.1:5001"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "203653825400161",
+                "SendMonitor": {
+                    "Start": "2024-07-26T19:20:07.7Z",
+                    "Bytes": "2548268314",
+                    "Samples": "743786",
+                    "InstRate": "4017",
+                    "CurRate": "13085",
+                    "AvgRate": "12513",
+                    "PeakRate": "2813957",
+                    "BytesRem": "0",
+                    "Duration": "203653740000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-26T19:20:07.7Z",
+                    "Bytes": "3781767451",
+                    "Samples": "729345",
+                    "InstRate": "41294",
+                    "CurRate": "27438",
+                    "AvgRate": "18570",
+                    "PeakRate": "1676150",
+                    "BytesRem": "0",
+                    "Duration": "203653780000000",
+                    "Idle": "40000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "10388"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14600"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "59013"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "53752"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "37.27.56.238"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://127.0.0.1:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "998113825147791",
+                "SendMonitor": {
+                    "Start": "2024-07-17T14:39:07.7Z",
+                    "Bytes": "15952088506",
+                    "Samples": "3745415",
+                    "InstRate": "50670",
+                    "CurRate": "29074",
+                    "AvgRate": "15982",
+                    "PeakRate": "5176090",
+                    "BytesRem": "0",
+                    "Duration": "998113740000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T14:39:07.7Z",
+                    "Bytes": "16126399817",
+                    "Samples": "3406048",
+                    "InstRate": "7534",
+                    "CurRate": "12984",
+                    "AvgRate": "16157",
+                    "PeakRate": "5126060",
+                    "BytesRem": "0",
+                    "Duration": "998113820000000",
+                    "Idle": "380000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11937"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14687"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "59223"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "102980"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "5"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "65.109.27.172"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://127.0.0.1:26657"
+                }
+            },
+            "is_outbound": false,
+            "connection_status": {
+                "Duration": "990961977741157",
+                "SendMonitor": {
+                    "Start": "2024-07-17T16:38:19.54Z",
+                    "Bytes": "13653016744",
+                    "Samples": "3645306",
+                    "InstRate": "63825",
+                    "CurRate": "19500",
+                    "AvgRate": "13778",
+                    "PeakRate": "5176090",
+                    "BytesRem": "0",
+                    "Duration": "990961900000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T16:38:19.54Z",
+                    "Bytes": "18400649881",
+                    "Samples": "3473987",
+                    "InstRate": "10833",
+                    "CurRate": "22028",
+                    "AvgRate": "18568",
+                    "PeakRate": "4593060",
+                    "BytesRem": "0",
+                    "Duration": "990961940000000",
+                    "Idle": "40000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11972"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14657"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "45617"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "63236"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "240"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "37.27.70.69"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "908383507867483",
+                "SendMonitor": {
+                    "Start": "2024-07-18T15:34:38.02Z",
+                    "Bytes": "18089708358",
+                    "Samples": "3480301",
+                    "InstRate": "50670",
+                    "CurRate": "33498",
+                    "AvgRate": "19914",
+                    "PeakRate": "5176090",
+                    "BytesRem": "0",
+                    "Duration": "908383420000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-18T15:34:38.02Z",
+                    "Bytes": "18073843528",
+                    "Samples": "3335673",
+                    "InstRate": "28193",
+                    "CurRate": "21806",
+                    "AvgRate": "19897",
+                    "PeakRate": "3361840",
+                    "BytesRem": "0",
+                    "Duration": "908383420000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "13940"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "54322"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "123214"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "2"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "164.152.163.157"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:26727"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "400633824706475",
+                "SendMonitor": {
+                    "Start": "2024-07-24T12:37:07.7Z",
+                    "Bytes": "5592899409",
+                    "Samples": "1475916",
+                    "InstRate": "3603",
+                    "CurRate": "5419",
+                    "AvgRate": "13960",
+                    "PeakRate": "2986500",
+                    "BytesRem": "0",
+                    "Duration": "400633740000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-24T12:37:07.7Z",
+                    "Bytes": "7747831882",
+                    "Samples": "1449543",
+                    "InstRate": "63120",
+                    "CurRate": "34777",
+                    "AvgRate": "19339",
+                    "PeakRate": "1598840",
+                    "BytesRem": "0",
+                    "Duration": "400633740000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11888"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14692"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "31808"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "29923"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "135.181.215.115"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://127.0.0.1:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "91453824809781",
+                "SendMonitor": {
+                    "Start": "2024-07-28T02:30:07.7Z",
+                    "Bytes": "1661119376",
+                    "Samples": "345027",
+                    "InstRate": "1015",
+                    "CurRate": "23643",
+                    "AvgRate": "18163",
+                    "PeakRate": "1676010",
+                    "BytesRem": "0",
+                    "Duration": "91453740000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-28T02:30:07.7Z",
+                    "Bytes": "1258243838",
+                    "Samples": "306918",
+                    "InstRate": "781",
+                    "CurRate": "24125",
+                    "AvgRate": "13758",
+                    "PeakRate": "1781420",
+                    "BytesRem": "0",
+                    "Duration": "91453820000000",
+                    "Idle": "260000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "1937"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14694"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "58781"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "100591"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "49.12.154.29"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "592093506246994",
+                "SendMonitor": {
+                    "Start": "2024-07-22T07:26:08.02Z",
+                    "Bytes": "12066720525",
+                    "Samples": "2261792",
+                    "InstRate": "49655",
+                    "CurRate": "33284",
+                    "AvgRate": "20380",
+                    "PeakRate": "4001980",
+                    "BytesRem": "0",
+                    "Duration": "592093420000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-22T07:26:08.02Z",
+                    "Bytes": "11716115620",
+                    "Samples": "2121442",
+                    "InstRate": "57916",
+                    "CurRate": "29601",
+                    "AvgRate": "19788",
+                    "PeakRate": "2599217",
+                    "BytesRem": "0",
+                    "Duration": "592093500000000",
+                    "Idle": "380000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "13939"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "54320"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "125805"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "7"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "164.152.162.21"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://127.0.0.1:14957"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "995743750421029",
+                "SendMonitor": {
+                    "Start": "2024-07-17T15:18:37.78Z",
+                    "Bytes": "14922361051",
+                    "Samples": "3718996",
+                    "InstRate": "4693",
+                    "CurRate": "19161",
+                    "AvgRate": "14986",
+                    "PeakRate": "5211570",
+                    "BytesRem": "0",
+                    "Duration": "995743660000000",
+                    "Idle": "60000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T15:18:37.78Z",
+                    "Bytes": "19718867385",
+                    "Samples": "3557124",
+                    "InstRate": "67366",
+                    "CurRate": "36729",
+                    "AvgRate": "19803",
+                    "PeakRate": "3629490",
+                    "BytesRem": "0",
+                    "Duration": "995743740000000",
+                    "Idle": "300000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14580"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "58023"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "66726"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "46.4.162.223"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:11002"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "947712898714418",
+                "SendMonitor": {
+                    "Start": "2024-07-18T04:39:08.62Z",
+                    "Bytes": "20612160437",
+                    "Samples": "3677418",
+                    "InstRate": "9253",
+                    "CurRate": "26606",
+                    "AvgRate": "21749",
+                    "PeakRate": "5211530",
+                    "BytesRem": "0",
+                    "Duration": "947712820000000",
+                    "Idle": "60000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-18T04:39:08.62Z",
+                    "Bytes": "19260295172",
+                    "Samples": "3234461",
+                    "InstRate": "4650",
+                    "CurRate": "54891",
+                    "AvgRate": "20323",
+                    "PeakRate": "4597260",
+                    "BytesRem": "0",
+                    "Duration": "947712860000000",
+                    "Idle": "40000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11540"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "12334"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "53938"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "107992"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "141.164.38.26"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.38.6",
+                "channels": "20222100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://127.0.0.1:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "993253723521382",
+                "SendMonitor": {
+                    "Start": "2024-07-17T16:00:07.8Z",
+                    "Bytes": "6525421232",
+                    "Samples": "3415637",
+                    "InstRate": "4323",
+                    "CurRate": "2940",
+                    "AvgRate": "6570",
+                    "PeakRate": "5211530",
+                    "BytesRem": "0",
+                    "Duration": "993253640000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T16:00:07.8Z",
+                    "Bytes": "1203231742",
+                    "Samples": "1045583",
+                    "InstRate": "25134",
+                    "CurRate": "10842",
+                    "AvgRate": "1211",
+                    "PeakRate": "541960",
+                    "BytesRem": "0",
+                    "Duration": "993253720000000",
+                    "Idle": "380000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14722"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "4820"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "4204"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "46.101.130.205"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.34.24",
+                "channels": "20222100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "off",
+                    "rpc_address": "tcp://127.0.0.1:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "163063327988994",
+                "SendMonitor": {
+                    "Start": "2024-07-27T06:36:38.2Z",
+                    "Bytes": "198842634",
+                    "Samples": "517000",
+                    "InstRate": "4017",
+                    "CurRate": "2859",
+                    "AvgRate": "1219",
+                    "PeakRate": "22940",
+                    "BytesRem": "0",
+                    "Duration": "163063240000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-27T06:36:38.2Z",
+                    "Bytes": "16302",
+                    "Samples": "19347",
+                    "InstRate": "0",
+                    "CurRate": "0",
+                    "AvgRate": "0",
+                    "PeakRate": "43",
+                    "BytesRem": "0",
+                    "Duration": "163063320000000",
+                    "Idle": "43160000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "13444"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "139.59.75.73"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "988213825183750",
+                "SendMonitor": {
+                    "Start": "2024-07-17T17:24:07.7Z",
+                    "Bytes": "11835602386",
+                    "Samples": "3588959",
+                    "InstRate": "4017",
+                    "CurRate": "19910",
+                    "AvgRate": "11977",
+                    "PeakRate": "5176090",
+                    "BytesRem": "0",
+                    "Duration": "988213740000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-17T17:24:07.7Z",
+                    "Bytes": "19287558092",
+                    "Samples": "3669731",
+                    "InstRate": "41915",
+                    "CurRate": "29982",
+                    "AvgRate": "19518",
+                    "PeakRate": "3267440",
+                    "BytesRem": "0",
+                    "Duration": "988213780000000",
+                    "Idle": "40000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11880"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14687"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "57376"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "66487"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "65.21.215.162"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "928003470423289",
+                "SendMonitor": {
+                    "Start": "2024-07-18T10:07:38.06Z",
+                    "Bytes": "19267352470",
+                    "Samples": "3576715",
+                    "InstRate": "38777",
+                    "CurRate": "32553",
+                    "AvgRate": "20762",
+                    "PeakRate": "5176090",
+                    "BytesRem": "0",
+                    "Duration": "928003380000000",
+                    "Idle": "60000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-18T10:07:38.06Z",
+                    "Bytes": "17345545833",
+                    "Samples": "3266552",
+                    "InstRate": "54026",
+                    "CurRate": "28667",
+                    "AvgRate": "18691",
+                    "PeakRate": "3295450",
+                    "BytesRem": "0",
+                    "Duration": "928003460000000",
+                    "Idle": "380000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11924"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "13934"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "54128"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "124046"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "15.235.51.48"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "124873741918902",
+                "SendMonitor": {
+                    "Start": "2024-07-27T17:13:07.78Z",
+                    "Bytes": "2092435638",
+                    "Samples": "465211",
+                    "InstRate": "24335",
+                    "CurRate": "25660",
+                    "AvgRate": "16756",
+                    "PeakRate": "1998880",
+                    "BytesRem": "0",
+                    "Duration": "124873660000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-27T17:13:07.78Z",
+                    "Bytes": "2282912679",
+                    "Samples": "440912",
+                    "InstRate": "17935",
+                    "CurRate": "22511",
+                    "AvgRate": "18282",
+                    "PeakRate": "3929200",
+                    "BytesRem": "0",
+                    "Duration": "124873740000000",
+                    "Idle": "260000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14627"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "57493"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "104158"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "5"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "162.19.56.16"
+        },
+        {
+            "node_info": {
+                "protocol_version": {
+                    "p2p": "8",
+                    "block": "11",
+                    "app": "0"
+                },
+                "id": "37e610f3424e17f3c76c8997fa791dcb6c12ee3d",
+                "listen_addr": "0.0.0.0:26657",
+                "network": "cosmoshub-4",
+                "version": "0.37.6",
+                "channels": "40202122233038606100",
+                "moniker": "highstakes-cosmos-public-rpc",
+                "other": {
+                    "tx_index": "on",
+                    "rpc_address": "tcp://0.0.0.0:26657"
+                }
+            },
+            "is_outbound": true,
+            "connection_status": {
+                "Duration": "46393639344474",
+                "SendMonitor": {
+                    "Start": "2024-07-28T15:01:07.88Z",
+                    "Bytes": "801038189",
+                    "Samples": "172013",
+                    "InstRate": "4017",
+                    "CurRate": "21089",
+                    "AvgRate": "17266",
+                    "PeakRate": "1499308",
+                    "BytesRem": "0",
+                    "Duration": "46393560000000",
+                    "Idle": "80000000",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "RecvMonitor": {
+                    "Start": "2024-07-28T15:01:07.88Z",
+                    "Bytes": "881738036",
+                    "Samples": "166206",
+                    "InstRate": "71284",
+                    "CurRate": "36711",
+                    "AvgRate": "19006",
+                    "PeakRate": "1250480",
+                    "BytesRem": "0",
+                    "Duration": "46393640000000",
+                    "Idle": "0",
+                    "TimeRem": "0",
+                    "Progress": 0,
+                    "Active": true
+                },
+                "Channels": [
+                    {
+                        "ID": 48,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "11938"
+                    },
+                    {
+                        "ID": 64,
+                        "SendQueueCapacity": "1000",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 32,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "14431"
+                    },
+                    {
+                        "ID": 33,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "10",
+                        "RecentlySent": "50139"
+                    },
+                    {
+                        "ID": 34,
+                        "SendQueueCapacity": "100",
+                        "SendQueueSize": "0",
+                        "Priority": "7",
+                        "RecentlySent": "87554"
+                    },
+                    {
+                        "ID": 35,
+                        "SendQueueCapacity": "2",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 56,
+                        "SendQueueCapacity": "1",
+                        "SendQueueSize": "0",
+                        "Priority": "6",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 96,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "5",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 97,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "3",
+                        "RecentlySent": "0"
+                    },
+                    {
+                        "ID": 0,
+                        "SendQueueCapacity": "10",
+                        "SendQueueSize": "0",
+                        "Priority": "1",
+                        "RecentlySent": "0"
+                    }
+                ]
+            },
+            "remote_ip": "37.120.245.112"
+        }
+    ]
+}

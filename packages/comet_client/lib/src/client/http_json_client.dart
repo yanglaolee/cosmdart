@@ -106,18 +106,6 @@ class HttpJsonClient extends CometClient implements ABCIClient, SignClient, Hist
   }
   
   @override
-  Future<ResultConsensusState?> consensusState() {
-    // TODO: implement consensusState
-    throw UnimplementedError();
-  }
-  
-  @override
-  Future<ResultDumpConsensusState?> dumpConsensusState() {
-    // TODO: implement dumpConsensusState
-    throw UnimplementedError();
-  }
-  
-  @override
   Future<ResultGenesis?> genesis() {
     // TODO: implement genesis
     throw UnimplementedError();

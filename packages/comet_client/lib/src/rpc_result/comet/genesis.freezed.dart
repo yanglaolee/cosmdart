@@ -21,11 +21,11 @@ GenesisValidator _$GenesisValidatorFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GenesisValidator {
   @JsonKey(name: 'address')
-  List<int>? get address => throw _privateConstructorUsedError;
+  String? get address => throw _privateConstructorUsedError;
   @JsonKey(name: 'pub_key')
   String? get pubKey => throw _privateConstructorUsedError;
   @JsonKey(name: 'power')
-  int? get power => throw _privateConstructorUsedError;
+  String? get power => throw _privateConstructorUsedError;
   @JsonKey(name: 'name')
   String? get name => throw _privateConstructorUsedError;
 
@@ -46,9 +46,9 @@ abstract class $GenesisValidatorCopyWith<$Res> {
       _$GenesisValidatorCopyWithImpl<$Res, GenesisValidator>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'address') List<int>? address,
+      {@JsonKey(name: 'address') String? address,
       @JsonKey(name: 'pub_key') String? pubKey,
-      @JsonKey(name: 'power') int? power,
+      @JsonKey(name: 'power') String? power,
       @JsonKey(name: 'name') String? name});
 }
 
@@ -76,7 +76,7 @@ class _$GenesisValidatorCopyWithImpl<$Res, $Val extends GenesisValidator>
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       pubKey: freezed == pubKey
           ? _value.pubKey
           : pubKey // ignore: cast_nullable_to_non_nullable
@@ -84,7 +84,7 @@ class _$GenesisValidatorCopyWithImpl<$Res, $Val extends GenesisValidator>
       power: freezed == power
           ? _value.power
           : power // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -102,9 +102,9 @@ abstract class _$$GenesisValidatorImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'address') List<int>? address,
+      {@JsonKey(name: 'address') String? address,
       @JsonKey(name: 'pub_key') String? pubKey,
-      @JsonKey(name: 'power') int? power,
+      @JsonKey(name: 'power') String? power,
       @JsonKey(name: 'name') String? name});
 }
 
@@ -128,9 +128,9 @@ class __$$GenesisValidatorImplCopyWithImpl<$Res>
   }) {
     return _then(_$GenesisValidatorImpl(
       address: freezed == address
-          ? _value._address
+          ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       pubKey: freezed == pubKey
           ? _value.pubKey
           : pubKey // ignore: cast_nullable_to_non_nullable
@@ -138,7 +138,7 @@ class __$$GenesisValidatorImplCopyWithImpl<$Res>
       power: freezed == power
           ? _value.power
           : power // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -152,32 +152,23 @@ class __$$GenesisValidatorImplCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$GenesisValidatorImpl implements _GenesisValidator {
   _$GenesisValidatorImpl(
-      {@JsonKey(name: 'address') final List<int>? address,
+      {@JsonKey(name: 'address') this.address,
       @JsonKey(name: 'pub_key') this.pubKey,
       @JsonKey(name: 'power') this.power,
-      @JsonKey(name: 'name') this.name})
-      : _address = address;
+      @JsonKey(name: 'name') this.name});
 
   factory _$GenesisValidatorImpl.fromJson(Map<String, dynamic> json) =>
       _$$GenesisValidatorImplFromJson(json);
 
-  final List<int>? _address;
   @override
   @JsonKey(name: 'address')
-  List<int>? get address {
-    final value = _address;
-    if (value == null) return null;
-    if (_address is EqualUnmodifiableListView) return _address;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  final String? address;
   @override
   @JsonKey(name: 'pub_key')
   final String? pubKey;
   @override
   @JsonKey(name: 'power')
-  final int? power;
+  final String? power;
   @override
   @JsonKey(name: 'name')
   final String? name;
@@ -192,7 +183,7 @@ class _$GenesisValidatorImpl implements _GenesisValidator {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GenesisValidatorImpl &&
-            const DeepCollectionEquality().equals(other._address, _address) &&
+            (identical(other.address, address) || other.address == address) &&
             (identical(other.pubKey, pubKey) || other.pubKey == pubKey) &&
             (identical(other.power, power) || other.power == power) &&
             (identical(other.name, name) || other.name == name));
@@ -200,8 +191,7 @@ class _$GenesisValidatorImpl implements _GenesisValidator {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_address), pubKey, power, name);
+  int get hashCode => Object.hash(runtimeType, address, pubKey, power, name);
 
   /// Create a copy of GenesisValidator
   /// with the given fields replaced by the non-null parameter values.
@@ -222,9 +212,9 @@ class _$GenesisValidatorImpl implements _GenesisValidator {
 
 abstract class _GenesisValidator implements GenesisValidator {
   factory _GenesisValidator(
-      {@JsonKey(name: 'address') final List<int>? address,
+      {@JsonKey(name: 'address') final String? address,
       @JsonKey(name: 'pub_key') final String? pubKey,
-      @JsonKey(name: 'power') final int? power,
+      @JsonKey(name: 'power') final String? power,
       @JsonKey(name: 'name') final String? name}) = _$GenesisValidatorImpl;
 
   factory _GenesisValidator.fromJson(Map<String, dynamic> json) =
@@ -232,13 +222,13 @@ abstract class _GenesisValidator implements GenesisValidator {
 
   @override
   @JsonKey(name: 'address')
-  List<int>? get address;
+  String? get address;
   @override
   @JsonKey(name: 'pub_key')
   String? get pubKey;
   @override
   @JsonKey(name: 'power')
-  int? get power;
+  String? get power;
   @override
   @JsonKey(name: 'name')
   String? get name;
@@ -263,15 +253,15 @@ mixin _$GenesisDoc {
   @JsonKey(name: 'chain_id')
   String? get chainId => throw _privateConstructorUsedError;
   @JsonKey(name: 'initial_height')
-  int? get initialHeight => throw _privateConstructorUsedError;
+  String? get initialHeight => throw _privateConstructorUsedError;
   @JsonKey(name: 'consensus_params', includeIfNull: false)
   ConsensusParams? get consensusParams => throw _privateConstructorUsedError;
   @JsonKey(name: 'validators', includeIfNull: false)
   List<GenesisValidator>? get validators => throw _privateConstructorUsedError;
   @JsonKey(name: 'app_hash')
-  List<int>? get appHash => throw _privateConstructorUsedError;
+  String? get appHash => throw _privateConstructorUsedError;
   @JsonKey(name: 'app_state', includeIfNull: false)
-  List<int>? get appState => throw _privateConstructorUsedError;
+  String? get appState => throw _privateConstructorUsedError;
 
   /// Serializes this GenesisDoc to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -294,13 +284,13 @@ abstract class $GenesisDocCopyWith<$Res> {
       @DateTimeConverter()
       DateTime? genesisTime,
       @JsonKey(name: 'chain_id') String? chainId,
-      @JsonKey(name: 'initial_height') int? initialHeight,
+      @JsonKey(name: 'initial_height') String? initialHeight,
       @JsonKey(name: 'consensus_params', includeIfNull: false)
       ConsensusParams? consensusParams,
       @JsonKey(name: 'validators', includeIfNull: false)
       List<GenesisValidator>? validators,
-      @JsonKey(name: 'app_hash') List<int>? appHash,
-      @JsonKey(name: 'app_state', includeIfNull: false) List<int>? appState});
+      @JsonKey(name: 'app_hash') String? appHash,
+      @JsonKey(name: 'app_state', includeIfNull: false) String? appState});
 
   $ConsensusParamsCopyWith<$Res>? get consensusParams;
 }
@@ -340,7 +330,7 @@ class _$GenesisDocCopyWithImpl<$Res, $Val extends GenesisDoc>
       initialHeight: freezed == initialHeight
           ? _value.initialHeight
           : initialHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       consensusParams: freezed == consensusParams
           ? _value.consensusParams
           : consensusParams // ignore: cast_nullable_to_non_nullable
@@ -352,11 +342,11 @@ class _$GenesisDocCopyWithImpl<$Res, $Val extends GenesisDoc>
       appHash: freezed == appHash
           ? _value.appHash
           : appHash // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       appState: freezed == appState
           ? _value.appState
           : appState // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
     ) as $Val);
   }
 
@@ -388,13 +378,13 @@ abstract class _$$GenesisDocImplCopyWith<$Res>
       @DateTimeConverter()
       DateTime? genesisTime,
       @JsonKey(name: 'chain_id') String? chainId,
-      @JsonKey(name: 'initial_height') int? initialHeight,
+      @JsonKey(name: 'initial_height') String? initialHeight,
       @JsonKey(name: 'consensus_params', includeIfNull: false)
       ConsensusParams? consensusParams,
       @JsonKey(name: 'validators', includeIfNull: false)
       List<GenesisValidator>? validators,
-      @JsonKey(name: 'app_hash') List<int>? appHash,
-      @JsonKey(name: 'app_state', includeIfNull: false) List<int>? appState});
+      @JsonKey(name: 'app_hash') String? appHash,
+      @JsonKey(name: 'app_state', includeIfNull: false) String? appState});
 
   @override
   $ConsensusParamsCopyWith<$Res>? get consensusParams;
@@ -433,7 +423,7 @@ class __$$GenesisDocImplCopyWithImpl<$Res>
       initialHeight: freezed == initialHeight
           ? _value.initialHeight
           : initialHeight // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       consensusParams: freezed == consensusParams
           ? _value.consensusParams
           : consensusParams // ignore: cast_nullable_to_non_nullable
@@ -443,13 +433,13 @@ class __$$GenesisDocImplCopyWithImpl<$Res>
           : validators // ignore: cast_nullable_to_non_nullable
               as List<GenesisValidator>?,
       appHash: freezed == appHash
-          ? _value._appHash
+          ? _value.appHash
           : appHash // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
       appState: freezed == appState
-          ? _value._appState
+          ? _value.appState
           : appState // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as String?,
     ));
   }
 }
@@ -466,12 +456,9 @@ class _$GenesisDocImpl implements _GenesisDoc {
       this.consensusParams,
       @JsonKey(name: 'validators', includeIfNull: false)
       final List<GenesisValidator>? validators,
-      @JsonKey(name: 'app_hash') final List<int>? appHash,
-      @JsonKey(name: 'app_state', includeIfNull: false)
-      final List<int>? appState})
-      : _validators = validators,
-        _appHash = appHash,
-        _appState = appState;
+      @JsonKey(name: 'app_hash') this.appHash,
+      @JsonKey(name: 'app_state', includeIfNull: false) this.appState})
+      : _validators = validators;
 
   factory _$GenesisDocImpl.fromJson(Map<String, dynamic> json) =>
       _$$GenesisDocImplFromJson(json);
@@ -485,7 +472,7 @@ class _$GenesisDocImpl implements _GenesisDoc {
   final String? chainId;
   @override
   @JsonKey(name: 'initial_height')
-  final int? initialHeight;
+  final String? initialHeight;
   @override
   @JsonKey(name: 'consensus_params', includeIfNull: false)
   final ConsensusParams? consensusParams;
@@ -500,27 +487,12 @@ class _$GenesisDocImpl implements _GenesisDoc {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<int>? _appHash;
   @override
   @JsonKey(name: 'app_hash')
-  List<int>? get appHash {
-    final value = _appHash;
-    if (value == null) return null;
-    if (_appHash is EqualUnmodifiableListView) return _appHash;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<int>? _appState;
+  final String? appHash;
   @override
   @JsonKey(name: 'app_state', includeIfNull: false)
-  List<int>? get appState {
-    final value = _appState;
-    if (value == null) return null;
-    if (_appState is EqualUnmodifiableListView) return _appState;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  final String? appState;
 
   @override
   String toString() {
@@ -541,8 +513,9 @@ class _$GenesisDocImpl implements _GenesisDoc {
                 other.consensusParams == consensusParams) &&
             const DeepCollectionEquality()
                 .equals(other._validators, _validators) &&
-            const DeepCollectionEquality().equals(other._appHash, _appHash) &&
-            const DeepCollectionEquality().equals(other._appState, _appState));
+            (identical(other.appHash, appHash) || other.appHash == appHash) &&
+            (identical(other.appState, appState) ||
+                other.appState == appState));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -554,8 +527,8 @@ class _$GenesisDocImpl implements _GenesisDoc {
       initialHeight,
       consensusParams,
       const DeepCollectionEquality().hash(_validators),
-      const DeepCollectionEquality().hash(_appHash),
-      const DeepCollectionEquality().hash(_appState));
+      appHash,
+      appState);
 
   /// Create a copy of GenesisDoc
   /// with the given fields replaced by the non-null parameter values.
@@ -579,14 +552,14 @@ abstract class _GenesisDoc implements GenesisDoc {
       @DateTimeConverter()
       final DateTime? genesisTime,
       @JsonKey(name: 'chain_id') final String? chainId,
-      @JsonKey(name: 'initial_height') final int? initialHeight,
+      @JsonKey(name: 'initial_height') final String? initialHeight,
       @JsonKey(name: 'consensus_params', includeIfNull: false)
       final ConsensusParams? consensusParams,
       @JsonKey(name: 'validators', includeIfNull: false)
       final List<GenesisValidator>? validators,
-      @JsonKey(name: 'app_hash') final List<int>? appHash,
+      @JsonKey(name: 'app_hash') final String? appHash,
       @JsonKey(name: 'app_state', includeIfNull: false)
-      final List<int>? appState}) = _$GenesisDocImpl;
+      final String? appState}) = _$GenesisDocImpl;
 
   factory _GenesisDoc.fromJson(Map<String, dynamic> json) =
       _$GenesisDocImpl.fromJson;
@@ -600,7 +573,7 @@ abstract class _GenesisDoc implements GenesisDoc {
   String? get chainId;
   @override
   @JsonKey(name: 'initial_height')
-  int? get initialHeight;
+  String? get initialHeight;
   @override
   @JsonKey(name: 'consensus_params', includeIfNull: false)
   ConsensusParams? get consensusParams;
@@ -609,10 +582,10 @@ abstract class _GenesisDoc implements GenesisDoc {
   List<GenesisValidator>? get validators;
   @override
   @JsonKey(name: 'app_hash')
-  List<int>? get appHash;
+  String? get appHash;
   @override
   @JsonKey(name: 'app_state', includeIfNull: false)
-  List<int>? get appState;
+  String? get appState;
 
   /// Create a copy of GenesisDoc
   /// with the given fields replaced by the non-null parameter values.

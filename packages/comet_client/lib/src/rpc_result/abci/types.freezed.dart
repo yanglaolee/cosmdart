@@ -1333,8 +1333,7 @@ class __$$EventAttributeImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable()
 class _$EventAttributeImpl implements _EventAttribute {
   _$EventAttributeImpl(
       {@JsonKey(name: 'key', includeIfNull: false) this.key,
@@ -1427,15 +1426,16 @@ mixin _$ExecTxResult {
   @JsonKey(name: 'code', includeIfNull: false)
   int? get code => throw _privateConstructorUsedError;
   @JsonKey(name: 'data', includeIfNull: false)
-  List<int>? get data => throw _privateConstructorUsedError;
+  @Base64Converter()
+  Uint8List? get data => throw _privateConstructorUsedError;
   @JsonKey(name: 'log', includeIfNull: false)
   String? get log => throw _privateConstructorUsedError;
   @JsonKey(name: 'info', includeIfNull: false)
   String? get info => throw _privateConstructorUsedError;
   @JsonKey(name: 'gas_wanted', includeIfNull: false)
-  int? get gasWanted => throw _privateConstructorUsedError;
+  String? get gasWanted => throw _privateConstructorUsedError;
   @JsonKey(name: 'gas_used', includeIfNull: false)
-  int? get gasUsed => throw _privateConstructorUsedError;
+  String? get gasUsed => throw _privateConstructorUsedError;
   @JsonKey(name: 'events', includeIfNull: false)
   List<Event>? get events => throw _privateConstructorUsedError;
   @JsonKey(name: 'codespace', includeIfNull: false)
@@ -1459,11 +1459,13 @@ abstract class $ExecTxResultCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
-      @JsonKey(name: 'data', includeIfNull: false) List<int>? data,
+      @JsonKey(name: 'data', includeIfNull: false)
+      @Base64Converter()
+      Uint8List? data,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
-      @JsonKey(name: 'gas_wanted', includeIfNull: false) int? gasWanted,
-      @JsonKey(name: 'gas_used', includeIfNull: false) int? gasUsed,
+      @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
+      @JsonKey(name: 'gas_used', includeIfNull: false) String? gasUsed,
       @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
       @JsonKey(name: 'codespace', includeIfNull: false) String? codespace});
 }
@@ -1500,7 +1502,7 @@ class _$ExecTxResultCopyWithImpl<$Res, $Val extends ExecTxResult>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as Uint8List?,
       log: freezed == log
           ? _value.log
           : log // ignore: cast_nullable_to_non_nullable
@@ -1512,11 +1514,11 @@ class _$ExecTxResultCopyWithImpl<$Res, $Val extends ExecTxResult>
       gasWanted: freezed == gasWanted
           ? _value.gasWanted
           : gasWanted // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       gasUsed: freezed == gasUsed
           ? _value.gasUsed
           : gasUsed // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       events: freezed == events
           ? _value.events
           : events // ignore: cast_nullable_to_non_nullable
@@ -1539,11 +1541,13 @@ abstract class _$$ExecTxResultImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
-      @JsonKey(name: 'data', includeIfNull: false) List<int>? data,
+      @JsonKey(name: 'data', includeIfNull: false)
+      @Base64Converter()
+      Uint8List? data,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
-      @JsonKey(name: 'gas_wanted', includeIfNull: false) int? gasWanted,
-      @JsonKey(name: 'gas_used', includeIfNull: false) int? gasUsed,
+      @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
+      @JsonKey(name: 'gas_used', includeIfNull: false) String? gasUsed,
       @JsonKey(name: 'events', includeIfNull: false) List<Event>? events,
       @JsonKey(name: 'codespace', includeIfNull: false) String? codespace});
 }
@@ -1576,9 +1580,9 @@ class __$$ExecTxResultImplCopyWithImpl<$Res>
           : code // ignore: cast_nullable_to_non_nullable
               as int?,
       data: freezed == data
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as Uint8List?,
       log: freezed == log
           ? _value.log
           : log // ignore: cast_nullable_to_non_nullable
@@ -1590,11 +1594,11 @@ class __$$ExecTxResultImplCopyWithImpl<$Res>
       gasWanted: freezed == gasWanted
           ? _value.gasWanted
           : gasWanted // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       gasUsed: freezed == gasUsed
           ? _value.gasUsed
           : gasUsed // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       events: freezed == events
           ? _value._events
           : events // ignore: cast_nullable_to_non_nullable
@@ -1613,15 +1617,14 @@ class __$$ExecTxResultImplCopyWithImpl<$Res>
 class _$ExecTxResultImpl implements _ExecTxResult {
   _$ExecTxResultImpl(
       {@JsonKey(name: 'code', includeIfNull: false) this.code,
-      @JsonKey(name: 'data', includeIfNull: false) final List<int>? data,
+      @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() this.data,
       @JsonKey(name: 'log', includeIfNull: false) this.log,
       @JsonKey(name: 'info', includeIfNull: false) this.info,
       @JsonKey(name: 'gas_wanted', includeIfNull: false) this.gasWanted,
       @JsonKey(name: 'gas_used', includeIfNull: false) this.gasUsed,
       @JsonKey(name: 'events', includeIfNull: false) final List<Event>? events,
       @JsonKey(name: 'codespace', includeIfNull: false) this.codespace})
-      : _data = data,
-        _events = events;
+      : _events = events;
 
   factory _$ExecTxResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$ExecTxResultImplFromJson(json);
@@ -1629,17 +1632,10 @@ class _$ExecTxResultImpl implements _ExecTxResult {
   @override
   @JsonKey(name: 'code', includeIfNull: false)
   final int? code;
-  final List<int>? _data;
   @override
   @JsonKey(name: 'data', includeIfNull: false)
-  List<int>? get data {
-    final value = _data;
-    if (value == null) return null;
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  @Base64Converter()
+  final Uint8List? data;
   @override
   @JsonKey(name: 'log', includeIfNull: false)
   final String? log;
@@ -1648,10 +1644,10 @@ class _$ExecTxResultImpl implements _ExecTxResult {
   final String? info;
   @override
   @JsonKey(name: 'gas_wanted', includeIfNull: false)
-  final int? gasWanted;
+  final String? gasWanted;
   @override
   @JsonKey(name: 'gas_used', includeIfNull: false)
-  final int? gasUsed;
+  final String? gasUsed;
   final List<Event>? _events;
   @override
   @JsonKey(name: 'events', includeIfNull: false)
@@ -1678,7 +1674,7 @@ class _$ExecTxResultImpl implements _ExecTxResult {
         (other.runtimeType == runtimeType &&
             other is _$ExecTxResultImpl &&
             (identical(other.code, code) || other.code == code) &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
             (identical(other.log, log) || other.log == log) &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.gasWanted, gasWanted) ||
@@ -1694,7 +1690,7 @@ class _$ExecTxResultImpl implements _ExecTxResult {
   int get hashCode => Object.hash(
       runtimeType,
       code,
-      const DeepCollectionEquality().hash(_data),
+      const DeepCollectionEquality().hash(data),
       log,
       info,
       gasWanted,
@@ -1721,11 +1717,14 @@ class _$ExecTxResultImpl implements _ExecTxResult {
 abstract class _ExecTxResult implements ExecTxResult {
   factory _ExecTxResult(
       {@JsonKey(name: 'code', includeIfNull: false) final int? code,
-      @JsonKey(name: 'data', includeIfNull: false) final List<int>? data,
+      @JsonKey(name: 'data', includeIfNull: false)
+      @Base64Converter()
+      final Uint8List? data,
       @JsonKey(name: 'log', includeIfNull: false) final String? log,
       @JsonKey(name: 'info', includeIfNull: false) final String? info,
-      @JsonKey(name: 'gas_wanted', includeIfNull: false) final int? gasWanted,
-      @JsonKey(name: 'gas_used', includeIfNull: false) final int? gasUsed,
+      @JsonKey(name: 'gas_wanted', includeIfNull: false)
+      final String? gasWanted,
+      @JsonKey(name: 'gas_used', includeIfNull: false) final String? gasUsed,
       @JsonKey(name: 'events', includeIfNull: false) final List<Event>? events,
       @JsonKey(name: 'codespace', includeIfNull: false)
       final String? codespace}) = _$ExecTxResultImpl;
@@ -1738,7 +1737,8 @@ abstract class _ExecTxResult implements ExecTxResult {
   int? get code;
   @override
   @JsonKey(name: 'data', includeIfNull: false)
-  List<int>? get data;
+  @Base64Converter()
+  Uint8List? get data;
   @override
   @JsonKey(name: 'log', includeIfNull: false)
   String? get log;
@@ -1747,10 +1747,10 @@ abstract class _ExecTxResult implements ExecTxResult {
   String? get info;
   @override
   @JsonKey(name: 'gas_wanted', includeIfNull: false)
-  int? get gasWanted;
+  String? get gasWanted;
   @override
   @JsonKey(name: 'gas_used', includeIfNull: false)
-  int? get gasUsed;
+  String? get gasUsed;
   @override
   @JsonKey(name: 'events', includeIfNull: false)
   List<Event>? get events;
