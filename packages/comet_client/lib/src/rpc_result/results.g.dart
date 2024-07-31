@@ -188,7 +188,7 @@ _$ResultTxImpl _$$ResultTxImplFromJson(Map<String, dynamic> json) =>
       txResult: json['tx_result'] == null
           ? null
           : ExecTxResult.fromJson(json['tx_result'] as Map<String, dynamic>),
-      tx: _$JsonConverterFromJson<String, Uint8List>(
+      tx: _$JsonConverterFromJson<String, BinArray>(
           json['tx'], const Base64Converter().fromJson),
       proof: json['proof'] == null
           ? null
@@ -201,7 +201,7 @@ Map<String, dynamic> _$$ResultTxImplToJson(_$ResultTxImpl instance) {
     'height': instance.height,
     'index': instance.index,
     'tx_result': instance.txResult?.toJson(),
-    'tx': _$JsonConverterToJson<String, Uint8List>(
+    'tx': _$JsonConverterToJson<String, BinArray>(
         instance.tx, const Base64Converter().toJson),
   };
 
@@ -451,7 +451,7 @@ _$ResultUnconfirmedTxsImpl _$$ResultUnconfirmedTxsImplFromJson(
       nTxs: json['n_txs'] as String?,
       total: json['total'] as String?,
       totalBytes: json['total_bytes'] as String?,
-      txs: _$JsonConverterFromJson<List<dynamic>, List<Uint8List>>(
+      txs: _$JsonConverterFromJson<List<dynamic>, List<BinArray>>(
           json['txs'], const TxsConverter().fromJson),
     );
 
@@ -461,14 +461,14 @@ Map<String, dynamic> _$$ResultUnconfirmedTxsImplToJson(
       'n_txs': instance.nTxs,
       'total': instance.total,
       'total_bytes': instance.totalBytes,
-      'txs': _$JsonConverterToJson<List<dynamic>, List<Uint8List>>(
+      'txs': _$JsonConverterToJson<List<dynamic>, List<BinArray>>(
           instance.txs, const TxsConverter().toJson),
     };
 
 _$ResultCheckTxImpl _$$ResultCheckTxImplFromJson(Map<String, dynamic> json) =>
     _$ResultCheckTxImpl(
       code: (json['code'] as num?)?.toInt(),
-      data: _$JsonConverterFromJson<String, Uint8List>(
+      data: _$JsonConverterFromJson<String, BinArray>(
           json['data'], const Base64Converter().fromJson),
       log: json['log'] as String?,
       info: json['info'] as String?,
@@ -492,7 +492,7 @@ Map<String, dynamic> _$$ResultCheckTxImplToJson(_$ResultCheckTxImpl instance) {
   writeNotNull('code', instance.code);
   writeNotNull(
       'data',
-      _$JsonConverterToJson<String, Uint8List>(
+      _$JsonConverterToJson<String, BinArray>(
           instance.data, const Base64Converter().toJson));
   writeNotNull('log', instance.log);
   writeNotNull('info', instance.info);
@@ -502,3 +502,9 @@ Map<String, dynamic> _$$ResultCheckTxImplToJson(_$ResultCheckTxImpl instance) {
   writeNotNull('codespace', instance.codespace);
   return val;
 }
+
+_$ResultEmptyImpl _$$ResultEmptyImplFromJson(Map<String, dynamic> json) =>
+    _$ResultEmptyImpl();
+
+Map<String, dynamic> _$$ResultEmptyImplToJson(_$ResultEmptyImpl instance) =>
+    <String, dynamic>{};

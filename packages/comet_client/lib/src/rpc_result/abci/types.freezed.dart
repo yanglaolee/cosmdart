@@ -30,7 +30,7 @@ mixin _$ResponseInfo {
   String? get lastBlockHeight => throw _privateConstructorUsedError;
   @JsonKey(name: 'last_block_app_hash', includeIfNull: false)
   @Base64Converter()
-  Uint8List? get lastBlockAppHash => throw _privateConstructorUsedError;
+  BinArray? get lastBlockAppHash => throw _privateConstructorUsedError;
 
   /// Serializes this ResponseInfo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -56,7 +56,7 @@ abstract class $ResponseInfoCopyWith<$Res> {
       String? lastBlockHeight,
       @JsonKey(name: 'last_block_app_hash', includeIfNull: false)
       @Base64Converter()
-      Uint8List? lastBlockAppHash});
+      BinArray? lastBlockAppHash});
 }
 
 /// @nodoc
@@ -100,7 +100,7 @@ class _$ResponseInfoCopyWithImpl<$Res, $Val extends ResponseInfo>
       lastBlockAppHash: freezed == lastBlockAppHash
           ? _value.lastBlockAppHash
           : lastBlockAppHash // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
     ) as $Val);
   }
 }
@@ -121,7 +121,7 @@ abstract class _$$ResponseInfoImplCopyWith<$Res>
       String? lastBlockHeight,
       @JsonKey(name: 'last_block_app_hash', includeIfNull: false)
       @Base64Converter()
-      Uint8List? lastBlockAppHash});
+      BinArray? lastBlockAppHash});
 }
 
 /// @nodoc
@@ -163,7 +163,7 @@ class __$$ResponseInfoImplCopyWithImpl<$Res>
       lastBlockAppHash: freezed == lastBlockAppHash
           ? _value.lastBlockAppHash
           : lastBlockAppHash // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
     ));
   }
 }
@@ -199,7 +199,7 @@ class _$ResponseInfoImpl implements _ResponseInfo {
   @override
   @JsonKey(name: 'last_block_app_hash', includeIfNull: false)
   @Base64Converter()
-  final Uint8List? lastBlockAppHash;
+  final BinArray? lastBlockAppHash;
 
   @override
   String toString() {
@@ -217,14 +217,14 @@ class _$ResponseInfoImpl implements _ResponseInfo {
                 other.appVersion == appVersion) &&
             (identical(other.lastBlockHeight, lastBlockHeight) ||
                 other.lastBlockHeight == lastBlockHeight) &&
-            const DeepCollectionEquality()
-                .equals(other.lastBlockAppHash, lastBlockAppHash));
+            (identical(other.lastBlockAppHash, lastBlockAppHash) ||
+                other.lastBlockAppHash == lastBlockAppHash));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, data, version, appVersion,
-      lastBlockHeight, const DeepCollectionEquality().hash(lastBlockAppHash));
+      lastBlockHeight, lastBlockAppHash);
 
   /// Create a copy of ResponseInfo
   /// with the given fields replaced by the non-null parameter values.
@@ -252,7 +252,7 @@ abstract class _ResponseInfo implements ResponseInfo {
       final String? lastBlockHeight,
       @JsonKey(name: 'last_block_app_hash', includeIfNull: false)
       @Base64Converter()
-      final Uint8List? lastBlockAppHash}) = _$ResponseInfoImpl;
+      final BinArray? lastBlockAppHash}) = _$ResponseInfoImpl;
 
   factory _ResponseInfo.fromJson(Map<String, dynamic> json) =
       _$ResponseInfoImpl.fromJson;
@@ -272,7 +272,7 @@ abstract class _ResponseInfo implements ResponseInfo {
   @override
   @JsonKey(name: 'last_block_app_hash', includeIfNull: false)
   @Base64Converter()
-  Uint8List? get lastBlockAppHash;
+  BinArray? get lastBlockAppHash;
 
   /// Create a copy of ResponseInfo
   /// with the given fields replaced by the non-null parameter values.
@@ -657,7 +657,7 @@ mixin _$ResponseCheckTx {
   int? get code => throw _privateConstructorUsedError;
   @JsonKey(name: 'data', includeIfNull: false)
   @Base64Converter()
-  Uint8List? get data => throw _privateConstructorUsedError;
+  BinArray? get data => throw _privateConstructorUsedError;
   @JsonKey(name: 'log', includeIfNull: false)
   String? get log => throw _privateConstructorUsedError;
   @JsonKey(name: 'info', includeIfNull: false)
@@ -691,7 +691,7 @@ abstract class $ResponseCheckTxCopyWith<$Res> {
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
       @JsonKey(name: 'data', includeIfNull: false)
       @Base64Converter()
-      Uint8List? data,
+      BinArray? data,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
       @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
@@ -732,7 +732,7 @@ class _$ResponseCheckTxCopyWithImpl<$Res, $Val extends ResponseCheckTx>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
       log: freezed == log
           ? _value.log
           : log // ignore: cast_nullable_to_non_nullable
@@ -773,7 +773,7 @@ abstract class _$$ResponseCheckTxImplCopyWith<$Res>
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
       @JsonKey(name: 'data', includeIfNull: false)
       @Base64Converter()
-      Uint8List? data,
+      BinArray? data,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
       @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
@@ -812,7 +812,7 @@ class __$$ResponseCheckTxImplCopyWithImpl<$Res>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
       log: freezed == log
           ? _value.log
           : log // ignore: cast_nullable_to_non_nullable
@@ -865,7 +865,7 @@ class _$ResponseCheckTxImpl implements _ResponseCheckTx {
   @override
   @JsonKey(name: 'data', includeIfNull: false)
   @Base64Converter()
-  final Uint8List? data;
+  final BinArray? data;
   @override
   @JsonKey(name: 'log', includeIfNull: false)
   final String? log;
@@ -904,7 +904,7 @@ class _$ResponseCheckTxImpl implements _ResponseCheckTx {
         (other.runtimeType == runtimeType &&
             other is _$ResponseCheckTxImpl &&
             (identical(other.code, code) || other.code == code) &&
-            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.data, data) || other.data == data) &&
             (identical(other.log, log) || other.log == log) &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.gasWanted, gasWanted) ||
@@ -917,16 +917,8 @@ class _$ResponseCheckTxImpl implements _ResponseCheckTx {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      code,
-      const DeepCollectionEquality().hash(data),
-      log,
-      info,
-      gasWanted,
-      gasUsed,
-      const DeepCollectionEquality().hash(_events),
-      codespace);
+  int get hashCode => Object.hash(runtimeType, code, data, log, info, gasWanted,
+      gasUsed, const DeepCollectionEquality().hash(_events), codespace);
 
   /// Create a copy of ResponseCheckTx
   /// with the given fields replaced by the non-null parameter values.
@@ -950,7 +942,7 @@ abstract class _ResponseCheckTx implements ResponseCheckTx {
       {@JsonKey(name: 'code', includeIfNull: false) final int? code,
       @JsonKey(name: 'data', includeIfNull: false)
       @Base64Converter()
-      final Uint8List? data,
+      final BinArray? data,
       @JsonKey(name: 'log', includeIfNull: false) final String? log,
       @JsonKey(name: 'info', includeIfNull: false) final String? info,
       @JsonKey(name: 'gas_wanted', includeIfNull: false)
@@ -969,7 +961,7 @@ abstract class _ResponseCheckTx implements ResponseCheckTx {
   @override
   @JsonKey(name: 'data', includeIfNull: false)
   @Base64Converter()
-  Uint8List? get data;
+  BinArray? get data;
   @override
   @JsonKey(name: 'log', includeIfNull: false)
   String? get log;
@@ -1401,7 +1393,7 @@ mixin _$ExecTxResult {
   int? get code => throw _privateConstructorUsedError;
   @JsonKey(name: 'data', includeIfNull: false)
   @Base64Converter()
-  Uint8List? get data => throw _privateConstructorUsedError;
+  BinArray? get data => throw _privateConstructorUsedError;
   @JsonKey(name: 'log', includeIfNull: false)
   String? get log => throw _privateConstructorUsedError;
   @JsonKey(name: 'info', includeIfNull: false)
@@ -1435,7 +1427,7 @@ abstract class $ExecTxResultCopyWith<$Res> {
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
       @JsonKey(name: 'data', includeIfNull: false)
       @Base64Converter()
-      Uint8List? data,
+      BinArray? data,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
       @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
@@ -1476,7 +1468,7 @@ class _$ExecTxResultCopyWithImpl<$Res, $Val extends ExecTxResult>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
       log: freezed == log
           ? _value.log
           : log // ignore: cast_nullable_to_non_nullable
@@ -1517,7 +1509,7 @@ abstract class _$$ExecTxResultImplCopyWith<$Res>
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
       @JsonKey(name: 'data', includeIfNull: false)
       @Base64Converter()
-      Uint8List? data,
+      BinArray? data,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
       @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
@@ -1556,7 +1548,7 @@ class __$$ExecTxResultImplCopyWithImpl<$Res>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
       log: freezed == log
           ? _value.log
           : log // ignore: cast_nullable_to_non_nullable
@@ -1609,7 +1601,7 @@ class _$ExecTxResultImpl implements _ExecTxResult {
   @override
   @JsonKey(name: 'data', includeIfNull: false)
   @Base64Converter()
-  final Uint8List? data;
+  final BinArray? data;
   @override
   @JsonKey(name: 'log', includeIfNull: false)
   final String? log;
@@ -1648,7 +1640,7 @@ class _$ExecTxResultImpl implements _ExecTxResult {
         (other.runtimeType == runtimeType &&
             other is _$ExecTxResultImpl &&
             (identical(other.code, code) || other.code == code) &&
-            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.data, data) || other.data == data) &&
             (identical(other.log, log) || other.log == log) &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.gasWanted, gasWanted) ||
@@ -1661,16 +1653,8 @@ class _$ExecTxResultImpl implements _ExecTxResult {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      code,
-      const DeepCollectionEquality().hash(data),
-      log,
-      info,
-      gasWanted,
-      gasUsed,
-      const DeepCollectionEquality().hash(_events),
-      codespace);
+  int get hashCode => Object.hash(runtimeType, code, data, log, info, gasWanted,
+      gasUsed, const DeepCollectionEquality().hash(_events), codespace);
 
   /// Create a copy of ExecTxResult
   /// with the given fields replaced by the non-null parameter values.
@@ -1693,7 +1677,7 @@ abstract class _ExecTxResult implements ExecTxResult {
       {@JsonKey(name: 'code', includeIfNull: false) final int? code,
       @JsonKey(name: 'data', includeIfNull: false)
       @Base64Converter()
-      final Uint8List? data,
+      final BinArray? data,
       @JsonKey(name: 'log', includeIfNull: false) final String? log,
       @JsonKey(name: 'info', includeIfNull: false) final String? info,
       @JsonKey(name: 'gas_wanted', includeIfNull: false)
@@ -1712,7 +1696,7 @@ abstract class _ExecTxResult implements ExecTxResult {
   @override
   @JsonKey(name: 'data', includeIfNull: false)
   @Base64Converter()
-  Uint8List? get data;
+  BinArray? get data;
   @override
   @JsonKey(name: 'log', includeIfNull: false)
   String? get log;
@@ -1933,7 +1917,8 @@ mixin _$TxResult {
   @JsonKey(name: 'index', includeIfNull: false)
   int? get index => throw _privateConstructorUsedError;
   @JsonKey(name: 'tx', includeIfNull: false)
-  List<int>? get tx => throw _privateConstructorUsedError;
+  @Base64Converter()
+  BinArray? get tx => throw _privateConstructorUsedError;
   @JsonKey(name: 'result')
   ExecTxResult? get result => throw _privateConstructorUsedError;
 
@@ -1955,7 +1940,9 @@ abstract class $TxResultCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'height', includeIfNull: false) int? height,
       @JsonKey(name: 'index', includeIfNull: false) int? index,
-      @JsonKey(name: 'tx', includeIfNull: false) List<int>? tx,
+      @JsonKey(name: 'tx', includeIfNull: false)
+      @Base64Converter()
+      BinArray? tx,
       @JsonKey(name: 'result') ExecTxResult? result});
 
   $ExecTxResultCopyWith<$Res>? get result;
@@ -1993,7 +1980,7 @@ class _$TxResultCopyWithImpl<$Res, $Val extends TxResult>
       tx: freezed == tx
           ? _value.tx
           : tx // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as BinArray?,
       result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -2027,7 +2014,9 @@ abstract class _$$TxResultImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'height', includeIfNull: false) int? height,
       @JsonKey(name: 'index', includeIfNull: false) int? index,
-      @JsonKey(name: 'tx', includeIfNull: false) List<int>? tx,
+      @JsonKey(name: 'tx', includeIfNull: false)
+      @Base64Converter()
+      BinArray? tx,
       @JsonKey(name: 'result') ExecTxResult? result});
 
   @override
@@ -2062,9 +2051,9 @@ class __$$TxResultImplCopyWithImpl<$Res>
           : index // ignore: cast_nullable_to_non_nullable
               as int?,
       tx: freezed == tx
-          ? _value._tx
+          ? _value.tx
           : tx // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as BinArray?,
       result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -2080,9 +2069,8 @@ class _$TxResultImpl implements _TxResult {
   _$TxResultImpl(
       {@JsonKey(name: 'height', includeIfNull: false) this.height,
       @JsonKey(name: 'index', includeIfNull: false) this.index,
-      @JsonKey(name: 'tx', includeIfNull: false) final List<int>? tx,
-      @JsonKey(name: 'result') this.result})
-      : _tx = tx;
+      @JsonKey(name: 'tx', includeIfNull: false) @Base64Converter() this.tx,
+      @JsonKey(name: 'result') this.result});
 
   factory _$TxResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$TxResultImplFromJson(json);
@@ -2093,17 +2081,10 @@ class _$TxResultImpl implements _TxResult {
   @override
   @JsonKey(name: 'index', includeIfNull: false)
   final int? index;
-  final List<int>? _tx;
   @override
   @JsonKey(name: 'tx', includeIfNull: false)
-  List<int>? get tx {
-    final value = _tx;
-    if (value == null) return null;
-    if (_tx is EqualUnmodifiableListView) return _tx;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  @Base64Converter()
+  final BinArray? tx;
   @override
   @JsonKey(name: 'result')
   final ExecTxResult? result;
@@ -2120,14 +2101,13 @@ class _$TxResultImpl implements _TxResult {
             other is _$TxResultImpl &&
             (identical(other.height, height) || other.height == height) &&
             (identical(other.index, index) || other.index == index) &&
-            const DeepCollectionEquality().equals(other._tx, _tx) &&
+            (identical(other.tx, tx) || other.tx == tx) &&
             (identical(other.result, result) || other.result == result));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, height, index,
-      const DeepCollectionEquality().hash(_tx), result);
+  int get hashCode => Object.hash(runtimeType, height, index, tx, result);
 
   /// Create a copy of TxResult
   /// with the given fields replaced by the non-null parameter values.
@@ -2149,7 +2129,9 @@ abstract class _TxResult implements TxResult {
   factory _TxResult(
       {@JsonKey(name: 'height', includeIfNull: false) final int? height,
       @JsonKey(name: 'index', includeIfNull: false) final int? index,
-      @JsonKey(name: 'tx', includeIfNull: false) final List<int>? tx,
+      @JsonKey(name: 'tx', includeIfNull: false)
+      @Base64Converter()
+      final BinArray? tx,
       @JsonKey(name: 'result') final ExecTxResult? result}) = _$TxResultImpl;
 
   factory _TxResult.fromJson(Map<String, dynamic> json) =
@@ -2163,7 +2145,8 @@ abstract class _TxResult implements TxResult {
   int? get index;
   @override
   @JsonKey(name: 'tx', includeIfNull: false)
-  List<int>? get tx;
+  @Base64Converter()
+  BinArray? get tx;
   @override
   @JsonKey(name: 'result')
   ExecTxResult? get result;
@@ -2194,7 +2177,8 @@ mixin _$ResponseFinalizeBlock {
   ConsensusParams? get consensusParamUpdates =>
       throw _privateConstructorUsedError;
   @JsonKey(name: 'app_hash', includeIfNull: false)
-  List<int>? get appHash => throw _privateConstructorUsedError;
+  @HexConverter()
+  BinArray? get appHash => throw _privateConstructorUsedError;
 
   /// Serializes this ResponseFinalizeBlock to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2220,7 +2204,9 @@ abstract class $ResponseFinalizeBlockCopyWith<$Res> {
       List<ValidatorUpdate>? validatorUpdates,
       @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
       ConsensusParams? consensusParamUpdates,
-      @JsonKey(name: 'app_hash', includeIfNull: false) List<int>? appHash});
+      @JsonKey(name: 'app_hash', includeIfNull: false)
+      @HexConverter()
+      BinArray? appHash});
 
   $ConsensusParamsCopyWith<$Res>? get consensusParamUpdates;
 }
@@ -2267,7 +2253,7 @@ class _$ResponseFinalizeBlockCopyWithImpl<$Res,
       appHash: freezed == appHash
           ? _value.appHash
           : appHash // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as BinArray?,
     ) as $Val);
   }
 
@@ -2304,7 +2290,9 @@ abstract class _$$ResponseFinalizeBlockImplCopyWith<$Res>
       List<ValidatorUpdate>? validatorUpdates,
       @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
       ConsensusParams? consensusParamUpdates,
-      @JsonKey(name: 'app_hash', includeIfNull: false) List<int>? appHash});
+      @JsonKey(name: 'app_hash', includeIfNull: false)
+      @HexConverter()
+      BinArray? appHash});
 
   @override
   $ConsensusParamsCopyWith<$Res>? get consensusParamUpdates;
@@ -2348,9 +2336,9 @@ class __$$ResponseFinalizeBlockImplCopyWithImpl<$Res>
           : consensusParamUpdates // ignore: cast_nullable_to_non_nullable
               as ConsensusParams?,
       appHash: freezed == appHash
-          ? _value._appHash
+          ? _value.appHash
           : appHash // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as BinArray?,
     ));
   }
 }
@@ -2368,11 +2356,11 @@ class _$ResponseFinalizeBlockImpl implements _ResponseFinalizeBlock {
       @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
       this.consensusParamUpdates,
       @JsonKey(name: 'app_hash', includeIfNull: false)
-      final List<int>? appHash})
+      @HexConverter()
+      this.appHash})
       : _events = events,
         _txResults = txResults,
-        _validatorUpdates = validatorUpdates,
-        _appHash = appHash;
+        _validatorUpdates = validatorUpdates;
 
   factory _$ResponseFinalizeBlockImpl.fromJson(Map<String, dynamic> json) =>
       _$$ResponseFinalizeBlockImplFromJson(json);
@@ -2414,16 +2402,10 @@ class _$ResponseFinalizeBlockImpl implements _ResponseFinalizeBlock {
   @override
   @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
   final ConsensusParams? consensusParamUpdates;
-  final List<int>? _appHash;
   @override
   @JsonKey(name: 'app_hash', includeIfNull: false)
-  List<int>? get appHash {
-    final value = _appHash;
-    if (value == null) return null;
-    if (_appHash is EqualUnmodifiableListView) return _appHash;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  @HexConverter()
+  final BinArray? appHash;
 
   @override
   String toString() {
@@ -2442,7 +2424,7 @@ class _$ResponseFinalizeBlockImpl implements _ResponseFinalizeBlock {
                 .equals(other._validatorUpdates, _validatorUpdates) &&
             (identical(other.consensusParamUpdates, consensusParamUpdates) ||
                 other.consensusParamUpdates == consensusParamUpdates) &&
-            const DeepCollectionEquality().equals(other._appHash, _appHash));
+            (identical(other.appHash, appHash) || other.appHash == appHash));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2453,7 +2435,7 @@ class _$ResponseFinalizeBlockImpl implements _ResponseFinalizeBlock {
       const DeepCollectionEquality().hash(_txResults),
       const DeepCollectionEquality().hash(_validatorUpdates),
       consensusParamUpdates,
-      const DeepCollectionEquality().hash(_appHash));
+      appHash);
 
   /// Create a copy of ResponseFinalizeBlock
   /// with the given fields replaced by the non-null parameter values.
@@ -2482,7 +2464,8 @@ abstract class _ResponseFinalizeBlock implements ResponseFinalizeBlock {
       @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
       final ConsensusParams? consensusParamUpdates,
       @JsonKey(name: 'app_hash', includeIfNull: false)
-      final List<int>? appHash}) = _$ResponseFinalizeBlockImpl;
+      @HexConverter()
+      final BinArray? appHash}) = _$ResponseFinalizeBlockImpl;
 
   factory _ResponseFinalizeBlock.fromJson(Map<String, dynamic> json) =
       _$ResponseFinalizeBlockImpl.fromJson;
@@ -2501,7 +2484,8 @@ abstract class _ResponseFinalizeBlock implements ResponseFinalizeBlock {
   ConsensusParams? get consensusParamUpdates;
   @override
   @JsonKey(name: 'app_hash', includeIfNull: false)
-  List<int>? get appHash;
+  @HexConverter()
+  BinArray? get appHash;
 
   /// Create a copy of ResponseFinalizeBlock
   /// with the given fields replaced by the non-null parameter values.

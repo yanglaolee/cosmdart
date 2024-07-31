@@ -8,18 +8,12 @@ import 'decode.dart';
 import 'parsed_url.dart' show ParsedURL;
 import 'http_client_interface.dart' show HTTPClient;
 
-class HttpJsonClient implements HTTPClient {
-  late String address;
+class HttpJsonClient extends HTTPClient {
   late int _nextReqID;
 
   final _lock = Lock();
-  final http.Client _client = http.Client();
 
-  HttpJsonClient(String address) {
-    var url = ParsedURL(address);
-    url.setDefaultSchemeHTTP();
-    this.address = url.getTrimmedURL();
-
+  HttpJsonClient(String address) : super(ParsedURL(address).getTrimmedURL()) {
     print(this.address);
 
     _nextReqID = 0;
@@ -36,7 +30,7 @@ class HttpJsonClient implements HTTPClient {
 
     final http.Response response;
     try {
-      response = await _client
+      response = await client
           .post(
         Uri.parse(address),
         headers: {'Content-Type': 'application/json'},
@@ -67,7 +61,7 @@ class HttpJsonClient implements HTTPClient {
 
     final http.Response response;
     try {
-      response = await _client
+      response = await client
           .post(
         Uri.parse(address),
         headers: {'Content-Type': 'application/json'},
@@ -94,7 +88,4 @@ class HttpJsonClient implements HTTPClient {
     });
   }
 
-  void close() {
-    _client.close();
-  }
 }

@@ -26,10 +26,10 @@ mixin _$Proof {
   String? get index => throw _privateConstructorUsedError;
   @JsonKey(name: 'leaf_hash')
   @Base64Converter()
-  Uint8List? get leafHash => throw _privateConstructorUsedError;
+  BinArray? get leafHash => throw _privateConstructorUsedError;
   @JsonKey(name: 'aunts', includeIfNull: false)
   @TxsConverter()
-  List<Uint8List>? get aunts => throw _privateConstructorUsedError;
+  List<BinArray>? get aunts => throw _privateConstructorUsedError;
 
   /// Serializes this Proof to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,10 +48,10 @@ abstract class $ProofCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'total') String? total,
       @JsonKey(name: 'index') String? index,
-      @JsonKey(name: 'leaf_hash') @Base64Converter() Uint8List? leafHash,
+      @JsonKey(name: 'leaf_hash') @Base64Converter() BinArray? leafHash,
       @JsonKey(name: 'aunts', includeIfNull: false)
       @TxsConverter()
-      List<Uint8List>? aunts});
+      List<BinArray>? aunts});
 }
 
 /// @nodoc
@@ -86,11 +86,11 @@ class _$ProofCopyWithImpl<$Res, $Val extends Proof>
       leafHash: freezed == leafHash
           ? _value.leafHash
           : leafHash // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
       aunts: freezed == aunts
           ? _value.aunts
           : aunts // ignore: cast_nullable_to_non_nullable
-              as List<Uint8List>?,
+              as List<BinArray>?,
     ) as $Val);
   }
 }
@@ -105,10 +105,10 @@ abstract class _$$ProofImplCopyWith<$Res> implements $ProofCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'total') String? total,
       @JsonKey(name: 'index') String? index,
-      @JsonKey(name: 'leaf_hash') @Base64Converter() Uint8List? leafHash,
+      @JsonKey(name: 'leaf_hash') @Base64Converter() BinArray? leafHash,
       @JsonKey(name: 'aunts', includeIfNull: false)
       @TxsConverter()
-      List<Uint8List>? aunts});
+      List<BinArray>? aunts});
 }
 
 /// @nodoc
@@ -141,11 +141,11 @@ class __$$ProofImplCopyWithImpl<$Res>
       leafHash: freezed == leafHash
           ? _value.leafHash
           : leafHash // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
       aunts: freezed == aunts
           ? _value._aunts
           : aunts // ignore: cast_nullable_to_non_nullable
-              as List<Uint8List>?,
+              as List<BinArray>?,
     ));
   }
 }
@@ -159,7 +159,7 @@ class _$ProofImpl implements _Proof {
       @JsonKey(name: 'leaf_hash') @Base64Converter() this.leafHash,
       @JsonKey(name: 'aunts', includeIfNull: false)
       @TxsConverter()
-      final List<Uint8List>? aunts})
+      final List<BinArray>? aunts})
       : _aunts = aunts;
 
   factory _$ProofImpl.fromJson(Map<String, dynamic> json) =>
@@ -174,12 +174,12 @@ class _$ProofImpl implements _Proof {
   @override
   @JsonKey(name: 'leaf_hash')
   @Base64Converter()
-  final Uint8List? leafHash;
-  final List<Uint8List>? _aunts;
+  final BinArray? leafHash;
+  final List<BinArray>? _aunts;
   @override
   @JsonKey(name: 'aunts', includeIfNull: false)
   @TxsConverter()
-  List<Uint8List>? get aunts {
+  List<BinArray>? get aunts {
     final value = _aunts;
     if (value == null) return null;
     if (_aunts is EqualUnmodifiableListView) return _aunts;
@@ -199,17 +199,14 @@ class _$ProofImpl implements _Proof {
             other is _$ProofImpl &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.index, index) || other.index == index) &&
-            const DeepCollectionEquality().equals(other.leafHash, leafHash) &&
+            (identical(other.leafHash, leafHash) ||
+                other.leafHash == leafHash) &&
             const DeepCollectionEquality().equals(other._aunts, _aunts));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      total,
-      index,
-      const DeepCollectionEquality().hash(leafHash),
+  int get hashCode => Object.hash(runtimeType, total, index, leafHash,
       const DeepCollectionEquality().hash(_aunts));
 
   /// Create a copy of Proof
@@ -232,10 +229,10 @@ abstract class _Proof implements Proof {
   factory _Proof(
       {@JsonKey(name: 'total') final String? total,
       @JsonKey(name: 'index') final String? index,
-      @JsonKey(name: 'leaf_hash') @Base64Converter() final Uint8List? leafHash,
+      @JsonKey(name: 'leaf_hash') @Base64Converter() final BinArray? leafHash,
       @JsonKey(name: 'aunts', includeIfNull: false)
       @TxsConverter()
-      final List<Uint8List>? aunts}) = _$ProofImpl;
+      final List<BinArray>? aunts}) = _$ProofImpl;
 
   factory _Proof.fromJson(Map<String, dynamic> json) = _$ProofImpl.fromJson;
 
@@ -248,11 +245,11 @@ abstract class _Proof implements Proof {
   @override
   @JsonKey(name: 'leaf_hash')
   @Base64Converter()
-  Uint8List? get leafHash;
+  BinArray? get leafHash;
   @override
   @JsonKey(name: 'aunts', includeIfNull: false)
   @TxsConverter()
-  List<Uint8List>? get aunts;
+  List<BinArray>? get aunts;
 
   /// Create a copy of Proof
   /// with the given fields replaced by the non-null parameter values.

@@ -1,5 +1,4 @@
-import 'dart:typed_data';
-
+import 'package:comet_client/types.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:comet_client/converter.dart';
@@ -67,7 +66,7 @@ class Header with _$Header {
 class Data with _$Data {
   @JsonSerializable(explicitToJson: true)
   factory Data({
-    @JsonKey(name: 'txs') @TxsConverter() List<Uint8List>? txs,
+    @JsonKey(name: 'txs') @TxsConverter() List<BinArray>? txs,
     @JsonKey(name: 'hash', includeIfNull: false) String? hash,
   }) = _Data;
 
@@ -107,7 +106,7 @@ class CommitSig with _$CommitSig {
     @JsonKey(name: 'block_id_flag') int? blockIdFlag,
     @JsonKey(name: 'validator_address') String? validatorAddress,
     @JsonKey(name: 'timestamp') @DateTimeConverter() DateTime? timestamp,
-    @JsonKey(name: 'signature') @Base64Converter() Uint8List? signature,
+    @JsonKey(name: 'signature') @Base64Converter() BinArray? signature,
   }) = _CommitSig;
 
   factory CommitSig.fromJson(Map<String, dynamic> json) =>

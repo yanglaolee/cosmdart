@@ -12,7 +12,7 @@ _$ResponseInfoImpl _$$ResponseInfoImplFromJson(Map<String, dynamic> json) =>
       version: json['version'] as String?,
       appVersion: json['app_version'] as String?,
       lastBlockHeight: json['last_block_height'] as String?,
-      lastBlockAppHash: _$JsonConverterFromJson<String, Uint8List>(
+      lastBlockAppHash: _$JsonConverterFromJson<String, BinArray>(
           json['last_block_app_hash'], const Base64Converter().fromJson),
     );
 
@@ -31,7 +31,7 @@ Map<String, dynamic> _$$ResponseInfoImplToJson(_$ResponseInfoImpl instance) {
   writeNotNull('last_block_height', instance.lastBlockHeight);
   writeNotNull(
       'last_block_app_hash',
-      _$JsonConverterToJson<String, Uint8List>(
+      _$JsonConverterToJson<String, BinArray>(
           instance.lastBlockAppHash, const Base64Converter().toJson));
   return val;
 }
@@ -88,7 +88,7 @@ _$ResponseCheckTxImpl _$$ResponseCheckTxImplFromJson(
         Map<String, dynamic> json) =>
     _$ResponseCheckTxImpl(
       code: (json['code'] as num?)?.toInt(),
-      data: _$JsonConverterFromJson<String, Uint8List>(
+      data: _$JsonConverterFromJson<String, BinArray>(
           json['data'], const Base64Converter().fromJson),
       log: json['log'] as String?,
       info: json['info'] as String?,
@@ -113,7 +113,7 @@ Map<String, dynamic> _$$ResponseCheckTxImplToJson(
   writeNotNull('code', instance.code);
   writeNotNull(
       'data',
-      _$JsonConverterToJson<String, Uint8List>(
+      _$JsonConverterToJson<String, BinArray>(
           instance.data, const Base64Converter().toJson));
   writeNotNull('log', instance.log);
   writeNotNull('info', instance.info);
@@ -172,7 +172,7 @@ Map<String, dynamic> _$$EventAttributeImplToJson(
 _$ExecTxResultImpl _$$ExecTxResultImplFromJson(Map<String, dynamic> json) =>
     _$ExecTxResultImpl(
       code: (json['code'] as num?)?.toInt(),
-      data: _$JsonConverterFromJson<String, Uint8List>(
+      data: _$JsonConverterFromJson<String, BinArray>(
           json['data'], const Base64Converter().fromJson),
       log: json['log'] as String?,
       info: json['info'] as String?,
@@ -196,7 +196,7 @@ Map<String, dynamic> _$$ExecTxResultImplToJson(_$ExecTxResultImpl instance) {
   writeNotNull('code', instance.code);
   writeNotNull(
       'data',
-      _$JsonConverterToJson<String, Uint8List>(
+      _$JsonConverterToJson<String, BinArray>(
           instance.data, const Base64Converter().toJson));
   writeNotNull('log', instance.log);
   writeNotNull('info', instance.info);
@@ -233,9 +233,8 @@ _$TxResultImpl _$$TxResultImplFromJson(Map<String, dynamic> json) =>
     _$TxResultImpl(
       height: (json['height'] as num?)?.toInt(),
       index: (json['index'] as num?)?.toInt(),
-      tx: (json['tx'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      tx: _$JsonConverterFromJson<String, BinArray>(
+          json['tx'], const Base64Converter().fromJson),
       result: json['result'] == null
           ? null
           : ExecTxResult.fromJson(json['result'] as Map<String, dynamic>),
@@ -252,7 +251,10 @@ Map<String, dynamic> _$$TxResultImplToJson(_$TxResultImpl instance) {
 
   writeNotNull('height', instance.height);
   writeNotNull('index', instance.index);
-  writeNotNull('tx', instance.tx);
+  writeNotNull(
+      'tx',
+      _$JsonConverterToJson<String, BinArray>(
+          instance.tx, const Base64Converter().toJson));
   val['result'] = instance.result?.toJson();
   return val;
 }
@@ -273,9 +275,8 @@ _$ResponseFinalizeBlockImpl _$$ResponseFinalizeBlockImplFromJson(
           ? null
           : ConsensusParams.fromJson(
               json['consensus_param_updates'] as Map<String, dynamic>),
-      appHash: (json['app_hash'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      appHash: _$JsonConverterFromJson<String, BinArray>(
+          json['app_hash'], const HexConverter().fromJson),
     );
 
 Map<String, dynamic> _$$ResponseFinalizeBlockImplToJson(
@@ -295,6 +296,9 @@ Map<String, dynamic> _$$ResponseFinalizeBlockImplToJson(
       instance.validatorUpdates?.map((e) => e.toJson()).toList());
   writeNotNull(
       'consensus_param_updates', instance.consensusParamUpdates?.toJson());
-  writeNotNull('app_hash', instance.appHash);
+  writeNotNull(
+      'app_hash',
+      _$JsonConverterToJson<String, BinArray>(
+          instance.appHash, const HexConverter().toJson));
   return val;
 }

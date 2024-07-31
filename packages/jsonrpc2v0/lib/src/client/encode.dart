@@ -22,6 +22,7 @@ String? encodeRpcParamsToUrlValue(Map<String, dynamic>? params) {
   });
 
   var s = Uri(queryParameters: paramMap).query;
+  print(s);
   if (s.isEmpty) {
     return null;
   }

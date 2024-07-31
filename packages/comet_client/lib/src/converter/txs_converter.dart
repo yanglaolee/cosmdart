@@ -1,57 +1,25 @@
-import 'dart:typed_data';
-import 'dart:convert';
-
+import 'package:comet_client/types.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-class Base64Converter implements JsonConverter<Uint8List, String> {
-  const Base64Converter();
+import 'bin_array_converter.dart';
 
-  @override
-  Uint8List fromJson(String json) {
-    RegExp base64Regex = RegExp(r'^[a-zA-Z0-9+/]*={0,2}$');
-    if (!base64Regex.hasMatch(json)) {
-      throw FormatException("Invalid base64 string format");
-    }
-    return base64.decode(json);
-  }
-
-  @override
-  String toJson(Uint8List object) {
-    return base64.encode(object as List<int>);
-  }
-}
-
-class HexConverter implements JsonConverter<Uint8List, String> {
-  const HexConverter();
-
-  @override
-  Uint8List fromJson(String json) {
-    final buffer = Uint8List(json.length ~/ 2);
-    for (int i = 0; i < json.length; i += 2) {
-      buffer[i ~/ 2] = int.parse(json.substring(i, i + 2), radix: 16);
-    }
-    return buffer;
-  }
-
-  @override
-  String toJson(Uint8List object) {
-    return object
-        .map((byte) => byte.toRadixString(16).padLeft(2, '0').toUpperCase())
-        .join();
-  }
-}
-
-class TxsConverter implements JsonConverter<List<Uint8List>, List<dynamic>> {
+// Tx is represented a base64 string in JSON.
+// It can be converted to a list of bytes, BinArray.
+//
+// Txs eventually will be converted to a list of BinArray in this package.
+class TxsConverter implements JsonConverter<List<BinArray>, List<dynamic>> {
   const TxsConverter();
 
   @override
-  List<Uint8List> fromJson(List<dynamic> json) {
+  List<BinArray> fromJson(List<dynamic> json) {
+    // convert List<dynamic> to a list of base64 string
     final listStr = json.map((item) => item as String).toList();
+    // use Base64Converter to convert base64 string to BinArray
     return listStr.map((e) => Base64Converter().fromJson(e)).toList();
   }
 
   @override
-  List<dynamic> toJson(List<Uint8List> object) {
+  List<dynamic> toJson(List<BinArray> object) {
     return object.map((e) => Base64Converter().toJson(e)).toList();
   }
 }

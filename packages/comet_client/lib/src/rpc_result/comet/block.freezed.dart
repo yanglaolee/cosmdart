@@ -1030,7 +1030,7 @@ Data _$DataFromJson(Map<String, dynamic> json) {
 mixin _$Data {
   @JsonKey(name: 'txs')
   @TxsConverter()
-  List<Uint8List>? get txs => throw _privateConstructorUsedError;
+  List<BinArray>? get txs => throw _privateConstructorUsedError;
   @JsonKey(name: 'hash', includeIfNull: false)
   String? get hash => throw _privateConstructorUsedError;
 
@@ -1049,7 +1049,7 @@ abstract class $DataCopyWith<$Res> {
       _$DataCopyWithImpl<$Res, Data>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'txs') @TxsConverter() List<Uint8List>? txs,
+      {@JsonKey(name: 'txs') @TxsConverter() List<BinArray>? txs,
       @JsonKey(name: 'hash', includeIfNull: false) String? hash});
 }
 
@@ -1075,7 +1075,7 @@ class _$DataCopyWithImpl<$Res, $Val extends Data>
       txs: freezed == txs
           ? _value.txs
           : txs // ignore: cast_nullable_to_non_nullable
-              as List<Uint8List>?,
+              as List<BinArray>?,
       hash: freezed == hash
           ? _value.hash
           : hash // ignore: cast_nullable_to_non_nullable
@@ -1092,7 +1092,7 @@ abstract class _$$DataImplCopyWith<$Res> implements $DataCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'txs') @TxsConverter() List<Uint8List>? txs,
+      {@JsonKey(name: 'txs') @TxsConverter() List<BinArray>? txs,
       @JsonKey(name: 'hash', includeIfNull: false) String? hash});
 }
 
@@ -1115,7 +1115,7 @@ class __$$DataImplCopyWithImpl<$Res>
       txs: freezed == txs
           ? _value._txs
           : txs // ignore: cast_nullable_to_non_nullable
-              as List<Uint8List>?,
+              as List<BinArray>?,
       hash: freezed == hash
           ? _value.hash
           : hash // ignore: cast_nullable_to_non_nullable
@@ -1129,18 +1129,18 @@ class __$$DataImplCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$DataImpl implements _Data {
   _$DataImpl(
-      {@JsonKey(name: 'txs') @TxsConverter() final List<Uint8List>? txs,
+      {@JsonKey(name: 'txs') @TxsConverter() final List<BinArray>? txs,
       @JsonKey(name: 'hash', includeIfNull: false) this.hash})
       : _txs = txs;
 
   factory _$DataImpl.fromJson(Map<String, dynamic> json) =>
       _$$DataImplFromJson(json);
 
-  final List<Uint8List>? _txs;
+  final List<BinArray>? _txs;
   @override
   @JsonKey(name: 'txs')
   @TxsConverter()
-  List<Uint8List>? get txs {
+  List<BinArray>? get txs {
     final value = _txs;
     if (value == null) return null;
     if (_txs is EqualUnmodifiableListView) return _txs;
@@ -1189,7 +1189,7 @@ class _$DataImpl implements _Data {
 
 abstract class _Data implements Data {
   factory _Data(
-          {@JsonKey(name: 'txs') @TxsConverter() final List<Uint8List>? txs,
+          {@JsonKey(name: 'txs') @TxsConverter() final List<BinArray>? txs,
           @JsonKey(name: 'hash', includeIfNull: false) final String? hash}) =
       _$DataImpl;
 
@@ -1198,7 +1198,7 @@ abstract class _Data implements Data {
   @override
   @JsonKey(name: 'txs')
   @TxsConverter()
-  List<Uint8List>? get txs;
+  List<BinArray>? get txs;
   @override
   @JsonKey(name: 'hash', includeIfNull: false)
   String? get hash;
@@ -1644,7 +1644,7 @@ mixin _$CommitSig {
   DateTime? get timestamp => throw _privateConstructorUsedError;
   @JsonKey(name: 'signature')
   @Base64Converter()
-  Uint8List? get signature => throw _privateConstructorUsedError;
+  BinArray? get signature => throw _privateConstructorUsedError;
 
   /// Serializes this CommitSig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1665,7 +1665,7 @@ abstract class $CommitSigCopyWith<$Res> {
       {@JsonKey(name: 'block_id_flag') int? blockIdFlag,
       @JsonKey(name: 'validator_address') String? validatorAddress,
       @JsonKey(name: 'timestamp') @DateTimeConverter() DateTime? timestamp,
-      @JsonKey(name: 'signature') @Base64Converter() Uint8List? signature});
+      @JsonKey(name: 'signature') @Base64Converter() BinArray? signature});
 }
 
 /// @nodoc
@@ -1704,7 +1704,7 @@ class _$CommitSigCopyWithImpl<$Res, $Val extends CommitSig>
       signature: freezed == signature
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
     ) as $Val);
   }
 }
@@ -1721,7 +1721,7 @@ abstract class _$$CommitSigImplCopyWith<$Res>
       {@JsonKey(name: 'block_id_flag') int? blockIdFlag,
       @JsonKey(name: 'validator_address') String? validatorAddress,
       @JsonKey(name: 'timestamp') @DateTimeConverter() DateTime? timestamp,
-      @JsonKey(name: 'signature') @Base64Converter() Uint8List? signature});
+      @JsonKey(name: 'signature') @Base64Converter() BinArray? signature});
 }
 
 /// @nodoc
@@ -1758,7 +1758,7 @@ class __$$CommitSigImplCopyWithImpl<$Res>
       signature: freezed == signature
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
     ));
   }
 }
@@ -1789,7 +1789,7 @@ class _$CommitSigImpl implements _CommitSig {
   @override
   @JsonKey(name: 'signature')
   @Base64Converter()
-  final Uint8List? signature;
+  final BinArray? signature;
 
   @override
   String toString() {
@@ -1807,13 +1807,14 @@ class _$CommitSigImpl implements _CommitSig {
                 other.validatorAddress == validatorAddress) &&
             (identical(other.timestamp, timestamp) ||
                 other.timestamp == timestamp) &&
-            const DeepCollectionEquality().equals(other.signature, signature));
+            (identical(other.signature, signature) ||
+                other.signature == signature));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, blockIdFlag, validatorAddress,
-      timestamp, const DeepCollectionEquality().hash(signature));
+  int get hashCode => Object.hash(
+      runtimeType, blockIdFlag, validatorAddress, timestamp, signature);
 
   /// Create a copy of CommitSig
   /// with the given fields replaced by the non-null parameter values.
@@ -1840,7 +1841,7 @@ abstract class _CommitSig implements CommitSig {
       final DateTime? timestamp,
       @JsonKey(name: 'signature')
       @Base64Converter()
-      final Uint8List? signature}) = _$CommitSigImpl;
+      final BinArray? signature}) = _$CommitSigImpl;
 
   factory _CommitSig.fromJson(Map<String, dynamic> json) =
       _$CommitSigImpl.fromJson;
@@ -1858,7 +1859,7 @@ abstract class _CommitSig implements CommitSig {
   @override
   @JsonKey(name: 'signature')
   @Base64Converter()
-  Uint8List? get signature;
+  BinArray? get signature;
 
   /// Create a copy of CommitSig
   /// with the given fields replaced by the non-null parameter values.

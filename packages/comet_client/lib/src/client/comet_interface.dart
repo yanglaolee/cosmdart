@@ -1,59 +1,63 @@
-import 'dart:typed_data';
-
 import 'package:comet_client/types.dart';
-
+import 'package:protobuf/protobuf.dart' as pb;
 
 // --------------------------------------------------------------------------
 // ABCIClient groups together the functionality that principally affects the
 // ABCI app.
 abstract interface class ABCIClient {
-
   // Reading from abci app
   Future<ResultABCIInfo?> abciInfo();
-  Future<ResultABCIQuery?> abciQuery({required String path, required Uint8List data, int height, bool prove});
+  Future<ResultABCIQuery?> abciQuery(
+      {required String path,
+      required pb.GeneratedMessage data,
+      int height,
+      bool prove});
 
   // Writing to abci app
-  Future<ResultBroadcastTxCommit?> broadcastTxCommit(Uint8List tx);
-  Future<ResultBroadcastTx?> broadcastTxAsync(Uint8List tx);
-  Future<ResultBroadcastTx?> broadcastTxSync(Uint8List tx);
+
+  // use only for testing and development. In production
+  // use BroadcastTxSync or BroadcastTxAsync.
+  Future<ResultBroadcastTxCommit?> broadcastTxCommit(BinArray tx);
+
+  Future<ResultBroadcastTx?> broadcastTxAsync(BinArray tx);
+  Future<ResultBroadcastTx?> broadcastTxSync(BinArray tx);
 }
 
 // --------------------------------------------------------------------------
 // SignClient groups together the functionality needed to get valid signatures
 // and prove anything about the chain.
 abstract interface class SignClient {
-
   Future<ResultBlock?> block({int? height});
-  Future<ResultBlock?> blockByHash(Hash hash);
-  Future<ResultBlockResults?> blockResults(String height);
-  Future<ResultHeader?> header(String height);
-  Future<ResultHeader?> headerByHash(Uint8List hash);
-  Future<ResultCommit?> commit(String height);
-  Future<ResultValidators?> validators(String height, int page, int perPage);
-  Future<ResultTx?> tx(Uint8List hash, bool prove);
+  Future<ResultBlock?> blockByHash(BinArray hash);
+  Future<ResultBlockResults?> blockResults({int? height});
+  Future<ResultHeader?> header({int? height});
+  Future<ResultHeader?> headerByHash(BinArray hash);
+  Future<ResultCommit?> commit({int? height});
+  Future<ResultValidators?> validators({int? height, int page=1, int perPage=30});
+  Future<ResultTx?> tx({required BinArray hash, bool prove=false});
 
   // TxSearch defines a method to search for a paginated set of transactions by
-	// transaction event search criteria.
-  Future<ResultTxSearch?> txSearch(String query, bool prove, int perPage, String orderBy);	
+  // transaction event search criteria.
+  Future<ResultTxSearch?> txSearch(
+      {required String query, bool prove=false, int page=1, int perPage=30, String? orderBy});
 
   // BlockSearch defines a method to search for a paginated set of blocks based
-	// from FinalizeBlock event search criteria.
-  Future<ResultBlockSearch?> blockSearch(String query, int page, int perPage, String orderBy);
+  // from FinalizeBlock event search criteria.
+  Future<ResultBlockSearch?> blockSearch(
+      {required String query, int page=1, int perPage=30, String? orderBy});
 }
 
 // --------------------------------------------------------------------------
 // HistoryClient provides access to data from genesis to now in large chunks.
 abstract interface class HistoryClient {
-
   Future<ResultGenesis?> genesis();
-  Future<ResultGenesisChunk?> genesisChunked(int chunckSize);
+  Future<ResultGenesisChunked?> genesisChunked({required int chunckId});
   Future<ResultBlockchainInfo?> blockchainInfo(int minHeight, int maxHeight);
 }
 
 // --------------------------------------------------------------------------
 // StatusClient provides access to general chain info.
 abstract interface class StatusClient {
-  
   Future<ResultStatus?> status();
 }
 
@@ -61,31 +65,29 @@ abstract interface class StatusClient {
 // NetworkClient is general info about the network state. May not be needed
 // usually.
 abstract interface class NetworkClient {
-
   Future<ResultNetInfo?> netInfo();
   // Future<ResultDumpConsensusState?> dumpConsensusState();  // not surpported
   // Future<ResultConsensusState?> consensusState();  // // not surpported
-  Future<ResultConsensusParams?> consensusParams(String height);
-  Future<void> health();
+  Future<ResultConsensusParams?> consensusParams({int? height});
+  Future<ResultEmpty?> health();
 }
 
 // --------------------------------------------------------------------------
 // EventsClient is reactive, you can subscribe to any message, given the proper
 // string. see cometbft/types/events.go
 abstract interface class EventsClient {
-
-  Stream<ResultEvent?> subscribe(String subscriber, String query);
-  Future<void> unsubscribe(String subscriber, String query); 
-  Future<void> unsubscribeAll(String subscriber);
+  Stream<ResultEvent?> subscribe(
+      {required String subscriber, required String query});
+  Future<void> unsubscribe({required String subscriber, required String query});
+  Future<void> unsubscribeAll({required String subscriber});
 }
 
 // --------------------------------------------------------------------------
 // MempoolClient shows us data about current mempool state.
 abstract interface class MempoolClient {
-
-  Future<ResultUnconfirmedTxs?> unconfirmedTxs(int limit);
+  Future<ResultUnconfirmedTxs?> unconfirmedTxs({int limit = 30});
   Future<ResultUnconfirmedTxs?> numUnconfirmedTxs();
-  Future<ResultCheckTx?> checkTx(Uint8List tx);
+  Future<ResultCheckTx?> checkTx(BinArray tx);
 }
 
 // --------------------------------------------------------------------------
@@ -193,7 +195,7 @@ extension RpcMethodExtension on RpcMethod {
       // StatusClient
       case RpcMethod.status:
         return 'status';
-      
+
       // NetworkClient
       case RpcMethod.netInfo:
         return 'net_info';
@@ -205,7 +207,7 @@ extension RpcMethodExtension on RpcMethod {
         return 'consensus_params';
       case RpcMethod.health:
         return 'health';
-      
+
       // EventsClient
       case RpcMethod.subscribe:
         return 'subscribe';
@@ -221,7 +223,7 @@ extension RpcMethodExtension on RpcMethod {
         return 'num_unconfirmed_txs';
       case RpcMethod.checkTx:
         return 'check_tx';
-      
+
       // EvidenceClient  // not surpported
       // case RpcMethod.broadcastEvidence:
       //   return 'broadcast_evidence';

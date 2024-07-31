@@ -1,6 +1,3 @@
-
-import 'package:http/http.dart' as http;
-
 import '../types/types.dart';
 import 'decode.dart';
 import 'encode.dart';
@@ -9,16 +6,12 @@ import 'http_client_interface.dart' show HTTPClient;
 
 final _httpUriClientRequestID = RpcIntId(id: -1);
 
-class HttpUriClient implements HTTPClient {
-  late String address;
+class HttpUriClient extends HTTPClient {
+
   String? errMessage;
 
-  final http.Client _client = http.Client();
 
-  HttpUriClient(String address) {
-    var url = ParsedURL(address);
-    this.address = url.getDialAddress();
-  }
+  HttpUriClient(String address) : super(ParsedURL(address).getDialAddress());
 
   // call issues a POST form HTTP request.
   // 
@@ -37,7 +30,7 @@ class HttpUriClient implements HTTPClient {
     try {
       var uri = Uri.parse('$address/$method');
 
-      var response = await _client.post(
+      var response = await client.post(
         uri,
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         body: encodedParams,
@@ -54,10 +47,5 @@ class HttpUriClient implements HTTPClient {
     } catch (e) {
       throw Exception('Error occurred: $e');
     }
-  }
-
-  // close closes the internal http client.
-  void close() {
-    _client.close();
   }
 }

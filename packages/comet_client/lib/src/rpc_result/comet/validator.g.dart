@@ -26,14 +26,14 @@ Map<String, dynamic> _$$ValidatorImplToJson(_$ValidatorImpl instance) =>
 
 _$PubKeyImpl _$$PubKeyImplFromJson(Map<String, dynamic> json) => _$PubKeyImpl(
       type: json['type'] as String?,
-      value: _$JsonConverterFromJson<String, Uint8List>(
+      value: _$JsonConverterFromJson<String, BinArray>(
           json['value'], const Base64Converter().fromJson),
     );
 
 Map<String, dynamic> _$$PubKeyImplToJson(_$PubKeyImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
-      'value': _$JsonConverterToJson<String, Uint8List>(
+      'value': _$JsonConverterToJson<String, BinArray>(
           instance.value, const Base64Converter().toJson),
     };
 

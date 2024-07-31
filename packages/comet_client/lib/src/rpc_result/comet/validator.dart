@@ -1,6 +1,5 @@
-import 'dart:typed_data';
-
 import 'package:comet_client/converter.dart';
+import 'package:comet_client/types.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'validator.freezed.dart';
@@ -25,7 +24,7 @@ class PubKey with _$PubKey {
 
   factory PubKey({
     @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'value') @Base64Converter() Uint8List? value,
+    @JsonKey(name: 'value') @Base64Converter() BinArray? value,
   }) = _PubKey;
 
   factory PubKey.fromJson(Map<String, dynamic> json) =>

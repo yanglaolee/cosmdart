@@ -10,6 +10,7 @@ void main() {
       await client.addCall('net_info');
 
       var responses = await client.send();
+      client.close();
 
       print(responses);
     });

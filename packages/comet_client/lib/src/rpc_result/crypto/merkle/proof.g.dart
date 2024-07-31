@@ -9,9 +9,9 @@ part of 'proof.dart';
 _$ProofImpl _$$ProofImplFromJson(Map<String, dynamic> json) => _$ProofImpl(
       total: json['total'] as String?,
       index: json['index'] as String?,
-      leafHash: _$JsonConverterFromJson<String, Uint8List>(
+      leafHash: _$JsonConverterFromJson<String, BinArray>(
           json['leaf_hash'], const Base64Converter().fromJson),
-      aunts: _$JsonConverterFromJson<List<dynamic>, List<Uint8List>>(
+      aunts: _$JsonConverterFromJson<List<dynamic>, List<BinArray>>(
           json['aunts'], const TxsConverter().fromJson),
     );
 
@@ -19,7 +19,7 @@ Map<String, dynamic> _$$ProofImplToJson(_$ProofImpl instance) {
   final val = <String, dynamic>{
     'total': instance.total,
     'index': instance.index,
-    'leaf_hash': _$JsonConverterToJson<String, Uint8List>(
+    'leaf_hash': _$JsonConverterToJson<String, BinArray>(
         instance.leafHash, const Base64Converter().toJson),
   };
 
@@ -31,7 +31,7 @@ Map<String, dynamic> _$$ProofImplToJson(_$ProofImpl instance) {
 
   writeNotNull(
       'aunts',
-      _$JsonConverterToJson<List<dynamic>, List<Uint8List>>(
+      _$JsonConverterToJson<List<dynamic>, List<BinArray>>(
           instance.aunts, const TxsConverter().toJson));
   return val;
 }

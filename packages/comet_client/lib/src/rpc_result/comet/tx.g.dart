@@ -9,7 +9,7 @@ part of 'tx.dart';
 _$TxProofImpl _$$TxProofImplFromJson(Map<String, dynamic> json) =>
     _$TxProofImpl(
       rootHash: json['root_hash'] as String?,
-      data: _$JsonConverterFromJson<String, Uint8List>(
+      data: _$JsonConverterFromJson<String, BinArray>(
           json['data'], const Base64Converter().fromJson),
       proof: json['proof'] == null
           ? null
@@ -19,7 +19,7 @@ _$TxProofImpl _$$TxProofImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$TxProofImplToJson(_$TxProofImpl instance) =>
     <String, dynamic>{
       'root_hash': instance.rootHash,
-      'data': _$JsonConverterToJson<String, Uint8List>(
+      'data': _$JsonConverterToJson<String, BinArray>(
           instance.data, const Base64Converter().toJson),
       'proof': instance.proof,
     };

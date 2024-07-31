@@ -47,8 +47,9 @@ void main() {
       var client = HttpJsonClient(address);
 
       var respone =
-          await client.call("block_results", params: {"height": '21443855'});
-
+          await client.call("block_results", params: {"height": '20994955'});
+      client.close(); 
+      
       print(respone);
 
       if (respone.isError) fail('Error response');
@@ -67,6 +68,7 @@ void main() {
             '933973EE6D1AC7B660DEA6113A412B7672088F8200603769459A51B3F854B108',
         "prove": true
       });
+      client.close();
 
       print(respone);
 

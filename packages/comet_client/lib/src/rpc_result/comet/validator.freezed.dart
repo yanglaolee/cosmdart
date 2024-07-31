@@ -271,7 +271,7 @@ mixin _$PubKey {
   String? get type => throw _privateConstructorUsedError;
   @JsonKey(name: 'value')
   @Base64Converter()
-  Uint8List? get value => throw _privateConstructorUsedError;
+  BinArray? get value => throw _privateConstructorUsedError;
 
   /// Serializes this PubKey to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -289,7 +289,7 @@ abstract class $PubKeyCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'type') String? type,
-      @JsonKey(name: 'value') @Base64Converter() Uint8List? value});
+      @JsonKey(name: 'value') @Base64Converter() BinArray? value});
 }
 
 /// @nodoc
@@ -318,7 +318,7 @@ class _$PubKeyCopyWithImpl<$Res, $Val extends PubKey>
       value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
     ) as $Val);
   }
 }
@@ -332,7 +332,7 @@ abstract class _$$PubKeyImplCopyWith<$Res> implements $PubKeyCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'type') String? type,
-      @JsonKey(name: 'value') @Base64Converter() Uint8List? value});
+      @JsonKey(name: 'value') @Base64Converter() BinArray? value});
 }
 
 /// @nodoc
@@ -359,7 +359,7 @@ class __$$PubKeyImplCopyWithImpl<$Res>
       value: freezed == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
     ));
   }
 }
@@ -380,7 +380,7 @@ class _$PubKeyImpl implements _PubKey {
   @override
   @JsonKey(name: 'value')
   @Base64Converter()
-  final Uint8List? value;
+  final BinArray? value;
 
   @override
   String toString() {
@@ -393,13 +393,12 @@ class _$PubKeyImpl implements _PubKey {
         (other.runtimeType == runtimeType &&
             other is _$PubKeyImpl &&
             (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other.value, value));
+            (identical(other.value, value) || other.value == value));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, type, const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(runtimeType, type, value);
 
   /// Create a copy of PubKey
   /// with the given fields replaced by the non-null parameter values.
@@ -420,7 +419,7 @@ class _$PubKeyImpl implements _PubKey {
 abstract class _PubKey implements PubKey {
   factory _PubKey(
           {@JsonKey(name: 'type') final String? type,
-          @JsonKey(name: 'value') @Base64Converter() final Uint8List? value}) =
+          @JsonKey(name: 'value') @Base64Converter() final BinArray? value}) =
       _$PubKeyImpl;
 
   factory _PubKey.fromJson(Map<String, dynamic> json) = _$PubKeyImpl.fromJson;
@@ -431,7 +430,7 @@ abstract class _PubKey implements PubKey {
   @override
   @JsonKey(name: 'value')
   @Base64Converter()
-  Uint8List? get value;
+  BinArray? get value;
 
   /// Create a copy of PubKey
   /// with the given fields replaced by the non-null parameter values.

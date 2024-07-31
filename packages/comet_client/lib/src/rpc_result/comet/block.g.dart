@@ -98,14 +98,14 @@ Json? _$JsonConverterToJson<Json, Value>(
     value == null ? null : toJson(value);
 
 _$DataImpl _$$DataImplFromJson(Map<String, dynamic> json) => _$DataImpl(
-      txs: _$JsonConverterFromJson<List<dynamic>, List<Uint8List>>(
+      txs: _$JsonConverterFromJson<List<dynamic>, List<BinArray>>(
           json['txs'], const TxsConverter().fromJson),
       hash: json['hash'] as String?,
     );
 
 Map<String, dynamic> _$$DataImplToJson(_$DataImpl instance) {
   final val = <String, dynamic>{
-    'txs': _$JsonConverterToJson<List<dynamic>, List<Uint8List>>(
+    'txs': _$JsonConverterToJson<List<dynamic>, List<BinArray>>(
         instance.txs, const TxsConverter().toJson),
   };
 
@@ -157,7 +157,7 @@ _$CommitSigImpl _$$CommitSigImplFromJson(Map<String, dynamic> json) =>
       validatorAddress: json['validator_address'] as String?,
       timestamp: _$JsonConverterFromJson<String, DateTime>(
           json['timestamp'], const DateTimeConverter().fromJson),
-      signature: _$JsonConverterFromJson<String, Uint8List>(
+      signature: _$JsonConverterFromJson<String, BinArray>(
           json['signature'], const Base64Converter().fromJson),
     );
 
@@ -167,6 +167,6 @@ Map<String, dynamic> _$$CommitSigImplToJson(_$CommitSigImpl instance) =>
       'validator_address': instance.validatorAddress,
       'timestamp': _$JsonConverterToJson<String, DateTime>(
           instance.timestamp, const DateTimeConverter().toJson),
-      'signature': _$JsonConverterToJson<String, Uint8List>(
+      'signature': _$JsonConverterToJson<String, BinArray>(
           instance.signature, const Base64Converter().toJson),
     };

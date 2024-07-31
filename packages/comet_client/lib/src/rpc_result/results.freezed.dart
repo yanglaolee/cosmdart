@@ -2125,7 +2125,7 @@ mixin _$ResultTx {
   ExecTxResult? get txResult => throw _privateConstructorUsedError;
   @JsonKey(name: 'tx')
   @Base64Converter()
-  Uint8List? get tx => throw _privateConstructorUsedError;
+  BinArray? get tx => throw _privateConstructorUsedError;
   @JsonKey(name: 'proof', includeIfNull: false)
   TxProof? get proof => throw _privateConstructorUsedError;
 
@@ -2149,7 +2149,7 @@ abstract class $ResultTxCopyWith<$Res> {
       @JsonKey(name: 'height') String? height,
       @JsonKey(name: 'index') int? index,
       @JsonKey(name: 'tx_result') ExecTxResult? txResult,
-      @JsonKey(name: 'tx') @Base64Converter() Uint8List? tx,
+      @JsonKey(name: 'tx') @Base64Converter() BinArray? tx,
       @JsonKey(name: 'proof', includeIfNull: false) TxProof? proof});
 
   $ExecTxResultCopyWith<$Res>? get txResult;
@@ -2198,7 +2198,7 @@ class _$ResultTxCopyWithImpl<$Res, $Val extends ResultTx>
       tx: freezed == tx
           ? _value.tx
           : tx // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
       proof: freezed == proof
           ? _value.proof
           : proof // ignore: cast_nullable_to_non_nullable
@@ -2248,7 +2248,7 @@ abstract class _$$ResultTxImplCopyWith<$Res>
       @JsonKey(name: 'height') String? height,
       @JsonKey(name: 'index') int? index,
       @JsonKey(name: 'tx_result') ExecTxResult? txResult,
-      @JsonKey(name: 'tx') @Base64Converter() Uint8List? tx,
+      @JsonKey(name: 'tx') @Base64Converter() BinArray? tx,
       @JsonKey(name: 'proof', includeIfNull: false) TxProof? proof});
 
   @override
@@ -2297,7 +2297,7 @@ class __$$ResultTxImplCopyWithImpl<$Res>
       tx: freezed == tx
           ? _value.tx
           : tx // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
       proof: freezed == proof
           ? _value.proof
           : proof // ignore: cast_nullable_to_non_nullable
@@ -2336,7 +2336,7 @@ class _$ResultTxImpl implements _ResultTx {
   @override
   @JsonKey(name: 'tx')
   @Base64Converter()
-  final Uint8List? tx;
+  final BinArray? tx;
   @override
   @JsonKey(name: 'proof', includeIfNull: false)
   final TxProof? proof;
@@ -2356,14 +2356,14 @@ class _$ResultTxImpl implements _ResultTx {
             (identical(other.index, index) || other.index == index) &&
             (identical(other.txResult, txResult) ||
                 other.txResult == txResult) &&
-            const DeepCollectionEquality().equals(other.tx, tx) &&
+            (identical(other.tx, tx) || other.tx == tx) &&
             (identical(other.proof, proof) || other.proof == proof));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, hash, height, index, txResult,
-      const DeepCollectionEquality().hash(tx), proof);
+  int get hashCode =>
+      Object.hash(runtimeType, hash, height, index, txResult, tx, proof);
 
   /// Create a copy of ResultTx
   /// with the given fields replaced by the non-null parameter values.
@@ -2387,7 +2387,7 @@ abstract class _ResultTx implements ResultTx {
           @JsonKey(name: 'height') final String? height,
           @JsonKey(name: 'index') final int? index,
           @JsonKey(name: 'tx_result') final ExecTxResult? txResult,
-          @JsonKey(name: 'tx') @Base64Converter() final Uint8List? tx,
+          @JsonKey(name: 'tx') @Base64Converter() final BinArray? tx,
           @JsonKey(name: 'proof', includeIfNull: false) final TxProof? proof}) =
       _$ResultTxImpl;
 
@@ -2409,7 +2409,7 @@ abstract class _ResultTx implements ResultTx {
   @override
   @JsonKey(name: 'tx')
   @Base64Converter()
-  Uint8List? get tx;
+  BinArray? get tx;
   @override
   @JsonKey(name: 'proof', includeIfNull: false)
   TxProof? get proof;
@@ -2982,12 +2982,12 @@ abstract class _ResultGenesis implements ResultGenesis {
       throw _privateConstructorUsedError;
 }
 
-ResultGenesisChunk _$ResultGenesisChunkFromJson(Map<String, dynamic> json) {
+ResultGenesisChunked _$ResultGenesisChunkedFromJson(Map<String, dynamic> json) {
   return _ResultGenesisChunk.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ResultGenesisChunk {
+mixin _$ResultGenesisChunked {
   @JsonKey(name: 'chunk')
   int? get chunkNumber => throw _privateConstructorUsedError;
   @JsonKey(name: 'total')
@@ -2995,21 +2995,21 @@ mixin _$ResultGenesisChunk {
   @JsonKey(name: 'data')
   String? get data => throw _privateConstructorUsedError;
 
-  /// Serializes this ResultGenesisChunk to a JSON map.
+  /// Serializes this ResultGenesisChunked to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of ResultGenesisChunk
+  /// Create a copy of ResultGenesisChunked
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ResultGenesisChunkCopyWith<ResultGenesisChunk> get copyWith =>
+  $ResultGenesisChunkedCopyWith<ResultGenesisChunked> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ResultGenesisChunkCopyWith<$Res> {
-  factory $ResultGenesisChunkCopyWith(
-          ResultGenesisChunk value, $Res Function(ResultGenesisChunk) then) =
-      _$ResultGenesisChunkCopyWithImpl<$Res, ResultGenesisChunk>;
+abstract class $ResultGenesisChunkedCopyWith<$Res> {
+  factory $ResultGenesisChunkedCopyWith(ResultGenesisChunked value,
+          $Res Function(ResultGenesisChunked) then) =
+      _$ResultGenesisChunkedCopyWithImpl<$Res, ResultGenesisChunked>;
   @useResult
   $Res call(
       {@JsonKey(name: 'chunk') int? chunkNumber,
@@ -3018,16 +3018,17 @@ abstract class $ResultGenesisChunkCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ResultGenesisChunkCopyWithImpl<$Res, $Val extends ResultGenesisChunk>
-    implements $ResultGenesisChunkCopyWith<$Res> {
-  _$ResultGenesisChunkCopyWithImpl(this._value, this._then);
+class _$ResultGenesisChunkedCopyWithImpl<$Res,
+        $Val extends ResultGenesisChunked>
+    implements $ResultGenesisChunkedCopyWith<$Res> {
+  _$ResultGenesisChunkedCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ResultGenesisChunk
+  /// Create a copy of ResultGenesisChunked
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -3055,7 +3056,7 @@ class _$ResultGenesisChunkCopyWithImpl<$Res, $Val extends ResultGenesisChunk>
 
 /// @nodoc
 abstract class _$$ResultGenesisChunkImplCopyWith<$Res>
-    implements $ResultGenesisChunkCopyWith<$Res> {
+    implements $ResultGenesisChunkedCopyWith<$Res> {
   factory _$$ResultGenesisChunkImplCopyWith(_$ResultGenesisChunkImpl value,
           $Res Function(_$ResultGenesisChunkImpl) then) =
       __$$ResultGenesisChunkImplCopyWithImpl<$Res>;
@@ -3069,13 +3070,13 @@ abstract class _$$ResultGenesisChunkImplCopyWith<$Res>
 
 /// @nodoc
 class __$$ResultGenesisChunkImplCopyWithImpl<$Res>
-    extends _$ResultGenesisChunkCopyWithImpl<$Res, _$ResultGenesisChunkImpl>
+    extends _$ResultGenesisChunkedCopyWithImpl<$Res, _$ResultGenesisChunkImpl>
     implements _$$ResultGenesisChunkImplCopyWith<$Res> {
   __$$ResultGenesisChunkImplCopyWithImpl(_$ResultGenesisChunkImpl _value,
       $Res Function(_$ResultGenesisChunkImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ResultGenesisChunk
+  /// Create a copy of ResultGenesisChunked
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -3124,7 +3125,7 @@ class _$ResultGenesisChunkImpl implements _ResultGenesisChunk {
 
   @override
   String toString() {
-    return 'ResultGenesisChunk(chunkNumber: $chunkNumber, totalChunks: $totalChunks, data: $data)';
+    return 'ResultGenesisChunked(chunkNumber: $chunkNumber, totalChunks: $totalChunks, data: $data)';
   }
 
   @override
@@ -3143,7 +3144,7 @@ class _$ResultGenesisChunkImpl implements _ResultGenesisChunk {
   @override
   int get hashCode => Object.hash(runtimeType, chunkNumber, totalChunks, data);
 
-  /// Create a copy of ResultGenesisChunk
+  /// Create a copy of ResultGenesisChunked
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -3160,7 +3161,7 @@ class _$ResultGenesisChunkImpl implements _ResultGenesisChunk {
   }
 }
 
-abstract class _ResultGenesisChunk implements ResultGenesisChunk {
+abstract class _ResultGenesisChunk implements ResultGenesisChunked {
   factory _ResultGenesisChunk(
       {@JsonKey(name: 'chunk') final int? chunkNumber,
       @JsonKey(name: 'total') final int? totalChunks,
@@ -3179,7 +3180,7 @@ abstract class _ResultGenesisChunk implements ResultGenesisChunk {
   @JsonKey(name: 'data')
   String? get data;
 
-  /// Create a copy of ResultGenesisChunk
+  /// Create a copy of ResultGenesisChunked
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -5217,7 +5218,7 @@ mixin _$ResultUnconfirmedTxs {
   String? get totalBytes => throw _privateConstructorUsedError;
   @JsonKey(name: 'txs', includeIfNull: true)
   @TxsConverter()
-  List<Uint8List>? get txs => throw _privateConstructorUsedError;
+  List<BinArray>? get txs => throw _privateConstructorUsedError;
 
   /// Serializes this ResultUnconfirmedTxs to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -5241,7 +5242,7 @@ abstract class $ResultUnconfirmedTxsCopyWith<$Res> {
       @JsonKey(name: 'total_bytes') String? totalBytes,
       @JsonKey(name: 'txs', includeIfNull: true)
       @TxsConverter()
-      List<Uint8List>? txs});
+      List<BinArray>? txs});
 }
 
 /// @nodoc
@@ -5281,7 +5282,7 @@ class _$ResultUnconfirmedTxsCopyWithImpl<$Res,
       txs: freezed == txs
           ? _value.txs
           : txs // ignore: cast_nullable_to_non_nullable
-              as List<Uint8List>?,
+              as List<BinArray>?,
     ) as $Val);
   }
 }
@@ -5300,7 +5301,7 @@ abstract class _$$ResultUnconfirmedTxsImplCopyWith<$Res>
       @JsonKey(name: 'total_bytes') String? totalBytes,
       @JsonKey(name: 'txs', includeIfNull: true)
       @TxsConverter()
-      List<Uint8List>? txs});
+      List<BinArray>? txs});
 }
 
 /// @nodoc
@@ -5337,7 +5338,7 @@ class __$$ResultUnconfirmedTxsImplCopyWithImpl<$Res>
       txs: freezed == txs
           ? _value._txs
           : txs // ignore: cast_nullable_to_non_nullable
-              as List<Uint8List>?,
+              as List<BinArray>?,
     ));
   }
 }
@@ -5351,7 +5352,7 @@ class _$ResultUnconfirmedTxsImpl implements _ResultUnconfirmedTxs {
       @JsonKey(name: 'total_bytes') this.totalBytes,
       @JsonKey(name: 'txs', includeIfNull: true)
       @TxsConverter()
-      final List<Uint8List>? txs})
+      final List<BinArray>? txs})
       : _txs = txs;
 
   factory _$ResultUnconfirmedTxsImpl.fromJson(Map<String, dynamic> json) =>
@@ -5366,11 +5367,11 @@ class _$ResultUnconfirmedTxsImpl implements _ResultUnconfirmedTxs {
   @override
   @JsonKey(name: 'total_bytes')
   final String? totalBytes;
-  final List<Uint8List>? _txs;
+  final List<BinArray>? _txs;
   @override
   @JsonKey(name: 'txs', includeIfNull: true)
   @TxsConverter()
-  List<Uint8List>? get txs {
+  List<BinArray>? get txs {
     final value = _txs;
     if (value == null) return null;
     if (_txs is EqualUnmodifiableListView) return _txs;
@@ -5425,7 +5426,7 @@ abstract class _ResultUnconfirmedTxs implements ResultUnconfirmedTxs {
       @JsonKey(name: 'total_bytes') final String? totalBytes,
       @JsonKey(name: 'txs', includeIfNull: true)
       @TxsConverter()
-      final List<Uint8List>? txs}) = _$ResultUnconfirmedTxsImpl;
+      final List<BinArray>? txs}) = _$ResultUnconfirmedTxsImpl;
 
   factory _ResultUnconfirmedTxs.fromJson(Map<String, dynamic> json) =
       _$ResultUnconfirmedTxsImpl.fromJson;
@@ -5442,7 +5443,7 @@ abstract class _ResultUnconfirmedTxs implements ResultUnconfirmedTxs {
   @override
   @JsonKey(name: 'txs', includeIfNull: true)
   @TxsConverter()
-  List<Uint8List>? get txs;
+  List<BinArray>? get txs;
 
   /// Create a copy of ResultUnconfirmedTxs
   /// with the given fields replaced by the non-null parameter values.
@@ -5462,7 +5463,7 @@ mixin _$ResultCheckTx {
   int? get code => throw _privateConstructorUsedError;
   @JsonKey(name: 'data', includeIfNull: false)
   @Base64Converter()
-  Uint8List? get data => throw _privateConstructorUsedError;
+  BinArray? get data => throw _privateConstructorUsedError;
   @JsonKey(name: 'log', includeIfNull: false)
   String? get log => throw _privateConstructorUsedError;
   @JsonKey(name: 'info', includeIfNull: false)
@@ -5496,7 +5497,7 @@ abstract class $ResultCheckTxCopyWith<$Res> {
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
       @JsonKey(name: 'data', includeIfNull: false)
       @Base64Converter()
-      Uint8List? data,
+      BinArray? data,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
       @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
@@ -5537,7 +5538,7 @@ class _$ResultCheckTxCopyWithImpl<$Res, $Val extends ResultCheckTx>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
       log: freezed == log
           ? _value.log
           : log // ignore: cast_nullable_to_non_nullable
@@ -5578,7 +5579,7 @@ abstract class _$$ResultCheckTxImplCopyWith<$Res>
       {@JsonKey(name: 'code', includeIfNull: false) int? code,
       @JsonKey(name: 'data', includeIfNull: false)
       @Base64Converter()
-      Uint8List? data,
+      BinArray? data,
       @JsonKey(name: 'log', includeIfNull: false) String? log,
       @JsonKey(name: 'info', includeIfNull: false) String? info,
       @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
@@ -5617,7 +5618,7 @@ class __$$ResultCheckTxImplCopyWithImpl<$Res>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Uint8List?,
+              as BinArray?,
       log: freezed == log
           ? _value.log
           : log // ignore: cast_nullable_to_non_nullable
@@ -5670,7 +5671,7 @@ class _$ResultCheckTxImpl implements _ResultCheckTx {
   @override
   @JsonKey(name: 'data', includeIfNull: false)
   @Base64Converter()
-  final Uint8List? data;
+  final BinArray? data;
   @override
   @JsonKey(name: 'log', includeIfNull: false)
   final String? log;
@@ -5709,7 +5710,7 @@ class _$ResultCheckTxImpl implements _ResultCheckTx {
         (other.runtimeType == runtimeType &&
             other is _$ResultCheckTxImpl &&
             (identical(other.code, code) || other.code == code) &&
-            const DeepCollectionEquality().equals(other.data, data) &&
+            (identical(other.data, data) || other.data == data) &&
             (identical(other.log, log) || other.log == log) &&
             (identical(other.info, info) || other.info == info) &&
             (identical(other.gasWanted, gasWanted) ||
@@ -5722,16 +5723,8 @@ class _$ResultCheckTxImpl implements _ResultCheckTx {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      code,
-      const DeepCollectionEquality().hash(data),
-      log,
-      info,
-      gasWanted,
-      gasUsed,
-      const DeepCollectionEquality().hash(_events),
-      codespace);
+  int get hashCode => Object.hash(runtimeType, code, data, log, info, gasWanted,
+      gasUsed, const DeepCollectionEquality().hash(_events), codespace);
 
   /// Create a copy of ResultCheckTx
   /// with the given fields replaced by the non-null parameter values.
@@ -5754,7 +5747,7 @@ abstract class _ResultCheckTx implements ResultCheckTx {
       {@JsonKey(name: 'code', includeIfNull: false) final int? code,
       @JsonKey(name: 'data', includeIfNull: false)
       @Base64Converter()
-      final Uint8List? data,
+      final BinArray? data,
       @JsonKey(name: 'log', includeIfNull: false) final String? log,
       @JsonKey(name: 'info', includeIfNull: false) final String? info,
       @JsonKey(name: 'gas_wanted', includeIfNull: false)
@@ -5773,7 +5766,7 @@ abstract class _ResultCheckTx implements ResultCheckTx {
   @override
   @JsonKey(name: 'data', includeIfNull: false)
   @Base64Converter()
-  Uint8List? get data;
+  BinArray? get data;
   @override
   @JsonKey(name: 'log', includeIfNull: false)
   String? get log;
@@ -5799,4 +5792,92 @@ abstract class _ResultCheckTx implements ResultCheckTx {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ResultCheckTxImplCopyWith<_$ResultCheckTxImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+ResultEmpty _$ResultEmptyFromJson(Map<String, dynamic> json) {
+  return _ResultEmpty.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ResultEmpty {
+  /// Serializes this ResultEmpty to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ResultEmptyCopyWith<$Res> {
+  factory $ResultEmptyCopyWith(
+          ResultEmpty value, $Res Function(ResultEmpty) then) =
+      _$ResultEmptyCopyWithImpl<$Res, ResultEmpty>;
+}
+
+/// @nodoc
+class _$ResultEmptyCopyWithImpl<$Res, $Val extends ResultEmpty>
+    implements $ResultEmptyCopyWith<$Res> {
+  _$ResultEmptyCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ResultEmpty
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$ResultEmptyImplCopyWith<$Res> {
+  factory _$$ResultEmptyImplCopyWith(
+          _$ResultEmptyImpl value, $Res Function(_$ResultEmptyImpl) then) =
+      __$$ResultEmptyImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResultEmptyImplCopyWithImpl<$Res>
+    extends _$ResultEmptyCopyWithImpl<$Res, _$ResultEmptyImpl>
+    implements _$$ResultEmptyImplCopyWith<$Res> {
+  __$$ResultEmptyImplCopyWithImpl(
+      _$ResultEmptyImpl _value, $Res Function(_$ResultEmptyImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ResultEmpty
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ResultEmptyImpl implements _ResultEmpty {
+  _$ResultEmptyImpl();
+
+  factory _$ResultEmptyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResultEmptyImplFromJson(json);
+
+  @override
+  String toString() {
+    return 'ResultEmpty()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResultEmptyImpl);
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ResultEmptyImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ResultEmpty implements ResultEmpty {
+  factory _ResultEmpty() = _$ResultEmptyImpl;
+
+  factory _ResultEmpty.fromJson(Map<String, dynamic> json) =
+      _$ResultEmptyImpl.fromJson;
 }

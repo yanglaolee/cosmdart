@@ -1,7 +1,6 @@
-import 'dart:typed_data';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import 'package:comet_client/types.dart';
 import 'package:comet_client/converter.dart';
 
 import 'abci/types.dart';
@@ -148,7 +147,7 @@ class ResultTx extends RpcResult with _$ResultTx {
     @JsonKey(name: 'height') String? height,
     @JsonKey(name: 'index') int? index,
     @JsonKey(name: 'tx_result') ExecTxResult? txResult,
-    @JsonKey(name: 'tx') @Base64Converter() Uint8List? tx,
+    @JsonKey(name: 'tx') @Base64Converter() BinArray? tx,
     @JsonKey(name: 'proof', includeIfNull: false) TxProof? proof,
   }) = _ResultTx;
 
@@ -192,15 +191,15 @@ class ResultGenesis extends RpcResult with _$ResultGenesis {
 }
 
 @freezed
-class ResultGenesisChunk extends RpcResult with _$ResultGenesisChunk {
-  factory ResultGenesisChunk({
+class ResultGenesisChunked extends RpcResult with _$ResultGenesisChunked {
+  factory ResultGenesisChunked({
     @JsonKey(name: 'chunk') int? chunkNumber,
     @JsonKey(name: 'total') int? totalChunks,
     @JsonKey(name: 'data') String? data,
   }) = _ResultGenesisChunk;
 
-  factory ResultGenesisChunk.fromJson(Map<String, dynamic> json) =>
-      _$ResultGenesisChunkFromJson(json);
+  factory ResultGenesisChunked.fromJson(Map<String, dynamic> json) =>
+      _$ResultGenesisChunkedFromJson(json);
 }
 
 @freezed
@@ -355,7 +354,7 @@ class ResultUnconfirmedTxs extends RpcResult with _$ResultUnconfirmedTxs {
     @JsonKey(name: 'n_txs') String? nTxs,
     @JsonKey(name: 'total') String? total,
     @JsonKey(name: 'total_bytes') String? totalBytes,
-    @JsonKey(name: 'txs', includeIfNull: true) @TxsConverter() List<Uint8List>? txs,
+    @JsonKey(name: 'txs', includeIfNull: true) @TxsConverter() List<BinArray>? txs,
   }) = _ResultUnconfirmedTxs;
 
   factory ResultUnconfirmedTxs.fromJson(Map<String, dynamic> json) =>
@@ -367,7 +366,7 @@ class ResultCheckTx extends RpcResult with _$ResultCheckTx {
   @JsonSerializable(explicitToJson: true)
   factory ResultCheckTx({
     @JsonKey(name: 'code', includeIfNull: false) int? code,
-    @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() Uint8List? data,
+    @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() BinArray? data,
     @JsonKey(name: 'log', includeIfNull: false) String? log,
     @JsonKey(name: 'info', includeIfNull: false) String? info,
     @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
@@ -389,3 +388,11 @@ class ResultCheckTx extends RpcResult with _$ResultCheckTx {
 //   factory ResultBroadcastEvidence.fromJson(Map<String, dynamic> json) =>
 //       _$ResultBroadcastEvidenceFromJson(json);
 // }
+
+@freezed
+class ResultEmpty extends RpcResult with _$ResultEmpty {
+  factory ResultEmpty() = _ResultEmpty;
+
+  factory ResultEmpty.fromJson(Map<String, dynamic> json) =>
+      _$ResultEmptyFromJson(json);
+}

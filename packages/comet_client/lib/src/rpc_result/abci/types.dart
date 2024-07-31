@@ -1,4 +1,4 @@
-import 'dart:typed_data';
+import 'package:comet_client/types.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:comet_client/converter.dart';
@@ -17,7 +17,7 @@ class ResponseInfo with _$ResponseInfo {
     @JsonKey(name: 'app_version', includeIfNull: false) String? appVersion,
     @JsonKey(name: 'last_block_height', includeIfNull: false)
     String? lastBlockHeight,
-    @JsonKey(name: 'last_block_app_hash', includeIfNull: false) @Base64Converter() Uint8List? lastBlockAppHash,
+    @JsonKey(name: 'last_block_app_hash', includeIfNull: false) @Base64Converter() BinArray? lastBlockAppHash,
   }) = _ResponseInfo;
 
   factory ResponseInfo.fromJson(Map<String, dynamic> json) =>
@@ -48,7 +48,7 @@ class ResponseCheckTx with _$ResponseCheckTx {
   @JsonSerializable(explicitToJson: true)
   factory ResponseCheckTx({
     @JsonKey(name: 'code', includeIfNull: false) int? code,
-    @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() Uint8List? data,
+    @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() BinArray? data,
     @JsonKey(name: 'log', includeIfNull: false) String? log,
     @JsonKey(name: 'info', includeIfNull: false) String? info,
     @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
@@ -90,7 +90,7 @@ class ExecTxResult with _$ExecTxResult {
   @JsonSerializable(explicitToJson: true)
   factory ExecTxResult({
     @JsonKey(name: 'code', includeIfNull: false) int? code,
-    @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() Uint8List? data,
+    @JsonKey(name: 'data', includeIfNull: false) @Base64Converter() BinArray? data,
     @JsonKey(name: 'log', includeIfNull: false) String? log,
     @JsonKey(name: 'info', includeIfNull: false) String? info,
     @JsonKey(name: 'gas_wanted', includeIfNull: false) String? gasWanted,
@@ -121,7 +121,7 @@ class TxResult with _$TxResult {
   factory TxResult({
     @JsonKey(name: 'height', includeIfNull: false) int? height,
     @JsonKey(name: 'index', includeIfNull: false) int? index,
-    @JsonKey(name: 'tx', includeIfNull: false) List<int>? tx,
+    @JsonKey(name: 'tx', includeIfNull: false) @Base64Converter() BinArray? tx,
     @JsonKey(name: 'result') ExecTxResult? result,
   }) = _TxResult;
 
@@ -140,7 +140,7 @@ class ResponseFinalizeBlock with _$ResponseFinalizeBlock {
     List<ValidatorUpdate>? validatorUpdates,
     @JsonKey(name: 'consensus_param_updates', includeIfNull: false)
     ConsensusParams? consensusParamUpdates,
-    @JsonKey(name: 'app_hash', includeIfNull: false) List<int>? appHash,
+    @JsonKey(name: 'app_hash', includeIfNull: false) @HexConverter() BinArray? appHash,
   }) = _ResponseFinalizeBlock;
 
   factory ResponseFinalizeBlock.fromJson(Map<String, dynamic> json) =>
