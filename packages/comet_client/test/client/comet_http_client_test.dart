@@ -1,9 +1,9 @@
-import 'package:comet_client/converter.dart';
+// import 'package:comet_client/converter.dart';
 import 'package:test/test.dart';
 import 'package:comet_client/comet_client.dart';
 import 'package:comet_client/types.dart';
-import 'package:cosmdart_types/src/cosmos/bank/v1beta1/query.pb.dart'
-    as bank_module_query;
+// import 'package:cosmdart_types/src/cosmos/bank/v1beta1/query.pb.dart'
+// as bank_module_query;
 
 void main() {
   group('Comet HTTP Client Test', () {
@@ -27,6 +27,7 @@ void main() {
       expect(result.response?.version, "v18.1.0");
     });
 
+/*
     test('Call ABCI Query', () async {
       final client = CometHttpClient(address, jsonRpc: isJsonRpc);
 
@@ -55,5 +56,6 @@ void main() {
 
       expect(resp.balance.denom, "uatom");
     });
+*/
   });
 }

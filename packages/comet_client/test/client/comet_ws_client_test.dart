@@ -1,7 +1,6 @@
 
 import 'package:test/test.dart';
 import 'package:comet_client/comet_client.dart';
-import 'package:comet_client/types.dart';
 
 void main() {
   group('Comet WS Client Test', () {

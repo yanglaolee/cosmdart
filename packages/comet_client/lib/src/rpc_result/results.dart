@@ -1,3 +1,4 @@
+import 'package:comet_client/src/converter/event_data_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:comet_client/types.dart';
@@ -340,7 +341,7 @@ class ResultEvent extends RpcResult with _$ResultEvent {
   @JsonSerializable(explicitToJson: true)
   factory ResultEvent({
     @JsonKey(name: 'query') String? query,
-    @JsonKey(name: 'data') EventData? data, // TODO need a custom converter
+    @JsonKey(name: 'data') @EventDataConverter() EventData? data,
     @JsonKey(name: 'events') Map<String, List<String>>? events,
   }) = _ResultEvent;
 
