@@ -429,8 +429,9 @@ Map<String, dynamic> _$$ResultConsensusParamsImplToJson(
 _$ResultEventImpl _$$ResultEventImplFromJson(Map<String, dynamic> json) =>
     _$ResultEventImpl(
       query: json['query'] as String?,
-      data: _$JsonConverterFromJson<Map<String, dynamic>, EventData>(
-          json['data'], const EventDataConverter().fromJson),
+      data: json['data'] == null
+          ? null
+          : EventData.fromJson(json['data'] as Map<String, dynamic>),
       events: (json['events'] as Map<String, dynamic>?)?.map(
         (k, e) =>
             MapEntry(k, (e as List<dynamic>).map((e) => e as String).toList()),
@@ -440,8 +441,7 @@ _$ResultEventImpl _$$ResultEventImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$ResultEventImplToJson(_$ResultEventImpl instance) =>
     <String, dynamic>{
       'query': instance.query,
-      'data': _$JsonConverterToJson<Map<String, dynamic>, EventData>(
-          instance.data, const EventDataConverter().toJson),
+      'data': instance.data?.toJson(),
       'events': instance.events,
     };
 

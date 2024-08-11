@@ -16,200 +16,200 @@ sealed class EventData with _$EventData {
   @FreezedUnionValue('tendermint/event/NewBlock')
   factory EventData.newBlock({
     @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'value') NewBlock? value,
-  }) = EventDataNewBlock;
+    @JsonKey(name: 'value') EventDataNewBlock? value,
+  }) = NewBlock;
 
   @JsonSerializable(explicitToJson: true)
   @FreezedUnionValue('tendermint/event/NewBlockHeader')
   factory EventData.newBlockHeader({
     @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'value') NewBlockHeader? value,
-  }) = EventDataNewBlockHeader;
+    @JsonKey(name: 'value') EventDataNewBlockHeader? value,
+  }) = NewBlockHeader;
 
   @JsonSerializable(explicitToJson: true)
   @FreezedUnionValue('tendermint/event/NewBlockEvents')
   factory EventData.newBlockEvents({
     @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'value') NewBlockEvents? value,
-  }) = EventDataNewBlockEvents;
+    @JsonKey(name: 'value') EventDataNewBlockEvents? value,
+  }) = NewBlockEvents;
 
   @JsonSerializable(explicitToJson: true)
   @FreezedUnionValue('tendermint/event/NewEvidence')
   factory EventData.newEvidence({
     @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'value') NewEvidence? value,
-  }) = EventDataNewEvidence;
+    @JsonKey(name: 'value') EventDataNewEvidence? value,
+  }) = NewEvidence;
 
   @JsonSerializable(explicitToJson: true)
   @FreezedUnionValue('tendermint/event/Tx')
   factory EventData.tx({
     @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'value') Tx? value,
-  }) = EventDataTx;
+    @JsonKey(name: 'value') EventDataTx? value,
+  }) = EventTx;
 
   @JsonSerializable(explicitToJson: true)
   @FreezedUnionValue('tendermint/event/RoundState')
   factory EventData.roundState({
     @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'value') RoundState? value,
-  }) = EventDataRoundState;
+    @JsonKey(name: 'value') EventDataRoundState? value,
+  }) = RoundState;
 
   @JsonSerializable(explicitToJson: true)
   @FreezedUnionValue('tendermint/event/NewRound')
   factory EventData.newRound({
     @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'value') NewRound? value,
-  }) = EventDataNewRound;
+    @JsonKey(name: 'value') EventDataNewRound? value,
+  }) = NewRound;
 
   @JsonSerializable(explicitToJson: true)
   @FreezedUnionValue('tendermint/event/CompleteProposal')
   factory EventData.completeProposal({
     @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'value') CompleteProposal? value,
-  }) = EventDataCompleteProposal;
+    @JsonKey(name: 'value') EventDataCompleteProposal? value,
+  }) = CompleteProposal;
 
   @JsonSerializable(explicitToJson: true)
   @FreezedUnionValue('tendermint/event/Vote')
   factory EventData.vote({
     @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'value') Vote? value,
-  }) = EventDataVote;
+    @JsonKey(name: 'value') EventDataVote? value,
+  }) = EventVote;
 
   @JsonSerializable(explicitToJson: true)
   @FreezedUnionValue('tendermint/event/ValidatorSetUpdates')
   factory EventData.validatorSetUpdates({
     @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'value') ValidatorSetUpdates? value,
-  }) = EventDataValidatorSetUpdates;
+    @JsonKey(name: 'value') EventDataValidatorSetUpdates? value,
+  }) = ValidatorSetUpdates;
 
   factory EventData.fromJson(Map<String, dynamic> json) =>
       _$EventDataFromJson(json);
 }
 
 @freezed
-class NewBlock with _$NewBlock {
+class EventDataNewBlock with _$EventDataNewBlock {
   @JsonSerializable(explicitToJson: true)
-  factory NewBlock({
+  factory EventDataNewBlock({
     @JsonKey(name: 'block') Block? block,
     @JsonKey(name: 'block_id') BlockID? blockID,
     @JsonKey(name: 'result_finalize_block')
     ResponseFinalizeBlock? responseFinalizeBlock,
-  }) = _NewBlock;
+  }) = _EventDataNewBlock;
 
-  factory NewBlock.fromJson(Map<String, dynamic> json) =>
-      _$NewBlockFromJson(json);
+  factory EventDataNewBlock.fromJson(Map<String, dynamic> json) =>
+      _$EventDataNewBlockFromJson(json);
 }
 
 @freezed
-class NewBlockHeader with _$NewBlockHeader {
+class EventDataNewBlockHeader with _$EventDataNewBlockHeader {
   @JsonSerializable(explicitToJson: true)
-  factory NewBlockHeader({
+  factory EventDataNewBlockHeader({
     @JsonKey(name: 'header') Header? header,
     ResponseFinalizeBlock? responseFinalizeBlock,
-  }) = _NewBlockHeader;
+  }) = _EventDataNewBlockHeader;
 
-  factory NewBlockHeader.fromJson(Map<String, dynamic> json) =>
-      _$NewBlockHeaderFromJson(json);
+  factory EventDataNewBlockHeader.fromJson(Map<String, dynamic> json) =>
+      _$EventDataNewBlockHeaderFromJson(json);
 }
 
 @freezed
-class NewBlockEvents with _$NewBlockEvents {
+class EventDataNewBlockEvents with _$EventDataNewBlockEvents {
   @JsonSerializable(explicitToJson: true)
-  factory NewBlockEvents({
+  factory EventDataNewBlockEvents({
     @JsonKey(name: 'height') int? height,
     @JsonKey(name: 'events') List<Event>? events,
     @JsonKey(name: 'num_txs') int? numTxs,
     ResponseFinalizeBlock? responseFinalizeBlock,
-  }) = _NewBlockEvents;
+  }) = _EventDataNewBlockEvents;
 
-  factory NewBlockEvents.fromJson(Map<String, dynamic> json) =>
-      _$NewBlockEventsFromJson(json);
+  factory EventDataNewBlockEvents.fromJson(Map<String, dynamic> json) =>
+      _$EventDataNewBlockEventsFromJson(json);
 }
 
 @freezed
-class NewEvidence with _$NewEvidence {
+class EventDataNewEvidence with _$EventDataNewEvidence {
   @JsonSerializable(explicitToJson: true)
-  factory NewEvidence({
+  factory EventDataNewEvidence({
     @JsonKey(name: 'height') int? height,
     @JsonKey(name: 'evidence') DuplicateVoteEvidence? evidencve,
     ResponseFinalizeBlock? responseFinalizeBlock,
-  }) = _NewEvidence;
+  }) = _EventDataNewEvidence;
 
-  factory NewEvidence.fromJson(Map<String, dynamic> json) =>
-      _$NewEvidenceFromJson(json);
+  factory EventDataNewEvidence.fromJson(Map<String, dynamic> json) =>
+      _$EventDataNewEvidenceFromJson(json);
 }
 
 @freezed
-class Tx with _$Tx {
+class EventDataTx with _$EventDataTx {
   @JsonSerializable(explicitToJson: true)
-  factory Tx({
+  factory EventDataTx({
     @JsonKey(name: 'tx_result') TxResult? height,
     ResponseFinalizeBlock? responseFinalizeBlock,
-  }) = _Tx;
+  }) = _EventDataTx;
 
-  factory Tx.fromJson(Map<String, dynamic> json) => _$TxFromJson(json);
+  factory EventDataTx.fromJson(Map<String, dynamic> json) => _$EventDataTxFromJson(json);
 }
 
 @freezed
-class RoundState with _$RoundState {
+class EventDataRoundState with _$EventDataRoundState {
   @JsonSerializable(explicitToJson: true)
-  factory RoundState({
+  factory EventDataRoundState({
     @JsonKey(name: 'height') int? height,
     @JsonKey(name: 'round') int? round,
     @JsonKey(name: 'step') String? step,
-  }) = _RoundState;
+  }) = _EventDataRoundState;
 
-  factory RoundState.fromJson(Map<String, dynamic> json) =>
-      _$RoundStateFromJson(json);
+  factory EventDataRoundState.fromJson(Map<String, dynamic> json) =>
+      _$EventDataRoundStateFromJson(json);
 }
 
 @freezed
-class NewRound with _$NewRound {
+class EventDataNewRound with _$EventDataNewRound {
   @JsonSerializable(explicitToJson: true)
-  factory NewRound({
+  factory EventDataNewRound({
     @JsonKey(name: 'height') int? height,
     @JsonKey(name: 'round') int? round,
     @JsonKey(name: 'step') String? step,
     @JsonKey(name: 'proposer') ValidatorInfo? proposer,
-  }) = _NewRound;
+  }) = _EventDataNewRound;
 
-  factory NewRound.fromJson(Map<String, dynamic> json) =>
-      _$NewRoundFromJson(json);
+  factory EventDataNewRound.fromJson(Map<String, dynamic> json) =>
+      _$EventDataNewRoundFromJson(json);
 }
 
 @freezed
-class CompleteProposal with _$CompleteProposal {
+class EventDataCompleteProposal with _$EventDataCompleteProposal {
   @JsonSerializable(explicitToJson: true)
-  factory CompleteProposal({
+  factory EventDataCompleteProposal({
     @JsonKey(name: 'height') int? height,
     @JsonKey(name: 'round') int? round,
     @JsonKey(name: 'step') String? step,
     @JsonKey(name: 'block_id') BlockID? blockID,
-  }) = _CompleteProposal;
+  }) = _EventDataCompleteProposal;
 
-  factory CompleteProposal.fromJson(Map<String, dynamic> json) =>
-      _$CompleteProposalFromJson(json);
+  factory EventDataCompleteProposal.fromJson(Map<String, dynamic> json) =>
+      _$EventDataCompleteProposalFromJson(json);
 }
 
 @freezed
-class Vote with _$Vote {
+class EventDataVote with _$EventDataVote {
   @JsonSerializable(explicitToJson: true)
-  factory Vote({
+  factory EventDataVote({
     @JsonKey(name: 'vote') Vote? vote,
-  }) = _Vote;
+  }) = _EventDataVote;
 
-  factory Vote.fromJson(Map<String, dynamic> json) => _$VoteFromJson(json);
+  factory EventDataVote.fromJson(Map<String, dynamic> json) => _$EventDataVoteFromJson(json);
 }
 
 @freezed
-class ValidatorSetUpdates with _$ValidatorSetUpdates {
+class EventDataValidatorSetUpdates with _$EventDataValidatorSetUpdates {
   @JsonSerializable(explicitToJson: true)
-  factory ValidatorSetUpdates({
+  factory EventDataValidatorSetUpdates({
     @JsonKey(name: 'validator_updates') List<Validator>? validatorUpdates,
-  }) = _ValidatorSetUpdates;
+  }) = _EventDataValidatorSetUpdates;
 
-  factory ValidatorSetUpdates.fromJson(Map<String, dynamic> json) =>
-      _$ValidatorSetUpdatesFromJson(json);
+  factory EventDataValidatorSetUpdates.fromJson(Map<String, dynamic> json) =>
+      _$EventDataValidatorSetUpdatesFromJson(json);
 }
 
 @freezed

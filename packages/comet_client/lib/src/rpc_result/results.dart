@@ -1,4 +1,4 @@
-import 'package:comet_client/src/converter/event_data_converter.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:comet_client/types.dart';
