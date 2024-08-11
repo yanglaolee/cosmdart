@@ -52,7 +52,7 @@ class EventDataConverter
       return EventDataValidatorSetUpdates.fromJson(json);
     }
 
-    throw FormatException('Invalid EventData format', json);
+    throw FormatException('Invalid EventData format $json');
   }
 
   @override

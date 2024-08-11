@@ -3,6 +3,8 @@
 // JSON-RPC 2.0 Spec docs：
 // https://wiki.geekdream.com/Specification/json-rpc_2.0.html
 
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'rpc_id_converter.dart';
 

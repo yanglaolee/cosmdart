@@ -12,19 +12,17 @@ class WsClient {
 
   WsClient._(this._ws) : _nextReqID = 0;
 
-  static Future<WsClient> connect(String address,
-      {Duration pingInterval = const Duration(seconds: 1),
-      Duration backOffInterval = const Duration(seconds: 1)}) async {
-
+  static Future<WsClient> connect(
+    String address, {
+    Duration pingInterval = const Duration(seconds: 3),
+  }) async {
     final ws = WebSocket(
       Uri.parse(address),
       pingInterval: pingInterval,
-      backoff: ConstantBackoff(backOffInterval),
     );
 
     try {
       // Wait until a connection has been established.
-      ws.connection.forEach(print);
       await ws.connection.firstWhere((state) => state is Connected);
     } catch (e) {
       throw Exception('Failed to connect to $address: $e');

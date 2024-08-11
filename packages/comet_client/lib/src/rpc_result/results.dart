@@ -341,7 +341,7 @@ class ResultEvent extends RpcResult with _$ResultEvent {
   @JsonSerializable(explicitToJson: true)
   factory ResultEvent({
     @JsonKey(name: 'query') String? query,
-    @JsonKey(name: 'data') @EventDataConverter() EventData? data,
+    @JsonKey(name: 'data') EventData? data,
     @JsonKey(name: 'events') Map<String, List<String>>? events,
   }) = _ResultEvent;
 
