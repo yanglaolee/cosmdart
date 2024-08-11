@@ -4978,8 +4978,8 @@ mixin _$ResultEvent {
   @JsonKey(name: 'query')
   String? get query => throw _privateConstructorUsedError;
   @JsonKey(name: 'data')
-  EventData? get data =>
-      throw _privateConstructorUsedError; // TODO need a custom converter
+  @EventDataConverter()
+  EventData? get data => throw _privateConstructorUsedError;
   @JsonKey(name: 'events')
   Map<String, List<String>>? get events => throw _privateConstructorUsedError;
 
@@ -5001,7 +5001,7 @@ abstract class $ResultEventCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'query') String? query,
-      @JsonKey(name: 'data') EventData? data,
+      @JsonKey(name: 'data') @EventDataConverter() EventData? data,
       @JsonKey(name: 'events') Map<String, List<String>>? events});
 
   $EventDataCopyWith<$Res>? get data;
@@ -5067,7 +5067,7 @@ abstract class _$$ResultEventImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'query') String? query,
-      @JsonKey(name: 'data') EventData? data,
+      @JsonKey(name: 'data') @EventDataConverter() EventData? data,
       @JsonKey(name: 'events') Map<String, List<String>>? events});
 
   @override
@@ -5114,7 +5114,7 @@ class __$$ResultEventImplCopyWithImpl<$Res>
 class _$ResultEventImpl implements _ResultEvent {
   _$ResultEventImpl(
       {@JsonKey(name: 'query') this.query,
-      @JsonKey(name: 'data') this.data,
+      @JsonKey(name: 'data') @EventDataConverter() this.data,
       @JsonKey(name: 'events') final Map<String, List<String>>? events})
       : _events = events;
 
@@ -5126,10 +5126,9 @@ class _$ResultEventImpl implements _ResultEvent {
   final String? query;
   @override
   @JsonKey(name: 'data')
+  @EventDataConverter()
   final EventData? data;
-// TODO need a custom converter
   final Map<String, List<String>>? _events;
-// TODO need a custom converter
   @override
   @JsonKey(name: 'events')
   Map<String, List<String>>? get events {
@@ -5179,7 +5178,7 @@ class _$ResultEventImpl implements _ResultEvent {
 abstract class _ResultEvent implements ResultEvent {
   factory _ResultEvent(
           {@JsonKey(name: 'query') final String? query,
-          @JsonKey(name: 'data') final EventData? data,
+          @JsonKey(name: 'data') @EventDataConverter() final EventData? data,
           @JsonKey(name: 'events') final Map<String, List<String>>? events}) =
       _$ResultEventImpl;
 
@@ -5191,7 +5190,8 @@ abstract class _ResultEvent implements ResultEvent {
   String? get query;
   @override
   @JsonKey(name: 'data')
-  EventData? get data; // TODO need a custom converter
+  @EventDataConverter()
+  EventData? get data;
   @override
   @JsonKey(name: 'events')
   Map<String, List<String>>? get events;

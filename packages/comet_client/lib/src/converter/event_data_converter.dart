@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:json_annotation/json_annotation.dart';
 
 import '../rpc_result/comet/events.dart';
@@ -19,29 +21,42 @@ class EventDataConverter
 
   @override
   EventData fromJson(Map<String, dynamic> json) {
-    if (isEventData(json, NewBlock)) return EventDataNewBlock.fromJson(json);
-    if (isEventData(json, NewBlockHeader))
+    if (isEventData(json, NewBlock)) {
+      return EventDataNewBlock.fromJson(json);
+    }
+    if (isEventData(json, NewBlockHeader)) {
       return EventDataNewBlockHeader.fromJson(json);
-    if (isEventData(json, NewBlockEvents))
+    }
+    if (isEventData(json, NewBlockEvents)) {
       return EventDataNewBlockEvents.fromJson(json);
-    if (isEventData(json, NewEvidence))
+    }
+    if (isEventData(json, NewEvidence)) {
       return EventDataNewEvidence.fromJson(json);
-    if (isEventData(json, Tx)) return EventDataTx.fromJson(json);
-    if (isEventData(json, RoundState))
+    }
+    if (isEventData(json, Tx)) {
+      return EventDataTx.fromJson(json);
+    }
+    if (isEventData(json, RoundState)) {
       return EventDataRoundState.fromJson(json);
-    if (isEventData(json, NewRound)) return EventDataNewRound.fromJson(json);
-    if (isEventData(json, CompleteProposal))
+    }
+    if (isEventData(json, NewRound)) {
+      return EventDataNewRound.fromJson(json);
+    }
+    if (isEventData(json, CompleteProposal)) {
       return EventDataCompleteProposal.fromJson(json);
-    if (isEventData(json, Vote)) return EventDataVote.fromJson(json);
-    if (isEventData(json, VlidatorSetUpdates))
+    }
+    if (isEventData(json, Vote)) {
+      return EventDataVote.fromJson(json);
+    }
+    if (isEventData(json, VlidatorSetUpdates)) {
       return EventDataValidatorSetUpdates.fromJson(json);
+    }
 
     throw FormatException('Invalid EventData format', json);
   }
 
   @override
   Map<String, dynamic> toJson(EventData object) {
-    // TODO: implement toJson
     throw UnimplementedError();
   }
 }
