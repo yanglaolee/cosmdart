@@ -9,11 +9,12 @@ environment:
 # Add regular dependencies here.
 dependencies:
   http: ^1.2.1
-  convert: ^3.1.1
-  web_socket_channel: ^3.0.0
+  web_socket: ^0.1.6
   json_annotation: ^4.9.0  # # a package containing annotations for json_serializable
   freezed_annotation: ^2.4.4  # a package containing annotations for freezed
   synchronized: ^3.1.0+1
+  web_socket_client: ^0.1.0
+  
 
 dev_dependencies:
   lints: ^4.0.0

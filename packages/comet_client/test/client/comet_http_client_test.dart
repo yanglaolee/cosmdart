@@ -1,6 +1,7 @@
 import 'package:comet_client/converter.dart';
 import 'package:test/test.dart';
 import 'package:comet_client/comet_client.dart';
+import 'package:comet_client/types.dart';
 import 'package:cosmdart_types/src/cosmos/bank/v1beta1/query.pb.dart'
     as bank_module_query;
 
@@ -12,11 +13,14 @@ void main() {
     final isJsonRpc = false;
     test('Call ABCI Info', () async {
       final client = CometHttpClient(address, jsonRpc: isJsonRpc);
-      final result = await client.abciInfo();
-      client.close();
+      final ResultABCIInfo result;
 
-      if (result == null) {
-        fail('ERROR: ${client.errCode!}, ${client.errMessage!}');
+      try {
+        result = await client.abciInfo();
+      } on CometResponseError catch (e) {
+        fail('ERROR: ${e.code}, ${e.message}');
+      } finally {
+        client.close();
       }
 
       expect(result.response?.data, "GaiaApp");
@@ -34,15 +38,20 @@ void main() {
       //     address: 'kujira1fqtgvhfgfy77wkdut5c6798srfm7yh4kuh05gr',
       //     denom: 'ukuji');
 
-      final result = await client.abciQuery(
-          path: '/cosmos.bank.v1beta1.Query/Balance', data: req, prove: false);
-      client.close();
-
-      if (result == null) {
-        fail('ERROR: ${client.errCode!}, ${client.errMessage!}');
+      final ResultABCIQuery result;
+      try {
+        result = await client.abciQuery(
+            path: '/cosmos.bank.v1beta1.Query/Balance',
+            data: req,
+            prove: false);
+      } on CometResponseError catch (e) {
+        fail('ERROR: ${e.code}, ${e.message}');
+      } finally {
+        client.close();
       }
 
-      final resp = bank_module_query.QueryBalanceResponse.fromBuffer(Base64Converter().fromJson(result.response!.value!).data);
+      final resp = bank_module_query.QueryBalanceResponse.fromBuffer(
+          Base64Converter().fromJson(result.response!.value!).data);
 
       expect(resp.balance.denom, "uatom");
     });

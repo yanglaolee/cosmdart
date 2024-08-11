@@ -7,3 +7,4 @@ export 'src/rpc_result/results.dart';
 
 // Custom types
 export 'src/types/bin_array.dart';
+export 'src/types/exceptions.dart';
