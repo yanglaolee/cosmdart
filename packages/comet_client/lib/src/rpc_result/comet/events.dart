@@ -10,6 +10,35 @@ import 'evidence.dart';
 part 'events.freezed.dart';
 part 'events.g.dart';
 
+	// Block level events for mass consumption by users.
+	// These events are triggered from the state package,
+	// after a block has been committed.
+	// These are also used by the tx indexer for async indexing.
+	// All of this data can be fetched through the rpc.
+      // EventNewBlock            = "NewBlock"
+      // EventNewBlockHeader      = "NewBlockHeader"
+      // EventNewBlockEvents      = "NewBlockEvents"
+      // EventNewEvidence         = "NewEvidence"
+      // EventTx                  = "Tx"
+      // EventValidatorSetUpdates = "ValidatorSetUpdates"
+
+	// Internal consensus events.
+	// These are used for testing the consensus state machine.
+	// They can also be used to build real-time consensus visualizers.
+      // EventCompleteProposal = "CompleteProposal"
+      // EventLock             = "Lock"
+      // EventNewRound         = "NewRound"
+      // EventNewRoundStep     = "NewRoundStep"
+      // EventPolka            = "Polka"
+      // EventRelock           = "Relock"
+      // EventTimeoutPropose   = "TimeoutPropose"
+      // EventTimeoutWait      = "TimeoutWait"
+      // EventUnlock           = "Unlock"
+      // EventValidBlock       = "ValidBlock"
+      // EventVote             = "Vote"
+
+
+
 @Freezed(unionKey: 'type', unionValueCase: FreezedUnionCase.pascal)
 sealed class EventData with _$EventData {
   @JsonSerializable(explicitToJson: true)
@@ -81,6 +110,13 @@ sealed class EventData with _$EventData {
     @JsonKey(name: 'type') String? type,
     @JsonKey(name: 'value') EventDataValidatorSetUpdates? value,
   }) = ValidatorSetUpdates;
+
+  @JsonSerializable(explicitToJson: true)
+  @FreezedUnionValue('tendermint/event/ProposalString')
+  factory EventData.proposalString({
+    @JsonKey(name: 'type') String? type,
+    @JsonKey(name: 'value') String? value,
+  }) = ProposalString;
 
   factory EventData.fromJson(Map<String, dynamic> json) =>
       _$EventDataFromJson(json);
