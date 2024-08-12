@@ -18,25 +18,53 @@ class CometWsClient implements EventsClient {
     return client;
   }
 
+  /// Response swicth, redirect responses to respective subscribers' stream
   void _listenToResponses() {
-    _wsClient.responses.listen((response) {
-      ResultEvent? result;
+    _wsClient.responses.listen(  
+        (response) {
+          ResultEvent result;
 
-      // if json rpc response is success
-      // add the result to the corresponding stream
-      if (response.isSuccess) {
-        result = ResultEvent.fromJson(response.result!);
-        _subscriptions[result.query]!.add(result);
-      }
+          // if websocket json rpc response is success
+          // parse the result and add to the corresponding stream
+          if (response.isSuccess) {
+            result = ResultEvent.fromJson(response.result!);
+            if (_subscriptions.containsKey(result.query)) {
+              // result's field can be null, just in case
+              _subscriptions[result.query]?.add(result);
+            }
+          }
+          
+          // TODO need to add this error to the corresponding subscription stream
+          // But how to find the stream? As `_subscriptions[result.query]` is null 
+          // for Error response.
+          if (response.isError) 
+            throw CometResponseError(
+                response.error?.code, response.error?.message);
+        },
 
-      if (response.isError) print(response.error);
-    },
-        // onDone: () => ,
-        // onError: () => ,
-        cancelOnError: true);
+        onDone: () async {
+          // if websocket response stream is over, close all subscription 
+          // stream and clear and close websocket conn. 
+          // Typically, stream goes forever, this callback will not be executed.
+          await Future.wait(
+          _subscriptions.values.map((controller) => controller.close()));
+          _subscriptions.clear();
+          _wsClient.close();
+        },
+
+        onError: (error) {
+          // If error occurred, add CometResponseError to all subscription stream.
+          // Typically, the response stream will not have errors.
+          final e = CometResponseError(-1, 'Unknown Json RPC response error $error');
+          _subscriptions.forEach((query, controller) => controller.addError(e));
+        },
+
+        cancelOnError: false);
   }
 
-  // The query grammar is defined in [pubsub/query/syntax](https://godoc.org/github.com/tendermint/tendermint/internal/pubsub/query/syntax).
+  // The query string grammar:
+  // Defined in [pubsub/query/syntax](https://godoc.org/github.com/tendermint/tendermint/internal/pubsub/query/syntax).
+  //
   // An empty query matches all events; otherwise a query comprises one or
   // more terms comparing event metadata to target values. For example, to
   // select new block events:
@@ -101,14 +129,19 @@ class CometWsClient implements EventsClient {
   @override
   Future<void> unsubscribeAll({required String subscriber}) async {
     _wsClient.call(RpcMethod.unsubscribeAll.name);
-    await Future.wait(_subscriptions.values.map((controller) => controller.close()));
+
+    await Future.wait(
+        _subscriptions.values.map((controller) => controller.close()));
     _subscriptions.clear();
   }
 
   // close all subscriptions and close the websocket connection
-  void close() {
-    _subscriptions.forEach((query, controller) => controller.close());
-    _subscriptions.clear();
+  Future<void> close() async {
+    if (_subscriptions.isNotEmpty) {
+      await Future.wait(
+          _subscriptions.values.map((controller) => controller.close()));
+      _subscriptions.clear();
+    }
     _wsClient.close();
   }
 }
