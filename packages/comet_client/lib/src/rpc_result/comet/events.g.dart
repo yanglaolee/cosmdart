@@ -157,6 +157,19 @@ Map<String, dynamic> _$$ValidatorSetUpdatesImplToJson(
       'value': instance.value?.toJson(),
     };
 
+_$ProposalStringImpl _$$ProposalStringImplFromJson(Map<String, dynamic> json) =>
+    _$ProposalStringImpl(
+      type: json['type'] as String?,
+      value: json['value'] as String?,
+    );
+
+Map<String, dynamic> _$$ProposalStringImplToJson(
+        _$ProposalStringImpl instance) =>
+    <String, dynamic>{
+      'type': instance.type,
+      'value': instance.value,
+    };
+
 _$EventDataNewBlockImpl _$$EventDataNewBlockImplFromJson(
         Map<String, dynamic> json) =>
     _$EventDataNewBlockImpl(

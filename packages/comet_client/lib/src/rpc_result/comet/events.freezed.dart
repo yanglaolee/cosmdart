@@ -36,6 +36,8 @@ EventData _$EventDataFromJson(Map<String, dynamic> json) {
       return EventVote.fromJson(json);
     case 'tendermint/event/ValidatorSetUpdates':
       return ValidatorSetUpdates.fromJson(json);
+    case 'tendermint/event/ProposalString':
+      return ProposalString.fromJson(json);
 
     default:
       throw CheckedFromJsonException(
@@ -81,6 +83,9 @@ mixin _$EventData {
     required TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
         validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -115,6 +120,9 @@ mixin _$EventData {
     TResult? Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -149,6 +157,9 @@ mixin _$EventData {
     TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -164,6 +175,7 @@ mixin _$EventData {
     required TResult Function(CompleteProposal value) completeProposal,
     required TResult Function(EventVote value) vote,
     required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -178,6 +190,7 @@ mixin _$EventData {
     TResult? Function(CompleteProposal value)? completeProposal,
     TResult? Function(EventVote value)? vote,
     TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -192,6 +205,7 @@ mixin _$EventData {
     TResult Function(CompleteProposal value)? completeProposal,
     TResult Function(EventVote value)? vote,
     TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -374,6 +388,9 @@ class _$NewBlockImpl implements NewBlock {
     required TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
         validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
   }) {
     return newBlock(type, value);
   }
@@ -411,6 +428,9 @@ class _$NewBlockImpl implements NewBlock {
     TResult? Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
   }) {
     return newBlock?.call(type, value);
   }
@@ -448,6 +468,9 @@ class _$NewBlockImpl implements NewBlock {
     TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
     required TResult orElse(),
   }) {
     if (newBlock != null) {
@@ -469,6 +492,7 @@ class _$NewBlockImpl implements NewBlock {
     required TResult Function(CompleteProposal value) completeProposal,
     required TResult Function(EventVote value) vote,
     required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
   }) {
     return newBlock(this);
   }
@@ -486,6 +510,7 @@ class _$NewBlockImpl implements NewBlock {
     TResult? Function(CompleteProposal value)? completeProposal,
     TResult? Function(EventVote value)? vote,
     TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
   }) {
     return newBlock?.call(this);
   }
@@ -503,6 +528,7 @@ class _$NewBlockImpl implements NewBlock {
     TResult Function(CompleteProposal value)? completeProposal,
     TResult Function(EventVote value)? vote,
     TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
     required TResult orElse(),
   }) {
     if (newBlock != null) {
@@ -677,6 +703,9 @@ class _$NewBlockHeaderImpl implements NewBlockHeader {
     required TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
         validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
   }) {
     return newBlockHeader(type, value);
   }
@@ -714,6 +743,9 @@ class _$NewBlockHeaderImpl implements NewBlockHeader {
     TResult? Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
   }) {
     return newBlockHeader?.call(type, value);
   }
@@ -751,6 +783,9 @@ class _$NewBlockHeaderImpl implements NewBlockHeader {
     TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
     required TResult orElse(),
   }) {
     if (newBlockHeader != null) {
@@ -772,6 +807,7 @@ class _$NewBlockHeaderImpl implements NewBlockHeader {
     required TResult Function(CompleteProposal value) completeProposal,
     required TResult Function(EventVote value) vote,
     required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
   }) {
     return newBlockHeader(this);
   }
@@ -789,6 +825,7 @@ class _$NewBlockHeaderImpl implements NewBlockHeader {
     TResult? Function(CompleteProposal value)? completeProposal,
     TResult? Function(EventVote value)? vote,
     TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
   }) {
     return newBlockHeader?.call(this);
   }
@@ -806,6 +843,7 @@ class _$NewBlockHeaderImpl implements NewBlockHeader {
     TResult Function(CompleteProposal value)? completeProposal,
     TResult Function(EventVote value)? vote,
     TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
     required TResult orElse(),
   }) {
     if (newBlockHeader != null) {
@@ -981,6 +1019,9 @@ class _$NewBlockEventsImpl implements NewBlockEvents {
     required TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
         validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
   }) {
     return newBlockEvents(type, value);
   }
@@ -1018,6 +1059,9 @@ class _$NewBlockEventsImpl implements NewBlockEvents {
     TResult? Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
   }) {
     return newBlockEvents?.call(type, value);
   }
@@ -1055,6 +1099,9 @@ class _$NewBlockEventsImpl implements NewBlockEvents {
     TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
     required TResult orElse(),
   }) {
     if (newBlockEvents != null) {
@@ -1076,6 +1123,7 @@ class _$NewBlockEventsImpl implements NewBlockEvents {
     required TResult Function(CompleteProposal value) completeProposal,
     required TResult Function(EventVote value) vote,
     required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
   }) {
     return newBlockEvents(this);
   }
@@ -1093,6 +1141,7 @@ class _$NewBlockEventsImpl implements NewBlockEvents {
     TResult? Function(CompleteProposal value)? completeProposal,
     TResult? Function(EventVote value)? vote,
     TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
   }) {
     return newBlockEvents?.call(this);
   }
@@ -1110,6 +1159,7 @@ class _$NewBlockEventsImpl implements NewBlockEvents {
     TResult Function(CompleteProposal value)? completeProposal,
     TResult Function(EventVote value)? vote,
     TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
     required TResult orElse(),
   }) {
     if (newBlockEvents != null) {
@@ -1284,6 +1334,9 @@ class _$NewEvidenceImpl implements NewEvidence {
     required TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
         validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
   }) {
     return newEvidence(type, value);
   }
@@ -1321,6 +1374,9 @@ class _$NewEvidenceImpl implements NewEvidence {
     TResult? Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
   }) {
     return newEvidence?.call(type, value);
   }
@@ -1358,6 +1414,9 @@ class _$NewEvidenceImpl implements NewEvidence {
     TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
     required TResult orElse(),
   }) {
     if (newEvidence != null) {
@@ -1379,6 +1438,7 @@ class _$NewEvidenceImpl implements NewEvidence {
     required TResult Function(CompleteProposal value) completeProposal,
     required TResult Function(EventVote value) vote,
     required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
   }) {
     return newEvidence(this);
   }
@@ -1396,6 +1456,7 @@ class _$NewEvidenceImpl implements NewEvidence {
     TResult? Function(CompleteProposal value)? completeProposal,
     TResult? Function(EventVote value)? vote,
     TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
   }) {
     return newEvidence?.call(this);
   }
@@ -1413,6 +1474,7 @@ class _$NewEvidenceImpl implements NewEvidence {
     TResult Function(CompleteProposal value)? completeProposal,
     TResult Function(EventVote value)? vote,
     TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
     required TResult orElse(),
   }) {
     if (newEvidence != null) {
@@ -1587,6 +1649,9 @@ class _$EventTxImpl implements EventTx {
     required TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
         validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
   }) {
     return tx(type, value);
   }
@@ -1624,6 +1689,9 @@ class _$EventTxImpl implements EventTx {
     TResult? Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
   }) {
     return tx?.call(type, value);
   }
@@ -1661,6 +1729,9 @@ class _$EventTxImpl implements EventTx {
     TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
     required TResult orElse(),
   }) {
     if (tx != null) {
@@ -1682,6 +1753,7 @@ class _$EventTxImpl implements EventTx {
     required TResult Function(CompleteProposal value) completeProposal,
     required TResult Function(EventVote value) vote,
     required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
   }) {
     return tx(this);
   }
@@ -1699,6 +1771,7 @@ class _$EventTxImpl implements EventTx {
     TResult? Function(CompleteProposal value)? completeProposal,
     TResult? Function(EventVote value)? vote,
     TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
   }) {
     return tx?.call(this);
   }
@@ -1716,6 +1789,7 @@ class _$EventTxImpl implements EventTx {
     TResult Function(CompleteProposal value)? completeProposal,
     TResult Function(EventVote value)? vote,
     TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
     required TResult orElse(),
   }) {
     if (tx != null) {
@@ -1888,6 +1962,9 @@ class _$RoundStateImpl implements RoundState {
     required TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
         validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
   }) {
     return roundState(type, value);
   }
@@ -1925,6 +2002,9 @@ class _$RoundStateImpl implements RoundState {
     TResult? Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
   }) {
     return roundState?.call(type, value);
   }
@@ -1962,6 +2042,9 @@ class _$RoundStateImpl implements RoundState {
     TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
     required TResult orElse(),
   }) {
     if (roundState != null) {
@@ -1983,6 +2066,7 @@ class _$RoundStateImpl implements RoundState {
     required TResult Function(CompleteProposal value) completeProposal,
     required TResult Function(EventVote value) vote,
     required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
   }) {
     return roundState(this);
   }
@@ -2000,6 +2084,7 @@ class _$RoundStateImpl implements RoundState {
     TResult? Function(CompleteProposal value)? completeProposal,
     TResult? Function(EventVote value)? vote,
     TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
   }) {
     return roundState?.call(this);
   }
@@ -2017,6 +2102,7 @@ class _$RoundStateImpl implements RoundState {
     TResult Function(CompleteProposal value)? completeProposal,
     TResult Function(EventVote value)? vote,
     TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
     required TResult orElse(),
   }) {
     if (roundState != null) {
@@ -2191,6 +2277,9 @@ class _$NewRoundImpl implements NewRound {
     required TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
         validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
   }) {
     return newRound(type, value);
   }
@@ -2228,6 +2317,9 @@ class _$NewRoundImpl implements NewRound {
     TResult? Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
   }) {
     return newRound?.call(type, value);
   }
@@ -2265,6 +2357,9 @@ class _$NewRoundImpl implements NewRound {
     TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
     required TResult orElse(),
   }) {
     if (newRound != null) {
@@ -2286,6 +2381,7 @@ class _$NewRoundImpl implements NewRound {
     required TResult Function(CompleteProposal value) completeProposal,
     required TResult Function(EventVote value) vote,
     required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
   }) {
     return newRound(this);
   }
@@ -2303,6 +2399,7 @@ class _$NewRoundImpl implements NewRound {
     TResult? Function(CompleteProposal value)? completeProposal,
     TResult? Function(EventVote value)? vote,
     TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
   }) {
     return newRound?.call(this);
   }
@@ -2320,6 +2417,7 @@ class _$NewRoundImpl implements NewRound {
     TResult Function(CompleteProposal value)? completeProposal,
     TResult Function(EventVote value)? vote,
     TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
     required TResult orElse(),
   }) {
     if (newRound != null) {
@@ -2494,6 +2592,9 @@ class _$CompleteProposalImpl implements CompleteProposal {
     required TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
         validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
   }) {
     return completeProposal(type, value);
   }
@@ -2531,6 +2632,9 @@ class _$CompleteProposalImpl implements CompleteProposal {
     TResult? Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
   }) {
     return completeProposal?.call(type, value);
   }
@@ -2568,6 +2672,9 @@ class _$CompleteProposalImpl implements CompleteProposal {
     TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
     required TResult orElse(),
   }) {
     if (completeProposal != null) {
@@ -2589,6 +2696,7 @@ class _$CompleteProposalImpl implements CompleteProposal {
     required TResult Function(CompleteProposal value) completeProposal,
     required TResult Function(EventVote value) vote,
     required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
   }) {
     return completeProposal(this);
   }
@@ -2606,6 +2714,7 @@ class _$CompleteProposalImpl implements CompleteProposal {
     TResult? Function(CompleteProposal value)? completeProposal,
     TResult? Function(EventVote value)? vote,
     TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
   }) {
     return completeProposal?.call(this);
   }
@@ -2623,6 +2732,7 @@ class _$CompleteProposalImpl implements CompleteProposal {
     TResult Function(CompleteProposal value)? completeProposal,
     TResult Function(EventVote value)? vote,
     TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
     required TResult orElse(),
   }) {
     if (completeProposal != null) {
@@ -2797,6 +2907,9 @@ class _$EventVoteImpl implements EventVote {
     required TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
         validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
   }) {
     return vote(type, value);
   }
@@ -2834,6 +2947,9 @@ class _$EventVoteImpl implements EventVote {
     TResult? Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
   }) {
     return vote?.call(type, value);
   }
@@ -2871,6 +2987,9 @@ class _$EventVoteImpl implements EventVote {
     TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
     required TResult orElse(),
   }) {
     if (vote != null) {
@@ -2892,6 +3011,7 @@ class _$EventVoteImpl implements EventVote {
     required TResult Function(CompleteProposal value) completeProposal,
     required TResult Function(EventVote value) vote,
     required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
   }) {
     return vote(this);
   }
@@ -2909,6 +3029,7 @@ class _$EventVoteImpl implements EventVote {
     TResult? Function(CompleteProposal value)? completeProposal,
     TResult? Function(EventVote value)? vote,
     TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
   }) {
     return vote?.call(this);
   }
@@ -2926,6 +3047,7 @@ class _$EventVoteImpl implements EventVote {
     TResult Function(CompleteProposal value)? completeProposal,
     TResult Function(EventVote value)? vote,
     TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
     required TResult orElse(),
   }) {
     if (vote != null) {
@@ -3100,6 +3222,9 @@ class _$ValidatorSetUpdatesImpl implements ValidatorSetUpdates {
     required TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
         validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
   }) {
     return validatorSetUpdates(type, value);
   }
@@ -3137,6 +3262,9 @@ class _$ValidatorSetUpdatesImpl implements ValidatorSetUpdates {
     TResult? Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
   }) {
     return validatorSetUpdates?.call(type, value);
   }
@@ -3174,6 +3302,9 @@ class _$ValidatorSetUpdatesImpl implements ValidatorSetUpdates {
     TResult Function(@JsonKey(name: 'type') String? type,
             @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
         validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
     required TResult orElse(),
   }) {
     if (validatorSetUpdates != null) {
@@ -3195,6 +3326,7 @@ class _$ValidatorSetUpdatesImpl implements ValidatorSetUpdates {
     required TResult Function(CompleteProposal value) completeProposal,
     required TResult Function(EventVote value) vote,
     required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
   }) {
     return validatorSetUpdates(this);
   }
@@ -3212,6 +3344,7 @@ class _$ValidatorSetUpdatesImpl implements ValidatorSetUpdates {
     TResult? Function(CompleteProposal value)? completeProposal,
     TResult? Function(EventVote value)? vote,
     TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
   }) {
     return validatorSetUpdates?.call(this);
   }
@@ -3229,6 +3362,7 @@ class _$ValidatorSetUpdatesImpl implements ValidatorSetUpdates {
     TResult Function(CompleteProposal value)? completeProposal,
     TResult Function(EventVote value)? vote,
     TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
     required TResult orElse(),
   }) {
     if (validatorSetUpdates != null) {
@@ -3266,6 +3400,305 @@ abstract class ValidatorSetUpdates implements EventData {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ValidatorSetUpdatesImplCopyWith<_$ValidatorSetUpdatesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProposalStringImplCopyWith<$Res>
+    implements $EventDataCopyWith<$Res> {
+  factory _$$ProposalStringImplCopyWith(_$ProposalStringImpl value,
+          $Res Function(_$ProposalStringImpl) then) =
+      __$$ProposalStringImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'type') String? type,
+      @JsonKey(name: 'value') String? value});
+}
+
+/// @nodoc
+class __$$ProposalStringImplCopyWithImpl<$Res>
+    extends _$EventDataCopyWithImpl<$Res, _$ProposalStringImpl>
+    implements _$$ProposalStringImplCopyWith<$Res> {
+  __$$ProposalStringImplCopyWithImpl(
+      _$ProposalStringImpl _value, $Res Function(_$ProposalStringImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of EventData
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = freezed,
+    Object? value = freezed,
+  }) {
+    return _then(_$ProposalStringImpl(
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(explicitToJson: true)
+class _$ProposalStringImpl implements ProposalString {
+  _$ProposalStringImpl(
+      {@JsonKey(name: 'type') this.type, @JsonKey(name: 'value') this.value});
+
+  factory _$ProposalStringImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProposalStringImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'type')
+  final String? type;
+  @override
+  @JsonKey(name: 'value')
+  final String? value;
+
+  @override
+  String toString() {
+    return 'EventData.proposalString(type: $type, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProposalStringImpl &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, type, value);
+
+  /// Create a copy of EventData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProposalStringImplCopyWith<_$ProposalStringImpl> get copyWith =>
+      __$$ProposalStringImplCopyWithImpl<_$ProposalStringImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewBlock? value)
+        newBlock,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewBlockHeader? value)
+        newBlockHeader,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewBlockEvents? value)
+        newBlockEvents,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewEvidence? value)
+        newEvidence,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataTx? value)
+        tx,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataRoundState? value)
+        roundState,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewRound? value)
+        newRound,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataCompleteProposal? value)
+        completeProposal,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataVote? value)
+        vote,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)
+        validatorSetUpdates,
+    required TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)
+        proposalString,
+  }) {
+    return proposalString(type, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewBlock? value)?
+        newBlock,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewBlockHeader? value)?
+        newBlockHeader,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewBlockEvents? value)?
+        newBlockEvents,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewEvidence? value)?
+        newEvidence,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataTx? value)?
+        tx,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataRoundState? value)?
+        roundState,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewRound? value)?
+        newRound,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataCompleteProposal? value)?
+        completeProposal,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataVote? value)?
+        vote,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
+        validatorSetUpdates,
+    TResult? Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
+  }) {
+    return proposalString?.call(type, value);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewBlock? value)?
+        newBlock,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewBlockHeader? value)?
+        newBlockHeader,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewBlockEvents? value)?
+        newBlockEvents,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewEvidence? value)?
+        newEvidence,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataTx? value)?
+        tx,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataRoundState? value)?
+        roundState,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataNewRound? value)?
+        newRound,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataCompleteProposal? value)?
+        completeProposal,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataVote? value)?
+        vote,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') EventDataValidatorSetUpdates? value)?
+        validatorSetUpdates,
+    TResult Function(@JsonKey(name: 'type') String? type,
+            @JsonKey(name: 'value') String? value)?
+        proposalString,
+    required TResult orElse(),
+  }) {
+    if (proposalString != null) {
+      return proposalString(type, value);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NewBlock value) newBlock,
+    required TResult Function(NewBlockHeader value) newBlockHeader,
+    required TResult Function(NewBlockEvents value) newBlockEvents,
+    required TResult Function(NewEvidence value) newEvidence,
+    required TResult Function(EventTx value) tx,
+    required TResult Function(RoundState value) roundState,
+    required TResult Function(NewRound value) newRound,
+    required TResult Function(CompleteProposal value) completeProposal,
+    required TResult Function(EventVote value) vote,
+    required TResult Function(ValidatorSetUpdates value) validatorSetUpdates,
+    required TResult Function(ProposalString value) proposalString,
+  }) {
+    return proposalString(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NewBlock value)? newBlock,
+    TResult? Function(NewBlockHeader value)? newBlockHeader,
+    TResult? Function(NewBlockEvents value)? newBlockEvents,
+    TResult? Function(NewEvidence value)? newEvidence,
+    TResult? Function(EventTx value)? tx,
+    TResult? Function(RoundState value)? roundState,
+    TResult? Function(NewRound value)? newRound,
+    TResult? Function(CompleteProposal value)? completeProposal,
+    TResult? Function(EventVote value)? vote,
+    TResult? Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult? Function(ProposalString value)? proposalString,
+  }) {
+    return proposalString?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NewBlock value)? newBlock,
+    TResult Function(NewBlockHeader value)? newBlockHeader,
+    TResult Function(NewBlockEvents value)? newBlockEvents,
+    TResult Function(NewEvidence value)? newEvidence,
+    TResult Function(EventTx value)? tx,
+    TResult Function(RoundState value)? roundState,
+    TResult Function(NewRound value)? newRound,
+    TResult Function(CompleteProposal value)? completeProposal,
+    TResult Function(EventVote value)? vote,
+    TResult Function(ValidatorSetUpdates value)? validatorSetUpdates,
+    TResult Function(ProposalString value)? proposalString,
+    required TResult orElse(),
+  }) {
+    if (proposalString != null) {
+      return proposalString(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ProposalStringImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ProposalString implements EventData {
+  factory ProposalString(
+      {@JsonKey(name: 'type') final String? type,
+      @JsonKey(name: 'value') final String? value}) = _$ProposalStringImpl;
+
+  factory ProposalString.fromJson(Map<String, dynamic> json) =
+      _$ProposalStringImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'type')
+  String? get type;
+  @override
+  @JsonKey(name: 'value')
+  String? get value;
+
+  /// Create a copy of EventData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProposalStringImplCopyWith<_$ProposalStringImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
