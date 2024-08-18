@@ -63,6 +63,7 @@ class CometWsClient implements EventsClient {
   }
 
   // The query string grammar:
+  //
   // Defined in [pubsub/query/syntax](https://godoc.org/github.com/tendermint/tendermint/internal/pubsub/query/syntax).
   //
   // An empty query matches all events; otherwise a query comprises one or
